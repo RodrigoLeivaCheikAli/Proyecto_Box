@@ -1,5 +1,5 @@
-﻿Public Class Form1
-    ' Variables para manejar las dimensiones y el radio de las esquinas redondeadas
+﻿Public Class Clientes
+
     Private Const CS_DROPSHADOW As Integer = &H20000
     Private Const borderRadius As Integer = 30
 
@@ -39,17 +39,6 @@
         graphicsPath.Dispose()
     End Sub
 
-#Region " Permite mover el formulario sin borde"
-    ' Protected Overrides Sub WndProc(ByRef m As Message)
-    '      MyBase.WndProc(m)
-    '     If m.Msg = &H84 Then ' 0x84 es el código del mensaje WM_NCHITTEST
-    '  Dim pos As Point = Me.PointToClient(New Point(m.LParam.ToInt32()))
-    '         If pos.Y < borderRadius Then
-    '             m.Result = New IntPtr(2) ' HTCAPTION
-    '          End If
-    '    End If
-    ' End Sub
-
     Protected Overrides Sub WndProc(ByRef m As Message)
         ' Constante para el mensaje WM_NCLBUTTONDBLCLK
         Const WM_NCLBUTTONDBLCLK As Integer = &HA3
@@ -74,29 +63,8 @@
         End If
     End Sub
 
-#End Region
-
-
-
-
-#Region "LOAD"
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-
-    End Sub
-
-#End Region
-
-
-#Region "SOMBRAS LABEL"
     
-#End Region
-
-
+   
     
-
-    Private Sub PictureBox4_Click(sender As System.Object, e As System.EventArgs) Handles PictureBox4.Click
-
-    End Sub
+    
 End Class
