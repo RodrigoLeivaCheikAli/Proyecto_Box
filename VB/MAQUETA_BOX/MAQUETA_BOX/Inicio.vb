@@ -88,4 +88,12 @@
         Clientes.Show()
         Me.Hide()
     End Sub
+
+    Private Sub Label5_Click(sender As System.Object, e As System.EventArgs) Handles Label5.Click
+        PictureBox1.Visible = False
+        Dim newForm As New Ventas() ' Crea una nueva instancia del formulario que deseas agregar
+        newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
+        Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+        newForm.Show() ' Muestra el formulario
+    End Sub
 End Class
