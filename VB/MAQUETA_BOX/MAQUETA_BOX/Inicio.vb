@@ -90,6 +90,7 @@
 
     Private Sub lbl_Ventas_Click(sender As System.Object, e As System.EventArgs) Handles lbl_Ventas.Click
         PictureBox1.Visible = False
+        Panel1.Controls.Clear()
         Dim newForm As New Ventas() ' Crea una nueva instancia del formulario que deseas agregar
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
@@ -98,7 +99,17 @@
 
     Private Sub lbl_Compras_Click(sender As System.Object, e As System.EventArgs) Handles lbl_Compras.Click
         PictureBox1.Visible = False
+        Panel1.Controls.Clear()
         Dim newForm As New Compras() ' Crea una nueva instancia del formulario que deseas agregar
+        newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
+        Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+        newForm.Show() ' Muestra el formulario
+    End Sub
+
+    Private Sub lbl_Productos_Click(sender As System.Object, e As System.EventArgs) Handles lbl_Productos.Click
+        PictureBox1.Visible = False
+        Panel1.Controls.Clear()
+        Dim newForm As New Productos() ' Crea una nueva instancia del formulario que deseas agregar
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
         newForm.Show() ' Muestra el formulario
@@ -108,4 +119,5 @@
 
     
    
+    
 End Class
