@@ -84,16 +84,28 @@
 
 
 
-    Private Sub Label1_Click(sender As System.Object, e As System.EventArgs) Handles Label1.Click
-        Clientes.Show()
-        Me.Hide()
-    End Sub
+#Region "Botones e Imagenes redirección"
 
-    Private Sub Label5_Click(sender As System.Object, e As System.EventArgs) Handles Label5.Click
+
+
+    Private Sub lbl_Ventas_Click(sender As System.Object, e As System.EventArgs) Handles lbl_Ventas.Click
         PictureBox1.Visible = False
         Dim newForm As New Ventas() ' Crea una nueva instancia del formulario que deseas agregar
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
         newForm.Show() ' Muestra el formulario
     End Sub
+
+    Private Sub lbl_Compras_Click(sender As System.Object, e As System.EventArgs) Handles lbl_Compras.Click
+        PictureBox1.Visible = False
+        Dim newForm As New Compras() ' Crea una nueva instancia del formulario que deseas agregar
+        newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
+        Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+        newForm.Show() ' Muestra el formulario
+    End Sub
+
+#End Region
+
+    
+   
 End Class
