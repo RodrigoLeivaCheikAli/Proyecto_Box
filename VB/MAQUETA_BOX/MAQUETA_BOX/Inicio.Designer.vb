@@ -24,6 +24,7 @@ Partial Class Inicio
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lbl_Tire_Task = New System.Windows.Forms.Label()
         Me.lbl_Estadisticas = New System.Windows.Forms.Label()
         Me.lbl_Documentos = New System.Windows.Forms.Label()
         Me.lbl_Compras = New System.Windows.Forms.Label()
@@ -31,6 +32,7 @@ Partial Class Inicio
         Me.lbl_Proveedores = New System.Windows.Forms.Label()
         Me.lbl_Mantenimientos = New System.Windows.Forms.Label()
         Me.lbl_Productos = New System.Windows.Forms.Label()
+        Me.lbl_Clientes = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.pb_Estadisticas = New System.Windows.Forms.PictureBox()
         Me.pb_Ventas = New System.Windows.Forms.PictureBox()
@@ -43,8 +45,6 @@ Partial Class Inicio
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.lbl_Clientes = New System.Windows.Forms.Label()
-        Me.lbl_Tire_Task = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_Estadisticas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,6 +88,16 @@ Partial Class Inicio
         Me.GroupBox1.Size = New System.Drawing.Size(276, 686)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'lbl_Tire_Task
+        '
+        Me.lbl_Tire_Task.AutoSize = True
+        Me.lbl_Tire_Task.Font = New System.Drawing.Font("Roboto", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Tire_Task.Location = New System.Drawing.Point(108, 74)
+        Me.lbl_Tire_Task.Name = "lbl_Tire_Task"
+        Me.lbl_Tire_Task.Size = New System.Drawing.Size(103, 23)
+        Me.lbl_Tire_Task.TabIndex = 5
+        Me.lbl_Tire_Task.Text = "TIRE TASK"
         '
         'lbl_Estadisticas
         '
@@ -158,6 +168,16 @@ Partial Class Inicio
         Me.lbl_Productos.Size = New System.Drawing.Size(104, 24)
         Me.lbl_Productos.TabIndex = 4
         Me.lbl_Productos.Text = "Productos"
+        '
+        'lbl_Clientes
+        '
+        Me.lbl_Clientes.AutoSize = True
+        Me.lbl_Clientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Clientes.Location = New System.Drawing.Point(103, 157)
+        Me.lbl_Clientes.Name = "lbl_Clientes"
+        Me.lbl_Clientes.Size = New System.Drawing.Size(85, 24)
+        Me.lbl_Clientes.TabIndex = 4
+        Me.lbl_Clientes.Text = "Clientes"
         '
         'PictureBox2
         '
@@ -271,32 +291,12 @@ Partial Class Inicio
         'PictureBox11
         '
         Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
-        Me.PictureBox11.Location = New System.Drawing.Point(958, 3)
+        Me.PictureBox11.Location = New System.Drawing.Point(958, 12)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(129, 72)
         Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox11.TabIndex = 7
         Me.PictureBox11.TabStop = False
-        '
-        'lbl_Clientes
-        '
-        Me.lbl_Clientes.AutoSize = True
-        Me.lbl_Clientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Clientes.Location = New System.Drawing.Point(103, 157)
-        Me.lbl_Clientes.Name = "lbl_Clientes"
-        Me.lbl_Clientes.Size = New System.Drawing.Size(85, 24)
-        Me.lbl_Clientes.TabIndex = 4
-        Me.lbl_Clientes.Text = "Clientes"
-        '
-        'lbl_Tire_Task
-        '
-        Me.lbl_Tire_Task.AutoSize = True
-        Me.lbl_Tire_Task.Font = New System.Drawing.Font("Roboto", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Tire_Task.Location = New System.Drawing.Point(108, 74)
-        Me.lbl_Tire_Task.Name = "lbl_Tire_Task"
-        Me.lbl_Tire_Task.Size = New System.Drawing.Size(103, 23)
-        Me.lbl_Tire_Task.TabIndex = 5
-        Me.lbl_Tire_Task.Text = "TIRE TASK"
         '
         'Inicio
         '

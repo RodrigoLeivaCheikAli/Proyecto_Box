@@ -23,273 +23,185 @@ Partial Class Compras
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Compras))
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.GroupBox1.SuspendLayout()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'GroupBox1
+        'PictureBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.PictureBox2)
-        Me.GroupBox1.Controls.Add(Me.PictureBox3)
-        Me.GroupBox1.Controls.Add(Me.PictureBox10)
-        Me.GroupBox1.Controls.Add(Me.PictureBox9)
-        Me.GroupBox1.Controls.Add(Me.PictureBox5)
-        Me.GroupBox1.Controls.Add(Me.PictureBox4)
-        Me.GroupBox1.Controls.Add(Me.PictureBox6)
-        Me.GroupBox1.Controls.Add(Me.PictureBox8)
-        Me.GroupBox1.Controls.Add(Me.PictureBox7)
-        Me.GroupBox1.ForeColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Location = New System.Drawing.Point(-1, -12)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(276, 686)
-        Me.GroupBox1.TabIndex = 1
-        Me.GroupBox1.TabStop = False
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
         '
-        'Label8
+        'Panel1
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(103, 573)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(119, 24)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "Estadisticas"
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.PictureBox12)
+        Me.Panel1.Controls.Add(Me.PictureBox11)
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.Label14)
+        Me.Panel1.Controls.Add(Me.TextBox4)
+        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.TextBox5)
+        Me.Panel1.Controls.Add(Me.TextBox2)
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Location = New System.Drawing.Point(-8, 414)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1100, 252)
+        Me.Panel1.TabIndex = 11
         '
-        'Label7
+        'PictureBox12
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(103, 515)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(127, 24)
-        Me.Label7.TabIndex = 4
-        Me.Label7.Text = "Documentos"
+        Me.PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), System.Drawing.Image)
+        Me.PictureBox12.Location = New System.Drawing.Point(683, 160)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Size = New System.Drawing.Size(150, 70)
+        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox12.TabIndex = 6
+        Me.PictureBox12.TabStop = False
         '
-        'Label6
+        'PictureBox11
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(103, 455)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 24)
-        Me.Label6.TabIndex = 4
-        Me.Label6.Text = "Compras"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(103, 395)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(74, 24)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Ventas"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(103, 335)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(129, 24)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Proveedores"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(103, 276)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(157, 24)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Mantenimientos"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(103, 215)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(104, 24)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Productos"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(103, 157)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(85, 24)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Clientes"
+        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
+        Me.PictureBox11.Location = New System.Drawing.Point(465, 160)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(150, 70)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox11.TabIndex = 6
+        Me.PictureBox11.TabStop = False
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(75, 24)
+        Me.PictureBox2.Location = New System.Drawing.Point(251, 160)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(102, 75)
+        Me.PictureBox2.Size = New System.Drawing.Size(150, 70)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabIndex = 6
         Me.PictureBox2.TabStop = False
         '
-        'PictureBox3
+        'Label14
         '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(19, 557)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(89, 54)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 2
-        Me.PictureBox3.TabStop = False
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
+        Me.Label14.Location = New System.Drawing.Point(764, 75)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(69, 22)
+        Me.Label14.TabIndex = 5
+        Me.Label14.Text = "Precio"
         '
-        'PictureBox10
+        'TextBox4
         '
-        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
-        Me.PictureBox10.Location = New System.Drawing.Point(6, 377)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox10.TabIndex = 2
-        Me.PictureBox10.TabStop = False
+        Me.TextBox4.Location = New System.Drawing.Point(886, 75)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(181, 20)
+        Me.TextBox4.TabIndex = 4
         '
-        'PictureBox9
+        'Label12
         '
-        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
-        Me.PictureBox9.Location = New System.Drawing.Point(6, 497)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox9.TabIndex = 2
-        Me.PictureBox9.TabStop = False
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
+        Me.Label12.Location = New System.Drawing.Point(437, 23)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(94, 22)
+        Me.Label12.TabIndex = 4
+        Me.Label12.Text = "Producto"
         '
-        'PictureBox5
+        'TextBox5
         '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(6, 317)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox5.TabIndex = 2
-        Me.PictureBox5.TabStop = False
+        Me.TextBox5.Location = New System.Drawing.Point(886, 27)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(181, 20)
+        Me.TextBox5.TabIndex = 4
         '
-        'PictureBox4
+        'TextBox2
         '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(6, 437)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 2
-        Me.PictureBox4.TabStop = False
+        Me.TextBox2.Location = New System.Drawing.Point(552, 25)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(181, 20)
+        Me.TextBox2.TabIndex = 4
         '
-        'PictureBox6
+        'Label9
         '
-        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-        Me.PictureBox6.Location = New System.Drawing.Point(6, 137)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox6.TabIndex = 2
-        Me.PictureBox6.TabStop = False
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(35, 21)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(75, 22)
+        Me.Label9.TabIndex = 4
+        Me.Label9.Text = "Codigo"
         '
-        'PictureBox8
+        'TextBox1
         '
-        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
-        Me.PictureBox8.Location = New System.Drawing.Point(6, 197)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox8.TabIndex = 2
-        Me.PictureBox8.TabStop = False
+        Me.TextBox1.Location = New System.Drawing.Point(220, 23)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(181, 20)
+        Me.TextBox1.TabIndex = 4
         '
-        'PictureBox7
+        'Label10
         '
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(6, 257)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 2
-        Me.PictureBox7.TabStop = False
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
+        Me.Label10.Location = New System.Drawing.Point(759, 25)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(105, 22)
+        Me.Label10.TabIndex = 4
+        Me.Label10.Text = "Proveedor"
         '
         'Compras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1360, 661)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(1090, 665)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "Compras"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Compras"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents PictureBox12 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox11 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox10 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox9 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox6 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox8 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
 End Class
