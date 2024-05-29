@@ -25,19 +25,14 @@ Partial Class Ventas
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colAgregar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,8 +71,10 @@ Partial Class Ventas
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -86,18 +83,31 @@ Partial Class Ventas
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.colAgregar})
+        Me.DataGridView1.ColumnHeadersHeight = 27
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.GridColor = System.Drawing.Color.White
+        Me.DataGridView1.GridColor = System.Drawing.Color.SteelBlue
         Me.DataGridView1.Location = New System.Drawing.Point(39, 90)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.RowHeadersVisible = False
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(716, 334)
         Me.DataGridView1.TabIndex = 4
         '
@@ -109,44 +119,6 @@ Partial Class Ventas
         Me.DataGridView2.Size = New System.Drawing.Size(314, 334)
         Me.DataGridView2.TabIndex = 5
         '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Nº"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Tipo"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Descripcion"
-        Me.Column3.Name = "Column3"
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Vehiculo"
-        Me.Column4.Name = "Column4"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Precio"
-        Me.Column5.Name = "Column5"
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Cantidad"
-        Me.Column6.Name = "Column6"
-        '
-        'colAgregar
-        '
-        Me.colAgregar.HeaderText = ""
-        Me.colAgregar.Name = "colAgregar"
-        Me.colAgregar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.colAgregar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.colAgregar.Text = "Agregar"
-        '
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
@@ -156,6 +128,15 @@ Partial Class Ventas
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox3.TabIndex = 6
         Me.PictureBox3.TabStop = False
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = ""
+        Me.Column1.Image = CType(resources.GetObject("Column1.Image"), System.Drawing.Image)
+        Me.Column1.MinimumWidth = 2
+        Me.Column1.Name = "Column1"
+        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
         '
         'Ventas
         '
@@ -186,12 +167,6 @@ Partial Class Ventas
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colAgregar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewImageColumn
 End Class
