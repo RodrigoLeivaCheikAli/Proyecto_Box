@@ -31,3 +31,5 @@ C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUET
 C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Resources.resources
 C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.vbproj.GenerateResource.Cache
 C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Ventas.resources
+D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Compras.resources
+D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Ventas.resources

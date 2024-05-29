@@ -24,36 +24,37 @@ Partial Class Inicio
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbl_Estadisticas = New System.Windows.Forms.Label()
+        Me.lbl_Documentos = New System.Windows.Forms.Label()
+        Me.lbl_Compras = New System.Windows.Forms.Label()
+        Me.lbl_Ventas = New System.Windows.Forms.Label()
+        Me.lbl_Proveedores = New System.Windows.Forms.Label()
+        Me.lbl_Mantenimientos = New System.Windows.Forms.Label()
+        Me.lbl_Productos = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.pb_Estadisticas = New System.Windows.Forms.PictureBox()
+        Me.pb_Ventas = New System.Windows.Forms.PictureBox()
+        Me.pb_Documentos = New System.Windows.Forms.PictureBox()
+        Me.pb_Proveedores = New System.Windows.Forms.PictureBox()
+        Me.pb_Compras = New System.Windows.Forms.PictureBox()
+        Me.pb_Clientes = New System.Windows.Forms.PictureBox()
+        Me.pb_Productos = New System.Windows.Forms.PictureBox()
+        Me.pb_Mantenimientos = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.lbl_Clientes = New System.Windows.Forms.Label()
+        Me.lbl_Tire_Task = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_Estadisticas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_Ventas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_Documentos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_Proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_Compras, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_Mantenimientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,23 +64,24 @@ Partial Class Inicio
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.lbl_Tire_Task)
+        Me.GroupBox1.Controls.Add(Me.lbl_Estadisticas)
+        Me.GroupBox1.Controls.Add(Me.lbl_Documentos)
+        Me.GroupBox1.Controls.Add(Me.lbl_Compras)
+        Me.GroupBox1.Controls.Add(Me.lbl_Ventas)
+        Me.GroupBox1.Controls.Add(Me.lbl_Proveedores)
+        Me.GroupBox1.Controls.Add(Me.lbl_Mantenimientos)
+        Me.GroupBox1.Controls.Add(Me.lbl_Productos)
+        Me.GroupBox1.Controls.Add(Me.lbl_Clientes)
         Me.GroupBox1.Controls.Add(Me.PictureBox2)
-        Me.GroupBox1.Controls.Add(Me.PictureBox3)
-        Me.GroupBox1.Controls.Add(Me.PictureBox10)
-        Me.GroupBox1.Controls.Add(Me.PictureBox9)
-        Me.GroupBox1.Controls.Add(Me.PictureBox5)
-        Me.GroupBox1.Controls.Add(Me.PictureBox4)
-        Me.GroupBox1.Controls.Add(Me.PictureBox6)
-        Me.GroupBox1.Controls.Add(Me.PictureBox8)
-        Me.GroupBox1.Controls.Add(Me.PictureBox7)
+        Me.GroupBox1.Controls.Add(Me.pb_Estadisticas)
+        Me.GroupBox1.Controls.Add(Me.pb_Ventas)
+        Me.GroupBox1.Controls.Add(Me.pb_Documentos)
+        Me.GroupBox1.Controls.Add(Me.pb_Proveedores)
+        Me.GroupBox1.Controls.Add(Me.pb_Compras)
+        Me.GroupBox1.Controls.Add(Me.pb_Clientes)
+        Me.GroupBox1.Controls.Add(Me.pb_Productos)
+        Me.GroupBox1.Controls.Add(Me.pb_Mantenimientos)
         Me.GroupBox1.ForeColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Location = New System.Drawing.Point(-1, -12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -87,183 +89,173 @@ Partial Class Inicio
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
-        'Label8
+        'lbl_Estadisticas
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(103, 573)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(119, 24)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "Estadisticas"
+        Me.lbl_Estadisticas.AutoSize = True
+        Me.lbl_Estadisticas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Estadisticas.Location = New System.Drawing.Point(103, 573)
+        Me.lbl_Estadisticas.Name = "lbl_Estadisticas"
+        Me.lbl_Estadisticas.Size = New System.Drawing.Size(119, 24)
+        Me.lbl_Estadisticas.TabIndex = 4
+        Me.lbl_Estadisticas.Text = "Estadisticas"
         '
-        'Label7
+        'lbl_Documentos
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(103, 515)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(127, 24)
-        Me.Label7.TabIndex = 4
-        Me.Label7.Text = "Documentos"
+        Me.lbl_Documentos.AutoSize = True
+        Me.lbl_Documentos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Documentos.Location = New System.Drawing.Point(103, 515)
+        Me.lbl_Documentos.Name = "lbl_Documentos"
+        Me.lbl_Documentos.Size = New System.Drawing.Size(127, 24)
+        Me.lbl_Documentos.TabIndex = 4
+        Me.lbl_Documentos.Text = "Documentos"
         '
-        'Label6
+        'lbl_Compras
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(103, 455)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 24)
-        Me.Label6.TabIndex = 4
-        Me.Label6.Text = "Compras"
+        Me.lbl_Compras.AutoSize = True
+        Me.lbl_Compras.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Compras.Location = New System.Drawing.Point(103, 455)
+        Me.lbl_Compras.Name = "lbl_Compras"
+        Me.lbl_Compras.Size = New System.Drawing.Size(93, 24)
+        Me.lbl_Compras.TabIndex = 4
+        Me.lbl_Compras.Text = "Compras"
         '
-        'Label5
+        'lbl_Ventas
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(103, 395)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(74, 24)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Ventas"
+        Me.lbl_Ventas.AutoSize = True
+        Me.lbl_Ventas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Ventas.Location = New System.Drawing.Point(103, 395)
+        Me.lbl_Ventas.Name = "lbl_Ventas"
+        Me.lbl_Ventas.Size = New System.Drawing.Size(74, 24)
+        Me.lbl_Ventas.TabIndex = 4
+        Me.lbl_Ventas.Text = "Ventas"
         '
-        'Label4
+        'lbl_Proveedores
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(103, 335)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(129, 24)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Proveedores"
+        Me.lbl_Proveedores.AutoSize = True
+        Me.lbl_Proveedores.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Proveedores.Location = New System.Drawing.Point(103, 335)
+        Me.lbl_Proveedores.Name = "lbl_Proveedores"
+        Me.lbl_Proveedores.Size = New System.Drawing.Size(129, 24)
+        Me.lbl_Proveedores.TabIndex = 4
+        Me.lbl_Proveedores.Text = "Proveedores"
         '
-        'Label3
+        'lbl_Mantenimientos
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(103, 276)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(157, 24)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Mantenimientos"
+        Me.lbl_Mantenimientos.AutoSize = True
+        Me.lbl_Mantenimientos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Mantenimientos.Location = New System.Drawing.Point(103, 276)
+        Me.lbl_Mantenimientos.Name = "lbl_Mantenimientos"
+        Me.lbl_Mantenimientos.Size = New System.Drawing.Size(157, 24)
+        Me.lbl_Mantenimientos.TabIndex = 4
+        Me.lbl_Mantenimientos.Text = "Mantenimientos"
         '
-        'Label2
+        'lbl_Productos
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(103, 215)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(104, 24)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Productos"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(103, 157)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(85, 24)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Clientes"
+        Me.lbl_Productos.AutoSize = True
+        Me.lbl_Productos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Productos.Location = New System.Drawing.Point(103, 215)
+        Me.lbl_Productos.Name = "lbl_Productos"
+        Me.lbl_Productos.Size = New System.Drawing.Size(104, 24)
+        Me.lbl_Productos.TabIndex = 4
+        Me.lbl_Productos.Text = "Productos"
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(6, 21)
+        Me.PictureBox2.Location = New System.Drawing.Point(0, 24)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(102, 75)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 3
         Me.PictureBox2.TabStop = False
         '
-        'PictureBox3
+        'pb_Estadisticas
         '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(19, 557)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(89, 54)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 2
-        Me.PictureBox3.TabStop = False
+        Me.pb_Estadisticas.Image = CType(resources.GetObject("pb_Estadisticas.Image"), System.Drawing.Image)
+        Me.pb_Estadisticas.Location = New System.Drawing.Point(19, 557)
+        Me.pb_Estadisticas.Name = "pb_Estadisticas"
+        Me.pb_Estadisticas.Size = New System.Drawing.Size(89, 54)
+        Me.pb_Estadisticas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_Estadisticas.TabIndex = 2
+        Me.pb_Estadisticas.TabStop = False
         '
-        'PictureBox10
+        'pb_Ventas
         '
-        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
-        Me.PictureBox10.Location = New System.Drawing.Point(6, 377)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox10.TabIndex = 2
-        Me.PictureBox10.TabStop = False
+        Me.pb_Ventas.Image = CType(resources.GetObject("pb_Ventas.Image"), System.Drawing.Image)
+        Me.pb_Ventas.Location = New System.Drawing.Point(6, 377)
+        Me.pb_Ventas.Name = "pb_Ventas"
+        Me.pb_Ventas.Size = New System.Drawing.Size(102, 54)
+        Me.pb_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_Ventas.TabIndex = 2
+        Me.pb_Ventas.TabStop = False
         '
-        'PictureBox9
+        'pb_Documentos
         '
-        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
-        Me.PictureBox9.Location = New System.Drawing.Point(6, 497)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox9.TabIndex = 2
-        Me.PictureBox9.TabStop = False
+        Me.pb_Documentos.Image = CType(resources.GetObject("pb_Documentos.Image"), System.Drawing.Image)
+        Me.pb_Documentos.Location = New System.Drawing.Point(6, 497)
+        Me.pb_Documentos.Name = "pb_Documentos"
+        Me.pb_Documentos.Size = New System.Drawing.Size(102, 54)
+        Me.pb_Documentos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_Documentos.TabIndex = 2
+        Me.pb_Documentos.TabStop = False
         '
-        'PictureBox5
+        'pb_Proveedores
         '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(6, 317)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox5.TabIndex = 2
-        Me.PictureBox5.TabStop = False
+        Me.pb_Proveedores.Image = CType(resources.GetObject("pb_Proveedores.Image"), System.Drawing.Image)
+        Me.pb_Proveedores.Location = New System.Drawing.Point(6, 317)
+        Me.pb_Proveedores.Name = "pb_Proveedores"
+        Me.pb_Proveedores.Size = New System.Drawing.Size(102, 54)
+        Me.pb_Proveedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_Proveedores.TabIndex = 2
+        Me.pb_Proveedores.TabStop = False
         '
-        'PictureBox4
+        'pb_Compras
         '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(6, 437)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 2
-        Me.PictureBox4.TabStop = False
+        Me.pb_Compras.Image = CType(resources.GetObject("pb_Compras.Image"), System.Drawing.Image)
+        Me.pb_Compras.Location = New System.Drawing.Point(6, 437)
+        Me.pb_Compras.Name = "pb_Compras"
+        Me.pb_Compras.Size = New System.Drawing.Size(102, 54)
+        Me.pb_Compras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_Compras.TabIndex = 2
+        Me.pb_Compras.TabStop = False
         '
-        'PictureBox6
+        'pb_Clientes
         '
-        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-        Me.PictureBox6.Location = New System.Drawing.Point(6, 137)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox6.TabIndex = 2
-        Me.PictureBox6.TabStop = False
+        Me.pb_Clientes.Image = CType(resources.GetObject("pb_Clientes.Image"), System.Drawing.Image)
+        Me.pb_Clientes.Location = New System.Drawing.Point(6, 137)
+        Me.pb_Clientes.Name = "pb_Clientes"
+        Me.pb_Clientes.Size = New System.Drawing.Size(102, 54)
+        Me.pb_Clientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_Clientes.TabIndex = 2
+        Me.pb_Clientes.TabStop = False
         '
-        'PictureBox8
+        'pb_Productos
         '
-        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
-        Me.PictureBox8.Location = New System.Drawing.Point(6, 197)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox8.TabIndex = 2
-        Me.PictureBox8.TabStop = False
+        Me.pb_Productos.Image = CType(resources.GetObject("pb_Productos.Image"), System.Drawing.Image)
+        Me.pb_Productos.Location = New System.Drawing.Point(6, 197)
+        Me.pb_Productos.Name = "pb_Productos"
+        Me.pb_Productos.Size = New System.Drawing.Size(102, 54)
+        Me.pb_Productos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_Productos.TabIndex = 2
+        Me.pb_Productos.TabStop = False
         '
-        'PictureBox7
+        'pb_Mantenimientos
         '
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(6, 257)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(102, 54)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 2
-        Me.PictureBox7.TabStop = False
+        Me.pb_Mantenimientos.Image = CType(resources.GetObject("pb_Mantenimientos.Image"), System.Drawing.Image)
+        Me.pb_Mantenimientos.Location = New System.Drawing.Point(6, 257)
+        Me.pb_Mantenimientos.Name = "pb_Mantenimientos"
+        Me.pb_Mantenimientos.Size = New System.Drawing.Size(102, 54)
+        Me.pb_Mantenimientos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_Mantenimientos.TabIndex = 2
+        Me.pb_Mantenimientos.TabStop = False
         '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.PictureBox11)
-        Me.Panel1.Location = New System.Drawing.Point(265, -1)
+        Me.Panel1.Location = New System.Drawing.Point(276, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1105, 674)
+        Me.Panel1.Size = New System.Drawing.Size(1090, 665)
         Me.Panel1.TabIndex = 1
         '
         'PictureBox1
@@ -279,12 +271,32 @@ Partial Class Inicio
         'PictureBox11
         '
         Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
-        Me.PictureBox11.Location = New System.Drawing.Point(971, 5)
+        Me.PictureBox11.Location = New System.Drawing.Point(958, 3)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(129, 72)
         Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox11.TabIndex = 7
         Me.PictureBox11.TabStop = False
+        '
+        'lbl_Clientes
+        '
+        Me.lbl_Clientes.AutoSize = True
+        Me.lbl_Clientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Clientes.Location = New System.Drawing.Point(103, 157)
+        Me.lbl_Clientes.Name = "lbl_Clientes"
+        Me.lbl_Clientes.Size = New System.Drawing.Size(85, 24)
+        Me.lbl_Clientes.TabIndex = 4
+        Me.lbl_Clientes.Text = "Clientes"
+        '
+        'lbl_Tire_Task
+        '
+        Me.lbl_Tire_Task.AutoSize = True
+        Me.lbl_Tire_Task.Font = New System.Drawing.Font("Roboto", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Tire_Task.Location = New System.Drawing.Point(108, 74)
+        Me.lbl_Tire_Task.Name = "lbl_Tire_Task"
+        Me.lbl_Tire_Task.Size = New System.Drawing.Size(103, 23)
+        Me.lbl_Tire_Task.TabIndex = 5
+        Me.lbl_Tire_Task.Text = "TIRE TASK"
         '
         'Inicio
         '
@@ -297,18 +309,18 @@ Partial Class Inicio
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "Inicio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "Incio"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_Estadisticas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_Ventas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_Documentos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_Proveedores, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_Compras, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_Clientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_Productos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_Mantenimientos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
@@ -316,24 +328,25 @@ Partial Class Inicio
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox10 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox9 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox6 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox8 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
+    Friend WithEvents pb_Estadisticas As System.Windows.Forms.PictureBox
+    Friend WithEvents pb_Ventas As System.Windows.Forms.PictureBox
+    Friend WithEvents pb_Documentos As System.Windows.Forms.PictureBox
+    Friend WithEvents pb_Proveedores As System.Windows.Forms.PictureBox
+    Friend WithEvents pb_Compras As System.Windows.Forms.PictureBox
+    Friend WithEvents pb_Clientes As System.Windows.Forms.PictureBox
+    Friend WithEvents pb_Productos As System.Windows.Forms.PictureBox
+    Friend WithEvents pb_Mantenimientos As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lbl_Estadisticas As System.Windows.Forms.Label
+    Friend WithEvents lbl_Documentos As System.Windows.Forms.Label
+    Friend WithEvents lbl_Compras As System.Windows.Forms.Label
+    Friend WithEvents lbl_Ventas As System.Windows.Forms.Label
+    Friend WithEvents lbl_Proveedores As System.Windows.Forms.Label
+    Friend WithEvents lbl_Mantenimientos As System.Windows.Forms.Label
+    Friend WithEvents lbl_Productos As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox11 As System.Windows.Forms.PictureBox
+    Friend WithEvents lbl_Tire_Task As System.Windows.Forms.Label
+    Friend WithEvents lbl_Clientes As System.Windows.Forms.Label
 End Class
