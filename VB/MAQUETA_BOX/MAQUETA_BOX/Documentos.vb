@@ -14,7 +14,7 @@ Public Class Documentos
         conexion.Open()
         comando.Connection = conexion
         comando.CommandType = CommandType.StoredProcedure
-        comando.CommandText = ("") 'falta el procedimiento
+        comando.CommandText = ("consultar_documentos_OrCompras")
 
         Dim datadapter As New SqlDataAdapter(comando)
         Dim oDs As New DataSet
