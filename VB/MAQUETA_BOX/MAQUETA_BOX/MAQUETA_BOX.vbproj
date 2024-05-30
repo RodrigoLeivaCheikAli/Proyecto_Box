@@ -137,6 +137,12 @@
     <Compile Include="Productos_Listado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Productos_Vendidos.Designer.vb">
+      <DependentUpon>Productos_Vendidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos_Vendidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Proveedores.Designer.vb">
       <DependentUpon>Proveedores.vb</DependentUpon>
     </Compile>
@@ -175,6 +181,9 @@
     <EmbeddedResource Include="Productos_Listado.resx">
       <DependentUpon>Productos_Listado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Productos_Vendidos.resx">
+      <DependentUpon>Productos_Vendidos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +213,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\btnVENDIDOS1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnGESTION-PRODUCTOS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
