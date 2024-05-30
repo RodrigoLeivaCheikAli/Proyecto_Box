@@ -151,6 +151,9 @@
     <EmbeddedResource Include="Compras.resx">
       <DependentUpon>Compras.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Documentos.resx">
+      <DependentUpon>Documentos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
     </EmbeddedResource>
