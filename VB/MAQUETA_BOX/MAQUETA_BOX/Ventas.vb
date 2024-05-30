@@ -57,6 +57,18 @@ Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal 
         End If
     End Sub
 
+ Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+        Dim senderGrid = DirectCast(sender, DataGridView)
+
+        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
+            'TODO - Aquí va el código que quieres que se ejecute cuando se presiona el botón
+            If e.ColumnIndex = DataGridView2.Columns("DataGridViewImageColumn1").Index AndAlso e.RowIndex >= 0 Then
+                ' Eliminar la fila seleccionada
+                DataGridView2.Rows.RemoveAt(e.RowIndex)
+            End If
+        End If
+    End Sub
+
 
 
 
