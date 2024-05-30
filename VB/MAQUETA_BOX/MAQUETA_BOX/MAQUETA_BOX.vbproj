@@ -131,6 +131,12 @@
     <Compile Include="Productos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Productos_Listado.Designer.vb">
+      <DependentUpon>Productos_Listado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos_Listado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Proveedores.Designer.vb">
       <DependentUpon>Proveedores.vb</DependentUpon>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos_Listado.resx">
+      <DependentUpon>Productos_Listado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>
