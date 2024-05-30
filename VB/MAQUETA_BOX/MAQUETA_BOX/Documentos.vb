@@ -13,7 +13,6 @@ Public Class Documentos
 
 #End Region
 
-
 #Region "Llenar Grilla"
 
     Private Sub LlenarGrilla()
@@ -41,6 +40,5 @@ Public Class Documentos
     End Sub
 
 #End Region
-
 
 End Class
