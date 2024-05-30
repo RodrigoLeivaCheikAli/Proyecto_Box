@@ -29,4 +29,5 @@ Public Class Proveedores
         oDs = Nothing
         conexion.Close()
     End Sub
+
 End Class
