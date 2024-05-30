@@ -114,10 +114,19 @@
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
         newForm.Show() ' Muestra el formulario
     End Sub
-
+    Private Sub lbl_Documentos_Click(sender As System.Object, e As System.EventArgs) Handles lbl_Documentos.Click
+        PictureBox1.Visible = False
+        Panel1.Controls.Clear()
+        Dim newForm As New Documentos() ' Crea una nueva instancia del formulario que deseas agregar
+        newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
+        Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+        newForm.Show() ' Muestra el formulario
+    End Sub
 #End Region
 
     
    
+    
+
     
 End Class
