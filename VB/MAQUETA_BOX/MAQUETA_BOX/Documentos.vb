@@ -5,6 +5,15 @@ Public Class Documentos
     Dim conexion As SqlConnection
     Dim comando As New SqlCommand
 
+#Region "load"
+
+    Private Sub Documentos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        LlenarGrilla()
+    End Sub
+
+#End Region
+
+
 #Region "Llenar Grilla"
 
     Private Sub LlenarGrilla()
@@ -25,6 +34,7 @@ Public Class Documentos
             DataGridView1.DataSource = oDs.Tables(0)
             DataGridView1.Refresh()
         End If
+
         oDs = Nothing
         conexion.Close()
 
@@ -33,7 +43,4 @@ Public Class Documentos
 #End Region
 
 
-    Private Sub Documentos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
