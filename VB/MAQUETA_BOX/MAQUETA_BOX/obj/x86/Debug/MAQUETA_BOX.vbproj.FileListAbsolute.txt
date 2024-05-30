@@ -54,14 +54,5 @@ C:\Users\valle\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BO
 C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.exe
 C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.xml
 C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.pdb
-C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\bin\Debug\MAQUETA_BOX.exe
-C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\bin\Debug\MAQUETA_BOX.pdb
-C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\bin\Debug\MAQUETA_BOX.xml
-C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Clientes.resources
-C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Compras.resources
-C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Documentos.resources
-C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Inicio.resources
-C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Resources.resources
-C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Productos.resources
-C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Ventas.resources
-C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.vbproj.GenerateResource.Cache
+C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Documentos.resources
+C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Productos_Listado.resources
