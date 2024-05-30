@@ -22,9 +22,9 @@ Partial Class Productos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -44,14 +44,16 @@ Partial Class Productos
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,13 +61,14 @@ Partial Class Productos
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
-        Me.RadioButton1.Location = New System.Drawing.Point(149, 378)
+        Me.RadioButton1.Location = New System.Drawing.Point(149, 384)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(122, 26)
         Me.RadioButton1.TabIndex = 4
@@ -77,7 +80,7 @@ Partial Class Productos
         '
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
-        Me.RadioButton2.Location = New System.Drawing.Point(292, 378)
+        Me.RadioButton2.Location = New System.Drawing.Point(292, 384)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(172, 26)
         Me.RadioButton2.TabIndex = 5
@@ -89,7 +92,7 @@ Partial Class Productos
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(49, 426)
+        Me.Label9.Location = New System.Drawing.Point(49, 432)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(75, 22)
         Me.Label9.TabIndex = 6
@@ -99,7 +102,7 @@ Partial Class Productos
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(36, 467)
+        Me.Label1.Location = New System.Drawing.Point(36, 473)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(88, 22)
         Me.Label1.TabIndex = 7
@@ -109,7 +112,7 @@ Partial Class Productos
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(671, 420)
+        Me.Label5.Location = New System.Drawing.Point(671, 426)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(105, 22)
         Me.Label5.TabIndex = 8
@@ -119,7 +122,7 @@ Partial Class Productos
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(44, 378)
+        Me.Label6.Location = New System.Drawing.Point(44, 384)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(80, 22)
         Me.Label6.TabIndex = 9
@@ -127,7 +130,7 @@ Partial Class Productos
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(130, 426)
+        Me.TextBox1.Location = New System.Drawing.Point(130, 432)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 10
@@ -136,7 +139,7 @@ Partial Class Productos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(345, 422)
+        Me.Label2.Location = New System.Drawing.Point(345, 428)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(83, 22)
         Me.Label2.TabIndex = 12
@@ -144,21 +147,21 @@ Partial Class Productos
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(434, 424)
+        Me.TextBox3.Location = New System.Drawing.Point(434, 430)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(181, 20)
         Me.TextBox3.TabIndex = 13
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(782, 422)
+        Me.TextBox2.Location = New System.Drawing.Point(782, 428)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(181, 20)
         Me.TextBox2.TabIndex = 14
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(130, 469)
+        Me.TextBox4.Location = New System.Drawing.Point(130, 475)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(181, 20)
         Me.TextBox4.TabIndex = 18
@@ -167,7 +170,7 @@ Partial Class Productos
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(351, 465)
+        Me.Label3.Location = New System.Drawing.Point(351, 471)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(77, 22)
         Me.Label3.TabIndex = 19
@@ -175,7 +178,7 @@ Partial Class Productos
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(434, 467)
+        Me.TextBox5.Location = New System.Drawing.Point(434, 473)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(100, 20)
         Me.TextBox5.TabIndex = 20
@@ -184,7 +187,7 @@ Partial Class Productos
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(709, 463)
+        Me.Label4.Location = New System.Drawing.Point(709, 469)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(67, 22)
         Me.Label4.TabIndex = 21
@@ -192,7 +195,7 @@ Partial Class Productos
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(782, 465)
+        Me.TextBox6.Location = New System.Drawing.Point(782, 471)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(150, 20)
         Me.TextBox6.TabIndex = 22
@@ -201,7 +204,7 @@ Partial Class Productos
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(55, 508)
+        Me.Label7.Location = New System.Drawing.Point(55, 514)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(69, 22)
         Me.Label7.TabIndex = 23
@@ -209,7 +212,7 @@ Partial Class Productos
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(130, 510)
+        Me.TextBox7.Location = New System.Drawing.Point(130, 516)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(100, 20)
         Me.TextBox7.TabIndex = 24
@@ -220,41 +223,50 @@ Partial Class Productos
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 27
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.SteelBlue
-        Me.DataGridView1.Location = New System.Drawing.Point(282, 99)
+        Me.DataGridView1.Location = New System.Drawing.Point(267, 115)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(549, 241)
         Me.DataGridView1.TabIndex = 26
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = ""
+        Me.Column1.Image = CType(resources.GetObject("Column1.Image"), System.Drawing.Image)
+        Me.Column1.MinimumWidth = 2
+        Me.Column1.Name = "Column1"
+        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
         '
         'DataGridViewImageColumn1
         '
@@ -268,7 +280,7 @@ Partial Class Productos
         'PictureBox6
         '
         Me.PictureBox6.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnLISTADO
-        Me.PictureBox6.Location = New System.Drawing.Point(751, 12)
+        Me.PictureBox6.Location = New System.Drawing.Point(809, 14)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -278,21 +290,12 @@ Partial Class Productos
         'PictureBox5
         '
         Me.PictureBox5.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnVENDIDOS1
-        Me.PictureBox5.Location = New System.Drawing.Point(876, 9)
+        Me.PictureBox5.Location = New System.Drawing.Point(934, 11)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(112, 55)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox5.TabIndex = 27
         Me.PictureBox5.TabStop = False
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = ""
-        Me.Column1.Image = CType(resources.GetObject("Column1.Image"), System.Drawing.Image)
-        Me.Column1.MinimumWidth = 2
-        Me.Column1.Name = "Column1"
-        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
         '
         'PictureBox4
         '
@@ -307,9 +310,9 @@ Partial Class Productos
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnELIMINAR
-        Me.PictureBox3.Location = New System.Drawing.Point(658, 544)
+        Me.PictureBox3.Location = New System.Drawing.Point(671, 549)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(150, 70)
+        Me.PictureBox3.Size = New System.Drawing.Size(118, 65)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox3.TabIndex = 17
         Me.PictureBox3.TabStop = False
@@ -317,9 +320,9 @@ Partial Class Productos
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnMODIFICAR
-        Me.PictureBox1.Location = New System.Drawing.Point(466, 544)
+        Me.PictureBox1.Location = New System.Drawing.Point(479, 549)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(150, 70)
+        Me.PictureBox1.Size = New System.Drawing.Size(118, 65)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
@@ -327,18 +330,37 @@ Partial Class Productos
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(269, 544)
+        Me.PictureBox2.Location = New System.Drawing.Point(282, 549)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(150, 70)
+        Me.PictureBox2.Size = New System.Drawing.Size(118, 65)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 15
         Me.PictureBox2.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(654, 25)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(31, 28)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox7.TabIndex = 29
+        Me.PictureBox7.TabStop = False
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(457, 33)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(181, 20)
+        Me.TextBox8.TabIndex = 30
         '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1074, 626)
+        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.PictureBox7)
         Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.DataGridView1)
@@ -372,6 +394,7 @@ Partial Class Productos
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -402,4 +425,6 @@ Partial Class Productos
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents TextBox8 As TextBox
 End Class
