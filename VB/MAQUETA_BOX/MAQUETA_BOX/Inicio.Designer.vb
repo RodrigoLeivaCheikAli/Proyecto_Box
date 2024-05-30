@@ -92,10 +92,10 @@ Partial Class Inicio
         'lbl_Tire_Task
         '
         Me.lbl_Tire_Task.AutoSize = True
-        Me.lbl_Tire_Task.Font = New System.Drawing.Font("Roboto", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Tire_Task.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Tire_Task.Location = New System.Drawing.Point(108, 74)
         Me.lbl_Tire_Task.Name = "lbl_Tire_Task"
-        Me.lbl_Tire_Task.Size = New System.Drawing.Size(103, 23)
+        Me.lbl_Tire_Task.Size = New System.Drawing.Size(115, 24)
         Me.lbl_Tire_Task.TabIndex = 5
         Me.lbl_Tire_Task.Text = "TIRE TASK"
         '
