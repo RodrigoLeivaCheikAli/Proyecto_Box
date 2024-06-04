@@ -4,7 +4,7 @@ Imports System.Configuration
 Public Class Ventas
     Dim conexion As SqlConnection
     Dim comando As New SqlCommand
-    Private contadores As New Dictionary(Of Integer, Integer)
+    Private addedRows As New Dictionary(Of Integer, Integer)
     Dim Cant As Integer = 0
     Dim valor As Integer
     Private Sub Ventas_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
@@ -37,6 +37,7 @@ Public Class Ventas
     End Sub
 
 Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
         Dim senderGrid = DirectCast(sender, DataGridView)
 
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
@@ -44,15 +45,25 @@ Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal 
             If e.ColumnIndex = DataGridView1.Columns("ImageColumn").Index AndAlso e.RowIndex >= 0 Then
                 ' Obtener la fila seleccionada
                 Dim selectedRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-
-                ' Crear una nueva fila en el DataGridView2 con los mismos valores
                 Dim newRow As DataGridViewRow = CType(selectedRow.Clone(), DataGridViewRow)
                 For i As Integer = 1 To selectedRow.Cells.Count - 2 ' Ignorar la primera y la última columna
                     newRow.Cells(i).Value = selectedRow.Cells(i).Value
                 Next
 
                 ' Agregar la nueva fila al DataGridView2
-                DataGridView2.Rows.Add(newRow)
+
+
+                ' Agregar la fila al diccionario
+                If addedRows.ContainsKey(selectedRow.Index) Then
+                    ' Si la fila ya fue agregada, incrementar la cantidad
+                    Cant += 1
+                    DataGridView2.Rows(newRow.Index).Cells(DataGridView2.ColumnCount + 7).Value = Cant
+                Else
+                    ' Si la fila no fue agregada, agregarla al DataGridView2 y al diccionario
+                    DataGridView2.Rows.Add(newRow)
+                    addedRows.Add(selectedRow.Index, newRow.Index)
+                    DataGridView2.Rows(newRow.Index).Cells(DataGridView2.ColumnCount - 1).Value = Cant
+                End If
             End If
         End If
     End Sub

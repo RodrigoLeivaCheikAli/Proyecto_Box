@@ -275,7 +275,7 @@ Partial Class Inicio
         Me.Panel1.Controls.Add(Me.PictureBox11)
         Me.Panel1.Location = New System.Drawing.Point(276, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1090, 665)
+        Me.Panel1.Size = New System.Drawing.Size(1154, 665)
         Me.Panel1.TabIndex = 1
         '
         'PictureBox1
@@ -291,7 +291,7 @@ Partial Class Inicio
         'PictureBox11
         '
         Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
-        Me.PictureBox11.Location = New System.Drawing.Point(958, 12)
+        Me.PictureBox11.Location = New System.Drawing.Point(1022, 12)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(129, 72)
         Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -303,7 +303,7 @@ Partial Class Inicio
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1366, 667)
+        Me.ClientSize = New System.Drawing.Size(1433, 667)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
