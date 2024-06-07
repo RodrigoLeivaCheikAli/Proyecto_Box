@@ -22,6 +22,7 @@ Partial Class Inicio
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lbl_Tire_Task = New System.Windows.Forms.Label()
@@ -45,6 +46,7 @@ Partial Class Inicio
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnSalir = New System.Windows.Forms.PictureBox()
+        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_Estadisticas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -298,6 +300,11 @@ Partial Class Inicio
         Me.btnSalir.TabIndex = 7
         Me.btnSalir.TabStop = False
         '
+        'BunifuElipse1
+        '
+        Me.BunifuElipse1.ElipseRadius = 15
+        Me.BunifuElipse1.TargetControl = Me
+        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -306,7 +313,7 @@ Partial Class Inicio
         Me.ClientSize = New System.Drawing.Size(1366, 667)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Inicio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Incio"
@@ -349,4 +356,5 @@ Partial Class Inicio
     Friend WithEvents btnSalir As System.Windows.Forms.PictureBox
     Friend WithEvents lbl_Tire_Task As System.Windows.Forms.Label
     Friend WithEvents lbl_Clientes As System.Windows.Forms.Label
+    Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
 End Class
