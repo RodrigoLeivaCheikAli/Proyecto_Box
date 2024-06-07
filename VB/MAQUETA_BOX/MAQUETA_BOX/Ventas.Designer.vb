@@ -33,9 +33,9 @@ Partial Class Ventas
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ImageColumn = New System.Windows.Forms.DataGridViewImageColumn()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.ImageColumn = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -110,6 +110,7 @@ Partial Class Ventas
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.RowHeadersWidth = 30
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -120,6 +121,16 @@ Partial Class Ventas
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(649, 334)
         Me.DataGridView1.TabIndex = 4
+        '
+        'ImageColumn
+        '
+        Me.ImageColumn.HeaderText = ""
+        Me.ImageColumn.Image = CType(resources.GetObject("ImageColumn.Image"), System.Drawing.Image)
+        Me.ImageColumn.MinimumWidth = 2
+        Me.ImageColumn.Name = "ImageColumn"
+        Me.ImageColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ImageColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        Me.ImageColumn.Width = 45
         '
         'PictureBox3
         '
@@ -172,16 +183,6 @@ Partial Class Ventas
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView2.Size = New System.Drawing.Size(492, 334)
         Me.DataGridView2.TabIndex = 7
-        '
-        'ImageColumn
-        '
-        Me.ImageColumn.HeaderText = ""
-        Me.ImageColumn.Image = CType(resources.GetObject("ImageColumn.Image"), System.Drawing.Image)
-        Me.ImageColumn.MinimumWidth = 2
-        Me.ImageColumn.Name = "ImageColumn"
-        Me.ImageColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ImageColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
-        Me.ImageColumn.Width = 45
         '
         'DataGridViewImageColumn1
         '
