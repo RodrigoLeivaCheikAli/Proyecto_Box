@@ -1,10 +1,9 @@
-﻿
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports System.Configuration
 Public Class Ventas
     Dim conexion As SqlConnection
     Dim comando As New SqlCommand
-    Private contadores As New Dictionary(Of Integer, Integer)
+    Private addedRows As New Dictionary(Of Integer, Integer)
     Dim Cant As Integer = 0
     Dim valor As Integer
     Private Sub Ventas_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
@@ -36,44 +35,72 @@ Public Class Ventas
         conexion.Close()
     End Sub
 
-Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
         Dim senderGrid = DirectCast(sender, DataGridView)
 
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
-            'TODO - Aquí va el código que quieres que se ejecute cuando se presiona el botón
+
             If e.ColumnIndex = DataGridView1.Columns("ImageColumn").Index AndAlso e.RowIndex >= 0 Then
                 ' Obtener la fila seleccionada
                 Dim selectedRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-
-                ' Crear una nueva fila en el DataGridView2 con los mismos valores
                 Dim newRow As DataGridViewRow = CType(selectedRow.Clone(), DataGridViewRow)
                 For i As Integer = 1 To selectedRow.Cells.Count - 2 ' Ignorar la primera y la última columna
                     newRow.Cells(i).Value = selectedRow.Cells(i).Value
                 Next
 
                 ' Agregar la nueva fila al DataGridView2
-                DataGridView2.Rows.Add(newRow)
+
+
+                ' Agregar la fila al diccionario
+                If addedRows.ContainsKey(selectedRow.Index) Then
+                    ' Si la fila ya fue agregada, incrementar la cantidad
+                    Cant = Cant + 1
+                    DataGridView2.Rows(addedRows(selectedRow.Index)).Cells(DataGridView2.ColumnCount - 1).Value = Cant
+                Else
+                    ' Si la fila no fue agregada, agregarla al DataGridView2 y al diccionario
+                    Cant = 1
+                    DataGridView2.Rows.Add(newRow)
+                    addedRows.Add(selectedRow.Index, newRow.Index)
+                    DataGridView2.Rows(newRow.Index).Cells(DataGridView2.ColumnCount - 1).Value = Cant
+                End If
             End If
         End If
     End Sub
 
- Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+    Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
         Dim senderGrid = DirectCast(sender, DataGridView)
-
+        Dim selectedRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
             'TODO - Aquí va el código que quieres que se ejecute cuando se presiona el botón
             If e.ColumnIndex = DataGridView2.Columns("DataGridViewImageColumn1").Index AndAlso e.RowIndex >= 0 Then
                 ' Eliminar la fila seleccionada
-                DataGridView2.Rows.RemoveAt(e.RowIndex)
+                If Cant > 1 Then
+                    ' Si Cant es mayor que 1, decrementar Cant en 1
+                    Cant = Cant - 1
+                    DataGridView2.Rows(e.RowIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant
+                Else
+
+                    Dim originalIndex As Integer = -1
+                    For Each pair In addedRows
+                        If pair.Value = e.RowIndex Then
+                            originalIndex = pair.Key
+                            Exit For
+                        End If
+                    Next
+
+                    If originalIndex <> -1 Then
+                        addedRows.Remove(originalIndex)
+                    End If
+                    ' Si Cant es igual a 1, eliminar la fila seleccionada
+                    DataGridView2.Rows.RemoveAt(e.RowIndex)
+                    ' También deberías eliminar la entrada correspondiente del diccionario addedRows
+
+                End If
+
             End If
         End If
     End Sub
-
-
-
-
-
-
 
 
     Private Sub PictureBox1_Click(sender As System.Object, e As System.EventArgs) Handles PictureBox1.Click
@@ -100,6 +127,6 @@ Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal 
         conexion.Close()
         MsgBox("La joya se ha insertado correctamente ", vbInformation, "Joyeria Monaco")
 
-        
+
     End Sub
 End Class
