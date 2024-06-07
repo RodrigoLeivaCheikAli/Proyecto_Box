@@ -49,15 +49,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\..\bunifu_ui_v1.5.3\Bunifu_UI_v1.5.3.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -87,12 +82,6 @@
       <DependentUpon>Compras.vb</DependentUpon>
     </Compile>
     <Compile Include="Compras.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Consultar_Compras.Designer.vb">
-      <DependentUpon>Consultar_Compras.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Consultar_Compras.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Documentos.Designer.vb">
@@ -142,6 +131,18 @@
     <Compile Include="Productos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Productos_Listado.Designer.vb">
+      <DependentUpon>Productos_Listado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos_Listado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos_Vendidos.Designer.vb">
+      <DependentUpon>Productos_Vendidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Productos_Vendidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Proveedores.Designer.vb">
       <DependentUpon>Proveedores.vb</DependentUpon>
     </Compile>
@@ -162,8 +163,8 @@
     <EmbeddedResource Include="Compras.resx">
       <DependentUpon>Compras.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultar_Compras.resx">
-      <DependentUpon>Consultar_Compras.vb</DependentUpon>
+    <EmbeddedResource Include="Documentos.resx">
+      <DependentUpon>Documentos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
@@ -176,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos_Listado.resx">
+      <DependentUpon>Productos_Listado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos_Vendidos.resx">
+      <DependentUpon>Productos_Vendidos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>
@@ -191,6 +198,24 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMODIFICAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnELIMINAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnVENDIDOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnLISTADO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnVENDIDOS1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnGESTION-PRODUCTOS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
