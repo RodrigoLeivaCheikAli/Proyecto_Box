@@ -41,18 +41,21 @@ Partial Class Compras
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.txtBusqueda_Compras = New System.Windows.Forms.TextBox()
+        Me.boton_Busqueda = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.boton_Busqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 199)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -64,6 +67,7 @@ Partial Class Compras
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel1.Controls.Add(Me.PictureBox12)
         Me.Panel1.Controls.Add(Me.PictureBox11)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.TextBox4)
@@ -153,7 +157,7 @@ Partial Class Compras
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(35, 21)
+        Me.Label9.Location = New System.Drawing.Point(109, 23)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(75, 22)
         Me.Label9.TabIndex = 4
@@ -178,13 +182,14 @@ Partial Class Compras
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -195,12 +200,13 @@ Partial Class Compras
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.SteelBlue
-        Me.DataGridView1.Location = New System.Drawing.Point(191, 58)
+        Me.DataGridView1.ImeMode = System.Windows.Forms.ImeMode.[On]
+        Me.DataGridView1.Location = New System.Drawing.Point(-8, 53)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
@@ -209,13 +215,13 @@ Partial Class Compras
         Me.DataGridView1.RowHeadersVisible = False
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(716, 334)
+        Me.DataGridView1.Size = New System.Drawing.Size(934, 355)
         Me.DataGridView1.TabIndex = 12
         '
         'Column1
@@ -227,15 +233,35 @@ Partial Class Compras
         Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
         '
+        'txtBusqueda_Compras
+        '
+        Me.txtBusqueda_Compras.Location = New System.Drawing.Point(212, 12)
+        Me.txtBusqueda_Compras.MinimumSize = New System.Drawing.Size(4, 30)
+        Me.txtBusqueda_Compras.Multiline = True
+        Me.txtBusqueda_Compras.Name = "txtBusqueda_Compras"
+        Me.txtBusqueda_Compras.Size = New System.Drawing.Size(666, 30)
+        Me.txtBusqueda_Compras.TabIndex = 13
+        '
+        'boton_Busqueda
+        '
+        Me.boton_Busqueda.Image = CType(resources.GetObject("boton_Busqueda.Image"), System.Drawing.Image)
+        Me.boton_Busqueda.Location = New System.Drawing.Point(142, 12)
+        Me.boton_Busqueda.Name = "boton_Busqueda"
+        Me.boton_Busqueda.Size = New System.Drawing.Size(64, 39)
+        Me.boton_Busqueda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.boton_Busqueda.TabIndex = 14
+        Me.boton_Busqueda.TabStop = False
+        '
         'Compras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1090, 665)
+        Me.Controls.Add(Me.boton_Busqueda)
+        Me.Controls.Add(Me.txtBusqueda_Compras)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Compras"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -247,7 +273,9 @@ Partial Class Compras
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.boton_Busqueda, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
@@ -265,4 +293,6 @@ Partial Class Compras
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents txtBusqueda_Compras As System.Windows.Forms.TextBox
+    Friend WithEvents boton_Busqueda As System.Windows.Forms.PictureBox
 End Class

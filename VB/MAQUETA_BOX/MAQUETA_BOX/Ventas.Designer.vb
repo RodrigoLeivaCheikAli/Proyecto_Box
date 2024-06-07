@@ -30,9 +30,9 @@ Partial Class Ventas
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,6 +111,15 @@ Partial Class Ventas
         Me.DataGridView1.Size = New System.Drawing.Size(716, 334)
         Me.DataGridView1.TabIndex = 4
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = ""
+        Me.Column1.Image = CType(resources.GetObject("Column1.Image"), System.Drawing.Image)
+        Me.Column1.MinimumWidth = 2
+        Me.Column1.Name = "Column1"
+        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        '
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -128,15 +137,6 @@ Partial Class Ventas
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox3.TabIndex = 6
         Me.PictureBox3.TabStop = False
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = ""
-        Me.Column1.Image = CType(resources.GetObject("Column1.Image"), System.Drawing.Image)
-        Me.Column1.MinimumWidth = 2
-        Me.Column1.Name = "Column1"
-        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
         '
         'Ventas
         '

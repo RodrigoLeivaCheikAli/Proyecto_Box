@@ -49,10 +49,15 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\bunifu_ui_v1.5.3\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -82,6 +87,12 @@
       <DependentUpon>Compras.vb</DependentUpon>
     </Compile>
     <Compile Include="Compras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultar_Compras.Designer.vb">
+      <DependentUpon>Consultar_Compras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultar_Compras.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Documentos.Designer.vb">
@@ -150,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras.resx">
       <DependentUpon>Compras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultar_Compras.resx">
+      <DependentUpon>Consultar_Compras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
