@@ -73,11 +73,5 @@ C:\Users\crett\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BO
 C:\Users\crett\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Ventas.resources
 C:\Users\crett\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.vbproj.GenerateResource.Cache
 C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Productos_Vendidos.resources
-<<<<<<< HEAD
 C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.vbproj.AssemblyReference.cache
 C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.vbproj.CoreCompileInputs.cache
-=======
-C:\Users\valle\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Documentos.resources
-C:\Users\valle\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Productos_Listado.resources
-C:\Users\valle\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Productos_Vendidos.resources
->>>>>>> 65618734bd92a7f618eace2d8644bdf4e4276cfe
