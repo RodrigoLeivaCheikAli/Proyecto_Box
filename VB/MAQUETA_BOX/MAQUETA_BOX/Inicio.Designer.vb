@@ -275,7 +275,7 @@ Partial Class Inicio
         '
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.btnSalir)
-        Me.Panel1.Location = New System.Drawing.Point(276, 3)
+        Me.Panel1.Location = New System.Drawing.Point(273, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1090, 665)
         Me.Panel1.TabIndex = 1

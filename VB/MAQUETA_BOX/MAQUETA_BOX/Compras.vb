@@ -23,9 +23,9 @@ Public Class Compras
         datadapter.Fill(oDs)
         If oDs.Tables(0).Rows.Count > 0 Then
             dt = oDs.Tables(0)
-            DataGridView1.AutoGenerateColumns = True
-            DataGridView1.DataSource = dt
-            DataGridView1.Refresh()
+            BunifuDataGridView1.AutoGenerateColumns = True
+            BunifuDataGridView1.DataSource = dt
+            BunifuDataGridView1.Refresh()
         End If
 
         oDs = Nothing
@@ -54,13 +54,21 @@ Public Class Compras
 
     End Sub
 
+
+    'Private Sub boton_Busqueda_Click(sender As System.Object, e As System.EventArgs) Handles boton_Busqueda.Click
+    '    If dt IsNot Nothing Then
+    '        Dim dv As DataView = dt.DefaultView
+    '        dv.RowFilter = String.Format("NOMBRE LIKE '%{0}%'", txtBusqueda_Compras.Text)
+    '        DataGridView1.DataSource = dv
+    '    End If
+    'End Sub
+
 #End Region
 
-    Private Sub boton_Busqueda_Click(sender As System.Object, e As System.EventArgs) Handles boton_Busqueda.Click
-        If dt IsNot Nothing Then
-            Dim dv As DataView = dt.DefaultView
-            dv.RowFilter = String.Format("NOMBRE LIKE '%{0}%'", txtBusqueda_Compras.Text)
-            DataGridView1.DataSource = dv
-        End If
+
+#Region "Prueba"
+
     End Sub
+#End Region
+
 End Class
