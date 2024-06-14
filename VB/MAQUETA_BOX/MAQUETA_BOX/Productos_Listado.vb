@@ -1,7 +1,37 @@
-﻿Public Class Productos_Listado
+﻿Imports System.Data.SqlClient
+
+Public Class Productos_Listado
+#Region "Cargar Grilla"
+    Dim dt As DataTable
+
+    Private Sub Cargar_Grilla()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
+
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+        conexion.Open()
+        comando.Connection = conexion
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = ("Consultar_Productos_Stock")
+
+        Dim datadapter As New SqlDataAdapter(comando)
+        Dim oDs As New DataSet
+
+        datadapter.Fill(oDs)
+        If oDs.Tables(0).Rows.Count > 0 Then
+            dt = oDs.Tables(0)
+            BunifuDataGridView1.AutoGenerateColumns = True
+            BunifuDataGridView1.DataSource = dt
+            BunifuDataGridView1.Refresh()
+        End If
+
+        oDs = Nothing
+        conexion.Close()
+    End Sub
+#End Region
 #Region "Load"
     Private Sub Productos_Listado_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
+        Cargar_Grilla()
     End Sub
 #End Region
 #Region "Redirección"

@@ -68,7 +68,7 @@ Public Class Compras
 
 #Region "Prueba"
 
-    End Sub
+
 #End Region
 
 End Class
