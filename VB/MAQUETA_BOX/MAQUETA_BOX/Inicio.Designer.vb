@@ -87,7 +87,7 @@ Partial Class Inicio
         Me.GroupBox1.ForeColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Location = New System.Drawing.Point(-1, -12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(276, 686)
+        Me.GroupBox1.Size = New System.Drawing.Size(258, 686)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
@@ -275,9 +275,9 @@ Partial Class Inicio
         '
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.btnSalir)
-        Me.Panel1.Location = New System.Drawing.Point(273, 0)
+        Me.Panel1.Location = New System.Drawing.Point(255, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1090, 665)
+        Me.Panel1.Size = New System.Drawing.Size(1108, 665)
         Me.Panel1.TabIndex = 1
         '
         'PictureBox1

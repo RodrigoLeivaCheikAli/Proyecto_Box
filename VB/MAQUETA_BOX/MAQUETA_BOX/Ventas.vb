@@ -40,7 +40,7 @@ Public Class Ventas
                 ' Obtener la fila seleccionada
                 Dim selectedRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
                 Dim newRow As DataGridViewRow = CType(selectedRow.Clone(), DataGridViewRow)
-                For i As Integer = 1 To selectedRow.Cells.Count - 2 ' Ignorar la primera y la última columna
+                For i As Integer = 1 To selectedRow.Cells.Count - 1 ' Ignorar la primera columna
                     newRow.Cells(i).Value = selectedRow.Cells(i).Value
                 Next
 
@@ -48,13 +48,14 @@ Public Class Ventas
                 If addedRows.ContainsKey(selectedRow.Index) Then
                     ' Si la fila ya fue agregada, incrementar la cantidad
                     Cant(selectedRow.Index) += 1
-                    DataGridView2.Rows(addedRows(selectedRow.Index)).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
+                    Dim targetIndex As Integer = addedRows(selectedRow.Index)
+                    DataGridView2.Rows(targetIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
                 Else
                     ' Si la fila no fue agregada, agregarla al DataGridView2 y al diccionario
                     Cant.Add(selectedRow.Index, 1)
-                    DataGridView2.Rows.Add(newRow)
-                    addedRows.Add(selectedRow.Index, newRow.Index)
-                    DataGridView2.Rows(newRow.Index).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
+                    Dim newIndex As Integer = DataGridView2.Rows.Add(newRow)
+                    addedRows.Add(selectedRow.Index, newIndex)
+                    DataGridView2.Rows(newIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
                 End If
             End If
         End If
@@ -65,7 +66,6 @@ Public Class Ventas
         Dim selectedRow As DataGridViewRow = DataGridView2.Rows(e.RowIndex)
 
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
-            'TODO - Aquí va el código que quieres que se ejecute cuando se presiona el botón
             If e.ColumnIndex = DataGridView2.Columns("DataGridViewImageColumn1").Index AndAlso e.RowIndex >= 0 Then
                 ' Eliminar la fila seleccionada
                 Dim originalIndex As Integer = -1
@@ -76,19 +76,32 @@ Public Class Ventas
                     End If
                 Next
 
-                If Cant.ContainsKey(originalIndex) Then
+                If originalIndex <> -1 AndAlso Cant.ContainsKey(originalIndex) Then
                     Cant(originalIndex) -= 1
                     If Cant(originalIndex) > 0 Then
                         DataGridView2.Rows(e.RowIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(originalIndex)
                     Else
+                        ' Eliminar de addedRows y Cant antes de eliminar la fila
                         addedRows.Remove(originalIndex)
                         Cant.Remove(originalIndex)
-                        DataGridView2.Rows.RemoveAt(selectedRow.Index)
+                        DataGridView2.Rows.RemoveAt(e.RowIndex)
+
+                        ' Actualizar los índices en addedRows
+                        Dim updatedAddedRows As New Dictionary(Of Integer, Integer)
+                        For Each pair In addedRows
+                            If pair.Value > e.RowIndex Then
+                                updatedAddedRows.Add(pair.Key, pair.Value - 1)
+                            Else
+                                updatedAddedRows.Add(pair.Key, pair.Value)
+                            End If
+                        Next
+                        addedRows = updatedAddedRows
                     End If
                 End If
             End If
         End If
     End Sub
+
 
 
     Private Sub PictureBox1_Click(sender As System.Object, e As System.EventArgs) Handles PictureBox1.Click
