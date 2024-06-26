@@ -32,7 +32,7 @@ Public Class Ventas
         conexion.Close()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs)
         Dim senderGrid = DirectCast(sender, DataGridView)
 
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
@@ -61,7 +61,7 @@ Public Class Ventas
         End If
     End Sub
 
-    Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+    Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs)
         Dim senderGrid = DirectCast(sender, DataGridView)
         Dim selectedRow As DataGridViewRow = DataGridView2.Rows(e.RowIndex)
 
@@ -104,29 +104,14 @@ Public Class Ventas
 
 
 
-    Private Sub PictureBox1_Click(sender As System.Object, e As System.EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click(sender As System.Object, e As System.EventArgs)
+        Panel1.Controls.Clear()
+        Dim newForm As New Presupuesto() ' Crea una nueva instancia del formulario que deseas agregar
+        newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
+        Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+        newForm.Show() ' Muestra el formulario
 
 
-        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
-
-
-
-
-        conexion.Open()
-        comando.Connection = conexion
-        comando.CommandType = CommandType.StoredProcedure
-        comando.CommandText = ("Cargar_DetalleVentas")
-
-        With comando.Parameters
-            .AddWithValue("@ID_Presupuesto", valor)
-            .AddWithValue("@ID_Oferta", valor)
-            '.AddWithValue("@Cantidad", contadores(e.RowIndex))
-
-        End With
-        comando.ExecuteScalar()
-        LlenarGrilla()
-        conexion.Close()
-        MsgBox("La joya se ha insertado correctamente ", vbInformation, "Joyeria Monaco")
 
 
     End Sub

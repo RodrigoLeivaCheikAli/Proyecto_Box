@@ -73,6 +73,10 @@
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
         newForm.Show() ' Muestra el formulario
     End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
 #End Region
 
 
