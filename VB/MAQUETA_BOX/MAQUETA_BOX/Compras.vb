@@ -3,12 +3,6 @@ Imports System.Configuration
 
 Public Class Compras
 
-    Dim conexion As SqlConnection
-    Dim comando As New SqlCommand
-    Private addedRows As New Dictionary(Of Integer, Integer)
-    Dim Cant As New Dictionary(Of Integer, Integer)
-    Dim valor As Integer
-
 #Region "Llenar Grilla"
 
     Dim dt As DataTable
@@ -48,6 +42,9 @@ Public Class Compras
 
 #End Region
 
+    Private Sub PictureBox1_Click(sender As System.Object, e As System.EventArgs) Handles PictureBox1.Click
+        Me.Close()
+    End Sub
 
 #Region "Barra Busqueda"
 
@@ -58,84 +55,18 @@ Public Class Compras
     End Sub
 
 
-
-
-
+    'Private Sub boton_Busqueda_Click(sender As System.Object, e As System.EventArgs) Handles boton_Busqueda.Click
+    '    If dt IsNot Nothing Then
+    '        Dim dv As DataView = dt.DefaultView
+    '        dv.RowFilter = String.Format("NOMBRE LIKE '%{0}%'", txtBusqueda_Compras.Text)
+    '        DataGridView1.DataSource = dv
+    '    End If
+    'End Sub
 
 #End Region
 
 
 #Region "Prueba"
-    Private Sub BunifuDataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellContentClick
-        Dim senderGrid = DirectCast(sender, DataGridView)
-
-        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
-            If e.ColumnIndex = BunifuDataGridView1.Columns("Column1").Index AndAlso e.RowIndex >= 0 Then
-                ' Obtener la fila seleccionada
-                Dim selectedRow As DataGridViewRow = BunifuDataGridView1.Rows(e.RowIndex)
-                Dim newRow As DataGridViewRow = CType(selectedRow.Clone(), DataGridViewRow)
-                For i As Integer = 2 To selectedRow.Cells.Count - 2 ' Ignorar la primera columna
-                    newRow.Cells(i).Value = selectedRow.Cells(i).Value
-                Next
-
-                ' Agregar la nueva fila al DataGridView2
-                If addedRows.ContainsKey(selectedRow.Index) Then
-                    ' Si la fila ya fue agregada, incrementar la cantidad
-                    Cant(selectedRow.Index) += 1
-                    Dim targetIndex As Integer = addedRows(selectedRow.Index)
-                    BunifuDataGridView2.Rows(targetIndex).Cells(BunifuDataGridView2.ColumnCount - 2).Value = Cant(selectedRow.Index)
-                Else
-                    ' Si la fila no fue agregada, agregarla al DataGridView2 y al diccionario
-                    Cant.Add(selectedRow.Index, 1)
-                    Dim newIndex As Integer = BunifuDataGridView2.Rows.Add(newRow)
-                    addedRows.Add(selectedRow.Index, newIndex)
-                    BunifuDataGridView2.Rows(newIndex).Cells(BunifuDataGridView2.ColumnCount - 2).Value = Cant(selectedRow.Index)
-                End If
-            End If
-        End If
-    End Sub
-
-    Private Sub BunifuDataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView2.CellContentClick
-        Dim senderGrid = DirectCast(sender, DataGridView)
-        Dim selectedRow As DataGridViewRow = BunifuDataGridView2.Rows(e.RowIndex)
-
-        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
-            If e.ColumnIndex = BunifuDataGridView2.Columns("DataGridViewImageColumn1").Index AndAlso e.RowIndex >= 0 Then
-                ' Eliminar la fila seleccionada
-                Dim originalIndex As Integer = -1
-                For Each pair In addedRows
-                    If pair.Value = selectedRow.Index Then
-                        originalIndex = pair.Key
-                        Exit For
-                    End If
-                Next
-
-                If originalIndex <> -1 AndAlso Cant.ContainsKey(originalIndex) Then
-                    Cant(originalIndex) -= 1
-                    If Cant(originalIndex) > 0 Then
-                        BunifuDataGridView2.Rows(e.RowIndex).Cells(BunifuDataGridView2.ColumnCount - 1).Value = Cant(originalIndex)
-                    Else
-                        ' Eliminar de addedRows y Cant antes de eliminar la fila
-                        addedRows.Remove(originalIndex)
-                        Cant.Remove(originalIndex)
-                        BunifuDataGridView2.Rows.RemoveAt(e.RowIndex)
-
-                        ' Actualizar los índices en addedRows
-                        Dim updatedAddedRows As New Dictionary(Of Integer, Integer)
-                        For Each pair In addedRows
-                            If pair.Value > e.RowIndex Then
-                                updatedAddedRows.Add(pair.Key, pair.Value - 1)
-                            Else
-                                updatedAddedRows.Add(pair.Key, pair.Value)
-                            End If
-                        Next
-                        addedRows = updatedAddedRows
-                    End If
-                End If
-            End If
-        End If
-    End Sub
-
 
 
 #End Region

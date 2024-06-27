@@ -34,6 +34,10 @@ Partial Class Inicio
         Me.lbl_Mantenimientos = New System.Windows.Forms.Label()
         Me.lbl_Productos = New System.Windows.Forms.Label()
         Me.lbl_Clientes = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnSalir = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.pb_Estadisticas = New System.Windows.Forms.PictureBox()
         Me.pb_Ventas = New System.Windows.Forms.PictureBox()
@@ -42,11 +46,11 @@ Partial Class Inicio
         Me.pb_Compras = New System.Windows.Forms.PictureBox()
         Me.pb_Clientes = New System.Windows.Forms.PictureBox()
         Me.pb_Productos = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnSalir = New System.Windows.Forms.PictureBox()
-        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.pb_Mantenimientos = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnSalir, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_Estadisticas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_Ventas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,9 +59,7 @@ Partial Class Inicio
         CType(Me.pb_Compras, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnSalir, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_Mantenimientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -81,6 +83,7 @@ Partial Class Inicio
         Me.GroupBox1.Controls.Add(Me.pb_Compras)
         Me.GroupBox1.Controls.Add(Me.pb_Clientes)
         Me.GroupBox1.Controls.Add(Me.pb_Productos)
+        Me.GroupBox1.Controls.Add(Me.pb_Mantenimientos)
         Me.GroupBox1.ForeColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Location = New System.Drawing.Point(-1, -12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -102,7 +105,7 @@ Partial Class Inicio
         '
         Me.lbl_Estadisticas.AutoSize = True
         Me.lbl_Estadisticas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Estadisticas.Location = New System.Drawing.Point(103, 507)
+        Me.lbl_Estadisticas.Location = New System.Drawing.Point(103, 573)
         Me.lbl_Estadisticas.Name = "lbl_Estadisticas"
         Me.lbl_Estadisticas.Size = New System.Drawing.Size(119, 24)
         Me.lbl_Estadisticas.TabIndex = 4
@@ -112,7 +115,7 @@ Partial Class Inicio
         '
         Me.lbl_Documentos.AutoSize = True
         Me.lbl_Documentos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Documentos.Location = New System.Drawing.Point(103, 449)
+        Me.lbl_Documentos.Location = New System.Drawing.Point(103, 515)
         Me.lbl_Documentos.Name = "lbl_Documentos"
         Me.lbl_Documentos.Size = New System.Drawing.Size(127, 24)
         Me.lbl_Documentos.TabIndex = 4
@@ -122,7 +125,7 @@ Partial Class Inicio
         '
         Me.lbl_Compras.AutoSize = True
         Me.lbl_Compras.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Compras.Location = New System.Drawing.Point(103, 389)
+        Me.lbl_Compras.Location = New System.Drawing.Point(103, 455)
         Me.lbl_Compras.Name = "lbl_Compras"
         Me.lbl_Compras.Size = New System.Drawing.Size(93, 24)
         Me.lbl_Compras.TabIndex = 4
@@ -132,7 +135,7 @@ Partial Class Inicio
         '
         Me.lbl_Ventas.AutoSize = True
         Me.lbl_Ventas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Ventas.Location = New System.Drawing.Point(103, 329)
+        Me.lbl_Ventas.Location = New System.Drawing.Point(103, 395)
         Me.lbl_Ventas.Name = "lbl_Ventas"
         Me.lbl_Ventas.Size = New System.Drawing.Size(74, 24)
         Me.lbl_Ventas.TabIndex = 4
@@ -142,7 +145,7 @@ Partial Class Inicio
         '
         Me.lbl_Proveedores.AutoSize = True
         Me.lbl_Proveedores.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Proveedores.Location = New System.Drawing.Point(103, 269)
+        Me.lbl_Proveedores.Location = New System.Drawing.Point(103, 335)
         Me.lbl_Proveedores.Name = "lbl_Proveedores"
         Me.lbl_Proveedores.Size = New System.Drawing.Size(129, 24)
         Me.lbl_Proveedores.TabIndex = 4
@@ -152,10 +155,11 @@ Partial Class Inicio
         '
         Me.lbl_Mantenimientos.AutoSize = True
         Me.lbl_Mantenimientos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Mantenimientos.Location = New System.Drawing.Point(103, 210)
+        Me.lbl_Mantenimientos.Location = New System.Drawing.Point(103, 276)
         Me.lbl_Mantenimientos.Name = "lbl_Mantenimientos"
-        Me.lbl_Mantenimientos.Size = New System.Drawing.Size(0, 24)
+        Me.lbl_Mantenimientos.Size = New System.Drawing.Size(157, 24)
         Me.lbl_Mantenimientos.TabIndex = 4
+        Me.lbl_Mantenimientos.Text = "Mantenimientos"
         '
         'lbl_Productos
         '
@@ -177,6 +181,40 @@ Partial Class Inicio
         Me.lbl_Clientes.TabIndex = 4
         Me.lbl_Clientes.Text = "Clientes"
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.btnSalir)
+        Me.Panel1.Location = New System.Drawing.Point(255, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1108, 665)
+        Me.Panel1.TabIndex = 1
+        '
+        'BunifuElipse1
+        '
+        Me.BunifuElipse1.ElipseRadius = 15
+        Me.BunifuElipse1.TargetControl = Me
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(333, 59)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(417, 569)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
+        Me.btnSalir.Location = New System.Drawing.Point(958, 12)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(129, 72)
+        Me.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnSalir.TabIndex = 7
+        Me.btnSalir.TabStop = False
+        '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
@@ -190,7 +228,7 @@ Partial Class Inicio
         'pb_Estadisticas
         '
         Me.pb_Estadisticas.Image = CType(resources.GetObject("pb_Estadisticas.Image"), System.Drawing.Image)
-        Me.pb_Estadisticas.Location = New System.Drawing.Point(19, 491)
+        Me.pb_Estadisticas.Location = New System.Drawing.Point(19, 557)
         Me.pb_Estadisticas.Name = "pb_Estadisticas"
         Me.pb_Estadisticas.Size = New System.Drawing.Size(89, 54)
         Me.pb_Estadisticas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -200,7 +238,7 @@ Partial Class Inicio
         'pb_Ventas
         '
         Me.pb_Ventas.Image = CType(resources.GetObject("pb_Ventas.Image"), System.Drawing.Image)
-        Me.pb_Ventas.Location = New System.Drawing.Point(6, 311)
+        Me.pb_Ventas.Location = New System.Drawing.Point(6, 377)
         Me.pb_Ventas.Name = "pb_Ventas"
         Me.pb_Ventas.Size = New System.Drawing.Size(102, 54)
         Me.pb_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -210,7 +248,7 @@ Partial Class Inicio
         'pb_Documentos
         '
         Me.pb_Documentos.Image = CType(resources.GetObject("pb_Documentos.Image"), System.Drawing.Image)
-        Me.pb_Documentos.Location = New System.Drawing.Point(6, 431)
+        Me.pb_Documentos.Location = New System.Drawing.Point(6, 497)
         Me.pb_Documentos.Name = "pb_Documentos"
         Me.pb_Documentos.Size = New System.Drawing.Size(102, 54)
         Me.pb_Documentos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -220,7 +258,7 @@ Partial Class Inicio
         'pb_Proveedores
         '
         Me.pb_Proveedores.Image = CType(resources.GetObject("pb_Proveedores.Image"), System.Drawing.Image)
-        Me.pb_Proveedores.Location = New System.Drawing.Point(6, 251)
+        Me.pb_Proveedores.Location = New System.Drawing.Point(6, 317)
         Me.pb_Proveedores.Name = "pb_Proveedores"
         Me.pb_Proveedores.Size = New System.Drawing.Size(102, 54)
         Me.pb_Proveedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -230,7 +268,7 @@ Partial Class Inicio
         'pb_Compras
         '
         Me.pb_Compras.Image = CType(resources.GetObject("pb_Compras.Image"), System.Drawing.Image)
-        Me.pb_Compras.Location = New System.Drawing.Point(6, 371)
+        Me.pb_Compras.Location = New System.Drawing.Point(6, 437)
         Me.pb_Compras.Name = "pb_Compras"
         Me.pb_Compras.Size = New System.Drawing.Size(102, 54)
         Me.pb_Compras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -257,39 +295,15 @@ Partial Class Inicio
         Me.pb_Productos.TabIndex = 2
         Me.pb_Productos.TabStop = False
         '
-        'Panel1
+        'pb_Mantenimientos
         '
-        Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.btnSalir)
-        Me.Panel1.Location = New System.Drawing.Point(255, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1108, 665)
-        Me.Panel1.TabIndex = 1
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(333, 59)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(417, 569)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(958, 12)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(129, 72)
-        Me.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnSalir.TabIndex = 7
-        Me.btnSalir.TabStop = False
-        '
-        'BunifuElipse1
-        '
-        Me.BunifuElipse1.ElipseRadius = 15
-        Me.BunifuElipse1.TargetControl = Me
+        Me.pb_Mantenimientos.Image = CType(resources.GetObject("pb_Mantenimientos.Image"), System.Drawing.Image)
+        Me.pb_Mantenimientos.Location = New System.Drawing.Point(6, 257)
+        Me.pb_Mantenimientos.Name = "pb_Mantenimientos"
+        Me.pb_Mantenimientos.Size = New System.Drawing.Size(102, 54)
+        Me.pb_Mantenimientos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_Mantenimientos.TabIndex = 2
+        Me.pb_Mantenimientos.TabStop = False
         '
         'Inicio
         '
@@ -305,6 +319,9 @@ Partial Class Inicio
         Me.Text = "Incio"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnSalir, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_Estadisticas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_Ventas, System.ComponentModel.ISupportInitialize).EndInit()
@@ -313,9 +330,7 @@ Partial Class Inicio
         CType(Me.pb_Compras, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_Clientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_Productos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnSalir, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_Mantenimientos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -327,6 +342,7 @@ Partial Class Inicio
     Friend WithEvents pb_Compras As System.Windows.Forms.PictureBox
     Friend WithEvents pb_Clientes As System.Windows.Forms.PictureBox
     Friend WithEvents pb_Productos As System.Windows.Forms.PictureBox
+    Friend WithEvents pb_Mantenimientos As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents lbl_Estadisticas As System.Windows.Forms.Label
     Friend WithEvents lbl_Documentos As System.Windows.Forms.Label
