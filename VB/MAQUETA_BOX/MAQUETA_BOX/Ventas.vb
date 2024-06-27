@@ -32,7 +32,7 @@ Public Class Ventas
         conexion.Close()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs)
+    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         Dim senderGrid = DirectCast(sender, DataGridView)
 
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
@@ -61,7 +61,7 @@ Public Class Ventas
         End If
     End Sub
 
-    Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs)
+    Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
         Dim senderGrid = DirectCast(sender, DataGridView)
         Dim selectedRow As DataGridViewRow = DataGridView2.Rows(e.RowIndex)
 
@@ -104,15 +104,13 @@ Public Class Ventas
 
 
 
-    Private Sub PictureBox1_Click(sender As System.Object, e As System.EventArgs)
+
+    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Panel1.Controls.Clear()
         Dim newForm As New Presupuesto() ' Crea una nueva instancia del formulario que deseas agregar
+        newForm.CopiarDatos(DataGridView2)
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
         newForm.Show() ' Muestra el formulario
-
-
-
-
     End Sub
 End Class
