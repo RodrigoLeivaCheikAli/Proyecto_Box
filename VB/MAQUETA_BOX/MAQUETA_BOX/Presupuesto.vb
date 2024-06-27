@@ -35,53 +35,34 @@ Public Class Presupuesto
 
             DataGridView3.Rows.Add(newRow)
         Next
-        SumarTotalColumn()
+
 
     End Sub
-    Private Sub SumarTotalColumn()
-        Dim totalGeneral As Double = 0
-        Dim nombreColumnaResultado As String = "Column7" ' Reemplaza con el nombre de tu columna de resultado
+    Private Sub DataGridView3_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellEndEdit
+        Dim columnName As String = DataGridView3.Columns(e.ColumnIndex).Name
 
-        For Each row As DataGridViewRow In DataGridView3.Rows
-            If row.Cells.Count >= 2 Then ' Verificar que haya al menos dos columnas
-                Dim valorAnterior As Double = 0
-                Dim valorUltimo As Double = 0
+        If columnName = "quantity" Or columnName = "rate" Then
+            Dim quantity As Integer
+            Dim rate As Integer
 
-                ' Convertir valores de las celdas a double
-                If Not IsDBNull(row.Cells(row.Cells.Count - 1).Value) Then
-                    valorAnterior = Convert.ToDouble(row.Cells(row.Cells.Count - 1).Value)
-                End If
+            ' Intentar convertir los valores de las celdas a Integer
+            If Integer.TryParse(Convert.ToString(DataGridView3.Rows(e.RowIndex).Cells("quantity").Value), quantity) AndAlso
+           Integer.TryParse(Convert.ToString(DataGridView3.Rows(e.RowIndex).Cells("rate").Value), rate) Then
+                Dim price As Integer = quantity * rate
+                DataGridView3.Rows(e.RowIndex).Cells("price").Value = price.ToString()
 
-                If Not IsDBNull(row.Cells(row.Cells.Count - 3).Value) Then
-                    valorUltimo = Convert.ToDouble(row.Cells(row.Cells.Count - 3).Value)
-                End If
-
-                ' Realizar la multiplicación y asignar el resultado a la columna específica
-                Dim resultado As Double = valorAnterior * valorUltimo
-
-                ' Buscar la columna por nombre y asignar el resultado
-                If DataGridView3.Columns.Contains(nombreColumnaResultado) Then
-                    row.Cells(nombreColumnaResultado).Value = resultado
-                Else
-                    ' Manejar el caso donde la columna no existe (puedes mostrar un mensaje de error o realizar otra acción)
-                End If
-
-                ' Sumar al total general
-                totalGeneral += resultado
-            End If
-        Next
-
-        ' Mostrar el total general en la última fila, columna específica
-        If DataGridView3.Rows.Count > 0 Then
-            Dim Total As DataGridViewRow = DataGridView3.Rows(DataGridView3.Rows.Count - 1)
-            If DataGridView3.Columns.Contains(nombreColumnaResultado) Then
-                Total.Cells(nombreColumnaResultado).Value = totalGeneral
-                ' Manejar el caso donde la columna no existe (puedes mostrar un mensaje de error o realizar otra acción)
+                ' Actualizar la vista del DataGridView para mostrar los cambios
+                DataGridView3.Refresh()
+            Else
+                ' Manejar el caso donde la conversión falló
+                ' Por ejemplo, podrías mostrar un mensaje de error o reiniciar el valor de la celda 'price'
+                DataGridView3.Rows(e.RowIndex).Cells("price").Value = String.Empty
             End If
         End If
-
-
     End Sub
+
+
+
 
 
     Private Sub Cargar_Combo_MediosP()
