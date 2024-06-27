@@ -1,37 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\",
+  "WorkspaceRootPath": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\gaite\\documents\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\documentos.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\documentos.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\gaite\\documents\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\documentos.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\documentos.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\gaite\\documents\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\user\\desktop\\practica\\desarrollo de aplicaciones\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\compras.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\compras.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\compras.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\compras.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\compras.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\compras.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
@@ -42,19 +50,40 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Documentos.vb",
+              "DocumentMoniker": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Documentos.vb",
+              "RelativeDocumentMoniker": "MAQUETA_BOX\\Documentos.vb",
+              "ToolTip": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Documentos.vb",
+              "RelativeToolTip": "MAQUETA_BOX\\Documentos.vb",
+              "ViewState": "AQIAAA4AAAAAAAAAAADwvyMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-06-27T18:26:03.13Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "Documentos.vb [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Documentos.vb",
+              "RelativeDocumentMoniker": "MAQUETA_BOX\\Documentos.vb",
+              "ToolTip": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Documentos.vb [Dise\u00F1o]",
+              "RelativeToolTip": "MAQUETA_BOX\\Documentos.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-06-27T18:24:14.121Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Ventas.vb",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb",
+              "DocumentMoniker": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb",
               "RelativeDocumentMoniker": "MAQUETA_BOX\\Ventas.vb",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb",
+              "ToolTip": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb",
               "RelativeToolTip": "MAQUETA_BOX\\Ventas.vb",
               "ViewState": "AQIAAAIAAAAAAAAAAAAwwA8AAACWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
@@ -63,11 +92,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Inicio.vb",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Inicio.vb",
+              "DocumentMoniker": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Inicio.vb",
               "RelativeDocumentMoniker": "MAQUETA_BOX\\Inicio.vb",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Inicio.vb",
+              "ToolTip": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Inicio.vb",
               "RelativeToolTip": "MAQUETA_BOX\\Inicio.vb",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwBsAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
@@ -76,11 +105,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Presupuesto.vb",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.vb",
+              "DocumentMoniker": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.vb",
               "RelativeDocumentMoniker": "MAQUETA_BOX\\Presupuesto.vb",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.vb",
+              "ToolTip": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.vb",
               "RelativeToolTip": "MAQUETA_BOX\\Presupuesto.vb",
               "ViewState": "AQIAACQAAAAAAAAAAAAmwE0AAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
@@ -89,11 +118,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Presupuesto.vb [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.vb",
+              "DocumentMoniker": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.vb",
               "RelativeDocumentMoniker": "MAQUETA_BOX\\Presupuesto.vb",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.vb [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.vb [Dise\u00F1o]",
               "RelativeToolTip": "MAQUETA_BOX\\Presupuesto.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-06-26T13:54:38.575Z",
@@ -101,11 +130,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Inicio.vb [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Inicio.vb",
+              "DocumentMoniker": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Inicio.vb",
               "RelativeDocumentMoniker": "MAQUETA_BOX\\Inicio.vb",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Inicio.vb [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Inicio.vb [Dise\u00F1o]",
               "RelativeToolTip": "MAQUETA_BOX\\Inicio.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-06-19T14:37:56.504Z",
@@ -113,11 +142,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Compras.vb",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb",
+              "DocumentMoniker": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb",
               "RelativeDocumentMoniker": "MAQUETA_BOX\\Compras.vb",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb",
+              "ToolTip": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb",
               "RelativeToolTip": "MAQUETA_BOX\\Compras.vb",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
@@ -126,11 +155,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Ventas.vb [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb",
+              "DocumentMoniker": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb",
               "RelativeDocumentMoniker": "MAQUETA_BOX\\Ventas.vb",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb [Dise\u00F1o]",
               "RelativeToolTip": "MAQUETA_BOX\\Ventas.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-06-10T15:36:47.091Z",
@@ -138,11 +167,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Compras.vb [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb",
+              "DocumentMoniker": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb",
               "RelativeDocumentMoniker": "MAQUETA_BOX\\Compras.vb",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb [Dise\u00F1o]",
               "RelativeToolTip": "MAQUETA_BOX\\Compras.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-06-07T18:51:08.205Z",

@@ -31,6 +31,7 @@ Partial Class Documentos
         Me.cboClientes = New System.Windows.Forms.ComboBox()
         Me.cboProveedores = New System.Windows.Forms.ComboBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.btnExportar = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,6 +79,7 @@ Partial Class Documentos
         'cboDocumentos
         '
         Me.cboDocumentos.FormattingEnabled = True
+        Me.cboDocumentos.Items.AddRange(New Object() {"Clientes", "Proveedores"})
         Me.cboDocumentos.Location = New System.Drawing.Point(271, 45)
         Me.cboDocumentos.Name = "cboDocumentos"
         Me.cboDocumentos.Size = New System.Drawing.Size(121, 21)
@@ -118,12 +120,22 @@ Partial Class Documentos
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 11
         '
+        'btnExportar
+        '
+        Me.btnExportar.Location = New System.Drawing.Point(731, 45)
+        Me.btnExportar.Name = "btnExportar"
+        Me.btnExportar.Size = New System.Drawing.Size(147, 23)
+        Me.btnExportar.TabIndex = 12
+        Me.btnExportar.Text = "Exportar"
+        Me.btnExportar.UseVisualStyleBackColor = True
+        '
         'Documentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1105, 674)
+        Me.Controls.Add(Me.btnExportar)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.cboProveedores)
         Me.Controls.Add(Me.cboClientes)
@@ -143,4 +155,5 @@ Partial Class Documentos
     Friend WithEvents cboClientes As System.Windows.Forms.ComboBox
     Friend WithEvents cboProveedores As System.Windows.Forms.ComboBox
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents btnExportar As Button
 End Class

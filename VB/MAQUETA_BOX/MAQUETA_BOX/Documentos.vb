@@ -8,8 +8,9 @@ Public Class Documentos
 #Region "load"
 
     Private Sub Documentos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        LlenarGrillaVentas()
-        LlenarGrillaCompras()
+        ' Inicializar el combo box y el DataGridView vacío
+        cboDocumentos.SelectedIndex = -1
+        DataGridView1.DataSource = Nothing
     End Sub
 
 #End Region
@@ -17,10 +18,7 @@ Public Class Documentos
 #Region "Llenar Grilla"
 
     Private Sub LlenarGrillaVentas()
-
         conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
-
-
 
         conexion.Open()
         comando.Connection = conexion
@@ -35,16 +33,16 @@ Public Class Documentos
             DataGridView1.AutoGenerateColumns = True
             DataGridView1.DataSource = oDs.Tables(0)
             DataGridView1.Refresh()
+        Else
+            DataGridView1.DataSource = Nothing
         End If
+
         oDs = Nothing
         conexion.Close()
-
     End Sub
+
     Private Sub LlenarGrillaCompras()
-
         conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
-
-
 
         conexion.Open()
         comando.Connection = conexion
@@ -59,12 +57,34 @@ Public Class Documentos
             DataGridView1.AutoGenerateColumns = True
             DataGridView1.DataSource = oDs.Tables(0)
             DataGridView1.Refresh()
+        Else
+            DataGridView1.DataSource = Nothing
         End If
+
         oDs = Nothing
         conexion.Close()
-
     End Sub
 
 #End Region
+
+#Region "Exportar"
+
+#End Region
+
+    Private Sub cboDocumentos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDocumentos.SelectedIndexChanged
+        DataGridView1.DataSource = Nothing  ' Limpiar el DataGridView
+
+        If cboDocumentos.SelectedIndex = -1 Then
+            ' No hacer nada si no hay una selección válida
+            Return
+        End If
+
+        ' Cargar la grilla dependiendo de la selección
+        If cboDocumentos.SelectedItem.ToString() = "Clientes" Then
+            LlenarGrillaCompras()
+        ElseIf cboDocumentos.SelectedItem.ToString() = "Proveedores" Then
+            LlenarGrillaVentas()
+        End If
+    End Sub
 
 End Class
