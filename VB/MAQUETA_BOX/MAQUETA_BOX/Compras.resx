@@ -121,7 +121,7 @@
   <data name="boton_Busqueda.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAAA6CAYAAAAA0F95AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAB1NJREFUaEPlW89vFVUUbsvrb1rCj7ZUGyz2VQlKEIqaiJHnH6A7NhAT3SGuIWpa
+        DAAACwwBP0AiyAAAB1NJREFUaEPlW89vFVUUbsvrb1rCj7ZUGyz2VQlKEIqaiJHnH6A7NhAT3SGuIWpa
         wEBckuhCXeFKV5alJpgIK2QFKyBuNAFDFcRaUFFAn99355z77sw788qbN8+0j5N8PXfunHtnznfPvffM
         dF5bmhSn50rFmRuni4duzAPlZQv4MDFz/fVyudwurtkSGhTfu3nY7Gw5Y/rGYXGPvkqpWtonp+feMDto
         AUy8O/ey+BkXjj5x5MiRjuKh62esxi2Bmetn4G6HNR1Y0QF0mg1bB/NTU1OdHOgYCTwolUqF0dHRPqNR
@@ -235,7 +235,7 @@
   <data name="Column1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAC0AAAAjCAYAAAAAEIPqAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAnNJREFUWEfFmL9O21AUxvMIPIIl21JG6BPwApWY6QArWyZUIeN46kgzdQQmJgTM
+        DgAACw4BQL7hQQAAAnNJREFUWEfFmL9O21AUxvMIPIIl21JG6BPwApWY6QArWyZUIeN46kgzdQQmJgTM
         7cBWMQETbA0SQ5obt5dQCQQIzDnJiWTKEfePj8Mn/QZHzrmfT46/2LchoSjpzUfrgxawH6d5N0oHGigI
         DZ8fhsnvTpj0F4JWd4a+Nn3h4mT0sGTQinBdbQWfewGVmo6ws3GqsKOsKVumYp66+5Uz4EsIFx+vqVla
         QlYjw6k64RaWIEzzJVpKRmhYYhxMiBrHVOAWqQW4X2hZf0XpnzZbvCZwxoOW9o/FJtzZXOHagZudLLgr
@@ -255,7 +255,7 @@
   <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAM8AAAByCAYAAAD01YX0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAF1FJREFUeF7tnQuMXsV1x22zttfejUNdG9vF2It3cRKnScFuwksNrlQ1bUWqNJKr
+        DgAACw4BQL7hQQAAF1FJREFUeF7tnQuMXsV1x22zttfejUNdG9vF2It3cRKnScFuwksNrlQ1bUWqNJKr
         ikgtkVpKoaFNJAoki5cSoE1L0xJFlqJGOKmayFYgaRORVJBCpTaYtAVLFYE2SARwwNhee/2KjbHx7fnP
         zrl77vnOfe332M/7nSP99j5m5szcu/O/87iPb05dS5Jk7tDYxPkjYwc2D2/d/3cjWw/sHtk6PkHLxHHO
         DVBf9/8b6u/60fEPx6rdHoNgsIRo1o8duMvF4swmhreO/3jkzn13Uf0e4rreEoMzMDK2/09Hxlw0zuwF
@@ -364,7 +364,7 @@
   <data name="DataGridViewImageColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAC0AAAAjCAYAAAAAEIPqAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAh9JREFUWEfFmLFOwzAQhvsIfYRITqSOhSfoCyAxwwCP0BGhNMnECJ0YKQ+ABDNL
+        DgAACw4BQL7hQQAAAh9JREFUWEfFmLFOwzAQhvsIfYRITqSOhSfoCyAxwwCP0BGhNMnECJ0YKQ+ABDNL
         VybaqWuQGErcgNkQIBTO5SKl0gnbqeP80rdUyu8/l8vVcceG/HA58EerIXAbRHnqRysBFIiA36csfBmz
         MNv3hmkXL3MvuTgGnVYCasFGfOKdLD20ciNZ2SDisqJkKF2chMfqXlAB6sLg5oNT3scl7GodOOIzamEb
         sCg/wqXsSAa20Q4qrAaXU4FapBHgfcFl68uPXmPSvCFkj3tDUX8s9uDNpowbB152jGCuIMyuSVMH1BqF

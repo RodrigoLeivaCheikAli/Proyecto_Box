@@ -44,6 +44,18 @@ Public Class Compras
 
     Private Sub Compras_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Llenar_Grilla()
+        Cargar_Combo()
+    End Sub
+
+    Private Sub Cargar_Combo()
+        cboColumna.Items.Clear()
+        For Each column As DataColumn In dt.Columns
+            cboColumna.Items.Add(column.ColumnName)
+        Next
+        If cboColumna.Items.Count > 0 Then
+            cboColumna.SelectedIndex = 0
+        End If
+
     End Sub
 
 #End Region
@@ -51,10 +63,23 @@ Public Class Compras
 
 #Region "Barra Busqueda"
 
-    Private Sub txtBusqueda_Compras_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtBusqueda_Compras.TextChanged
+    Private Sub txtBusqueda_Compras_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtBusqueda.TextChanged
 
+        If dt IsNot Nothing AndAlso cboColumna.SelectedIndex >= 0 Then
+            Dim selectedColumn As String = cboColumna.SelectedItem.ToString()
+            Dim columnType As Type = dt.Columns(selectedColumn).DataType
 
+            Dim filter As String
+            If columnType Is GetType(String) Then
+                filter = String.Format("[{0}] LIKE '%{1}%'", selectedColumn, txtBusqueda.Text)
+            Else
+                filter = String.Format("CONVERT([{0}], 'System.String') LIKE '%{1}%'", selectedColumn, txtBusqueda.Text)
+            End If
 
+            Dim dv As DataView = dt.DefaultView
+            dv.RowFilter = filter
+            BunifuDataGridView1.DataSource = dv
+        End If
     End Sub
 
 
@@ -134,6 +159,10 @@ Public Class Compras
                 End If
             End If
         End If
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboColumna.SelectedIndexChanged
+
     End Sub
 
 
