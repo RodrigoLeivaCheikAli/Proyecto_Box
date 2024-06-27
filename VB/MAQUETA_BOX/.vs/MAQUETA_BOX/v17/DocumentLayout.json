@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\user\\desktop\\practica\\desarrollo de aplicaciones\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\user\\desktop\\practica\\desarrollo de aplicaciones\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\presupuesto.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\presupuesto.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\presupuesto.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\user\\desktop\\practica\\desarrollo de aplicaciones\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
@@ -23,7 +23,7 @@
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\user\\desktop\\practica\\desarrollo de aplicaciones\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
@@ -62,31 +62,30 @@
               "RelativeToolTip": "MAQUETA_BOX\\Inicio.vb",
               "ViewState": "AQIAAAUAAAAAAAAAAAAUwBsAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-06-26T15:30:42.799Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-26T15:30:42.799Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Presupuesto.Designer.vb",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.Designer.vb",
               "RelativeDocumentMoniker": "MAQUETA_BOX\\Presupuesto.Designer.vb",
               "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.Designer.vb",
               "RelativeToolTip": "MAQUETA_BOX\\Presupuesto.Designer.vb",
-              "ViewState": "AQIAALABAAAAAAAAAAASwM0BAAA1AAAA",
+              "ViewState": "AQIAABkBAAAAAAAAAAAAAEMBAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-06-26T15:29:25.417Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Presupuesto.vb",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.vb",
               "RelativeDocumentMoniker": "MAQUETA_BOX\\Presupuesto.vb",
               "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.vb",
               "RelativeToolTip": "MAQUETA_BOX\\Presupuesto.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-06-26T14:02:53.115Z",
               "EditorCaption": ""
@@ -112,8 +111,7 @@
               "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Inicio.vb [Dise\u00F1o]",
               "RelativeToolTip": "MAQUETA_BOX\\Inicio.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-06-19T14:37:56.504Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-06-19T14:37:56.504Z"
             },
             {
               "$type": "Document",
@@ -125,8 +123,7 @@
               "RelativeToolTip": "MAQUETA_BOX\\Compras.vb",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-06-10T14:47:44.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T14:47:44.574Z"
             },
             {
               "$type": "Document",
@@ -137,8 +134,7 @@
               "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb [Dise\u00F1o]",
               "RelativeToolTip": "MAQUETA_BOX\\Ventas.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-06-10T15:36:47.091Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-06-10T15:36:47.091Z"
             },
             {
               "$type": "Document",
@@ -150,8 +146,7 @@
               "RelativeToolTip": "MAQUETA_BOX\\Ventas.vb",
               "ViewState": "AQIAAE8AAAAAAAAAAAAiwFsAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-06-07T15:07:20.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T15:07:20.333Z"
             },
             {
               "$type": "Document",
@@ -162,8 +157,7 @@
               "ToolTip": "C:\\Users\\User\\Desktop\\Practica\\Desarrollo de Aplicaciones\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb [Dise\u00F1o]",
               "RelativeToolTip": "MAQUETA_BOX\\Compras.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-06-07T18:51:08.205Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-06-07T18:51:08.205Z"
             }
           ]
         }
