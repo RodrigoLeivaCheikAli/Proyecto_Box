@@ -1,12 +1,52 @@
-﻿Public Class Productos
+﻿Imports System.Data.SqlClient
+
+Public Class Productos
 
 #Region "Load"
     Private Sub Productos_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
+        Cargar_Grilla()
+        cargar_cbo_tipo()
+        cargar_cbo_proveedores()
+        cargar_cbo_vehiculos()
+        cargar_cbo_marcas()
     End Sub
 #End Region
+#Region "Limpiar"
+    Private Sub Limpiar()
+        txtDescripcion.Text = Nothing
+        txtCantidad.Text = Nothing
+        txtCosto.Text = Nothing
+        txtGanancia.Text = Nothing
+    End Sub
+#End Region
+#Region "Cargar Grilla"
+    Dim dt As DataTable
 
+    Private Sub Cargar_Grilla()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
 
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+        conexion.Open()
+        comando.Connection = conexion
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = ("Consultar_Productos_Gestion")
+
+        Dim datadapter As New SqlDataAdapter(comando)
+        Dim oDs As New DataSet
+
+        datadapter.Fill(oDs)
+        If oDs.Tables(0).Rows.Count > 0 Then
+            dt = oDs.Tables(0)
+            BunifuDataGridView1.AutoGenerateColumns = True
+            BunifuDataGridView1.DataSource = dt
+            BunifuDataGridView1.Refresh()
+        End If
+
+        oDs = Nothing
+        conexion.Close()
+    End Sub
+#End Region
 #Region "Redirección"
 #Region " Recibir Panel"
     Private panelContenedor As Panel
@@ -75,5 +115,152 @@
     'Me.Close()
     'End Sub
 #End Region
+#End Region
+#Region "Cargar Combo Tipo"
+    Private Sub cargar_cbo_tipo()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
+
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+
+
+        conexion.Open()
+        comando.Connection = conexion
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = ("Cargar_cbo_Tipo_Producto")
+
+        Dim datadapter As New SqlDataAdapter(comando)
+        Dim oDs As New DataSet
+        datadapter.Fill(oDs)
+
+        If oDs.Tables(0).Rows.Count > 0 Then
+            cboTipo.DataSource = oDs.Tables(0)
+            cboTipo.DisplayMember = oDs.Tables(0).Columns(1).ToString
+            cboTipo.ValueMember = oDs.Tables(0).Columns(0).ToString
+        End If
+        oDs = Nothing
+        conexion.Close()
+    End Sub
+#End Region
+#Region "Cargar Combo Proveedores"
+    Private Sub cargar_cbo_proveedores()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
+
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+
+
+        conexion.Open()
+        comando.Connection = conexion
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = ("Cargar_cbo_Proveedores")
+
+        Dim datadapter As New SqlDataAdapter(comando)
+        Dim oDs As New DataSet
+        datadapter.Fill(oDs)
+
+        If oDs.Tables(0).Rows.Count > 0 Then
+            cboProveedor.DataSource = oDs.Tables(0)
+            cboProveedor.DisplayMember = oDs.Tables(0).Columns(1).ToString
+            cboProveedor.ValueMember = oDs.Tables(0).Columns(0).ToString
+        End If
+        oDs = Nothing
+        conexion.Close()
+    End Sub
+#End Region
+#Region "Cargar Combo Vehiculos"
+    Private Sub cargar_cbo_vehiculos()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
+
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+
+
+        conexion.Open()
+        comando.Connection = conexion
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = ("Cargar_cbo_Vehiculos")
+
+        Dim datadapter As New SqlDataAdapter(comando)
+        Dim oDs As New DataSet
+        datadapter.Fill(oDs)
+
+        If oDs.Tables(0).Rows.Count > 0 Then
+            cboVehiculo.DataSource = oDs.Tables(0)
+            cboVehiculo.DisplayMember = oDs.Tables(0).Columns(1).ToString
+            cboVehiculo.ValueMember = oDs.Tables(0).Columns(0).ToString
+        End If
+        oDs = Nothing
+        conexion.Close()
+    End Sub
+#End Region
+#Region "Cargar Combo Marcas"
+    Private Sub cargar_cbo_marcas()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
+
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+
+
+        conexion.Open()
+        comando.Connection = conexion
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = ("Cargar_cbo_Marcas")
+
+        Dim datadapter As New SqlDataAdapter(comando)
+        Dim oDs As New DataSet
+        datadapter.Fill(oDs)
+
+        If oDs.Tables(0).Rows.Count > 0 Then
+            cboMarca.DataSource = oDs.Tables(0)
+            cboMarca.DisplayMember = oDs.Tables(0).Columns(1).ToString
+            cboMarca.ValueMember = oDs.Tables(0).Columns(0).ToString
+        End If
+        oDs = Nothing
+        conexion.Close()
+    End Sub
+
+
+
+#End Region
+#Region "Cargar Productos"
+    Private Sub btnCargar_Click(sender As Object, e As EventArgs) Handles btnCargar.Click
+        If txtDescripcion.Text <> Nothing And txtCosto.Text <> Nothing And txtGanancia.Text <> Nothing Then
+
+            Dim conexion As SqlConnection
+            Dim comando As New SqlCommand
+
+            conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+            conexion.Open()
+            comando.Connection = conexion
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = ("Cargar_Productos")
+
+            With comando.Parameters
+                .AddWithValue("@idtipo", cboTipo.SelectedValue)
+                .AddWithValue("@descripcion", txtDescripcion.Text)
+                .AddWithValue("@idproveedor", cboProveedor.SelectedValue)
+                .AddWithValue("@idvehiculo", cboVehiculo.SelectedValue)
+                .AddWithValue("@costo", txtCosto.Text)
+                .AddWithValue("@ganancia", txtGanancia.Text)
+                .AddWithValue("@cantidad", txtCantidad.Text)
+                .AddWithValue("@idmarca", cboMarca.SelectedValue)
+
+            End With
+
+            comando.ExecuteScalar()
+            conexion.Close()
+            MsgBox("Se ha cargado correctamente", vbInformation, Me.Text)
+            Limpiar()
+            Cargar_Grilla()
+        Else
+            MsgBox("Complete los datos", vbInformation, Me.Text)
+        End If
+    End Sub
 #End Region
 End Class
