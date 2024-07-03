@@ -56,7 +56,9 @@ Public Class Inicio
         Dim newForm As New Proveedores() ' Crea una nueva instancia del formulario que deseas agregar
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
-        newForm.Show() ' Muestra el formulario
+
+        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        newForm.Show()
     End Sub
 
 #Region "Productos"
