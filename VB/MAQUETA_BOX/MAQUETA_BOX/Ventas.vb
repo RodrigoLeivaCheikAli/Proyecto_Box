@@ -113,4 +113,6 @@ Public Class Ventas
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
         newForm.Show() ' Muestra el formulario
     End Sub
+
+
 End Class
