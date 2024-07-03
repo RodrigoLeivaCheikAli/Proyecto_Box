@@ -63,7 +63,7 @@ Public Class Compras
 
 #Region "Barra Busqueda"
 
-    Private Sub txtBusqueda_Compras_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtBusqueda.TextChanged
+    Private Sub txtBusqueda_Compras_TextChanged(sender As System.Object, e As System.EventArgs)
 
         If dt IsNot Nothing AndAlso cboColumna.SelectedIndex >= 0 Then
             Dim selectedColumn As String = cboColumna.SelectedItem.ToString()
@@ -91,7 +91,7 @@ Public Class Compras
 
 
 #Region "Prueba"
-    Private Sub BunifuDataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellContentClick
+    Private Sub BunifuDataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim senderGrid = DirectCast(sender, DataGridView)
 
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
@@ -120,7 +120,7 @@ Public Class Compras
         End If
     End Sub
 
-    Private Sub BunifuDataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView2.CellContentClick
+    Private Sub BunifuDataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim senderGrid = DirectCast(sender, DataGridView)
         Dim selectedRow As DataGridViewRow = BunifuDataGridView2.Rows(e.RowIndex)
 
@@ -161,7 +161,7 @@ Public Class Compras
         End If
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboColumna.SelectedIndexChanged
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
 

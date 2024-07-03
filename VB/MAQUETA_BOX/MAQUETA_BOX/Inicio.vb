@@ -37,6 +37,7 @@
         Dim newForm As New Compras() ' Crea una nueva instancia del formulario que deseas agregar
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
         newForm.Show() ' Muestra el formulario
     End Sub
     Private Sub lbl_Documentos_Click(sender As Object, e As EventArgs) Handles lbl_Documentos.Click
@@ -85,6 +86,8 @@
     Private Sub lbl_Clientes_Click(sender As Object, e As EventArgs) Handles lbl_Clientes.Click
 
     End Sub
+
+
 
 
 
