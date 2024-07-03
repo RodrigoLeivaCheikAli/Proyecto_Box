@@ -1,4 +1,6 @@
-﻿Public Class Inicio
+﻿Imports MAQUETA_BOX.PIN_GRUPO11DataSetTableAdapters
+
+Public Class Inicio
 
 
 
@@ -84,6 +86,7 @@
 
 
     Private Sub lbl_Clientes_Click(sender As Object, e As EventArgs) Handles lbl_Clientes.Click
+<<<<<<< Updated upstream
 
     End Sub
 
@@ -104,6 +107,22 @@
 
 
 
+=======
+        ' Instancia de la clase Clientes pasando el Panel1 como parámetro
+        Dim ClientesForm As New Clientes(Me.Panel1)
+
+        ClientesForm.TopLevel = False
+
+        Panel1.Controls.Clear()
+        Panel1.Controls.Add(ClientesForm)
+        ' Ajustar el tamaño del formulario al panel
+        ClientesForm.Dock = DockStyle.Fill
+
+        ' Mostrar el formulario dentro del panel
+        ClientesForm.Show()
+    End Sub
+
+>>>>>>> Stashed changes
 #End Region
 
 

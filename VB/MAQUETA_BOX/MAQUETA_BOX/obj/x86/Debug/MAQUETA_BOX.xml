@@ -42,7 +42,22 @@ MAQUETA_BOX
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.btnHISTORIAL_BLUE">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.btnINFO_BLUE">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:MAQUETA_BOX.My.Resources.Resources.btnLISTADO">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.btnLISTADO_PRODUCTOS___WHITE">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -52,7 +67,22 @@ MAQUETA_BOX
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.btnPRODUCTOS_BLUE">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.btnPRODUCTOS_WHITE">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:MAQUETA_BOX.My.Resources.Resources.btnVENDIDOS">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.btnVENDIDOS_WHITE">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

@@ -85,6 +85,8 @@ Public Class Productos_Listado
         ' Mostrar el formulario dentro del panel
         vendidosForm.Show()
     End Sub
+
+
 #End Region
 #End Region
 End Class

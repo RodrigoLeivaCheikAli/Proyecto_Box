@@ -1,69 +1,226 @@
-﻿Public Class Clientes
+﻿Imports System.Data.SqlClient
 
-    Private Const CS_DROPSHADOW As Integer = &H20000
-    Private Const borderRadius As Integer = 30
+Public Class Clientes
+#Region "Panel"
+    Private _panel As Panel
 
+    ' Constructor que acepta un Panel como parámetro
+    Public Sub New(panel As Panel)
+        ' Inicialización de la clase
+        InitializeComponent() ' Llama al método para inicializar los componentes del formulario
 
-    Public Sub New()
-        ' Esta llamada es requerida por el diseñador.
+        ' Asigna el panel recibido a una variable de la clase
+        _panel = panel
+    End Sub
+#End Region
+#Region "Redirección"
+#Region " Recibir Panel"
+    Private panelContenedor As Panel
+    ' Constructor para recibir el panel contenedor
+    Public Sub e(panel As Panel)
         InitializeComponent()
+        Me.panelContenedor = panel
+    End Sub
+#End Region
+#Region "Listado"
+    ''Private Sub btnListado_Click(sender As Object, e As EventArgs) Handles btnListado.Click
+    ' Crear una instancia del formulario Productos_Listado
+    ''Dim listadoForm As New Productos_Listado(panelContenedor)
 
-        ' Agrega cualquier inicialización después de la llamada a InitializeComponent().
-        Me.FormBorderStyle = FormBorderStyle.None ' Elimina los bordes estándar del formulario
-        Me.SetStyle(ControlStyles.ResizeRedraw, True) ' Permite redibujar el formulario al cambiar tamaño
+    ' Configurar el formulario Productos_Listado para que no sea de nivel superior
+    ''listadoForm.TopLevel = False
+
+    ' Limpiar el panelContenedor antes de agregar el nuevo formulario
+    ''panelContenedor.Controls.Clear()
+
+    ' Agregar el formulario Productos_Listado al panelContenedor
+    ''  panelContenedor.Controls.Add(listadoForm)
+
+    ' Ajustar el tamaño del formulario al panel
+    ''    listadoForm.Dock = DockStyle.Fill
+
+    ' Mostrar el formulario dentro del panel
+    ''  listadoForm.Show()
+    ''End Sub
+#End Region
+#Region "Vendidos"
+    '' Private Sub btnVendidos_Click(sender As Object, e As EventArgs) Handles btnVendidos.Click
+    ' Crear una instancia del formulario Productos_Listado
+    ''Dim vendidosForm As New Productos_Vendidos(panelContenedor)
+
+    ' Configurar el formulario Productos_Listado para que no sea de nivel superior
+    ''vendidosForm.TopLevel = False
+
+    ' Limpiar el panelContenedor antes de agregar el nuevo formulario
+    ' panelContenedor.Controls.Clear()
+
+    ' Agregar el formulario Productos_Listado al panelContenedor
+    'panelContenedor.Controls.Add(vendidosForm)
+
+    ' Ajustar el tamaño del formulario al panel
+    'vendidosForm.Dock = DockStyle.Fill
+
+    ' Mostrar el formulario dentro del panel
+    'vendidosForm.Show()
+    'End Sub
+#End Region
+#Region "Menú"
+    Private mainForm As Inicio
+
+    ' Constructor para recibir la referencia del formulario principal
+    Public Sub New(mainForm As Inicio)
+        InitializeComponent()
+        Me.mainForm = mainForm
     End Sub
 
-    ' Maneja el evento Paint para dibujar el borde redondeado
-    Protected Overrides Sub OnPaint(e As PaintEventArgs)
-        ' Llama al método OnPaint del formulario base
-        MyBase.OnPaint(e)
+    'Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
+    ' Restaurar el estado inicial del panel
+    'mainForm.RestaurarPanel()
 
-        ' Crea un nuevo objeto GraphicsPath para el borde redondeado
-        Dim graphicsPath As New Drawing2D.GraphicsPath()
+    ' Cerrar el formulario actual
+    'Me.Close()
+    'End Sub
+#End Region
+#End Region
+#Region "Cargar Grilla"
+    Dim dt As DataTable
 
-        ' Define los puntos para las esquinas redondeadas
-        graphicsPath.StartFigure()
-        graphicsPath.AddArc(New Rectangle(0, 0, borderRadius, borderRadius), 180, 90)
-        graphicsPath.AddLine(borderRadius, 0, Me.Width - borderRadius, 0)
-        graphicsPath.AddArc(New Rectangle(Me.Width - borderRadius, 0, borderRadius, borderRadius), -90, 90)
-        graphicsPath.AddLine(Me.Width, borderRadius, Me.Width, Me.Height - borderRadius)
-        graphicsPath.AddArc(New Rectangle(Me.Width - borderRadius, Me.Height - borderRadius, borderRadius, borderRadius), 0, 90)
-        graphicsPath.AddLine(Me.Width - borderRadius, Me.Height, borderRadius, Me.Height)
-        graphicsPath.AddArc(New Rectangle(0, Me.Height - borderRadius, borderRadius, borderRadius), 90, 90)
-        graphicsPath.CloseFigure()
+    Private Sub Cargar_Grilla()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
 
-        ' Establece la región del formulario con el borde redondeado
-        Me.Region = New Region(graphicsPath)
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+        conexion.Open()
+        comando.Connection = conexion
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = ("Consultar_Clientes")
 
-        ' Libera los recursos del objeto GraphicsPath
-        graphicsPath.Dispose()
-    End Sub
+        Dim datadapter As New SqlDataAdapter(comando)
+        Dim oDs As New DataSet
 
-    Protected Overrides Sub WndProc(ByRef m As Message)
-        ' Constante para el mensaje WM_NCLBUTTONDBLCLK
-        Const WM_NCLBUTTONDBLCLK As Integer = &HA3
-        ' Constante para el mensaje WM_NCHITTEST
-        Const WM_NCHITTEST As Integer = &H84
-
-        ' Interceptar el mensaje de doble clic en la barra de título
-        If m.Msg = WM_NCLBUTTONDBLCLK Then
-            ' No hacer nada para evitar que el formulario se maximice
-            Return
+        datadapter.Fill(oDs)
+        If oDs.Tables(0).Rows.Count > 0 Then
+            dt = oDs.Tables(0)
+            BunifuDataGridView1.AutoGenerateColumns = True
+            BunifuDataGridView1.DataSource = dt
+            BunifuDataGridView1.Refresh()
         End If
 
-        ' Llamar al método WndProc base para manejar otros mensajes
-        MyBase.WndProc(m)
-
-        ' Manejar el mensaje WM_NCHITTEST para permitir mover el formulario sin borde
-        If m.Msg = WM_NCHITTEST Then
-            Dim pos As Point = Me.PointToClient(New Point(m.LParam.ToInt32()))
-            If pos.Y < borderRadius Then
-                m.Result = New IntPtr(2) ' HTCAPTION
-            End If
-        End If
+        oDs = Nothing
+        conexion.Close()
     End Sub
-
+#End Region
+#Region "Limpiar"
+    Private Sub Limpiar()
+        txtNombre.Text = Nothing
+        txtCodigo.Text = Nothing
+        txtCUIL.Text = Nothing
+        txtDireccion.Text = Nothing
+        txtMail.Text = Nothing
+        txtRazonSocial.Text = Nothing
+        txtRubro.Text = Nothing
+        txtTelefono.Text = Nothing
+    End Sub
+#End Region
+#Region "Load"
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Cargar_Grilla()
     End Sub
+#End Region
+#Region "Cargar Clientes"
+    Private Sub btnCargar_Click(sender As Object, e As EventArgs) Handles btnCargar.Click
+        If txtNombre.Text <> Nothing And txtTelefono.Text <> Nothing Then
+
+            Dim conexion As SqlConnection
+            Dim comando As New SqlCommand
+
+            conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+            conexion.Open()
+            comando.Connection = conexion
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = ("Cargar_Clientes")
+
+            With comando.Parameters
+                .AddWithValue("@nombre", txtNombre.Text)
+                .AddWithValue("@cuil", txtCUIL.Text)
+                .AddWithValue("@rubro", txtRubro.Text)
+                .AddWithValue("@razonsocial", txtRazonSocial.Text)
+                .AddWithValue("@telefono", txtTelefono.Text)
+                .AddWithValue("@mail", txtMail.Text)
+                .AddWithValue("@direccion", txtDireccion.Text)
+
+            End With
+
+            comando.ExecuteScalar()
+            conexion.Close()
+            MsgBox("Se ha cargado correctamente", vbInformation, Me.Text)
+            Limpiar()
+            Cargar_Grilla()
+        Else
+            MsgBox("Complete los datos", vbInformation, Me.Text)
+        End If
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        If txtCodigo.Text <> Nothing And txtNombre.Text <> Nothing And txtTelefono.Text <> Nothing Then
+            Dim conexion As SqlConnection
+            Dim comando As New SqlCommand
+
+            conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+            conexion.Open()
+            comando.Connection = conexion
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = ("Modificar_Clientes")
+
+            With comando.Parameters
+                .AddWithValue("@idcliente", txtCodigo.Text)
+                .AddWithValue("@nombre", txtNombre.Text)
+                .AddWithValue("@cuil", txtCUIL.Text)
+                .AddWithValue("@rubro", txtRubro.Text)
+                .AddWithValue("@razonsocial", txtRazonSocial.Text)
+                .AddWithValue("@telefono", txtTelefono.Text)
+                .AddWithValue("@mail", txtMail.Text)
+                .AddWithValue("@direccion", txtDireccion.Text)
+            End With
+
+            comando.ExecuteNonQuery()
+            MsgBox("Se ha modificado con exito", vbInformation, Me.Text)
+            Limpiar()
+            Cargar_Grilla()
+            conexion.Close()
+        Else
+            MsgBox("Complete los datos para modificar", MsgBoxStyle.Exclamation, "Error")
+        End If
+    End Sub
+
+
+#End Region
+#Region "Eliminar Clientes"
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If txtCodigo.Text <> Nothing Then
+            Dim conexion As SqlConnection
+            Dim comando As New SqlCommand
+
+            conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+            conexion.Open()
+            comando.Connection = conexion
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = ("Eliminar_Clientes")
+            With comando.Parameters
+                .AddWithValue("@idcliente", txtCodigo.Text)
+            End With
+
+            comando.ExecuteNonQuery()
+            MsgBox("Se ha eliminado correctamente", vbInformation, Me.Text)
+            Limpiar()
+            Cargar_Grilla()
+            conexion.Close()
+        Else
+            MsgBox("Complete datos para eliminar", MsgBoxStyle.Exclamation, "Error")
+        End If
+    End Sub
+#End Region
 End Class

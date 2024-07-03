@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports DocumentFormat.OpenXml.Wordprocessing
 
 Public Class Productos
 
@@ -260,6 +261,68 @@ Public Class Productos
             Cargar_Grilla()
         Else
             MsgBox("Complete los datos", vbInformation, Me.Text)
+        End If
+    End Sub
+#End Region
+
+#Region "Eliminar Productos"
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If txtCodigo.Text <> Nothing Then
+            Dim conexion As SqlConnection
+            Dim comando As New SqlCommand
+
+            conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+            conexion.Open()
+            comando.Connection = conexion
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = ("Eliminar_Productos")
+            With comando.Parameters
+                .AddWithValue("@idproducto", txtCodigo.Text)
+            End With
+
+            comando.ExecuteNonQuery()
+            MsgBox("Se ha eliminado correctamente", vbInformation, Me.Text)
+            Limpiar()
+            Cargar_Grilla()
+            conexion.Close()
+        Else
+            MsgBox("Complete datos para eliminar", MsgBoxStyle.Exclamation, "Error")
+        End If
+    End Sub
+#End Region
+#Region "Modificar Producto"
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        If txtCodigo.Text <> Nothing And txtCantidad.Text <> Nothing And txtCosto.Text <> Nothing And txtDescripcion.Text <> Nothing And txtGanancia.Text Then
+            Dim conexion As SqlConnection
+            Dim comando As New SqlCommand
+
+            conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+            conexion.Open()
+            comando.Connection = conexion
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = ("Modificar_Productos")
+
+            With comando.Parameters
+                .AddWithValue("@idproducto", txtCodigo.Text)
+                .AddWithValue("@idtipo", cboTipo.SelectedValue)
+                .AddWithValue("@descripcion", txtDescripcion.Text)
+                .AddWithValue("@idproveedor", cboProveedor.SelectedValue)
+                .AddWithValue("@idvehiculo", cboVehiculo.SelectedValue)
+                .AddWithValue("@costo", txtCosto.Text)
+                .AddWithValue("@ganancia", txtGanancia.Text)
+                .AddWithValue("@cantidad", txtCantidad.Text)
+                .AddWithValue("@idmarca", cboMarca.SelectedValue)
+            End With
+
+            comando.ExecuteNonQuery()
+            MsgBox("Se ha modificado con exito", vbInformation, Me.Text)
+            Limpiar()
+            Cargar_Grilla()
+            conexion.Close()
+        Else
+            MsgBox("Complete los datos para modificar", MsgBoxStyle.Exclamation, "Error")
         End If
     End Sub
 #End Region

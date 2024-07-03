@@ -434,6 +434,24 @@
   <ItemGroup>
     <None Include="Resources\btnCANCELAR-1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnINFO-BLUE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnHISTORIAL-BLUE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnPRODUCTOS-WHITE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnLISTADO PRODUCTOS - WHITE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnPRODUCTOS-BLUE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnVENDIDOS-WHITE.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

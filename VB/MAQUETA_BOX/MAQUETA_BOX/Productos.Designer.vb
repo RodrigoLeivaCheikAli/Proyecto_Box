@@ -22,10 +22,10 @@ Partial Class Productos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -35,15 +35,9 @@ Partial Class Productos
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtCosto = New System.Windows.Forms.TextBox()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.btnListado = New System.Windows.Forms.PictureBox()
-        Me.btnVendidos = New System.Windows.Forms.PictureBox()
-        Me.btnMenu = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnCargar = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.txtGanancia = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cboTipo = New System.Windows.Forms.ComboBox()
@@ -51,26 +45,34 @@ Partial Class Productos
         Me.cboProveedor = New System.Windows.Forms.ComboBox()
         Me.cboMarca = New System.Windows.Forms.ComboBox()
         Me.cboVehiculo = New System.Windows.Forms.ComboBox()
-        Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.btnGestion = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.btnListado = New System.Windows.Forms.PictureBox()
+        Me.btnVendidos = New System.Windows.Forms.PictureBox()
+        Me.btnMenu = New System.Windows.Forms.PictureBox()
+        Me.btnEliminar = New System.Windows.Forms.PictureBox()
+        Me.btnModificar = New System.Windows.Forms.PictureBox()
+        Me.btnCargar = New System.Windows.Forms.PictureBox()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Panel1.SuspendLayout()
+        CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnGestion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnListado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnVendidos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
-        CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(87, 32)
+        Me.Label9.Location = New System.Drawing.Point(87, 31)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(75, 22)
         Me.Label9.TabIndex = 6
@@ -90,7 +92,7 @@ Partial Class Productos
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(57, 77)
+        Me.Label5.Location = New System.Drawing.Point(57, 80)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(105, 22)
         Me.Label5.TabIndex = 8
@@ -98,16 +100,17 @@ Partial Class Productos
         '
         'txtCodigo
         '
+        Me.txtCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodigo.Location = New System.Drawing.Point(168, 32)
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(122, 20)
-        Me.txtCodigo.TabIndex = 10
+        Me.txtCodigo.Size = New System.Drawing.Size(122, 22)
+        Me.txtCodigo.TabIndex = 0
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(401, 30)
+        Me.Label2.Location = New System.Drawing.Point(401, 31)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(119, 22)
         Me.Label2.TabIndex = 12
@@ -115,16 +118,17 @@ Partial Class Productos
         '
         'txtDescripcion
         '
+        Me.txtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescripcion.Location = New System.Drawing.Point(526, 31)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(181, 20)
-        Me.txtDescripcion.TabIndex = 13
+        Me.txtDescripcion.Size = New System.Drawing.Size(181, 22)
+        Me.txtDescripcion.TabIndex = 1
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(756, 80)
+        Me.Label4.Location = New System.Drawing.Point(756, 81)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(67, 22)
         Me.Label4.TabIndex = 21
@@ -142,89 +146,11 @@ Partial Class Productos
         '
         'txtCosto
         '
+        Me.txtCosto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCosto.Location = New System.Drawing.Point(168, 128)
         Me.txtCosto.Name = "txtCosto"
-        Me.txtCosto.Size = New System.Drawing.Size(122, 20)
-        Me.txtCosto.TabIndex = 24
-        '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Image = CType(resources.GetObject("DataGridViewImageColumn1.Image"), System.Drawing.Image)
-        Me.DataGridViewImageColumn1.MinimumWidth = 2
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(654, 27)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(31, 30)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 29
-        Me.PictureBox7.TabStop = False
-        '
-        'btnListado
-        '
-        Me.btnListado.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnLISTADO
-        Me.btnListado.Location = New System.Drawing.Point(809, 14)
-        Me.btnListado.Name = "btnListado"
-        Me.btnListado.Size = New System.Drawing.Size(100, 50)
-        Me.btnListado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnListado.TabIndex = 28
-        Me.btnListado.TabStop = False
-        '
-        'btnVendidos
-        '
-        Me.btnVendidos.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnVENDIDOS1
-        Me.btnVendidos.Location = New System.Drawing.Point(934, 11)
-        Me.btnVendidos.Name = "btnVendidos"
-        Me.btnVendidos.Size = New System.Drawing.Size(112, 55)
-        Me.btnVendidos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnVendidos.TabIndex = 27
-        Me.btnVendidos.TabStop = False
-        '
-        'btnMenu
-        '
-        Me.btnMenu.Image = CType(resources.GetObject("btnMenu.Image"), System.Drawing.Image)
-        Me.btnMenu.Location = New System.Drawing.Point(12, 12)
-        Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(100, 50)
-        Me.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnMenu.TabIndex = 25
-        Me.btnMenu.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnELIMINAR
-        Me.PictureBox3.Location = New System.Drawing.Point(671, 549)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(118, 65)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 17
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnMODIFICAR
-        Me.PictureBox1.Location = New System.Drawing.Point(479, 549)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(118, 65)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 16
-        Me.PictureBox1.TabStop = False
-        '
-        'btnCargar
-        '
-        Me.btnCargar.Image = CType(resources.GetObject("btnCargar.Image"), System.Drawing.Image)
-        Me.btnCargar.Location = New System.Drawing.Point(289, 183)
-        Me.btnCargar.Name = "btnCargar"
-        Me.btnCargar.Size = New System.Drawing.Size(118, 46)
-        Me.btnCargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnCargar.TabIndex = 15
-        Me.btnCargar.TabStop = False
+        Me.txtCosto.Size = New System.Drawing.Size(122, 22)
+        Me.txtCosto.TabIndex = 6
         '
         'Panel1
         '
@@ -253,18 +179,37 @@ Partial Class Productos
         Me.Panel1.Size = New System.Drawing.Size(1100, 252)
         Me.Panel1.TabIndex = 31
         '
+        'txtCantidad
+        '
+        Me.txtCantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCantidad.Location = New System.Drawing.Point(829, 128)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(122, 22)
+        Me.txtCantidad.TabIndex = 8
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(730, 128)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(93, 22)
+        Me.Label8.TabIndex = 27
+        Me.Label8.Text = "Cantidad"
+        '
         'txtGanancia
         '
+        Me.txtGanancia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtGanancia.Location = New System.Drawing.Point(526, 128)
         Me.txtGanancia.Name = "txtGanancia"
-        Me.txtGanancia.Size = New System.Drawing.Size(122, 20)
-        Me.txtGanancia.TabIndex = 26
+        Me.txtGanancia.Size = New System.Drawing.Size(122, 22)
+        Me.txtGanancia.TabIndex = 7
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(424, 126)
+        Me.Label6.Location = New System.Drawing.Point(424, 128)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(96, 22)
         Me.Label6.TabIndex = 25
@@ -273,17 +218,18 @@ Partial Class Productos
         'cboTipo
         '
         Me.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTipo.FormattingEnabled = True
         Me.cboTipo.Location = New System.Drawing.Point(829, 31)
         Me.cboTipo.Name = "cboTipo"
-        Me.cboTipo.Size = New System.Drawing.Size(140, 21)
-        Me.cboTipo.TabIndex = 24
+        Me.cboTipo.Size = New System.Drawing.Size(140, 24)
+        Me.cboTipo.TabIndex = 2
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(773, 32)
+        Me.Label3.Location = New System.Drawing.Point(773, 31)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 22)
         Me.Label3.TabIndex = 23
@@ -292,38 +238,32 @@ Partial Class Productos
         'cboProveedor
         '
         Me.cboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboProveedor.FormattingEnabled = True
         Me.cboProveedor.Location = New System.Drawing.Point(168, 80)
         Me.cboProveedor.Name = "cboProveedor"
-        Me.cboProveedor.Size = New System.Drawing.Size(140, 21)
-        Me.cboProveedor.TabIndex = 22
+        Me.cboProveedor.Size = New System.Drawing.Size(140, 24)
+        Me.cboProveedor.TabIndex = 3
         '
         'cboMarca
         '
         Me.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboMarca.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboMarca.FormattingEnabled = True
         Me.cboMarca.Location = New System.Drawing.Point(829, 81)
         Me.cboMarca.Name = "cboMarca"
-        Me.cboMarca.Size = New System.Drawing.Size(140, 21)
-        Me.cboMarca.TabIndex = 14
+        Me.cboMarca.Size = New System.Drawing.Size(140, 24)
+        Me.cboMarca.TabIndex = 5
         '
         'cboVehiculo
         '
         Me.cboVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboVehiculo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboVehiculo.FormattingEnabled = True
         Me.cboVehiculo.Location = New System.Drawing.Point(526, 81)
         Me.cboVehiculo.Name = "cboVehiculo"
-        Me.cboVehiculo.Size = New System.Drawing.Size(140, 21)
-        Me.cboVehiculo.TabIndex = 13
-        '
-        'txtBusqueda
-        '
-        Me.txtBusqueda.Location = New System.Drawing.Point(395, 25)
-        Me.txtBusqueda.MinimumSize = New System.Drawing.Size(4, 30)
-        Me.txtBusqueda.Multiline = True
-        Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(253, 30)
-        Me.txtBusqueda.TabIndex = 32
+        Me.cboVehiculo.Size = New System.Drawing.Size(140, 24)
+        Me.cboVehiculo.TabIndex = 4
         '
         'BunifuDataGridView1
         '
@@ -376,58 +316,141 @@ Partial Class Productos
         Me.BunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue
         Me.BunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty
         Me.BunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White
-        Me.BunifuDataGridView1.Location = New System.Drawing.Point(140, 83)
+        Me.BunifuDataGridView1.Location = New System.Drawing.Point(141, 87)
         Me.BunifuDataGridView1.Name = "BunifuDataGridView1"
         Me.BunifuDataGridView1.RowHeadersVisible = False
         Me.BunifuDataGridView1.RowTemplate.Height = 40
         Me.BunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.BunifuDataGridView1.Size = New System.Drawing.Size(808, 261)
         Me.BunifuDataGridView1.TabIndex = 40
+        Me.BunifuDataGridView1.TabStop = False
         Me.BunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
         '
-        'Label8
+        'TextBox1
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(727, 124)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(93, 22)
-        Me.Label8.TabIndex = 27
-        Me.Label8.Text = "Cantidad"
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(206, 35)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(243, 22)
+        Me.TextBox1.TabIndex = 41
         '
-        'txtCantidad
+        'btnGestion
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(829, 128)
-        Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(122, 20)
-        Me.txtCantidad.TabIndex = 28
+        Me.btnGestion.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnPRODUCTOS_WHITE
+        Me.btnGestion.Location = New System.Drawing.Point(665, 15)
+        Me.btnGestion.Name = "btnGestion"
+        Me.btnGestion.Size = New System.Drawing.Size(115, 50)
+        Me.btnGestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnGestion.TabIndex = 42
+        Me.btnGestion.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(455, 31)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(28, 31)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox7.TabIndex = 29
+        Me.PictureBox7.TabStop = False
+        '
+        'btnListado
+        '
+        Me.btnListado.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnLISTADO
+        Me.btnListado.Location = New System.Drawing.Point(809, 14)
+        Me.btnListado.Name = "btnListado"
+        Me.btnListado.Size = New System.Drawing.Size(100, 50)
+        Me.btnListado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnListado.TabIndex = 28
+        Me.btnListado.TabStop = False
+        '
+        'btnVendidos
+        '
+        Me.btnVendidos.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnVENDIDOS1
+        Me.btnVendidos.Location = New System.Drawing.Point(934, 11)
+        Me.btnVendidos.Name = "btnVendidos"
+        Me.btnVendidos.Size = New System.Drawing.Size(112, 55)
+        Me.btnVendidos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnVendidos.TabIndex = 27
+        Me.btnVendidos.TabStop = False
+        '
+        'btnMenu
+        '
+        Me.btnMenu.Image = CType(resources.GetObject("btnMenu.Image"), System.Drawing.Image)
+        Me.btnMenu.Location = New System.Drawing.Point(18, 15)
+        Me.btnMenu.Name = "btnMenu"
+        Me.btnMenu.Size = New System.Drawing.Size(100, 50)
+        Me.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnMenu.TabIndex = 25
+        Me.btnMenu.TabStop = False
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnELIMINAR
+        Me.btnEliminar.Location = New System.Drawing.Point(671, 549)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(118, 65)
+        Me.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnEliminar.TabIndex = 17
+        Me.btnEliminar.TabStop = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnMODIFICAR
+        Me.btnModificar.Location = New System.Drawing.Point(479, 549)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(118, 65)
+        Me.btnModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnModificar.TabIndex = 16
+        Me.btnModificar.TabStop = False
+        '
+        'btnCargar
+        '
+        Me.btnCargar.Image = CType(resources.GetObject("btnCargar.Image"), System.Drawing.Image)
+        Me.btnCargar.Location = New System.Drawing.Point(289, 183)
+        Me.btnCargar.Name = "btnCargar"
+        Me.btnCargar.Size = New System.Drawing.Size(118, 46)
+        Me.btnCargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnCargar.TabIndex = 15
+        Me.btnCargar.TabStop = False
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = CType(resources.GetObject("DataGridViewImageColumn1.Image"), System.Drawing.Image)
+        Me.DataGridViewImageColumn1.MinimumWidth = 2
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
         '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1074, 626)
+        Me.Controls.Add(Me.btnGestion)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.BunifuDataGridView1)
-        Me.Controls.Add(Me.txtBusqueda)
         Me.Controls.Add(Me.PictureBox7)
         Me.Controls.Add(Me.btnListado)
         Me.Controls.Add(Me.btnVendidos)
         Me.Controls.Add(Me.btnMenu)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Productos"
         Me.Text = "Productos"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnGestion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnListado, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnVendidos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -439,8 +462,8 @@ Partial Class Productos
     Friend WithEvents Label2 As Label
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents btnCargar As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents btnModificar As PictureBox
+    Friend WithEvents btnEliminar As PictureBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents txtCosto As TextBox
@@ -450,7 +473,6 @@ Partial Class Productos
     Friend WithEvents btnListado As PictureBox
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents txtBusqueda As TextBox
     Friend WithEvents cboVehiculo As ComboBox
     Friend WithEvents cboTipo As ComboBox
     Friend WithEvents Label3 As Label
@@ -461,4 +483,6 @@ Partial Class Productos
     Friend WithEvents BunifuDataGridView1 As Bunifu.UI.WinForms.BunifuDataGridView
     Friend WithEvents txtCantidad As TextBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents btnGestion As PictureBox
 End Class
