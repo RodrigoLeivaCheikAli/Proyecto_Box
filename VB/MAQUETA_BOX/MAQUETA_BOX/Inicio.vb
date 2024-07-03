@@ -86,28 +86,6 @@ Public Class Inicio
 
 
     Private Sub lbl_Clientes_Click(sender As Object, e As EventArgs) Handles lbl_Clientes.Click
-<<<<<<< Updated upstream
-
-    End Sub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
         ' Instancia de la clase Clientes pasando el Panel1 como parámetro
         Dim ClientesForm As New Clientes(Me.Panel1)
 
@@ -122,7 +100,28 @@ Public Class Inicio
         ClientesForm.Show()
     End Sub
 
->>>>>>> Stashed changes
+
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #End Region
 
 
