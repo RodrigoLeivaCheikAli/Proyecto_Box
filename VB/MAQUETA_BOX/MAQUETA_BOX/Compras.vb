@@ -45,6 +45,9 @@ Public Class Compras
     Private Sub Compras_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Llenar_Grilla()
         Cargar_Combo()
+        Dim columnaPrecio As DataGridViewColumn = BunifuDataGridView1.Columns(5)
+        columnaPrecio.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        columnaPrecio.DefaultCellStyle.Format = "C2"
     End Sub
 
     Private Sub Cargar_Combo()
@@ -91,7 +94,11 @@ Public Class Compras
 
 
 #Region "Prueba"
-    Private Sub BunifuDataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+
+
+
+
+    Private Sub BunifuDataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellContentClick
         Dim senderGrid = DirectCast(sender, DataGridView)
 
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
@@ -120,7 +127,7 @@ Public Class Compras
         End If
     End Sub
 
-    Private Sub BunifuDataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub BunifuDataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView2.CellContentClick
         Dim senderGrid = DirectCast(sender, DataGridView)
         Dim selectedRow As DataGridViewRow = BunifuDataGridView2.Rows(e.RowIndex)
 
@@ -138,7 +145,7 @@ Public Class Compras
                 If originalIndex <> -1 AndAlso Cant.ContainsKey(originalIndex) Then
                     Cant(originalIndex) -= 1
                     If Cant(originalIndex) > 0 Then
-                        BunifuDataGridView2.Rows(e.RowIndex).Cells(BunifuDataGridView2.ColumnCount - 1).Value = Cant(originalIndex)
+                        BunifuDataGridView2.Rows(e.RowIndex).Cells(BunifuDataGridView2.ColumnCount - 2).Value = Cant(originalIndex)
                     Else
                         ' Eliminar de addedRows y Cant antes de eliminar la fila
                         addedRows.Remove(originalIndex)
@@ -161,9 +168,7 @@ Public Class Compras
         End If
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
 
-    End Sub
 
 
 
