@@ -6,8 +6,14 @@ Public Class Presupuesto
 
     Private Sub Presupuesto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cargar_Combo_MediosP()
-
-
+        For Each row As DataGridViewRow In DataGridView3.Rows
+            If Not row.IsNewRow Then
+                CalcularPrecio(row.Index)
+            End If
+        Next
+        ActualizarTotal()
+        ' Actualizar la vista del DataGridView para mostrar los cambios
+        DataGridView3.Refresh()
     End Sub
     Public Sub CopiarDatos(dgvOrigen As DataGridView)
         ' Limpiar cualquier dato existente en el DataGridView destino
@@ -42,26 +48,61 @@ Public Class Presupuesto
         Dim columnName As String = DataGridView3.Columns(e.ColumnIndex).Name
 
         If columnName = "quantity" Or columnName = "rate" Then
-            Dim quantity As Integer
-            Dim rate As Integer
-
-            ' Intentar convertir los valores de las celdas a Integer
-            If Integer.TryParse(Convert.ToString(DataGridView3.Rows(e.RowIndex).Cells("quantity").Value), quantity) AndAlso
-           Integer.TryParse(Convert.ToString(DataGridView3.Rows(e.RowIndex).Cells("rate").Value), rate) Then
-                Dim price As Integer = quantity * rate
-                DataGridView3.Rows(e.RowIndex).Cells("price").Value = price.ToString()
-
-                ' Actualizar la vista del DataGridView para mostrar los cambios
-                DataGridView3.Refresh()
-            Else
-                ' Manejar el caso donde la conversión falló
-                ' Por ejemplo, podrías mostrar un mensaje de error o reiniciar el valor de la celda 'price'
-                DataGridView3.Rows(e.RowIndex).Cells("price").Value = String.Empty
-            End If
+            CalcularPrecio(e.RowIndex)
+            ' Actualizar la vista del DataGridView para mostrar los cambios
+            DataGridView3.Refresh()
         End If
     End Sub
 
+    Private Sub CalcularPrecio(rowIndex As Integer)
+        Dim quantity As Double
+        Dim rate As Double
 
+        ' Intentar convertir los valores de las celdas a Double
+        If Double.TryParse(Convert.ToString(DataGridView3.Rows(rowIndex).Cells("quantity").Value), quantity) AndAlso
+       Double.TryParse(Convert.ToString(DataGridView3.Rows(rowIndex).Cells("rate").Value), rate) Then
+            Dim price As Double = quantity * rate
+            DataGridView3.Rows(rowIndex).Cells("price").Value = price.ToString()
+        Else
+            ' Manejar el caso donde la conversión falló
+            ' Por ejemplo, podrías mostrar un mensaje de error o reiniciar el valor de la celda 'price'
+            DataGridView3.Rows(rowIndex).Cells("price").Value = String.Empty
+        End If
+    End Sub
+
+    Private Function SumarColumnaPrice() As Double
+        Dim total As Double = 0
+
+        For Each row As DataGridViewRow In DataGridView3.Rows
+            If Not row.IsNewRow Then
+                Dim price As Double
+                If Double.TryParse(Convert.ToString(row.Cells("price").Value), price) Then
+                    total += price
+                End If
+            End If
+        Next
+
+        Return total
+    End Function
+    Private Sub ActualizarTotal()
+        Dim total As Double = SumarColumnaPrice()
+        lblSubtotal.Text = "$ " & total.ToString()
+        lblTotal.Text = total
+        Dim valor As String
+        If cboMediosP.SelectedIndex().ToString IsNot Nothing Then
+
+
+            If cboMediosP.SelectedIndex = 0 Then
+                lblTotal.Text = total - (total / 10%)
+            ElseIf cboMediosP.SelectedIndex = 1 Then
+                lblTotal.Text = total - (total / 10%)
+            Else
+                lblTotal.Text = total
+            End If
+
+        End If
+
+    End Sub
 
 
 
@@ -109,7 +150,7 @@ Public Class Presupuesto
         Else
             valor = "0%"
         End If
-
+        ActualizarTotal()
         lblDescuento.Text = valor
     End Sub
 

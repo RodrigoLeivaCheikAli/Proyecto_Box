@@ -308,6 +308,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PIN_GRUPO11DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PIN_GRUPO11DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Presupuesto.Designer.vb">
       <DependentUpon>Presupuesto.vb</DependentUpon>
     </Compile>
@@ -395,6 +400,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="PIN_GRUPO11DataSet.xsc">
+      <DependentUpon>PIN_GRUPO11DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PIN_GRUPO11DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PIN_GRUPO11DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PIN_GRUPO11DataSet.xss">
+      <DependentUpon>PIN_GRUPO11DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\btnMODIFICAR.png" />
   </ItemGroup>
   <ItemGroup>

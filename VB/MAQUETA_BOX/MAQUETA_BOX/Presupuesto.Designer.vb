@@ -27,6 +27,13 @@ Partial Class Presupuesto
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Presupuesto))
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.price = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BunifuLabel2 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.BunifuLabel5 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.BunifuLabel6 = New Bunifu.UI.WinForms.BunifuLabel()
@@ -40,15 +47,10 @@ Partial Class Presupuesto
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.BunifuDatePicker1 = New Bunifu.UI.WinForms.BunifuDatePicker()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtCliente = New System.Windows.Forms.TextBox()
         Me.cboMediosP = New System.Windows.Forms.ComboBox()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.price = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblSubtotal = New Bunifu.UI.WinForms.BunifuLabel()
+        Me.lblTotal = New Bunifu.UI.WinForms.BunifuLabel()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BunifuPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,6 +98,47 @@ Partial Class Presupuesto
         Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView3.Size = New System.Drawing.Size(893, 292)
         Me.DataGridView3.TabIndex = 8
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Nº"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 50
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Tipo"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 120
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Descripcion"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 300
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Vehiculo"
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 130
+        '
+        'rate
+        '
+        Me.rate.HeaderText = "Precio"
+        Me.rate.Name = "rate"
+        Me.rate.Width = 120
+        '
+        'quantity
+        '
+        Me.quantity.HeaderText = "Cantidad"
+        Me.quantity.Name = "quantity"
+        Me.quantity.Width = 70
+        '
+        'price
+        '
+        Me.price.HeaderText = "Total"
+        Me.price.Name = "price"
         '
         'BunifuLabel2
         '
@@ -151,6 +194,8 @@ Partial Class Presupuesto
         Me.BunifuPanel1.BorderColor = System.Drawing.Color.Transparent
         Me.BunifuPanel1.BorderRadius = 3
         Me.BunifuPanel1.BorderThickness = 1
+        Me.BunifuPanel1.Controls.Add(Me.lblTotal)
+        Me.BunifuPanel1.Controls.Add(Me.lblSubtotal)
         Me.BunifuPanel1.Controls.Add(Me.BunifuLabel9)
         Me.BunifuPanel1.Controls.Add(Me.lblDescuento)
         Me.BunifuPanel1.Controls.Add(Me.BunifuLabel7)
@@ -306,12 +351,12 @@ Partial Class Presupuesto
         Me.BunifuDatePicker1.Size = New System.Drawing.Size(220, 32)
         Me.BunifuDatePicker1.TabIndex = 17
         '
-        'TextBox1
+        'txtCliente
         '
-        Me.TextBox1.Location = New System.Drawing.Point(153, 35)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox1.TabIndex = 18
+        Me.txtCliente.Location = New System.Drawing.Point(153, 35)
+        Me.txtCliente.Name = "txtCliente"
+        Me.txtCliente.Size = New System.Drawing.Size(160, 20)
+        Me.txtCliente.TabIndex = 18
         '
         'cboMediosP
         '
@@ -321,46 +366,37 @@ Partial Class Presupuesto
         Me.cboMediosP.Size = New System.Drawing.Size(121, 21)
         Me.cboMediosP.TabIndex = 19
         '
-        'Column1
+        'lblSubtotal
         '
-        Me.Column1.HeaderText = "Nº"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 50
+        Me.lblSubtotal.AllowParentOverrides = False
+        Me.lblSubtotal.AutoEllipsis = False
+        Me.lblSubtotal.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lblSubtotal.CursorType = System.Windows.Forms.Cursors.Default
+        Me.lblSubtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSubtotal.ForeColor = System.Drawing.Color.White
+        Me.lblSubtotal.Location = New System.Drawing.Point(122, 7)
+        Me.lblSubtotal.Name = "lblSubtotal"
+        Me.lblSubtotal.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblSubtotal.Size = New System.Drawing.Size(0, 0)
+        Me.lblSubtotal.TabIndex = 15
+        Me.lblSubtotal.TextAlignment = System.Drawing.ContentAlignment.TopLeft
+        Me.lblSubtotal.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.[Default]
         '
-        'Column2
+        'lblTotal
         '
-        Me.Column2.HeaderText = "Tipo"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 120
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Descripcion"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 300
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Vehiculo"
-        Me.Column4.Name = "Column4"
-        Me.Column4.Width = 130
-        '
-        'rate
-        '
-        Me.rate.HeaderText = "Precio"
-        Me.rate.Name = "rate"
-        Me.rate.Width = 120
-        '
-        'quantity
-        '
-        Me.quantity.HeaderText = "Cantidad"
-        Me.quantity.Name = "quantity"
-        Me.quantity.Width = 70
-        '
-        'price
-        '
-        Me.price.HeaderText = "Total"
-        Me.price.Name = "price"
+        Me.lblTotal.AllowParentOverrides = False
+        Me.lblTotal.AutoEllipsis = False
+        Me.lblTotal.Cursor = System.Windows.Forms.Cursors.Default
+        Me.lblTotal.CursorType = System.Windows.Forms.Cursors.Default
+        Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.ForeColor = System.Drawing.Color.White
+        Me.lblTotal.Location = New System.Drawing.Point(85, 77)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblTotal.Size = New System.Drawing.Size(0, 0)
+        Me.lblTotal.TabIndex = 16
+        Me.lblTotal.TextAlignment = System.Drawing.ContentAlignment.TopLeft
+        Me.lblTotal.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.[Default]
         '
         'Presupuesto
         '
@@ -369,7 +405,7 @@ Partial Class Presupuesto
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1123, 635)
         Me.Controls.Add(Me.cboMediosP)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtCliente)
         Me.Controls.Add(Me.BunifuDatePicker1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -402,7 +438,7 @@ Partial Class Presupuesto
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents BunifuDatePicker1 As Bunifu.UI.WinForms.BunifuDatePicker
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtCliente As TextBox
     Friend WithEvents cboMediosP As ComboBox
     Friend WithEvents BunifuLabel9 As Bunifu.UI.WinForms.BunifuLabel
     Friend WithEvents lblDescuento As Bunifu.UI.WinForms.BunifuLabel
@@ -414,4 +450,6 @@ Partial Class Presupuesto
     Friend WithEvents rate As DataGridViewTextBoxColumn
     Friend WithEvents quantity As DataGridViewTextBoxColumn
     Friend WithEvents price As DataGridViewTextBoxColumn
+    Friend WithEvents lblSubtotal As Bunifu.UI.WinForms.BunifuLabel
+    Friend WithEvents lblTotal As Bunifu.UI.WinForms.BunifuLabel
 End Class

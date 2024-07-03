@@ -53,6 +53,17 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=168.197.51.109;Initial Catalog=PIN_GRUPO11;Persist Security Info=True"& _ 
+            ";User ID=PIN_GRUPO11;Password=PIN_GRUPO11123;TrustServerCertificate=True")>  _
+        Public ReadOnly Property PIN_GRUPO11ConnectionString() As String
+            Get
+                Return CType(Me("PIN_GRUPO11ConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

@@ -32,7 +32,7 @@ Partial Class Compras
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.txtBusqueda_Compras = New System.Windows.Forms.TextBox()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.boton_Busqueda = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
@@ -40,7 +40,6 @@ Partial Class Compras
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.BunifuDataGridView2 = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,6 +47,8 @@ Partial Class Compras
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.cboColumna = New System.Windows.Forms.ComboBox()
         CType(Me.boton_Busqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,14 +56,14 @@ Partial Class Compras
         CType(Me.BunifuDataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'txtBusqueda_Compras
+        'txtBusqueda
         '
-        Me.txtBusqueda_Compras.Location = New System.Drawing.Point(212, 17)
-        Me.txtBusqueda_Compras.MinimumSize = New System.Drawing.Size(4, 30)
-        Me.txtBusqueda_Compras.Multiline = True
-        Me.txtBusqueda_Compras.Name = "txtBusqueda_Compras"
-        Me.txtBusqueda_Compras.Size = New System.Drawing.Size(666, 30)
-        Me.txtBusqueda_Compras.TabIndex = 13
+        Me.txtBusqueda.Location = New System.Drawing.Point(212, 17)
+        Me.txtBusqueda.MinimumSize = New System.Drawing.Size(4, 30)
+        Me.txtBusqueda.Multiline = True
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(143, 30)
+        Me.txtBusqueda.TabIndex = 13
         '
         'boton_Busqueda
         '
@@ -262,11 +263,6 @@ Partial Class Compras
         Me.BunifuDataGridView2.TabIndex = 17
         Me.BunifuDataGridView2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue
         '
-        'BunifuElipse2
-        '
-        Me.BunifuElipse2.ElipseRadius = 10
-        Me.BunifuElipse2.TargetControl = Me.BunifuDataGridView2
-        '
         'DataGridViewImageColumn1
         '
         Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
@@ -309,17 +305,31 @@ Partial Class Compras
         Me.Column2.HeaderText = "TOTAL"
         Me.Column2.Name = "Column2"
         '
+        'BunifuElipse2
+        '
+        Me.BunifuElipse2.ElipseRadius = 10
+        Me.BunifuElipse2.TargetControl = Me.BunifuDataGridView2
+        '
+        'cboColumna
+        '
+        Me.cboColumna.FormattingEnabled = True
+        Me.cboColumna.Location = New System.Drawing.Point(361, 17)
+        Me.cboColumna.Name = "cboColumna"
+        Me.cboColumna.Size = New System.Drawing.Size(121, 21)
+        Me.cboColumna.TabIndex = 18
+        '
         'Compras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1090, 665)
+        Me.Controls.Add(Me.cboColumna)
         Me.Controls.Add(Me.BunifuDataGridView2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.BunifuDataGridView1)
         Me.Controls.Add(Me.boton_Busqueda)
-        Me.Controls.Add(Me.txtBusqueda_Compras)
+        Me.Controls.Add(Me.txtBusqueda)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Compras"
@@ -334,7 +344,7 @@ Partial Class Compras
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txtBusqueda_Compras As System.Windows.Forms.TextBox
+    Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents boton_Busqueda As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents BunifuDataGridView1 As Bunifu.UI.WinForms.BunifuDataGridView
@@ -350,4 +360,5 @@ Partial Class Compras
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents cboColumna As ComboBox
 End Class
