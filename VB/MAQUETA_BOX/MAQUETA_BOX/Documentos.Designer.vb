@@ -90,7 +90,7 @@ Partial Class Documentos
         'cboDocumentos
         '
         Me.cboDocumentos.FormattingEnabled = True
-        Me.cboDocumentos.Items.AddRange(New Object() {"Clientes", "Proveedores"})
+        Me.cboDocumentos.Items.AddRange(New Object() {"Cliente", "Proveedor"})
         Me.cboDocumentos.Location = New System.Drawing.Point(271, 45)
         Me.cboDocumentos.Name = "cboDocumentos"
         Me.cboDocumentos.Size = New System.Drawing.Size(121, 21)
