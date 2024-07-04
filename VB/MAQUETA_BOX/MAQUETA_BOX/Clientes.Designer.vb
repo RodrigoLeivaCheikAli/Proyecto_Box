@@ -22,40 +22,40 @@ Partial Class Clientes
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Clientes))
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Clientes))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtMail = New System.Windows.Forms.TextBox()
+        Me.txtDireccion = New System.Windows.Forms.TextBox()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.txtRazonSocial = New System.Windows.Forms.TextBox()
+        Me.txtRubro = New System.Windows.Forms.TextBox()
+        Me.txtCUIL = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnEliminar = New System.Windows.Forms.PictureBox()
+        Me.btnModificar = New System.Windows.Forms.PictureBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.btnCargar = New System.Windows.Forms.PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.txtCodigo = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtCUIL = New System.Windows.Forms.TextBox()
-        Me.txtRubro = New System.Windows.Forms.TextBox()
-        Me.txtRazonSocial = New System.Windows.Forms.TextBox()
-        Me.txtTelefono = New System.Windows.Forms.TextBox()
-        Me.txtDireccion = New System.Windows.Forms.TextBox()
-        Me.txtMail = New System.Windows.Forms.TextBox()
         Me.btnInfo = New System.Windows.Forms.PictureBox()
         Me.btnHistorial = New System.Windows.Forms.PictureBox()
-        Me.btnEliminar = New System.Windows.Forms.PictureBox()
-        Me.btnModificar = New System.Windows.Forms.PictureBox()
-        Me.btnCargar = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnInfo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnInfo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -85,63 +85,177 @@ Partial Class Clientes
         Me.Panel1.Size = New System.Drawing.Size(1100, 252)
         Me.Panel1.TabIndex = 3
         '
+        'txtMail
+        '
+        Me.txtMail.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMail.Location = New System.Drawing.Point(508, 131)
+        Me.txtMail.Name = "txtMail"
+        Me.txtMail.Size = New System.Drawing.Size(181, 33)
+        Me.txtMail.TabIndex = 7
+        '
+        'txtDireccion
+        '
+        Me.txtDireccion.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDireccion.Location = New System.Drawing.Point(146, 131)
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.Size = New System.Drawing.Size(181, 33)
+        Me.txtDireccion.TabIndex = 6
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTelefono.Location = New System.Drawing.Point(802, 77)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(181, 33)
+        Me.txtTelefono.TabIndex = 5
+        '
+        'txtRazonSocial
+        '
+        Me.txtRazonSocial.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRazonSocial.Location = New System.Drawing.Point(508, 77)
+        Me.txtRazonSocial.Name = "txtRazonSocial"
+        Me.txtRazonSocial.Size = New System.Drawing.Size(181, 33)
+        Me.txtRazonSocial.TabIndex = 4
+        '
+        'txtRubro
+        '
+        Me.txtRubro.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRubro.Location = New System.Drawing.Point(146, 77)
+        Me.txtRubro.Name = "txtRubro"
+        Me.txtRubro.Size = New System.Drawing.Size(181, 33)
+        Me.txtRubro.TabIndex = 3
+        '
+        'txtCUIL
+        '
+        Me.txtCUIL.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCUIL.Location = New System.Drawing.Point(802, 24)
+        Me.txtCUIL.Name = "txtCUIL"
+        Me.txtCUIL.Size = New System.Drawing.Size(181, 33)
+        Me.txtCUIL.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(419, 27)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(83, 25)
+        Me.Label2.TabIndex = 48
+        Me.Label2.Text = "Nombre"
+        '
+        'txtCodigo
+        '
+        Me.txtCodigo.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigo.Location = New System.Drawing.Point(146, 22)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(181, 33)
+        Me.txtCodigo.TabIndex = 0
+        '
+        'txtNombre
+        '
+        Me.txtNombre.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.Location = New System.Drawing.Point(508, 24)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(181, 33)
+        Me.txtNombre.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(74, 80)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(64, 25)
+        Me.Label1.TabIndex = 45
+        Me.Label1.Text = "Rubro"
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnELIMINAR
+        Me.btnEliminar.Location = New System.Drawing.Point(652, 178)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(118, 51)
+        Me.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnEliminar.TabIndex = 44
+        Me.btnEliminar.TabStop = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnMODIFICAR
+        Me.btnModificar.Location = New System.Drawing.Point(485, 181)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(118, 48)
+        Me.btnModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnModificar.TabIndex = 43
+        Me.btnModificar.TabStop = False
+        '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.Location = New System.Drawing.Point(43, 134)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(97, 22)
+        Me.Label14.Size = New System.Drawing.Size(93, 25)
         Me.Label14.TabIndex = 5
         Me.Label14.Text = "Dirección"
+        '
+        'btnCargar
+        '
+        Me.btnCargar.Image = CType(resources.GetObject("btnCargar.Image"), System.Drawing.Image)
+        Me.btnCargar.Location = New System.Drawing.Point(314, 181)
+        Me.btnCargar.Name = "btnCargar"
+        Me.btnCargar.Size = New System.Drawing.Size(118, 46)
+        Me.btnCargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnCargar.TabIndex = 42
+        Me.btnCargar.TabStop = False
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.Location = New System.Drawing.Point(455, 136)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(47, 22)
+        Me.Label15.Size = New System.Drawing.Size(50, 25)
         Me.Label15.TabIndex = 4
         Me.Label15.Text = "Mail"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.Location = New System.Drawing.Point(374, 80)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(128, 22)
+        Me.Label12.Size = New System.Drawing.Size(120, 25)
         Me.Label12.TabIndex = 4
         Me.Label12.Text = "Razon Social"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(708, 80)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(88, 22)
+        Me.Label11.Size = New System.Drawing.Size(85, 25)
         Me.Label11.TabIndex = 4
         Me.Label11.Text = "Teléfono"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(65, 25)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(75, 22)
+        Me.Label9.Size = New System.Drawing.Size(73, 25)
         Me.Label9.TabIndex = 4
         Me.Label9.Text = "Codigo"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(741, 27)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(55, 22)
+        Me.Label10.Size = New System.Drawing.Size(52, 25)
         Me.Label10.TabIndex = 4
         Me.Label10.Text = "CUIL"
         '
@@ -206,90 +320,6 @@ Partial Class Clientes
         Me.BunifuDataGridView1.TabStop = False
         Me.BunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(74, 80)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 22)
-        Me.Label1.TabIndex = 45
-        Me.Label1.Text = "Rubro"
-        '
-        'txtNombre
-        '
-        Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(508, 27)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(181, 22)
-        Me.txtNombre.TabIndex = 1
-        '
-        'txtCodigo
-        '
-        Me.txtCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(146, 27)
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(181, 22)
-        Me.txtCodigo.TabIndex = 0
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(419, 27)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 22)
-        Me.Label2.TabIndex = 48
-        Me.Label2.Text = "Nombre"
-        '
-        'txtCUIL
-        '
-        Me.txtCUIL.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCUIL.Location = New System.Drawing.Point(802, 27)
-        Me.txtCUIL.Name = "txtCUIL"
-        Me.txtCUIL.Size = New System.Drawing.Size(181, 22)
-        Me.txtCUIL.TabIndex = 2
-        '
-        'txtRubro
-        '
-        Me.txtRubro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRubro.Location = New System.Drawing.Point(146, 82)
-        Me.txtRubro.Name = "txtRubro"
-        Me.txtRubro.Size = New System.Drawing.Size(181, 22)
-        Me.txtRubro.TabIndex = 3
-        '
-        'txtRazonSocial
-        '
-        Me.txtRazonSocial.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRazonSocial.Location = New System.Drawing.Point(508, 80)
-        Me.txtRazonSocial.Name = "txtRazonSocial"
-        Me.txtRazonSocial.Size = New System.Drawing.Size(181, 22)
-        Me.txtRazonSocial.TabIndex = 4
-        '
-        'txtTelefono
-        '
-        Me.txtTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(802, 80)
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(181, 22)
-        Me.txtTelefono.TabIndex = 5
-        '
-        'txtDireccion
-        '
-        Me.txtDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccion.Location = New System.Drawing.Point(146, 136)
-        Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(181, 22)
-        Me.txtDireccion.TabIndex = 6
-        '
-        'txtMail
-        '
-        Me.txtMail.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMail.Location = New System.Drawing.Point(508, 136)
-        Me.txtMail.Name = "txtMail"
-        Me.txtMail.Size = New System.Drawing.Size(181, 22)
-        Me.txtMail.TabIndex = 7
-        '
         'btnInfo
         '
         Me.btnInfo.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnINFO_BLUE
@@ -310,36 +340,6 @@ Partial Class Clientes
         Me.btnHistorial.TabIndex = 6
         Me.btnHistorial.TabStop = False
         '
-        'btnEliminar
-        '
-        Me.btnEliminar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnELIMINAR
-        Me.btnEliminar.Location = New System.Drawing.Point(652, 178)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(118, 51)
-        Me.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnEliminar.TabIndex = 44
-        Me.btnEliminar.TabStop = False
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnMODIFICAR
-        Me.btnModificar.Location = New System.Drawing.Point(485, 181)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(118, 48)
-        Me.btnModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnModificar.TabIndex = 43
-        Me.btnModificar.TabStop = False
-        '
-        'btnCargar
-        '
-        Me.btnCargar.Image = CType(resources.GetObject("btnCargar.Image"), System.Drawing.Image)
-        Me.btnCargar.Location = New System.Drawing.Point(314, 181)
-        Me.btnCargar.Name = "btnCargar"
-        Me.btnCargar.Size = New System.Drawing.Size(118, 46)
-        Me.btnCargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnCargar.TabIndex = 42
-        Me.btnCargar.TabStop = False
-        '
         'Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -350,18 +350,19 @@ Partial Class Clientes
         Me.Controls.Add(Me.btnInfo)
         Me.Controls.Add(Me.btnHistorial)
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Location = New System.Drawing.Point(103, 157)
         Me.Name = "Clientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clientes"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnInfo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnHistorial, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnInfo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnHistorial, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

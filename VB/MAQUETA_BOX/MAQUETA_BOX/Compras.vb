@@ -66,24 +66,6 @@ Public Class Compras
 
 #Region "Barra Busqueda"
 
-    Private Sub txtBusqueda_Compras_TextChanged(sender As System.Object, e As System.EventArgs)
-
-        If dt IsNot Nothing AndAlso cboColumna.SelectedIndex >= 0 Then
-            Dim selectedColumn As String = cboColumna.SelectedItem.ToString()
-            Dim columnType As Type = dt.Columns(selectedColumn).DataType
-
-            Dim filter As String
-            If columnType Is GetType(String) Then
-                filter = String.Format("[{0}] LIKE '%{1}%'", selectedColumn, txtBusqueda.Text)
-            Else
-                filter = String.Format("CONVERT([{0}], 'System.String') LIKE '%{1}%'", selectedColumn, txtBusqueda.Text)
-            End If
-
-            Dim dv As DataView = dt.DefaultView
-            dv.RowFilter = filter
-            BunifuDataGridView1.DataSource = dv
-        End If
-    End Sub
 
 
 
@@ -168,8 +150,23 @@ Public Class Compras
         End If
     End Sub
 
-    Private Sub boton_Busqueda_Click(sender As Object, e As EventArgs) Handles boton_Busqueda.Click
 
+    Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
+        If dt IsNot Nothing AndAlso cboColumna.SelectedIndex >= 0 Then
+            Dim selectedColumn As String = cboColumna.SelectedItem.ToString()
+            Dim columnType As Type = dt.Columns(selectedColumn).DataType
+
+            Dim filter As String
+            If columnType Is GetType(String) Then
+                filter = String.Format("[{0}] LIKE '%{1}%'", selectedColumn, txtBusqueda.Text)
+            Else
+                filter = String.Format("CONVERT([{0}], 'System.String') LIKE '%{1}%'", selectedColumn, txtBusqueda.Text)
+            End If
+
+            Dim dv As DataView = dt.DefaultView
+            dv.RowFilter = filter
+            BunifuDataGridView1.DataSource = dv
+        End If
     End Sub
 
 
