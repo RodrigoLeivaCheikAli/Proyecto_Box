@@ -108,6 +108,10 @@ Public Class Inicio
 
     End Sub
 
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
+
 
 
 

@@ -30,6 +30,7 @@ Public Class Ventas
         End If
         oDs = Nothing
         conexion.Close()
+        AdjustColumnWidths()
     End Sub
 
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -103,7 +104,31 @@ Public Class Ventas
     End Sub
 
 
+    Private Sub AdjustColumnWidths()
+        ' Ajustar el tamaño de las columnas de acuerdo a su contenido
+        'For Each column As DataGridViewColumn In DataGridView1.Columns
+        '    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        'Next
 
+        '' Agregar un margen adicional al ancho de cada columna
+        'Dim extraWidth As Integer = 40 ' Ajustar este valor según sea necesario
+        'For Each column As DataGridViewColumn In DataGridView1.Columns
+        '    column.Width += extraWidth
+        'Next
+        'For Each column As DataGridViewColumn In DataGridView1.Columns
+        '    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        'Next
+
+        ' Ajustar el tamaño de una columna específica por nombre
+        If DataGridView1.Columns.Contains("Descripcion") Then
+            DataGridView1.Columns("Descripcion").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        End If
+
+        ' Ajustar el tamaño de una columna específica por índice
+        If DataGridView1.Columns.Count > 0 Then
+            DataGridView1.Columns(4).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        End If
+    End Sub
 
     Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Panel1.Controls.Clear()
@@ -111,6 +136,7 @@ Public Class Ventas
         newForm.CopiarDatos(DataGridView2)
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
         newForm.Show() ' Muestra el formulario
     End Sub
 

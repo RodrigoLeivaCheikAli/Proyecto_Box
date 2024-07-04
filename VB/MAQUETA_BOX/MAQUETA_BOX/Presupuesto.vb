@@ -20,10 +20,7 @@ Public Class Presupuesto
         DataGridView3.Rows.Clear()
 
 
-        ' Copiar las columnas, omitiendo la primera columna
-        For i As Integer = 1 To dgvOrigen.Columns.Count - 1
-            DataGridView3.Columns.Add(CType(dgvOrigen.Columns(i).Clone(), DataGridViewColumn))
-        Next
+
 
         ' Copiar las filas
         For Each row As DataGridViewRow In dgvOrigen.Rows
@@ -44,7 +41,7 @@ Public Class Presupuesto
 
 
     End Sub
-    Private Sub DataGridView3_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellEndEdit
+    Private Sub DataGridView3_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs)
         Dim columnName As String = DataGridView3.Columns(e.ColumnIndex).Name
 
         If columnName = "quantity" Or columnName = "rate" Then
@@ -95,7 +92,8 @@ Public Class Presupuesto
             If cboMediosP.SelectedIndex = 0 Then
                 lblTotal.Text = total - (total / 10%)
             ElseIf cboMediosP.SelectedIndex = 1 Then
-                lblTotal.Text = total - (total / 10%)
+
+                lblTotal.Text = total - ((total * 5) / 100)
             Else
                 lblTotal.Text = total
             End If
@@ -157,7 +155,18 @@ Public Class Presupuesto
 
 
 
-    Private Sub cboMediosP_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboMediosP.SelectedIndexChanged
+
+
+    Private Sub cboMediosP_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cboMediosP.SelectedIndexChanged
         Descuento()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Panel1.Controls.Clear()
+        Dim newForm As New Ventas() ' Crea una nueva instancia del formulario que deseas agregar
+        newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
+        Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        newForm.Show() ' Muestra el formulario
     End Sub
 End Class

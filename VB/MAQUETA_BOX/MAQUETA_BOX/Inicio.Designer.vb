@@ -25,6 +25,7 @@ Partial Class Inicio
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnSalir = New System.Windows.Forms.PictureBox()
         Me.lbl_Estadisticas = New System.Windows.Forms.Label()
         Me.pb_Estadisticas = New System.Windows.Forms.PictureBox()
         Me.lbl_Documentos = New System.Windows.Forms.Label()
@@ -43,10 +44,10 @@ Partial Class Inicio
         Me.lbl_Tire_Task = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnSalir = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.GroupBox1.SuspendLayout()
+        CType(Me.btnSalir, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_Estadisticas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_Documentos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_Compras, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,7 +57,6 @@ Partial Class Inicio
         CType(Me.pb_Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.btnSalir, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -64,6 +64,7 @@ Partial Class Inicio
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.GroupBox1.Controls.Add(Me.btnSalir)
         Me.GroupBox1.Controls.Add(Me.lbl_Estadisticas)
         Me.GroupBox1.Controls.Add(Me.pb_Estadisticas)
         Me.GroupBox1.Controls.Add(Me.lbl_Documentos)
@@ -85,16 +86,27 @@ Partial Class Inicio
         Me.GroupBox1.ForeColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(382, 667)
+        Me.GroupBox1.Size = New System.Drawing.Size(382, 983)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
+        Me.btnSalir.Location = New System.Drawing.Point(141, 850)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(138, 123)
+        Me.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnSalir.TabIndex = 7
+        Me.btnSalir.TabStop = False
         '
         'lbl_Estadisticas
         '
         Me.lbl_Estadisticas.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Estadisticas.AutoSize = True
         Me.lbl_Estadisticas.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Estadisticas.Location = New System.Drawing.Point(140, 593)
+        Me.lbl_Estadisticas.Location = New System.Drawing.Point(140, 751)
         Me.lbl_Estadisticas.Name = "lbl_Estadisticas"
         Me.lbl_Estadisticas.Size = New System.Drawing.Size(200, 37)
         Me.lbl_Estadisticas.TabIndex = 25
@@ -104,7 +116,7 @@ Partial Class Inicio
         '
         Me.pb_Estadisticas.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.pb_Estadisticas.Image = CType(resources.GetObject("pb_Estadisticas.Image"), System.Drawing.Image)
-        Me.pb_Estadisticas.Location = New System.Drawing.Point(6, 577)
+        Me.pb_Estadisticas.Location = New System.Drawing.Point(6, 735)
         Me.pb_Estadisticas.Name = "pb_Estadisticas"
         Me.pb_Estadisticas.Size = New System.Drawing.Size(130, 69)
         Me.pb_Estadisticas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -116,7 +128,7 @@ Partial Class Inicio
         Me.lbl_Documentos.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Documentos.AutoSize = True
         Me.lbl_Documentos.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Documentos.Location = New System.Drawing.Point(142, 505)
+        Me.lbl_Documentos.Location = New System.Drawing.Point(142, 663)
         Me.lbl_Documentos.Name = "lbl_Documentos"
         Me.lbl_Documentos.Size = New System.Drawing.Size(207, 37)
         Me.lbl_Documentos.TabIndex = 23
@@ -126,7 +138,7 @@ Partial Class Inicio
         '
         Me.pb_Documentos.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.pb_Documentos.Image = CType(resources.GetObject("pb_Documentos.Image"), System.Drawing.Image)
-        Me.pb_Documentos.Location = New System.Drawing.Point(6, 494)
+        Me.pb_Documentos.Location = New System.Drawing.Point(6, 652)
         Me.pb_Documentos.Name = "pb_Documentos"
         Me.pb_Documentos.Size = New System.Drawing.Size(130, 69)
         Me.pb_Documentos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -137,7 +149,7 @@ Partial Class Inicio
         '
         Me.pb_Compras.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.pb_Compras.Image = CType(resources.GetObject("pb_Compras.Image"), System.Drawing.Image)
-        Me.pb_Compras.Location = New System.Drawing.Point(6, 421)
+        Me.pb_Compras.Location = New System.Drawing.Point(6, 579)
         Me.pb_Compras.Name = "pb_Compras"
         Me.pb_Compras.Size = New System.Drawing.Size(130, 69)
         Me.pb_Compras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -149,7 +161,7 @@ Partial Class Inicio
         Me.lbl_Compras.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Compras.AutoSize = True
         Me.lbl_Compras.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Compras.Location = New System.Drawing.Point(140, 435)
+        Me.lbl_Compras.Location = New System.Drawing.Point(140, 593)
         Me.lbl_Compras.Name = "lbl_Compras"
         Me.lbl_Compras.Size = New System.Drawing.Size(155, 37)
         Me.lbl_Compras.TabIndex = 21
@@ -160,7 +172,7 @@ Partial Class Inicio
         Me.lbl_Proveedores.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Proveedores.AutoSize = True
         Me.lbl_Proveedores.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Proveedores.Location = New System.Drawing.Point(140, 288)
+        Me.lbl_Proveedores.Location = New System.Drawing.Point(140, 446)
         Me.lbl_Proveedores.Name = "lbl_Proveedores"
         Me.lbl_Proveedores.Size = New System.Drawing.Size(207, 37)
         Me.lbl_Proveedores.TabIndex = 19
@@ -170,7 +182,7 @@ Partial Class Inicio
         '
         Me.pb_Proveedores.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.pb_Proveedores.Image = CType(resources.GetObject("pb_Proveedores.Image"), System.Drawing.Image)
-        Me.pb_Proveedores.Location = New System.Drawing.Point(6, 274)
+        Me.pb_Proveedores.Location = New System.Drawing.Point(6, 432)
         Me.pb_Proveedores.Name = "pb_Proveedores"
         Me.pb_Proveedores.Size = New System.Drawing.Size(130, 69)
         Me.pb_Proveedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -181,7 +193,7 @@ Partial Class Inicio
         '
         Me.pb_Ventas.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.pb_Ventas.Image = CType(resources.GetObject("pb_Ventas.Image"), System.Drawing.Image)
-        Me.pb_Ventas.Location = New System.Drawing.Point(6, 349)
+        Me.pb_Ventas.Location = New System.Drawing.Point(6, 507)
         Me.pb_Ventas.Name = "pb_Ventas"
         Me.pb_Ventas.Size = New System.Drawing.Size(130, 69)
         Me.pb_Ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -193,7 +205,7 @@ Partial Class Inicio
         Me.lbl_Ventas.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Ventas.AutoSize = True
         Me.lbl_Ventas.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Ventas.Location = New System.Drawing.Point(140, 367)
+        Me.lbl_Ventas.Location = New System.Drawing.Point(140, 525)
         Me.lbl_Ventas.Name = "lbl_Ventas"
         Me.lbl_Ventas.Size = New System.Drawing.Size(123, 37)
         Me.lbl_Ventas.TabIndex = 17
@@ -203,7 +215,7 @@ Partial Class Inicio
         '
         Me.pb_Productos.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.pb_Productos.Image = CType(resources.GetObject("pb_Productos.Image"), System.Drawing.Image)
-        Me.pb_Productos.Location = New System.Drawing.Point(6, 199)
+        Me.pb_Productos.Location = New System.Drawing.Point(6, 357)
         Me.pb_Productos.Name = "pb_Productos"
         Me.pb_Productos.Size = New System.Drawing.Size(130, 69)
         Me.pb_Productos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -215,7 +227,7 @@ Partial Class Inicio
         Me.lbl_Productos.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Productos.AutoSize = True
         Me.lbl_Productos.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Productos.Location = New System.Drawing.Point(140, 209)
+        Me.lbl_Productos.Location = New System.Drawing.Point(140, 367)
         Me.lbl_Productos.Name = "lbl_Productos"
         Me.lbl_Productos.Size = New System.Drawing.Size(171, 37)
         Me.lbl_Productos.TabIndex = 14
@@ -226,7 +238,7 @@ Partial Class Inicio
         Me.lbl_Mantenimientos.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Mantenimientos.AutoSize = True
         Me.lbl_Mantenimientos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Mantenimientos.Location = New System.Drawing.Point(103, 209)
+        Me.lbl_Mantenimientos.Location = New System.Drawing.Point(103, 367)
         Me.lbl_Mantenimientos.Name = "lbl_Mantenimientos"
         Me.lbl_Mantenimientos.Size = New System.Drawing.Size(0, 24)
         Me.lbl_Mantenimientos.TabIndex = 15
@@ -235,7 +247,7 @@ Partial Class Inicio
         '
         Me.pb_Clientes.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.pb_Clientes.Image = CType(resources.GetObject("pb_Clientes.Image"), System.Drawing.Image)
-        Me.pb_Clientes.Location = New System.Drawing.Point(6, 124)
+        Me.pb_Clientes.Location = New System.Drawing.Point(6, 282)
         Me.pb_Clientes.Name = "pb_Clientes"
         Me.pb_Clientes.Size = New System.Drawing.Size(130, 69)
         Me.pb_Clientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -247,7 +259,7 @@ Partial Class Inicio
         Me.lbl_Clientes.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Clientes.AutoSize = True
         Me.lbl_Clientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Clientes.Location = New System.Drawing.Point(140, 151)
+        Me.lbl_Clientes.Location = New System.Drawing.Point(140, 309)
         Me.lbl_Clientes.Name = "lbl_Clientes"
         Me.lbl_Clientes.Size = New System.Drawing.Size(139, 37)
         Me.lbl_Clientes.TabIndex = 12
@@ -275,24 +287,12 @@ Partial Class Inicio
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.btnSalir)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(382, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(984, 667)
+        Me.Panel1.Size = New System.Drawing.Size(984, 983)
         Me.Panel1.TabIndex = 1
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(555, -24)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(138, 123)
-        Me.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnSalir.TabIndex = 7
-        Me.btnSalir.TabStop = False
         '
         'PictureBox1
         '
@@ -300,7 +300,7 @@ Partial Class Inicio
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(984, 667)
+        Me.PictureBox1.Size = New System.Drawing.Size(984, 983)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
@@ -315,7 +315,7 @@ Partial Class Inicio
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1366, 667)
+        Me.ClientSize = New System.Drawing.Size(1366, 983)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -324,6 +324,7 @@ Partial Class Inicio
         Me.Text = "Incio"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.btnSalir, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_Estadisticas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_Documentos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_Compras, System.ComponentModel.ISupportInitialize).EndInit()
@@ -333,7 +334,6 @@ Partial Class Inicio
         CType(Me.pb_Clientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.btnSalir, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
