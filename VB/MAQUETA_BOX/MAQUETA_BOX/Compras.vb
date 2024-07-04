@@ -168,6 +168,10 @@ Public Class Compras
         End If
     End Sub
 
+    Private Sub boton_Busqueda_Click(sender As Object, e As EventArgs) Handles boton_Busqueda.Click
+
+    End Sub
+
 
 
 
