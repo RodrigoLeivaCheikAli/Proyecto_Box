@@ -1,13 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\",
+  "WorkspaceRootPath": "C:\\Users\\valle\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\gaite\\documents\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\documentos.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\valle\\onedrive\\documentos\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\documentos.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\documentos.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\documentos.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\valle\\onedrive\\documentos\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\productos.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\productos.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\valle\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\documentos.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\documentos.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
@@ -18,29 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Productos.vb",
+              "DocumentMoniker": "C:\\Users\\valle\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Productos.vb",
+              "RelativeDocumentMoniker": "MAQUETA_BOX\\Productos.vb",
+              "ToolTip": "C:\\Users\\valle\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Productos.vb",
+              "RelativeToolTip": "MAQUETA_BOX\\Productos.vb",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAowKYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-04T15:09:10.196Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Documentos.vb",
-              "DocumentMoniker": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Documentos.vb",
+              "DocumentMoniker": "C:\\Users\\valle\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Documentos.vb",
               "RelativeDocumentMoniker": "MAQUETA_BOX\\Documentos.vb",
-              "ToolTip": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Documentos.vb",
+              "ToolTip": "C:\\Users\\valle\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Documentos.vb",
               "RelativeToolTip": "MAQUETA_BOX\\Documentos.vb",
-              "ViewState": "AQIAADwBAAAAAAAAAAAcwEQBAAAAAAAA",
+              "ViewState": "AQIAAP4AAAAAAAAAAAAcwEQBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-07-04T07:49:22.184Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Documentos.vb [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Documentos.vb",
+              "DocumentMoniker": "C:\\Users\\valle\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Documentos.vb",
               "RelativeDocumentMoniker": "MAQUETA_BOX\\Documentos.vb",
               "ToolTip": "C:\\Users\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Documentos.vb [Dise\u00F1o]",
-              "RelativeToolTip": "MAQUETA_BOX\\Documentos.vb [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\gaite\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Documentos.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-07-04T07:48:39.727Z"
             }
