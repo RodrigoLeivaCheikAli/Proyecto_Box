@@ -23,9 +23,9 @@ Partial Class Documentos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.cboDocumentos = New System.Windows.Forms.ComboBox()
         Me.cboProductos = New System.Windows.Forms.ComboBox()
@@ -39,59 +39,63 @@ Partial Class Documentos
         Me.Consultar_documentos_OrComprasTableAdapter = New MAQUETA_BOX.PIN_GRUPO11DataSetTableAdapters.consultar_documentos_OrComprasTableAdapter()
         Me.ConsultardocumentosOrVentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Consultar_documentos_OrVentasTableAdapter = New MAQUETA_BOX.PIN_GRUPO11DataSetTableAdapters.consultar_documentos_OrVentasTableAdapter()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PIN_GRUPO11DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PINGRUPO11DataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultardocumentosOrComprasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultardocumentosOrVentasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
+        Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView1.ColumnHeadersHeight = 27
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.SteelBlue
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 72)
+        Me.DataGridView1.Location = New System.Drawing.Point(213, 135)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(716, 334)
         Me.DataGridView1.TabIndex = 5
         '
         'cboDocumentos
         '
+        Me.cboDocumentos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cboDocumentos.FormattingEnabled = True
         Me.cboDocumentos.Items.AddRange(New Object() {"Cliente", "Proveedor"})
-        Me.cboDocumentos.Location = New System.Drawing.Point(271, 45)
+        Me.cboDocumentos.Location = New System.Drawing.Point(366, 59)
         Me.cboDocumentos.Name = "cboDocumentos"
         Me.cboDocumentos.Size = New System.Drawing.Size(121, 21)
         Me.cboDocumentos.TabIndex = 6
@@ -99,8 +103,9 @@ Partial Class Documentos
         '
         'cboProductos
         '
+        Me.cboProductos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cboProductos.FormattingEnabled = True
-        Me.cboProductos.Location = New System.Drawing.Point(17, 45)
+        Me.cboProductos.Location = New System.Drawing.Point(104, 59)
         Me.cboProductos.Name = "cboProductos"
         Me.cboProductos.Size = New System.Drawing.Size(121, 21)
         Me.cboProductos.TabIndex = 7
@@ -108,8 +113,9 @@ Partial Class Documentos
         '
         'cboClientes
         '
+        Me.cboClientes.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cboClientes.FormattingEnabled = True
-        Me.cboClientes.Location = New System.Drawing.Point(398, 45)
+        Me.cboClientes.Location = New System.Drawing.Point(513, 59)
         Me.cboClientes.Name = "cboClientes"
         Me.cboClientes.Size = New System.Drawing.Size(121, 21)
         Me.cboClientes.TabIndex = 8
@@ -117,8 +123,9 @@ Partial Class Documentos
         '
         'cboProveedores
         '
+        Me.cboProveedores.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cboProveedores.FormattingEnabled = True
-        Me.cboProveedores.Location = New System.Drawing.Point(144, 45)
+        Me.cboProveedores.Location = New System.Drawing.Point(231, 59)
         Me.cboProveedores.Name = "cboProveedores"
         Me.cboProveedores.Size = New System.Drawing.Size(121, 21)
         Me.cboProveedores.TabIndex = 9
@@ -126,14 +133,16 @@ Partial Class Documentos
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(525, 46)
+        Me.DateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.DateTimePicker1.Location = New System.Drawing.Point(661, 60)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 11
         '
         'btnExportar
         '
-        Me.btnExportar.Location = New System.Drawing.Point(731, 45)
+        Me.btnExportar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnExportar.Location = New System.Drawing.Point(867, 59)
         Me.btnExportar.Name = "btnExportar"
         Me.btnExportar.Size = New System.Drawing.Size(147, 23)
         Me.btnExportar.TabIndex = 12
@@ -168,19 +177,29 @@ Partial Class Documentos
         '
         Me.Consultar_documentos_OrVentasTableAdapter.ClearBeforeFill = True
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.btnExportar)
+        Me.Panel1.Controls.Add(Me.cboDocumentos)
+        Me.Panel1.Controls.Add(Me.cboClientes)
+        Me.Panel1.Controls.Add(Me.DataGridView1)
+        Me.Panel1.Controls.Add(Me.DateTimePicker1)
+        Me.Panel1.Controls.Add(Me.cboProveedores)
+        Me.Panel1.Controls.Add(Me.cboProductos)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1105, 674)
+        Me.Panel1.TabIndex = 13
+        '
         'Documentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1105, 674)
-        Me.Controls.Add(Me.btnExportar)
-        Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.cboProveedores)
-        Me.Controls.Add(Me.cboClientes)
-        Me.Controls.Add(Me.cboProductos)
-        Me.Controls.Add(Me.cboDocumentos)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Documentos"
         Me.Text = "Documentos"
@@ -189,6 +208,7 @@ Partial Class Documentos
         CType(Me.PINGRUPO11DataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultardocumentosOrComprasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultardocumentosOrVentasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -205,4 +225,5 @@ Partial Class Documentos
     Friend WithEvents Consultar_documentos_OrComprasTableAdapter As PIN_GRUPO11DataSetTableAdapters.consultar_documentos_OrComprasTableAdapter
     Friend WithEvents ConsultardocumentosOrVentasBindingSource As BindingSource
     Friend WithEvents Consultar_documentos_OrVentasTableAdapter As PIN_GRUPO11DataSetTableAdapters.consultar_documentos_OrVentasTableAdapter
+    Friend WithEvents Panel1 As Panel
 End Class
