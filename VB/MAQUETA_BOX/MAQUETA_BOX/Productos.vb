@@ -10,6 +10,15 @@ Public Class Productos
         cargar_cbo_proveedores()
         cargar_cbo_vehiculos()
         cargar_cbo_marcas()
+
+        'Prueba 
+        Dim columnaPrecio As DataGridViewColumn = BunifuDataGridView1.Columns(7)
+        Dim columnaPrecio2 As DataGridViewColumn = BunifuDataGridView1.Columns(9)
+        columnaPrecio.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        columnaPrecio.DefaultCellStyle.Format = "C2"
+        columnaPrecio2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        columnaPrecio2.DefaultCellStyle.Format = "C2"
+
     End Sub
 #End Region
 #Region "Limpiar"

@@ -189,7 +189,7 @@ Partial Class Compras
         Me.BunifuDataGridView2.RowHeadersVisible = False
         Me.BunifuDataGridView2.RowTemplate.Height = 40
         Me.BunifuDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.BunifuDataGridView2.Size = New System.Drawing.Size(979, 257)
+        Me.BunifuDataGridView2.Size = New System.Drawing.Size(979, 300)
         Me.BunifuDataGridView2.TabIndex = 24
         Me.BunifuDataGridView2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue
         '
@@ -237,8 +237,9 @@ Partial Class Compras
         '
         'PictureBox2
         '
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(491, 636)
+        Me.PictureBox2.Location = New System.Drawing.Point(473, 592)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(131, 70)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -318,7 +319,7 @@ Partial Class Compras
         Me.BunifuDataGridView1.RowHeadersVisible = False
         Me.BunifuDataGridView1.RowTemplate.Height = 40
         Me.BunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.BunifuDataGridView1.Size = New System.Drawing.Size(979, 257)
+        Me.BunifuDataGridView1.Size = New System.Drawing.Size(979, 300)
         Me.BunifuDataGridView1.TabIndex = 22
         Me.BunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue
         '
