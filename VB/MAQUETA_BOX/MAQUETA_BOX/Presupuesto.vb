@@ -7,6 +7,7 @@ Public Class Presupuesto
     Private Sub Presupuesto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Presupuesto = Presupuesto + 1
         Cargar_Combo_MediosP()
+        CargarCBOClientes()
         For Each row As DataGridViewRow In DataGridView3.Rows
             If Not row.IsNewRow Then
                 CalcularPrecio(row.Index)
@@ -84,7 +85,7 @@ Public Class Presupuesto
     End Function
     Private Sub ActualizarTotal()
         Dim total As Double = SumarColumnaPrice()
-        lblSubtotal.Text = "$ " & total.ToString()
+        lblSubtotal.Text = total.ToString()
         lblTotal.Text = total
         Dim valor As String
         If cboMediosP.SelectedIndex().ToString IsNot Nothing Then
@@ -103,7 +104,32 @@ Public Class Presupuesto
 
     End Sub
 
+    Private Sub CargarCBOClientes()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
 
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+
+
+        conexion.Open()
+        comando.Connection = conexion
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = ("Cargar_cboClientes_Presupuesto")
+
+        Dim datadapter As New SqlDataAdapter(comando)
+        Dim oDs As New DataSet
+        datadapter.Fill(oDs)
+
+        If oDs.Tables(0).Rows.Count > 0 Then
+            cboCliente.DataSource = oDs.Tables(0)
+            cboCliente.DisplayMember = oDs.Tables(0).Columns(1).ToString
+            cboCliente.ValueMember = oDs.Tables(0).Columns(0).ToString
+
+        End If
+        oDs = Nothing
+        conexion.Close()
+    End Sub
 
     Private Sub Cargar_Combo_MediosP()
         Dim conexion As SqlConnection
@@ -170,39 +196,65 @@ Public Class Presupuesto
         newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
         newForm.Show() ' Muestra el formulario
     End Sub
+    Private Sub CargarDetallesV()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
+
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+        conexion.Open()
+        comando.Connection = conexion
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = ("Cargar_DetallesV")
+
+        ' Suponiendo que tienes un DataGridView llamado dgvDetalles
+        ' y que estás obteniendo los valores de la primera fila como ejemplo
+
+        Dim idOferta As Integer = Convert.ToInt32(DataGridView3.Rows(0).Cells("colOferta").Value)
+        Dim cantidad As Integer = Convert.ToInt32(DataGridView3.Rows(0).Cells("quantity").Value)
+
+        With comando.Parameters
+            .AddWithValue("@ID_Presupuesto", Presupuesto)
+            .AddWithValue("@ID_Oferta", idOferta)
+            .AddWithValue("@Cantidad", cantidad)
+        End With
+
+        comando.ExecuteScalar()
+        conexion.Close()
+        MsgBox("Se realizó la operación correctamente", vbInformation, "Joyería Mónaco")
+    End Sub
+
+    Private Sub CargarPresupuesto()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
+        Dim total As Double = lblTotal.Text
+        Dim subtotal As Double = lblSubtotal.Text
+        Dim nota As String = "a"
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+
+
+        conexion.Open()
+        comando.Connection = conexion
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = ("Cargar_Presupuesto")
+        With comando.Parameters
+            .AddWithValue("@ID_Cliente", cboCliente.SelectedValue)
+            .AddWithValue("@Fecha", BunifuDatePicker1.Value)
+            .AddWithValue("@Subtotal", subtotal)
+            .AddWithValue("@ID_MediosP", cboMediosP.SelectedValue)
+            .AddWithValue("@Total", total)
+            .AddWithValue("@notas", nota)
+        End With
+        comando.ExecuteScalar()
+        conexion.Close()
+        MsgBox("Se realizo la Venta correctamente ", vbInformation, "Joyeria Monaco")
+    End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
 
-        Dim conexion As SqlConnection
-            Dim comando As New SqlCommand
-
-            conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
-
-
-
-            conexion.Open()
-            comando.Connection = conexion
-            comando.CommandType = CommandType.StoredProcedure
-            comando.CommandText = ("Cargar_DetallesV")
-
-            With comando.Parameters
-                .AddWithValue("@ID_Presupuesto", Presupuesto)
-                .AddWithValue("@ID_Oferta", colOferta)
-                .AddWithValue("@Cantidad", quantity)
-
-            End With
-            comando.ExecuteScalar()
-
-            comando.CommandText = ("Cargar_Presupuesto")
-            With comando.Parameters
-                .AddWithValue("@ID_Presupuesto", Presupuesto)
-                .AddWithValue("@ID_Oferta", colOferta)
-                .AddWithValue("@Cantidad", quantity)
-
-            End With
-            conexion.Close()
-            MsgBox("La joya se ha insertado correctamente ", vbInformation, "Joyeria Monaco")
-
+        CargarDetallesV()
+        CargarPresupuesto()
 
     End Sub
 End Class

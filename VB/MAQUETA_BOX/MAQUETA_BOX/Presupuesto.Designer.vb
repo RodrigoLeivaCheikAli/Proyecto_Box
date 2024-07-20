@@ -27,6 +27,7 @@ Partial Class Presupuesto
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cboCliente = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.cboMediosP = New System.Windows.Forms.ComboBox()
         Me.BunifuDatePicker1 = New Bunifu.UI.WinForms.BunifuDatePicker()
@@ -52,7 +53,6 @@ Partial Class Presupuesto
         Me.rate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.price = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cboCliente = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,6 +78,15 @@ Partial Class Presupuesto
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1123, 635)
         Me.Panel1.TabIndex = 0
+        '
+        'cboCliente
+        '
+        Me.cboCliente.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboCliente.FormattingEnabled = True
+        Me.cboCliente.Location = New System.Drawing.Point(178, -12)
+        Me.cboCliente.Name = "cboCliente"
+        Me.cboCliente.Size = New System.Drawing.Size(160, 21)
+        Me.cboCliente.TabIndex = 38
         '
         'Label16
         '
@@ -432,15 +441,6 @@ Partial Class Presupuesto
         '
         Me.price.HeaderText = "Total"
         Me.price.Name = "price"
-        '
-        'cboCliente
-        '
-        Me.cboCliente.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.cboCliente.FormattingEnabled = True
-        Me.cboCliente.Location = New System.Drawing.Point(178, -12)
-        Me.cboCliente.Name = "cboCliente"
-        Me.cboCliente.Size = New System.Drawing.Size(160, 21)
-        Me.cboCliente.TabIndex = 38
         '
         'Presupuesto
         '
