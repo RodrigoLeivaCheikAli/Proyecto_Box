@@ -23,12 +23,12 @@ Partial Class Presupuesto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Presupuesto))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.cboMediosP = New System.Windows.Forms.ComboBox()
-        Me.txtCliente = New System.Windows.Forms.TextBox()
         Me.BunifuDatePicker1 = New Bunifu.UI.WinForms.BunifuDatePicker()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -45,14 +45,14 @@ Partial Class Presupuesto
         Me.BunifuLabel3 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.BunifuLabel1 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colOferta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.price = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label16 = New System.Windows.Forms.Label()
+        Me.cboCliente = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,9 +62,9 @@ Partial Class Presupuesto
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.cboCliente)
         Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.cboMediosP)
-        Me.Panel1.Controls.Add(Me.txtCliente)
         Me.Panel1.Controls.Add(Me.BunifuDatePicker1)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
@@ -79,6 +79,17 @@ Partial Class Presupuesto
         Me.Panel1.Size = New System.Drawing.Size(1123, 635)
         Me.Panel1.TabIndex = 0
         '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(0, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(155, 39)
+        Me.Label16.TabIndex = 37
+        Me.Label16.Text = "VENTAS"
+        '
         'cboMediosP
         '
         Me.cboMediosP.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -87,14 +98,6 @@ Partial Class Presupuesto
         Me.cboMediosP.Name = "cboMediosP"
         Me.cboMediosP.Size = New System.Drawing.Size(121, 21)
         Me.cboMediosP.TabIndex = 29
-        '
-        'txtCliente
-        '
-        Me.txtCliente.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtCliente.Location = New System.Drawing.Point(178, -12)
-        Me.txtCliente.Name = "txtCliente"
-        Me.txtCliente.Size = New System.Drawing.Size(160, 20)
-        Me.txtCliente.TabIndex = 28
         '
         'BunifuDatePicker1
         '
@@ -353,47 +356,47 @@ Partial Class Presupuesto
         Me.DataGridView3.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView3.ColumnHeadersHeight = 27
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.rate, Me.quantity, Me.price})
+        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colOferta, Me.Column2, Me.Column3, Me.Column4, Me.rate, Me.quantity, Me.price})
         Me.DataGridView3.EnableHeadersVisualStyles = False
         Me.DataGridView3.GridColor = System.Drawing.Color.SteelBlue
         Me.DataGridView3.Location = New System.Drawing.Point(125, 98)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView3.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView3.RowHeadersVisible = False
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
-        Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.DataGridView3.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView3.Size = New System.Drawing.Size(893, 292)
         Me.DataGridView3.TabIndex = 20
         '
-        'Column1
+        'colOferta
         '
-        Me.Column1.HeaderText = "Nº"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 50
+        Me.colOferta.HeaderText = "Nº"
+        Me.colOferta.Name = "colOferta"
+        Me.colOferta.Width = 50
         '
         'Column2
         '
@@ -430,16 +433,14 @@ Partial Class Presupuesto
         Me.price.HeaderText = "Total"
         Me.price.Name = "price"
         '
-        'Label16
+        'cboCliente
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(0, 0)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(155, 39)
-        Me.Label16.TabIndex = 37
-        Me.Label16.Text = "VENTAS"
+        Me.cboCliente.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboCliente.FormattingEnabled = True
+        Me.cboCliente.Location = New System.Drawing.Point(178, -12)
+        Me.cboCliente.Name = "cboCliente"
+        Me.cboCliente.Size = New System.Drawing.Size(160, 21)
+        Me.cboCliente.TabIndex = 38
         '
         'Presupuesto
         '
@@ -464,7 +465,6 @@ Partial Class Presupuesto
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents cboMediosP As ComboBox
-    Friend WithEvents txtCliente As TextBox
     Friend WithEvents BunifuDatePicker1 As Bunifu.UI.WinForms.BunifuDatePicker
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
@@ -481,12 +481,13 @@ Partial Class Presupuesto
     Friend WithEvents BunifuLabel3 As Bunifu.UI.WinForms.BunifuLabel
     Friend WithEvents BunifuLabel1 As Bunifu.UI.WinForms.BunifuLabel
     Friend WithEvents DataGridView3 As DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Label16 As Label
+    Friend WithEvents colOferta As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents rate As DataGridViewTextBoxColumn
     Friend WithEvents quantity As DataGridViewTextBoxColumn
     Friend WithEvents price As DataGridViewTextBoxColumn
-    Friend WithEvents Label16 As Label
+    Friend WithEvents cboCliente As ComboBox
 End Class

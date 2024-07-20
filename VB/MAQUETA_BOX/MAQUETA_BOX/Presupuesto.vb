@@ -2,9 +2,10 @@
 
 Public Class Presupuesto
 
-
+    Dim Presupuesto As Integer = 0
 
     Private Sub Presupuesto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Presupuesto = Presupuesto + 1
         Cargar_Combo_MediosP()
         For Each row As DataGridViewRow In DataGridView3.Rows
             If Not row.IsNewRow Then
@@ -168,5 +169,40 @@ Public Class Presupuesto
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
         newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
         newForm.Show() ' Muestra el formulario
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+        Dim conexion As SqlConnection
+            Dim comando As New SqlCommand
+
+            conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+
+
+            conexion.Open()
+            comando.Connection = conexion
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = ("Cargar_DetallesV")
+
+            With comando.Parameters
+                .AddWithValue("@ID_Presupuesto", Presupuesto)
+                .AddWithValue("@ID_Oferta", colOferta)
+                .AddWithValue("@Cantidad", quantity)
+
+            End With
+            comando.ExecuteScalar()
+
+            comando.CommandText = ("Cargar_Presupuesto")
+            With comando.Parameters
+                .AddWithValue("@ID_Presupuesto", Presupuesto)
+                .AddWithValue("@ID_Oferta", colOferta)
+                .AddWithValue("@Cantidad", quantity)
+
+            End With
+            conexion.Close()
+            MsgBox("La joya se ha insertado correctamente ", vbInformation, "Joyeria Monaco")
+
+
     End Sub
 End Class

@@ -557,3 +557,4 @@ D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\bin\Debug\System.Num
 D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Presupuesto.resources
 D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Proveedores.resources
+C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Proveedores.resources
