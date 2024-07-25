@@ -71,6 +71,7 @@ Public Class Documentos
             comando.Parameters.Clear()
             comando.Parameters.AddWithValue("@Nombre_Apellido", If(cboClientes.SelectedItem IsNot Nothing, cboClientes.SelectedItem.ToString(), DBNull.Value))
             comando.Parameters.AddWithValue("@Descripcion", If(cboProductos.SelectedItem IsNot Nothing, cboProductos.SelectedItem.ToString(), DBNull.Value))
+            comando.Parameters.AddWithValue("@Fecha", DateTimePicker1.Value.Date)
 
             adapter = New SqlDataAdapter(comando)
             adapter.Fill(dataset)
@@ -136,6 +137,7 @@ Public Class Documentos
                 comando.Parameters.Clear()
                 comando.Parameters.AddWithValue("@Nombre", If(cboProveedores.SelectedItem IsNot Nothing, cboProveedores.SelectedItem.ToString(), DBNull.Value))
                 comando.Parameters.AddWithValue("@Descripcion", If(cboProductos.SelectedItem IsNot Nothing, cboProductos.SelectedItem.ToString(), DBNull.Value))
+                comando.Parameters.AddWithValue("@FechaParam", DateTimePicker1.Value.Date)
 
                 adapter = New SqlDataAdapter(comando)
                 adapter.Fill(dataset)
@@ -343,4 +345,14 @@ Public Class Documentos
         End If
     End Sub
 
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+
+        Select Case cboDocumentos.Text
+            Case "Proveedor"
+                FiltrarGrillaCompras()
+            Case "Cliente"
+                FiltrarGrillaVentas()
+        End Select
+
+    End Sub
 End Class
