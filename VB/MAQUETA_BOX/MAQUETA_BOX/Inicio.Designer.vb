@@ -128,7 +128,7 @@ Partial Class Inicio
         Me.lbl_Documentos.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Documentos.AutoSize = True
         Me.lbl_Documentos.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Documentos.Location = New System.Drawing.Point(142, 663)
+        Me.lbl_Documentos.Location = New System.Drawing.Point(140, 672)
         Me.lbl_Documentos.Name = "lbl_Documentos"
         Me.lbl_Documentos.Size = New System.Drawing.Size(207, 37)
         Me.lbl_Documentos.TabIndex = 23
@@ -161,7 +161,7 @@ Partial Class Inicio
         Me.lbl_Compras.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Compras.AutoSize = True
         Me.lbl_Compras.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Compras.Location = New System.Drawing.Point(140, 593)
+        Me.lbl_Compras.Location = New System.Drawing.Point(142, 599)
         Me.lbl_Compras.Name = "lbl_Compras"
         Me.lbl_Compras.Size = New System.Drawing.Size(155, 37)
         Me.lbl_Compras.TabIndex = 21
@@ -172,7 +172,7 @@ Partial Class Inicio
         Me.lbl_Proveedores.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Proveedores.AutoSize = True
         Me.lbl_Proveedores.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Proveedores.Location = New System.Drawing.Point(140, 446)
+        Me.lbl_Proveedores.Location = New System.Drawing.Point(140, 454)
         Me.lbl_Proveedores.Name = "lbl_Proveedores"
         Me.lbl_Proveedores.Size = New System.Drawing.Size(207, 37)
         Me.lbl_Proveedores.TabIndex = 19
@@ -205,7 +205,7 @@ Partial Class Inicio
         Me.lbl_Ventas.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Ventas.AutoSize = True
         Me.lbl_Ventas.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Ventas.Location = New System.Drawing.Point(140, 525)
+        Me.lbl_Ventas.Location = New System.Drawing.Point(140, 528)
         Me.lbl_Ventas.Name = "lbl_Ventas"
         Me.lbl_Ventas.Size = New System.Drawing.Size(123, 37)
         Me.lbl_Ventas.TabIndex = 17
@@ -227,7 +227,7 @@ Partial Class Inicio
         Me.lbl_Productos.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Productos.AutoSize = True
         Me.lbl_Productos.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Productos.Location = New System.Drawing.Point(140, 367)
+        Me.lbl_Productos.Location = New System.Drawing.Point(140, 376)
         Me.lbl_Productos.Name = "lbl_Productos"
         Me.lbl_Productos.Size = New System.Drawing.Size(171, 37)
         Me.lbl_Productos.TabIndex = 14
@@ -259,7 +259,7 @@ Partial Class Inicio
         Me.lbl_Clientes.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbl_Clientes.AutoSize = True
         Me.lbl_Clientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Clientes.Location = New System.Drawing.Point(140, 309)
+        Me.lbl_Clientes.Location = New System.Drawing.Point(140, 301)
         Me.lbl_Clientes.Name = "lbl_Clientes"
         Me.lbl_Clientes.Size = New System.Drawing.Size(139, 37)
         Me.lbl_Clientes.TabIndex = 12
