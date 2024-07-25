@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports DocumentFormat.OpenXml.Wordprocessing
+Imports SixLabors.Fonts
 
 Public Class Productos
 
@@ -335,4 +336,20 @@ Public Class Productos
         End If
     End Sub
 #End Region
+#Region "Cargar textbox productos"
+    Private Sub BunifuDataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = BunifuDataGridView1.Rows(e.RowIndex)
+            txtCodigo.Text = row.Cells("ID").Value.ToString()
+            txtDescripcion.Text = row.Cells("Descripción").Value.ToString()
+            cboMarca.Text = row.Cells("Marca").Value.ToString()
+            cboVehiculo.Text = row.Cells("Vehículo").Value.ToString()
+            cboProveedor.Text = row.Cells("Proveedor").Value.ToString()
+            txtCantidad.Text = row.Cells("Stock").Value.ToString()
+            txtCosto.Text = row.Cells("Costo").Value.ToString()
+            txtGanancia.Text = row.Cells("Ganancia").Value.ToString()
+        End If
+    End Sub
+#End Region
+
 End Class
