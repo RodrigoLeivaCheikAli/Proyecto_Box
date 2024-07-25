@@ -67,6 +67,7 @@ Public Class Proveedores
         txtTelefono.Text = Nothing
         txtMail.Text = Nothing
         txtNotas.Text = Nothing
+        txtBuscar.Text = Nothing
 
     End Sub
 
@@ -173,5 +174,60 @@ Public Class Proveedores
             MsgBox("Coloque el código del proveedor que desea eliminar", MsgBoxStyle.Exclamation, "Error")
         End If
     End Sub
+#End Region
+
+#Region "Buscar"
+    Private connectionString As String = "data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123"
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        ' Llama a la función para buscar proveedores
+        BuscarProveedores(txtBuscar.Text)
+    End Sub
+
+    Private Sub BuscarProveedores(busqueda As String)
+        Dim query As String
+        Dim isNumericSearch As Boolean = IsNumeric(busqueda)
+
+        If isNumericSearch Then
+            query = "SELECT Id_Proveedor, Nombre, Direccion, Telefono, Localidad, Mail, Rubro, CUIT, Notas FROM Proveedores WHERE Id_Proveedor = @Busqueda"
+        Else
+            query = "SELECT Id_Proveedor, Nombre, Direccion, Telefono, Localidad, Mail, Rubro, CUIT, Notas FROM Proveedores WHERE Nombre LIKE @Busqueda"
+        End If
+
+        ' Usa Using para asegurar que los recursos se liberan correctamente
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand(query, connection)
+                If isNumericSearch Then
+                    command.Parameters.AddWithValue("@Busqueda", Convert.ToInt32(busqueda))
+                Else
+                    command.Parameters.AddWithValue("@Busqueda", "%" & busqueda & "%")
+                End If
+
+                ' Crea un adaptador de datos y un DataTable
+                Dim adapter As New SqlDataAdapter(command)
+                Dim dataTable As New DataTable()
+
+                Try
+                    ' Abre la conexión a la base de datos
+                    connection.Open()
+
+                    ' Llena el DataTable con los resultados de la consulta
+                    adapter.Fill(dataTable)
+
+                    ' Asigna el DataTable como origen de datos del DataGridView
+                    grillaProv.DataSource = dataTable
+                Catch ex As Exception
+                    ' Muestra un mensaje de error si ocurre algún problema
+                    MessageBox.Show("Error al buscar los proveedores: " & ex.Message)
+                End Try
+            End Using
+        End Using
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        CargarGrilla()
+        Limpiar()
+    End Sub
+
 #End Region
 End Class
