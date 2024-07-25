@@ -191,7 +191,8 @@ Public Class Proveedores
         If isNumericSearch Then
             query = "SELECT Id_Proveedor, Nombre, Direccion, Telefono, Localidad, Mail, Rubro, CUIT, Notas FROM Proveedores WHERE Id_Proveedor = @Busqueda"
         Else
-            query = "SELECT Id_Proveedor, Nombre, Direccion, Telefono, Localidad, Mail, Rubro, CUIT, Notas FROM Proveedores WHERE Nombre LIKE @Busqueda"
+            query = "SELECT Id_Proveedor, Nombre, Direccion, Telefono, Localidad, Mail, Rubro, CUIT, Notas FROM Proveedores WHERE Nombre LIKE @Busqueda or Direccion LIKE @Busqueda
+            or Localidad LIKE @Busqueda or Mail LIKE @Busqueda or Rubro LIKE @Busqueda or Notas LIKE @Busqueda"
         End If
 
         ' Usa Using para asegurar que los recursos se liberan correctamente
