@@ -29,7 +29,6 @@ Partial Class Proveedores
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnBuscar = New System.Windows.Forms.PictureBox()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnEliminar = New System.Windows.Forms.PictureBox()
@@ -56,7 +55,6 @@ Partial Class Proveedores
         Me.grillaProv = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnBuscar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,7 +76,6 @@ Partial Class Proveedores
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.btnBuscar)
         Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.grillaProv)
@@ -91,22 +88,12 @@ Partial Class Proveedores
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(296, 28)
+        Me.PictureBox1.Location = New System.Drawing.Point(262, 28)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(28, 31)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 42
         Me.PictureBox1.TabStop = False
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.Image = CType(resources.GetObject("btnBuscar.Image"), System.Drawing.Image)
-        Me.btnBuscar.Location = New System.Drawing.Point(262, 28)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(28, 31)
-        Me.btnBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnBuscar.TabIndex = 40
-        Me.btnBuscar.TabStop = False
         '
         'txtBuscar
         '
@@ -412,7 +399,6 @@ Partial Class Proveedores
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnBuscar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -447,7 +433,6 @@ Partial Class Proveedores
     Friend WithEvents btnCargar As PictureBox
     Friend WithEvents btnModificar As PictureBox
     Friend WithEvents btnEliminar As PictureBox
-    Friend WithEvents btnBuscar As PictureBox
     Friend WithEvents grillaProv As Bunifu.UI.WinForms.BunifuDataGridView
     Friend WithEvents PictureBox1 As PictureBox
 End Class

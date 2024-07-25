@@ -179,8 +179,8 @@ Public Class Proveedores
 #Region "Buscar"
     Private connectionString As String = "data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123"
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        ' Llama a la función para buscar proveedores
+    ' Maneja el evento TextChanged del TextBox para actualizar la grilla en tiempo real
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         BuscarProveedores(txtBuscar.Text)
     End Sub
 
@@ -189,10 +189,9 @@ Public Class Proveedores
         Dim isNumericSearch As Boolean = IsNumeric(busqueda)
 
         If isNumericSearch Then
-            query = "SELECT Id_Proveedor, Nombre, Direccion, Telefono, Localidad, Mail, Rubro, CUIT, Notas FROM Proveedores WHERE Id_Proveedor = @Busqueda"
+            query = "SELECT Id_Proveedor AS Id, Nombre, Direccion, Telefono, Localidad, Mail, Rubro, CUIT, Notas FROM Proveedores WHERE Id_Proveedor = @Busqueda"
         Else
-            query = "SELECT Id_Proveedor, Nombre, Direccion, Telefono, Localidad, Mail, Rubro, CUIT, Notas FROM Proveedores WHERE Nombre LIKE @Busqueda or Direccion LIKE @Busqueda
-            or Localidad LIKE @Busqueda or Mail LIKE @Busqueda or Rubro LIKE @Busqueda or Notas LIKE @Busqueda"
+            query = "SELECT Id_Proveedor AS Id, Nombre, Direccion, Telefono, Localidad, Mail, Rubro, CUIT, Notas FROM Proveedores WHERE Nombre LIKE @Busqueda OR Direccion LIKE @Busqueda OR Localidad LIKE @Busqueda OR Mail LIKE @Busqueda OR Rubro LIKE @Busqueda OR Notas LIKE @Busqueda OR Telefono LIKE @Busqueda OR CUIT LIKE @Busqueda"
         End If
 
         ' Usa Using para asegurar que los recursos se liberan correctamente
@@ -217,6 +216,12 @@ Public Class Proveedores
 
                     ' Asigna el DataTable como origen de datos del DataGridView
                     grillaProv.DataSource = dataTable
+
+                    ' Cambia el nombre de la columna en el DataGridView
+                    If grillaProv.Columns.Contains("Id") Then
+                        grillaProv.Columns("Id").HeaderText = "Id"
+                    End If
+
                 Catch ex As Exception
                     ' Muestra un mensaje de error si ocurre algún problema
                     MessageBox.Show("Error al buscar los proveedores: " & ex.Message)
@@ -229,8 +234,5 @@ Public Class Proveedores
         CargarGrilla()
         Limpiar()
     End Sub
-
-
-
 #End Region
 End Class
