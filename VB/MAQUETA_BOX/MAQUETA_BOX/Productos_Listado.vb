@@ -9,6 +9,9 @@ Public Class Productos_Listado
         cboTipo.Items.Add("Servicio")
         cboTipo.SelectedIndex = 0
         Cargar_Grilla()
+        CargarComboVehiculo()
+        CargarComboProducto()
+        CargarComboServicio()
     End Sub
 #End Region
 #Region "Cargar Grilla"
@@ -95,31 +98,114 @@ Public Class Productos_Listado
 #End Region
 #End Region
 #Region "Filtrar por Tipo"
+    Private Sub cboTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTipo.SelectedIndexChanged
+        ' Filtrar el DataGridView
+        FiltrarGrilla()
+    End Sub
+#End Region
+#Region "Filtrar Por Vehículo"
+    Private Sub CargarComboVehiculo()
+        If dt IsNot Nothing Then
+            Dim vehiculos = dt.AsEnumerable().Select(Function(row) row.Field(Of String)("Vehículo")).Distinct().ToList()
+            cboVehiculo.Items.Clear()
+            cboVehiculo.Items.Add("Todos")
+            cboVehiculo.Items.AddRange(vehiculos.ToArray())
+            cboVehiculo.SelectedIndex = 0
+        End If
+    End Sub
+
+    Private Sub cboVehiculo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboVehiculo.SelectedIndexChanged
+        FiltrarGrilla()
+    End Sub
+#End Region
+#Region "Filtrar por Producto"
+    Private Sub CargarComboProducto()
+        If dt IsNot Nothing Then
+            ' Filtrar las filas donde la columna Tipo es "Producto" y obtener los valores únicos de la columna Descripción
+            Dim productos = dt.AsEnumerable().
+                         Where(Function(row) row.Field(Of String)("Tipo") = "Producto").
+                         Select(Function(row) row.Field(Of String)("Descripción")).
+                         Distinct().
+                         ToList()
+
+            cboProducto.Items.Clear()
+            cboProducto.Items.Add("Todos")
+            cboProducto.Items.AddRange(productos.ToArray())
+            cboProducto.SelectedIndex = 0
+        End If
+    End Sub
+    Private Sub cboProducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboProducto.SelectedIndexChanged
+        FiltrarGrilla()
+    End Sub
+#End Region
+#Region "Filtrar por Servicio"
+    Private Sub CargarComboServicio()
+        If dt IsNot Nothing Then
+            ' Filtrar las filas donde la columna Tipo es "Servicio" y obtener los valores únicos de la columna Descripción
+            Dim servicios = dt.AsEnumerable().
+                         Where(Function(row) row.Field(Of String)("Tipo") = "Servicio").
+                         Select(Function(row) row.Field(Of String)("Descripción")).
+                         Distinct().
+                         ToList()
+
+            cboServicio.Items.Clear()
+            cboServicio.Items.Add("Todos")
+            cboServicio.Items.AddRange(servicios.ToArray())
+            cboServicio.SelectedIndex = 0
+        End If
+    End Sub
+    Private Sub cboServicio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboServicio.SelectedIndexChanged
+        FiltrarGrilla()
+    End Sub
+#End Region
+#Region "Metodo Filtrar Grilla"
     Private Sub FiltrarGrilla()
-        ' Asegúrate de que haya un elemento seleccionado en el ComboBox
-        If cboTipo.SelectedItem Is Nothing Then Exit Sub
+        ' Asegúrate de que haya elementos seleccionados en todos los ComboBoxes
+        If cboTipo.SelectedItem Is Nothing OrElse cboVehiculo.SelectedItem Is Nothing OrElse cboProducto.SelectedItem Is Nothing OrElse cboServicio.SelectedItem Is Nothing Then Exit Sub
 
         Dim tipoSeleccionado As String = cboTipo.SelectedItem.ToString()
+        Dim vehiculoSeleccionado As String = cboVehiculo.SelectedItem.ToString()
+        Dim productoSeleccionado As String = cboProducto.SelectedItem.ToString()
+        Dim servicioSeleccionado As String = cboServicio.SelectedItem.ToString()
+        Dim textoBusqueda As String = txtBuscarProductos.Text.Trim()
 
         ' Verificar que dt no sea Nothing
         If dt IsNot Nothing Then
             ' Crear un DataView para filtrar los datos
             Dim dataView As New DataView(dt)
 
-            ' Aplicar el filtro basado en la selección del ComboBox
-            If tipoSeleccionado = "Todos" Then
-                dataView.RowFilter = String.Empty
-            Else
-                dataView.RowFilter = $"Tipo = '{tipoSeleccionado}'"
+            ' Construir el filtro basado en las selecciones
+            Dim filtro As String = String.Empty
+            If tipoSeleccionado <> "Todos" Then
+                filtro = $"Tipo = '{tipoSeleccionado}'"
             End If
+            If vehiculoSeleccionado <> "Todos" Then
+                If filtro <> String.Empty Then filtro &= " AND "
+                filtro &= $"Vehiculo = '{vehiculoSeleccionado}'"
+            End If
+            If productoSeleccionado <> "Todos" Then
+                If filtro <> String.Empty Then filtro &= " AND "
+                filtro &= $"Descripción = '{productoSeleccionado}'"
+            End If
+            If servicioSeleccionado <> "Todos" Then
+                If filtro <> String.Empty Then filtro &= " AND "
+                filtro &= $"Descripción = '{servicioSeleccionado}'"
+            End If
+            If Not String.IsNullOrEmpty(textoBusqueda) Then
+                If filtro <> String.Empty Then filtro &= " AND "
+                filtro &= $"Descripción LIKE '%{textoBusqueda}%'"
+            End If
+
+            ' Aplicar el filtro
+            dataView.RowFilter = filtro
 
             ' Asignar el DataView como origen de datos del DataGridView
             BunifuDataGridView1.DataSource = dataView
         End If
     End Sub
-
-    Private Sub cboTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTipo.SelectedIndexChanged
-        ' Filtrar el DataGridView
+#End Region
+#Region "Busqueda inteligente"
+    Private Sub txtBuscarProductos_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarProductos.TextChanged
         FiltrarGrilla()
     End Sub
 #End Region

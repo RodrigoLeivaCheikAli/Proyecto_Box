@@ -351,5 +351,35 @@ Public Class Productos
         End If
     End Sub
 #End Region
+#Region "Metodo Filtrar Busqueda"
+    Private Sub FiltrarGrilla()
+        Dim textoBusqueda As String = txtBuscarProductos.Text.Trim()
+
+        ' Verificar que dt no sea Nothing
+        If dt IsNot Nothing Then
+            ' Crear un DataView para filtrar los datos
+            Dim dataView As New DataView(dt)
+
+            ' Construir el filtro basado en las selecciones
+            Dim filtro As String = String.Empty
+            If Not String.IsNullOrEmpty(textoBusqueda) Then
+                If filtro <> String.Empty Then filtro &= " AND "
+                filtro &= $"Descripción LIKE '%{textoBusqueda}%'"
+            End If
+
+            ' Aplicar el filtro
+            dataView.RowFilter = filtro
+
+            ' Asignar el DataView como origen de datos del DataGridView
+            BunifuDataGridView1.DataSource = dataView
+        End If
+    End Sub
+
+    Private Sub txtBuscarProdcutos_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarProductos.TextChanged
+        FiltrarGrilla()
+    End Sub
+
+#End Region
+
 
 End Class
