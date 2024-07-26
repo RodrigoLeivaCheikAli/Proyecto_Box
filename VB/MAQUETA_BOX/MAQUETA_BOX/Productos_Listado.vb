@@ -1,6 +1,16 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class Productos_Listado
+#Region "Load"
+    Private Sub Productos_Listado_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+        cboTipo.Items.Add("Todos")
+        cboTipo.Items.Add("Producto")
+        cboTipo.Items.Add("Servicio")
+        cboTipo.SelectedIndex = 0
+        Cargar_Grilla()
+    End Sub
+#End Region
 #Region "Cargar Grilla"
     Dim dt As DataTable
 
@@ -27,11 +37,6 @@ Public Class Productos_Listado
 
         oDs = Nothing
         conexion.Close()
-    End Sub
-#End Region
-#Region "Load"
-    Private Sub Productos_Listado_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        Cargar_Grilla()
     End Sub
 #End Region
 #Region "Redirección"
@@ -88,5 +93,34 @@ Public Class Productos_Listado
 
 
 #End Region
+#End Region
+#Region "Filtrar por Tipo"
+    Private Sub FiltrarGrilla()
+        ' Asegúrate de que haya un elemento seleccionado en el ComboBox
+        If cboTipo.SelectedItem Is Nothing Then Exit Sub
+
+        Dim tipoSeleccionado As String = cboTipo.SelectedItem.ToString()
+
+        ' Verificar que dt no sea Nothing
+        If dt IsNot Nothing Then
+            ' Crear un DataView para filtrar los datos
+            Dim dataView As New DataView(dt)
+
+            ' Aplicar el filtro basado en la selección del ComboBox
+            If tipoSeleccionado = "Todos" Then
+                dataView.RowFilter = String.Empty
+            Else
+                dataView.RowFilter = $"Tipo = '{tipoSeleccionado}'"
+            End If
+
+            ' Asignar el DataView como origen de datos del DataGridView
+            BunifuDataGridView1.DataSource = dataView
+        End If
+    End Sub
+
+    Private Sub cboTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTipo.SelectedIndexChanged
+        ' Filtrar el DataGridView
+        FiltrarGrilla()
+    End Sub
 #End Region
 End Class
