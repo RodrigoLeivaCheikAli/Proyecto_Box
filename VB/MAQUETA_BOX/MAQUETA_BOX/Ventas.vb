@@ -148,4 +148,77 @@ Public Class Ventas
         newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
         newForm.Show() ' Muestra el formulario
     End Sub
+#Region "Barra Busqueda"
+
+    Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
+
+        Buscar(txtBusqueda.Text)
+
+    End Sub
+
+    Private connectionString As String = "data source=168.197.51.109;initial catalog=PIN_GRUPO11;user id=PIN_GRUPO11;password=PIN_GRUPO11123"
+
+    Private Sub Buscar(busqueda As String)
+        Dim query As String
+        Dim isNumericSearch As Boolean = IsNumeric(busqueda)
+
+        If isNumericSearch Then
+            query = "SELECT o.Id_Oferta AS PRODUCTO, o.Descripcion AS NOMBRE, v.Tipo AS VEHICULO, p.Nombre AS PROVEEDOR, o.Precio_Costo AS PRECIO_COSTO
+                 FROM Ofertas o
+                 JOIN Vehiculos v ON o.Id_Vehiculo = v.Id_Vehiculo
+                 JOIN Proveedores p ON o.Id_Proveedor = p.Id_Proveedor
+                 WHERE o.Id_Oferta = @Busqueda OR o.Precio_Costo = @Busqueda"
+        Else
+            query = "SELECT o.Id_Oferta AS PRODUCTO, o.Descripcion AS NOMBRE, v.Tipo AS VEHICULO, p.Nombre AS PROVEEDOR, o.Precio_Costo AS PRECIO_COSTO
+                 FROM Ofertas o
+                 JOIN Vehiculos v ON o.Id_Vehiculo = v.Id_Vehiculo
+                 JOIN Proveedores p ON o.Id_Proveedor = p.Id_Proveedor
+                 WHERE o.Descripcion LIKE @Busqueda OR v.Tipo LIKE @Busqueda OR p.Nombre LIKE @Busqueda"
+        End If
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand(query, connection)
+                If isNumericSearch Then
+                    command.Parameters.AddWithValue("@Busqueda", Convert.ToInt32(busqueda))
+                Else
+                    command.Parameters.AddWithValue("@Busqueda", "%" & busqueda & "%")
+                End If
+
+                Dim adapter As New SqlDataAdapter(command)
+                Dim dataTable As New DataTable()
+
+                Try
+                    connection.Open()
+                    adapter.Fill(dataTable)
+                    DataGridView1.DataSource = dataTable
+
+                    ' Renombra las columnas del DataGridView si es necesario
+                    For Each column As DataGridViewColumn In DataGridView1.Columns
+                        If column.Name = "Id_Oferta" Then
+                            column.HeaderText = "PRODUCTO"
+                        ElseIf column.Name = "Descripcion" Then
+                            column.HeaderText = "NOMBRE"
+                        ElseIf column.Name = "Tipo" Then
+                            column.HeaderText = "VEHICULO"
+                        ElseIf column.Name = "Nombre" Then
+                            column.HeaderText = "PROVEEDOR"
+                        ElseIf column.Name = "Precio_Costo" Then
+                            column.HeaderText = "PRECIO_COSTO"
+                        End If
+                    Next
+
+                    ' Establece el estilo y formato para la columna de precio
+                    Dim columnaPrecio As DataGridViewColumn = DataGridView1.Columns("PRECIO_COSTO")
+                    columnaPrecio.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                    columnaPrecio.DefaultCellStyle.Format = "C2"
+
+                Catch ex As Exception
+                    MessageBox.Show("Error al buscar los proveedores: " & ex.Message)
+                End Try
+            End Using
+        End Using
+    End Sub
+
+
+#End Region
 End Class

@@ -22,10 +22,10 @@ Partial Class Presupuesto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Presupuesto))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Presupuesto))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cboCliente = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -46,13 +46,15 @@ Partial Class Presupuesto
         Me.BunifuLabel3 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.BunifuLabel1 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.colOferta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BunifuCheckBox1 = New Bunifu.UI.WinForms.BunifuCheckBox()
         Me.price = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colOferta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,6 +64,8 @@ Partial Class Presupuesto
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.BunifuCheckBox1)
         Me.Panel1.Controls.Add(Me.cboCliente)
         Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.cboMediosP)
@@ -103,7 +107,7 @@ Partial Class Presupuesto
         '
         Me.cboMediosP.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cboMediosP.FormattingEnabled = True
-        Me.cboMediosP.Location = New System.Drawing.Point(834, -12)
+        Me.cboMediosP.Location = New System.Drawing.Point(769, -11)
         Me.cboMediosP.Name = "cboMediosP"
         Me.cboMediosP.Size = New System.Drawing.Size(121, 21)
         Me.cboMediosP.TabIndex = 29
@@ -162,7 +166,7 @@ Partial Class Presupuesto
         Me.BunifuLabel6.AutoEllipsis = False
         Me.BunifuLabel6.CursorType = Nothing
         Me.BunifuLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuLabel6.Location = New System.Drawing.Point(722, -12)
+        Me.BunifuLabel6.Location = New System.Drawing.Point(657, -11)
         Me.BunifuLabel6.Name = "BunifuLabel6"
         Me.BunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BunifuLabel6.Size = New System.Drawing.Size(106, 20)
@@ -401,35 +405,64 @@ Partial Class Presupuesto
         Me.DataGridView3.Size = New System.Drawing.Size(893, 292)
         Me.DataGridView3.TabIndex = 20
         '
-        'colOferta
+        'BunifuCheckBox1
         '
-        Me.colOferta.HeaderText = "Nº"
-        Me.colOferta.Name = "colOferta"
-        Me.colOferta.Width = 50
+        Me.BunifuCheckBox1.AllowBindingControlAnimation = True
+        Me.BunifuCheckBox1.AllowBindingControlColorChanges = False
+        Me.BunifuCheckBox1.AllowBindingControlLocation = True
+        Me.BunifuCheckBox1.AllowCheckBoxAnimation = False
+        Me.BunifuCheckBox1.AllowCheckmarkAnimation = True
+        Me.BunifuCheckBox1.AllowOnHoverStates = True
+        Me.BunifuCheckBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BunifuCheckBox1.AutoCheck = True
+        Me.BunifuCheckBox1.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuCheckBox1.BackgroundImage = CType(resources.GetObject("BunifuCheckBox1.BackgroundImage"), System.Drawing.Image)
+        Me.BunifuCheckBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BunifuCheckBox1.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right
+        Me.BunifuCheckBox1.BorderRadius = 12
+        Me.BunifuCheckBox1.Checked = True
+        Me.BunifuCheckBox1.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked
+        Me.BunifuCheckBox1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.BunifuCheckBox1.CustomCheckmarkImage = Nothing
+        Me.BunifuCheckBox1.Location = New System.Drawing.Point(1059, -14)
+        Me.BunifuCheckBox1.MinimumSize = New System.Drawing.Size(17, 17)
+        Me.BunifuCheckBox1.Name = "BunifuCheckBox1"
+        Me.BunifuCheckBox1.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue
+        Me.BunifuCheckBox1.OnCheck.BorderRadius = 12
+        Me.BunifuCheckBox1.OnCheck.BorderThickness = 2
+        Me.BunifuCheckBox1.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue
+        Me.BunifuCheckBox1.OnCheck.CheckmarkColor = System.Drawing.Color.White
+        Me.BunifuCheckBox1.OnCheck.CheckmarkThickness = 2
+        Me.BunifuCheckBox1.OnDisable.BorderColor = System.Drawing.Color.LightGray
+        Me.BunifuCheckBox1.OnDisable.BorderRadius = 12
+        Me.BunifuCheckBox1.OnDisable.BorderThickness = 2
+        Me.BunifuCheckBox1.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.BunifuCheckBox1.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray
+        Me.BunifuCheckBox1.OnDisable.CheckmarkThickness = 2
+        Me.BunifuCheckBox1.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuCheckBox1.OnHoverChecked.BorderRadius = 12
+        Me.BunifuCheckBox1.OnHoverChecked.BorderThickness = 2
+        Me.BunifuCheckBox1.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuCheckBox1.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White
+        Me.BunifuCheckBox1.OnHoverChecked.CheckmarkThickness = 2
+        Me.BunifuCheckBox1.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuCheckBox1.OnHoverUnchecked.BorderRadius = 12
+        Me.BunifuCheckBox1.OnHoverUnchecked.BorderThickness = 1
+        Me.BunifuCheckBox1.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.BunifuCheckBox1.OnUncheck.BorderColor = System.Drawing.Color.DarkGray
+        Me.BunifuCheckBox1.OnUncheck.BorderRadius = 12
+        Me.BunifuCheckBox1.OnUncheck.BorderThickness = 1
+        Me.BunifuCheckBox1.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.BunifuCheckBox1.Size = New System.Drawing.Size(21, 21)
+        Me.BunifuCheckBox1.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu
+        Me.BunifuCheckBox1.TabIndex = 40
+        Me.BunifuCheckBox1.ThreeState = False
+        Me.BunifuCheckBox1.ToolTipText = Nothing
         '
-        'Column2
+        'price
         '
-        Me.Column2.HeaderText = "Tipo"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 120
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Descripcion"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 300
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Vehiculo"
-        Me.Column4.Name = "Column4"
-        Me.Column4.Width = 130
-        '
-        'rate
-        '
-        Me.rate.HeaderText = "Precio"
-        Me.rate.Name = "rate"
-        Me.rate.Width = 120
+        Me.price.HeaderText = "Total"
+        Me.price.Name = "price"
         '
         'quantity
         '
@@ -437,10 +470,46 @@ Partial Class Presupuesto
         Me.quantity.Name = "quantity"
         Me.quantity.Width = 70
         '
-        'price
+        'rate
         '
-        Me.price.HeaderText = "Total"
-        Me.price.Name = "price"
+        Me.rate.HeaderText = "Precio"
+        Me.rate.Name = "rate"
+        Me.rate.Width = 120
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Vehiculo"
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 130
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Descripcion"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 300
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Tipo"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 120
+        '
+        'colOferta
+        '
+        Me.colOferta.HeaderText = "Nº"
+        Me.colOferta.Name = "colOferta"
+        Me.colOferta.Width = 50
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(911, -14)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(142, 24)
+        Me.Label1.TabIndex = 41
+        Me.Label1.Text = "Realizar Pedido"
         '
         'Presupuesto
         '
@@ -482,6 +551,8 @@ Partial Class Presupuesto
     Friend WithEvents BunifuLabel1 As Bunifu.UI.WinForms.BunifuLabel
     Friend WithEvents DataGridView3 As DataGridView
     Friend WithEvents Label16 As Label
+    Friend WithEvents cboCliente As ComboBox
+    Friend WithEvents BunifuCheckBox1 As Bunifu.UI.WinForms.BunifuCheckBox
     Friend WithEvents colOferta As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -489,5 +560,5 @@ Partial Class Presupuesto
     Friend WithEvents rate As DataGridViewTextBoxColumn
     Friend WithEvents quantity As DataGridViewTextBoxColumn
     Friend WithEvents price As DataGridViewTextBoxColumn
-    Friend WithEvents cboCliente As ComboBox
+    Friend WithEvents Label1 As Label
 End Class

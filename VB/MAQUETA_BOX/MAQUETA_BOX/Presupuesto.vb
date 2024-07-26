@@ -249,7 +249,7 @@ Public Class Presupuesto
         Next
 
         conexion.Close()
-        MsgBox("Se realizó la operación correctamente", vbInformation, "Joyería Mónaco")
+
     End Sub
 
 
@@ -259,7 +259,15 @@ Public Class Presupuesto
         Dim comando As New SqlCommand
         Dim total As Double = lblTotal.Text
         Dim subtotal As Double = lblSubtotal.Text
-        Dim nota As String = "a"
+        Dim estado As Integer
+        If BunifuCheckBox1.Checked Then
+            ' El CheckBox está marcado
+            estado = 3
+        Else
+            ' El CheckBox no está marcado
+            estado = 4
+        End If
+
         conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
 
 
@@ -274,17 +282,22 @@ Public Class Presupuesto
             .AddWithValue("@Subtotal", subtotal)
             .AddWithValue("@ID_MediosP", cboMediosP.SelectedValue)
             .AddWithValue("@Total", total)
-            .AddWithValue("@notas", nota)
+            .AddWithValue("@Estado", estado)
         End With
         comando.ExecuteScalar()
         conexion.Close()
-        MsgBox("Se realizo la Venta correctamente ", vbInformation, "Joyeria Monaco")
+        MsgBox("Se realizo la Venta correctamente ", vbInformation, "TTK")
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
 
         CargarDetallesV()
         CargarPresupuesto()
-
+        Panel1.Controls.Clear()
+        Dim newForm As New Ventas() ' Crea una nueva instancia del formulario que deseas agregar
+        newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
+        Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        newForm.Show() ' Muestra el formulario
     End Sub
 End Class
