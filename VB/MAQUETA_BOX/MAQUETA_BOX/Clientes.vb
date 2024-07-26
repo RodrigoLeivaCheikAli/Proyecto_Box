@@ -223,4 +223,17 @@ Public Class Clientes
         End If
     End Sub
 #End Region
+    Private Sub BunifuDataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = BunifuDataGridView1.Rows(e.RowIndex)
+            txtCodigo.Text = row.Cells("ID").Value.ToString()
+            txtNombre.Text = row.Cells("Nombre").Value.ToString()
+            txtCUIL.Text = row.Cells("CUIL").Value.ToString()
+            txtRubro.Text = row.Cells("Rubro").Value.ToString()
+            txtRazonSocial.Text = row.Cells("Razon Social").Value.ToString()
+            txtTelefono.Text = row.Cells("Telefono").Value.ToString()
+            txtMail.Text = row.Cells("Mail").Value.ToString()
+            txtDireccion.Text = row.Cells("Direccion").Value.ToString()
+        End If
+    End Sub
 End Class
