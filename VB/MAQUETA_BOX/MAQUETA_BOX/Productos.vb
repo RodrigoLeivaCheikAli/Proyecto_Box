@@ -374,9 +374,11 @@ Public Class Productos
             BunifuDataGridView1.DataSource = dataView
         End If
     End Sub
-    Private Sub txtBuscarProductos_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarProductos.TextChanged
+
+    Private Sub txtBuscarProdcutos_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarProductos.TextChanged
         FiltrarGrilla()
     End Sub
+
 #End Region
 
 
