@@ -223,4 +223,47 @@ Public Class Clientes
         End If
     End Sub
 #End Region
+#Region "Llenar Textbox"
+    Private Sub BunifuDataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow = BunifuDataGridView1.Rows(e.RowIndex)
+            txtCodigo.Text = row.Cells("ID").Value.ToString()
+            txtNombre.Text = row.Cells("Nombre").Value.ToString()
+            txtCUIL.Text = row.Cells("CUIL").Value.ToString()
+            txtRubro.Text = row.Cells("Rubro").Value.ToString()
+            txtRazonSocial.Text = row.Cells("Razon Social").Value.ToString()
+            txtTelefono.Text = row.Cells("Telefono").Value.ToString()
+            txtMail.Text = row.Cells("Mail").Value.ToString()
+            txtDireccion.Text = row.Cells("Direccion").Value.ToString()
+        End If
+    End Sub
+#End Region
+#Region "Buscar Cliente"
+    Private Sub FiltrarGrilla()
+        Dim textoBusqueda As String = txtBuscarClientes.Text.Trim()
+
+        ' Verificar que dt no sea Nothing
+        If dt IsNot Nothing Then
+            ' Crear un DataView para filtrar los datos
+            Dim dataView As New DataView(dt)
+
+            ' Construir el filtro basado en las selecciones
+            Dim filtro As String = String.Empty
+            If Not String.IsNullOrEmpty(textoBusqueda) Then
+                If filtro <> String.Empty Then filtro &= " AND "
+                filtro &= $"Nombre LIKE '%{textoBusqueda}%'"
+            End If
+
+            ' Aplicar el filtro
+            dataView.RowFilter = filtro
+
+            ' Asignar el DataView como origen de datos del DataGridView
+            BunifuDataGridView1.DataSource = dataView
+        End If
+    End Sub
+
+    Private Sub txtNombre_TextChanged(sender As Object, e As EventArgs) Handles txtNombre.TextChanged
+        FiltrarGrilla()
+    End Sub
+#End Region
 End Class

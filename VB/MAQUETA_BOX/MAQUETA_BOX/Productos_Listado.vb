@@ -181,7 +181,7 @@ Public Class Productos_Listado
             End If
             If vehiculoSeleccionado <> "Todos" Then
                 If filtro <> String.Empty Then filtro &= " AND "
-                filtro &= $"Vehiculo = '{vehiculoSeleccionado}'"
+                filtro &= $"Vehículo = '{vehiculoSeleccionado}'"
             End If
             If productoSeleccionado <> "Todos" Then
                 If filtro <> String.Empty Then filtro &= " AND "
