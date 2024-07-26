@@ -30,6 +30,7 @@ Public Class Presupuestos_Compras
         If oDs.Tables(0).Rows.Count > 0 Then
             dt = oDs.Tables(0)
             BunifuDataGridView1.AutoGenerateColumns = True
+            BunifuDataGridView1.DataSource = Nothing  ' Limpiar fuente de datos antes de asignar nueva
             BunifuDataGridView1.DataSource = dt
             BunifuDataGridView1.Refresh()
         End If
