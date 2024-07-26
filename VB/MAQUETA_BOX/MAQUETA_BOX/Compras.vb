@@ -140,7 +140,7 @@ Public Class Compras
                 Dim newRow As DataGridViewRow = CType(selectedRow.Clone(), DataGridViewRow)
 
                 ' Copiar valores de las celdas, incluyendo la columna 4
-                For i As Integer = 0 To selectedRow.Cells.Count - 1
+                For i As Integer = 1 To selectedRow.Cells.Count - 1
                     newRow.Cells(i).Value = selectedRow.Cells(i).Value
                 Next
 
@@ -170,25 +170,26 @@ Public Class Compras
 
     Private Sub BunifuDataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView2.CellContentClick
         Dim senderGrid = DirectCast(sender, DataGridView)
-        Dim selectedRow As DataGridViewRow = BunifuDataGridView2.Rows(e.RowIndex)
 
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
             If e.ColumnIndex = BunifuDataGridView2.Columns("DataGridViewImageColumn1").Index AndAlso e.RowIndex >= 0 Then
-                ' Eliminar la fila seleccionada
-                Dim originalIndex As Integer = -1
-                For Each pair In addedRows
-                    If pair.Value = selectedRow.Index Then
-                        originalIndex = pair.Key
-                        Exit For
-                    End If
-                Next
+                ' Evitar la fila nueva sin confirmar
+                If BunifuDataGridView2.Rows(e.RowIndex).IsNewRow Then
+                    Return
+                End If
+
+                ' Obtener la fila seleccionada
+                Dim selectedRow As DataGridViewRow = BunifuDataGridView2.Rows(e.RowIndex)
+
+                ' Buscar el índice original de la fila en addedRows
+                Dim originalIndex As Integer = addedRows.FirstOrDefault(Function(pair) pair.Value = e.RowIndex).Key
 
                 If originalIndex <> -1 AndAlso Cant.ContainsKey(originalIndex) Then
                     Cant(originalIndex) -= 1
                     If Cant(originalIndex) > 0 Then
                         BunifuDataGridView2.Rows(e.RowIndex).Cells(BunifuDataGridView2.ColumnCount - 2).Value = Cant(originalIndex)
                         ' Obtener el precio original
-                        Dim price As Decimal = Convert.ToDecimal(BunifuDataGridView1.Rows(originalIndex).Cells(4).Value)
+                        Dim price As Decimal = Convert.ToDecimal(BunifuDataGridView1.Rows(originalIndex).Cells(5).Value)
                         ' Actualizar el precio multiplicado
                         BunifuDataGridView2.Rows(e.RowIndex).Cells(BunifuDataGridView2.ColumnCount - 1).Value = price * Cant(originalIndex)
                     Else
@@ -211,6 +212,11 @@ Public Class Compras
                 End If
             End If
         End If
+    End Sub
+
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Presupuestos_Compras.Show()
     End Sub
 
 #End Region

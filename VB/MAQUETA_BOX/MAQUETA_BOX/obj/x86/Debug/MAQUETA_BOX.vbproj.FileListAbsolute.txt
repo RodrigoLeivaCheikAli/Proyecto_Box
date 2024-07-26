@@ -558,3 +558,4 @@ D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\bin\Debug\System.Run
 D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Presupuesto.resources
 D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Proveedores.resources
 C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Proveedores.resources
+D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Presupuestos_Compras.resources
