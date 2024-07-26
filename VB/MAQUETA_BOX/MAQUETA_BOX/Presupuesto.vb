@@ -2,10 +2,13 @@
 
 Public Class Presupuesto
 
-    Dim Presupuesto As Integer = 0
+
+
+
 
     Private Sub Presupuesto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Presupuesto = Presupuesto + 1
+        idPresupuesto()
+        Modulo.Presupuesto = Modulo.Presupuesto + 1
         Cargar_Combo_MediosP()
         CargarCBOClientes()
         For Each row As DataGridViewRow In DataGridView3.Rows
@@ -27,18 +30,20 @@ Public Class Presupuesto
         ' Copiar las filas
         For Each row As DataGridViewRow In dgvOrigen.Rows
             ' Crear una nueva fila en lugar de clonar la fila completa
-            Dim newRow As DataGridViewRow = New DataGridViewRow()
-            newRow.CreateCells(DataGridView3)
+            If Not row.IsNewRow Then
+                Dim newRow As DataGridViewRow = New DataGridViewRow()
+                newRow.CreateCells(DataGridView3)
 
-            ' Copiar las celdas, omitiendo la primera celda
-            For i As Integer = 1 To row.Cells.Count - 1
-                newRow.Cells(i - 1).Value = row.Cells(i).Value
-            Next
+                ' Copiar las celdas, omitiendo la primera celda
+                For i As Integer = 1 To row.Cells.Count - 1
+                    newRow.Cells(i - 1).Value = row.Cells(i).Value
+                Next
 
-            ' Agregar la nueva fila al DataGridView destino
+                ' Agregar la nueva fila al DataGridView destino
 
 
-            DataGridView3.Rows.Add(newRow)
+                DataGridView3.Rows.Add(newRow)
+            End If
         Next
 
 
@@ -51,6 +56,24 @@ Public Class Presupuesto
             ' Actualizar la vista del DataGridView para mostrar los cambios
             DataGridView3.Refresh()
         End If
+    End Sub
+
+    Private Sub idPresupuesto()
+        Using conn As New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+            conn.Open()
+            Dim consultaSQL As String = "  SELECT  MAX ([Id_Presupuesto] ) FROM Presupuestos "
+            Dim cmd As New SqlCommand(consultaSQL, conn)
+            cmd.Parameters.AddWithValue("@ID", 1) ' Supongamos que quieres obtener el nombre para el ID 1
+            Dim resultado As Object = cmd.ExecuteScalar()
+            If resultado IsNot Nothing Then
+                Modulo.Presupuesto = resultado.ToString()
+                ' Ahora puedes usar la variable 'nombre'
+            Else
+                ' El resultado fue nulo (no se encontró ningún registro)
+            End If
+        End Using
+
     End Sub
 
     Private Sub CalcularPrecio(rowIndex As Integer)
@@ -205,24 +228,31 @@ Public Class Presupuesto
         conexion.Open()
         comando.Connection = conexion
         comando.CommandType = CommandType.StoredProcedure
-        comando.CommandText = ("Cargar_DetallesV")
+        comando.CommandText = "Cargar_DetallesV"
 
-        ' Suponiendo que tienes un DataGridView llamado dgvDetalles
-        ' y que estás obteniendo los valores de la primera fila como ejemplo
+        ' Suponiendo que tienes un DataGridView llamado DataGridView3
+        For Each fila As DataGridViewRow In DataGridView3.Rows
+            ' Verifica si la fila no está vacía
+            If Not fila.IsNewRow Then
+                Dim idOferta As Integer = Convert.ToInt32(fila.Cells("colOferta").Value)
+                Dim cantidad As Integer = Convert.ToInt32(fila.Cells("quantity").Value)
 
-        Dim idOferta As Integer = Convert.ToInt32(DataGridView3.Rows(0).Cells("colOferta").Value)
-        Dim cantidad As Integer = Convert.ToInt32(DataGridView3.Rows(0).Cells("quantity").Value)
+                With comando.Parameters
+                    .Clear() ' Limpia los parámetros antes de agregar nuevos valores
+                    .AddWithValue("@ID_Presupuesto", Modulo.Presupuesto)
+                    .AddWithValue("@ID_Oferta", idOferta)
+                    .AddWithValue("@Cantidad", cantidad)
+                End With
 
-        With comando.Parameters
-            .AddWithValue("@ID_Presupuesto", Presupuesto)
-            .AddWithValue("@ID_Oferta", idOferta)
-            .AddWithValue("@Cantidad", cantidad)
-        End With
+                comando.ExecuteNonQuery() ' Ejecuta el comando para cada fila
+            End If
+        Next
 
-        comando.ExecuteScalar()
         conexion.Close()
         MsgBox("Se realizó la operación correctamente", vbInformation, "Joyería Mónaco")
     End Sub
+
+
 
     Private Sub CargarPresupuesto()
         Dim conexion As SqlConnection
