@@ -8,6 +8,7 @@ Public Class Compras
     Private addedRows As New Dictionary(Of Integer, Integer)
     Dim Cant As New Dictionary(Of Integer, Integer)
     Dim valor As Integer
+    Public Property IdPresupuesto As Integer
 
 #Region "Llenar Grilla"
 
@@ -219,6 +220,43 @@ Public Class Compras
         Presupuestos_Compras.Show()
     End Sub
 
+
+
+#End Region
+
+#Region "Presupuestos"
+    Public Sub CargarDetalles()
+        If IdPresupuesto <> 0 Then
+            Dim conexion As SqlConnection
+            Dim comando As New SqlCommand
+
+            conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+            comando.Connection = conexion
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = "Consultar_Detalle_Presupuestos_Compras"
+            comando.Parameters.AddWithValue("@Id_Presupuesto", IdPresupuesto)
+
+            Dim datadapter As New SqlDataAdapter(comando)
+            Dim oDs As New DataSet
+
+            Try
+                conexion.Open()
+                datadapter.Fill(oDs)
+                If oDs.Tables(0).Rows.Count > 0 Then
+                    Dim dtDetalles As DataTable = oDs.Tables(0)
+                    BunifuDataGridView2.AutoGenerateColumns = True
+                    BunifuDataGridView2.DataSource = dtDetalles
+                    BunifuDataGridView2.Refresh()
+                Else
+                    BunifuDataGridView2.DataSource = Nothing
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Error al cargar los detalles: " & ex.Message)
+            Finally
+                conexion.Close()
+            End Try
+        End If
+    End Sub
 #End Region
 
 End Class

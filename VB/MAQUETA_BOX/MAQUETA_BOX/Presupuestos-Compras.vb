@@ -2,14 +2,42 @@
 Imports System.Configuration
 
 Public Class Presupuestos_Compras
+    Private detallesPresupuesto As DataTable
+
+#Region "Pasar Variable"
+    Private Sub PasarIdPresupuestoAlFormularioPrincipal()
+        If BunifuDataGridView1.SelectedRows.Count > 0 Then
+            Dim idPresupuesto As Integer = Convert.ToInt32(BunifuDataGridView1.SelectedRows(0).Cells(0).Value)
+            If Application.OpenForms.OfType(Of Compras).Any() Then
+                Dim frmCompras As Compras = Application.OpenForms.OfType(Of Compras)().First()
+                frmCompras.IdPresupuesto = idPresupuesto
+                frmCompras.CargarDetalles()
+            End If
+        Else
+            MessageBox.Show("Por favor seleccione un presupuesto.")
+        End If
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        PasarIdPresupuestoAlFormularioPrincipal()
+        Me.Close()
+    End Sub
+
+
+
+
+#End Region
 
 #Region "Load Formulario"
     Private Sub Presupuestos_Compras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Llenar_Grilla()
+
     End Sub
 #End Region
 
 #Region "Cargar Grilla"
+
+
 
     Dim dt As DataTable
 
@@ -38,11 +66,9 @@ Public Class Presupuestos_Compras
         oDs = Nothing
         conexion.Close()
     End Sub
-
 #End Region
 
 #Region "Eventos de DataGridView"
-
     Private Sub BunifuDataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles BunifuDataGridView1.SelectionChanged
         If BunifuDataGridView1.SelectedRows.Count > 0 Then
             Dim idPresupuesto As Integer = Convert.ToInt32(BunifuDataGridView1.SelectedRows(0).Cells(0).Value)
@@ -55,7 +81,6 @@ Public Class Presupuestos_Compras
         Dim comando As New SqlCommand
 
         conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
-        conexion.Open()
         comando.Connection = conexion
         comando.CommandType = CommandType.StoredProcedure
         comando.CommandText = "Consultar_Detalle_Presupuestos_Compras"
@@ -64,20 +89,22 @@ Public Class Presupuestos_Compras
         Dim datadapter As New SqlDataAdapter(comando)
         Dim oDs As New DataSet
 
-        datadapter.Fill(oDs)
-        If oDs.Tables(0).Rows.Count > 0 Then
-            Dim dtDetalles As DataTable = oDs.Tables(0)
-            BunifuDataGridView2.AutoGenerateColumns = True
-            BunifuDataGridView2.DataSource = dtDetalles
-            BunifuDataGridView2.Refresh()
-        Else
-            BunifuDataGridView2.DataSource = Nothing
-        End If
-
-        oDs = Nothing
-        conexion.Close()
+        Try
+            conexion.Open()
+            datadapter.Fill(oDs)
+            If oDs.Tables(0).Rows.Count > 0 Then
+                Dim dtDetalles As DataTable = oDs.Tables(0)
+                BunifuDataGridView2.AutoGenerateColumns = True
+                BunifuDataGridView2.DataSource = dtDetalles
+                BunifuDataGridView2.Refresh()
+            Else
+                BunifuDataGridView2.DataSource = Nothing
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los detalles: " & ex.Message)
+        Finally
+            conexion.Close()
+        End Try
     End Sub
-
 #End Region
-
 End Class
