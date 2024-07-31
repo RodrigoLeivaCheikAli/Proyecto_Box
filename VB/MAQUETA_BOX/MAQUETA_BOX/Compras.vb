@@ -52,6 +52,8 @@ Public Class Compras
         Dim columnaPrecio2 As DataGridViewColumn = BunifuDataGridView2.Columns(6)
         columnaPrecio2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         columnaPrecio2.DefaultCellStyle.Format = "C2"
+
+        BunifuDataGridView3.Hide()
     End Sub
 
 #End Region
@@ -233,7 +235,7 @@ Public Class Compras
             conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
             comando.Connection = conexion
             comando.CommandType = CommandType.StoredProcedure
-            comando.CommandText = "Consultar_Detalle_Presupuestos_Compras"
+            comando.CommandText = "Consultar_Detalle_Presupuestos_Compras_2"
             comando.Parameters.AddWithValue("@Id_Presupuesto", IdPresupuesto)
 
             Dim datadapter As New SqlDataAdapter(comando)
@@ -244,11 +246,12 @@ Public Class Compras
                 datadapter.Fill(oDs)
                 If oDs.Tables(0).Rows.Count > 0 Then
                     Dim dtDetalles As DataTable = oDs.Tables(0)
-                    BunifuDataGridView2.AutoGenerateColumns = True
-                    BunifuDataGridView2.DataSource = dtDetalles
-                    BunifuDataGridView2.Refresh()
+                    BunifuDataGridView3.AutoGenerateColumns = True
+                    BunifuDataGridView3.DataSource = dtDetalles
+                    BunifuDataGridView3.Refresh()
+                    BunifuDataGridView3.Show()
                 Else
-                    BunifuDataGridView2.DataSource = Nothing
+                    BunifuDataGridView3.DataSource = Nothing
                 End If
             Catch ex As Exception
                 MessageBox.Show("Error al cargar los detalles: " & ex.Message)
@@ -257,6 +260,8 @@ Public Class Compras
             End Try
         End If
     End Sub
+
+
 #End Region
 
 End Class
