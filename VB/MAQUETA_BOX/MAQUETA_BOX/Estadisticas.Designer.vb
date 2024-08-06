@@ -22,14 +22,14 @@ Partial Class Estadisticas
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title3 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title4 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Estadisticas))
         Me.chartProductoPorCategoria = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.ChartProdPreferidos = New System.Windows.Forms.DataVisualization.Charting.Chart()
@@ -78,58 +78,58 @@ Partial Class Estadisticas
         'chartProductoPorCategoria
         '
         Me.chartProductoPorCategoria.Anchor = System.Windows.Forms.AnchorStyles.None
-        ChartArea3.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
-        ChartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent
-        ChartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent
-        ChartArea3.Name = "ChartArea1"
-        Me.chartProductoPorCategoria.ChartAreas.Add(ChartArea3)
-        Legend3.Enabled = False
-        Legend3.Name = "Legend1"
-        Legend3.Title = "Productos por Categorias"
-        Me.chartProductoPorCategoria.Legends.Add(Legend3)
+        ChartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
+        ChartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent
+        ChartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent
+        ChartArea1.Name = "ChartArea1"
+        Me.chartProductoPorCategoria.ChartAreas.Add(ChartArea1)
+        Legend1.Enabled = False
+        Legend1.Name = "Legend1"
+        Legend1.Title = "Productos por Categorias"
+        Me.chartProductoPorCategoria.Legends.Add(Legend1)
         Me.chartProductoPorCategoria.Location = New System.Drawing.Point(12, 12)
         Me.chartProductoPorCategoria.Name = "chartProductoPorCategoria"
-        Series3.ChartArea = "ChartArea1"
-        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar
-        Series3.Color = System.Drawing.Color.DodgerBlue
-        Series3.IsValueShownAsLabel = True
-        Series3.LabelForeColor = System.Drawing.Color.White
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Series3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
-        Me.chartProductoPorCategoria.Series.Add(Series3)
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar
+        Series1.Color = System.Drawing.Color.DodgerBlue
+        Series1.IsValueShownAsLabel = True
+        Series1.LabelForeColor = System.Drawing.Color.White
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
+        Me.chartProductoPorCategoria.Series.Add(Series1)
         Me.chartProductoPorCategoria.Size = New System.Drawing.Size(531, 300)
         Me.chartProductoPorCategoria.TabIndex = 39
         Me.chartProductoPorCategoria.Text = "Productos por Rubros"
-        Title3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title3.Name = "Title1"
-        Title3.Text = "Cantidad de Productos por Categorias"
-        Me.chartProductoPorCategoria.Titles.Add(Title3)
+        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title1.Name = "Title1"
+        Title1.Text = "Cantidad de Productos por Categorias"
+        Me.chartProductoPorCategoria.Titles.Add(Title1)
         '
         'ChartProdPreferidos
         '
         Me.ChartProdPreferidos.Anchor = System.Windows.Forms.AnchorStyles.None
-        ChartArea4.Name = "ChartArea1"
-        Me.ChartProdPreferidos.ChartAreas.Add(ChartArea4)
-        Legend4.Name = "Legend1"
-        Me.ChartProdPreferidos.Legends.Add(Legend4)
+        ChartArea2.Name = "ChartArea1"
+        Me.ChartProdPreferidos.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.ChartProdPreferidos.Legends.Add(Legend2)
         Me.ChartProdPreferidos.Location = New System.Drawing.Point(549, 21)
         Me.ChartProdPreferidos.Name = "ChartProdPreferidos"
-        Series4.ChartArea = "ChartArea1"
-        Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
-        Series4.IsValueShownAsLabel = True
-        Series4.LabelForeColor = System.Drawing.Color.White
-        Series4.Legend = "Legend1"
-        Series4.Name = "Series1"
-        Series4.YValuesPerPoint = 4
-        Me.ChartProdPreferidos.Series.Add(Series4)
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
+        Series2.IsValueShownAsLabel = True
+        Series2.LabelForeColor = System.Drawing.Color.White
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Series2.YValuesPerPoint = 4
+        Me.ChartProdPreferidos.Series.Add(Series2)
         Me.ChartProdPreferidos.Size = New System.Drawing.Size(452, 263)
         Me.ChartProdPreferidos.TabIndex = 40
         Me.ChartProdPreferidos.Text = "Chart1"
-        Title4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title4.Name = "Title1"
-        Title4.Text = "Top Productos Mas Vendidos"
-        Me.ChartProdPreferidos.Titles.Add(Title4)
+        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title2.Name = "Title1"
+        Title2.Text = "Top Productos Mas Vendidos"
+        Me.ChartProdPreferidos.Titles.Add(Title2)
         '
         'Label1
         '
