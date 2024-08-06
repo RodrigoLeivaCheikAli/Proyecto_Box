@@ -96,8 +96,6 @@ Public Class Inicio
 
 #End Region
 
-
-
     Private Sub lbl_Clientes_Click(sender As Object, e As EventArgs) Handles lbl_Clientes.Click
         ' Instancia de la clase Clientes pasando el Panel1 como parámetro
         Dim ClientesForm As New Clientes(Me.Panel1)
@@ -112,37 +110,28 @@ Public Class Inicio
         ' Mostrar el formulario dentro del panel
         ClientesForm.Show()
     End Sub
-
-
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
-
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+#End Region
+#Region "Estados del Formulario"
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
 
+    Private Sub btnMaximizar_Click(sender As Object, e As EventArgs) Handles btnMaximizar.Click
+        Me.WindowState = FormWindowState.Maximized
+        btnRestaurar.Visible = True
+        btnMaximizar.Visible = False
+    End Sub
 
+    Private Sub btnRestaurar_Click(sender As Object, e As EventArgs) Handles btnRestaurar.Click
+        Me.WindowState = FormWindowState.Normal
+        btnRestaurar.Visible = False
+        btnMaximizar.Visible = True
+    End Sub
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
 #End Region
-
 
 #Region "Codigo para restaurar el panel (Comentado por error en otra linea)"
     'Private pictureBox As PictureBox
