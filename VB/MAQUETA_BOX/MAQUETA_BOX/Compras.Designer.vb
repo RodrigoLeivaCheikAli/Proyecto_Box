@@ -23,6 +23,11 @@ Partial Class Compras
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Compras))
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -31,14 +36,11 @@ Partial Class Compras
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Compras))
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BunifuDataGridView3 = New Bunifu.UI.WinForms.BunifuDataGridView()
+        Me.DataGridViewImageColumn3 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -56,15 +58,13 @@ Partial Class Compras
         Me.boton_Busqueda = New System.Windows.Forms.PictureBox()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.BunifuDataGridView3 = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.DataGridViewImageColumn3 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
+        CType(Me.BunifuDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuDataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.boton_Busqueda, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BunifuDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BunifuElipse1
@@ -92,8 +92,96 @@ Partial Class Compras
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1770, 717)
+        Me.Panel1.Size = New System.Drawing.Size(1386, 717)
         Me.Panel1.TabIndex = 0
+        '
+        'BunifuDataGridView3
+        '
+        Me.BunifuDataGridView3.AllowCustomTheming = False
+        Me.BunifuDataGridView3.AllowUserToDeleteRows = False
+        Me.BunifuDataGridView3.AllowUserToOrderColumns = True
+        Me.BunifuDataGridView3.AllowUserToResizeColumns = False
+        Me.BunifuDataGridView3.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.BunifuDataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.BunifuDataGridView3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BunifuDataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.BunifuDataGridView3.BackgroundColor = System.Drawing.Color.White
+        Me.BunifuDataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.BunifuDataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.BunifuDataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.BunifuDataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.BunifuDataGridView3.ColumnHeadersHeight = 40
+        Me.BunifuDataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewImageColumn3})
+        Me.BunifuDataGridView3.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuDataGridView3.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.BunifuDataGridView3.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.BunifuDataGridView3.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuDataGridView3.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White
+        Me.BunifuDataGridView3.CurrentTheme.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BunifuDataGridView3.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuDataGridView3.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BunifuDataGridView3.CurrentTheme.HeaderStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
+        Me.BunifuDataGridView3.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.BunifuDataGridView3.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.BunifuDataGridView3.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White
+        Me.BunifuDataGridView3.CurrentTheme.Name = Nothing
+        Me.BunifuDataGridView3.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuDataGridView3.CurrentTheme.RowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.BunifuDataGridView3.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.BunifuDataGridView3.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuDataGridView3.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.BunifuDataGridView3.DefaultCellStyle = DataGridViewCellStyle3
+        Me.BunifuDataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.BunifuDataGridView3.EnableHeadersVisualStyles = False
+        Me.BunifuDataGridView3.GridColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuDataGridView3.HeaderBackColor = System.Drawing.Color.DodgerBlue
+        Me.BunifuDataGridView3.HeaderBgColor = System.Drawing.Color.Empty
+        Me.BunifuDataGridView3.HeaderForeColor = System.Drawing.Color.White
+        Me.BunifuDataGridView3.Location = New System.Drawing.Point(205, 450)
+        Me.BunifuDataGridView3.Name = "BunifuDataGridView3"
+        Me.BunifuDataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.BunifuDataGridView3.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.BunifuDataGridView3.RowHeadersVisible = False
+        Me.BunifuDataGridView3.RowTemplate.Height = 40
+        Me.BunifuDataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.BunifuDataGridView3.Size = New System.Drawing.Size(979, 300)
+        Me.BunifuDataGridView3.TabIndex = 29
+        Me.BunifuDataGridView3.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue
+        '
+        'DataGridViewImageColumn3
+        '
+        Me.DataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DataGridViewImageColumn3.Frozen = True
+        Me.DataGridViewImageColumn3.HeaderText = "QUITAR"
+        Me.DataGridViewImageColumn3.Image = CType(resources.GetObject("DataGridViewImageColumn3.Image"), System.Drawing.Image)
+        Me.DataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.DataGridViewImageColumn3.Name = "DataGridViewImageColumn3"
+        Me.DataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewImageColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.DataGridViewImageColumn3.Width = 75
         '
         'PictureBox1
         '
@@ -110,7 +198,7 @@ Partial Class Compras
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(827, 426)
+        Me.Label2.Location = New System.Drawing.Point(635, 426)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(66, 21)
         Me.Label2.TabIndex = 27
@@ -121,7 +209,7 @@ Partial Class Compras
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(809, 74)
+        Me.Label1.Location = New System.Drawing.Point(617, 74)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(102, 21)
         Me.Label1.TabIndex = 26
@@ -185,7 +273,7 @@ Partial Class Compras
         Me.BunifuDataGridView2.HeaderBackColor = System.Drawing.Color.DodgerBlue
         Me.BunifuDataGridView2.HeaderBgColor = System.Drawing.Color.Empty
         Me.BunifuDataGridView2.HeaderForeColor = System.Drawing.Color.White
-        Me.BunifuDataGridView2.Location = New System.Drawing.Point(397, 450)
+        Me.BunifuDataGridView2.Location = New System.Drawing.Point(205, 450)
         Me.BunifuDataGridView2.Name = "BunifuDataGridView2"
         Me.BunifuDataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -249,7 +337,7 @@ Partial Class Compras
         '
         Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(813, 644)
+        Me.PictureBox2.Location = New System.Drawing.Point(621, 644)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(131, 70)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -315,7 +403,7 @@ Partial Class Compras
         Me.BunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue
         Me.BunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty
         Me.BunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White
-        Me.BunifuDataGridView1.Location = New System.Drawing.Point(397, 123)
+        Me.BunifuDataGridView1.Location = New System.Drawing.Point(205, 123)
         Me.BunifuDataGridView1.Name = "BunifuDataGridView1"
         Me.BunifuDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -349,7 +437,7 @@ Partial Class Compras
         '
         Me.boton_Busqueda.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.boton_Busqueda.Image = CType(resources.GetObject("boton_Busqueda.Image"), System.Drawing.Image)
-        Me.boton_Busqueda.Location = New System.Drawing.Point(664, 20)
+        Me.boton_Busqueda.Location = New System.Drawing.Point(472, 20)
         Me.boton_Busqueda.Name = "boton_Busqueda"
         Me.boton_Busqueda.Size = New System.Drawing.Size(64, 39)
         Me.boton_Busqueda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -360,7 +448,7 @@ Partial Class Compras
         '
         Me.txtBusqueda.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtBusqueda.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBusqueda.Location = New System.Drawing.Point(734, 24)
+        Me.txtBusqueda.Location = New System.Drawing.Point(542, 24)
         Me.txtBusqueda.MinimumSize = New System.Drawing.Size(4, 30)
         Me.txtBusqueda.Multiline = True
         Me.txtBusqueda.Name = "txtBusqueda"
@@ -379,100 +467,12 @@ Partial Class Compras
         Me.DataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.DataGridViewImageColumn2.Width = 75
         '
-        'BunifuDataGridView3
-        '
-        Me.BunifuDataGridView3.AllowCustomTheming = False
-        Me.BunifuDataGridView3.AllowUserToDeleteRows = False
-        Me.BunifuDataGridView3.AllowUserToOrderColumns = True
-        Me.BunifuDataGridView3.AllowUserToResizeColumns = False
-        Me.BunifuDataGridView3.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.BunifuDataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.BunifuDataGridView3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BunifuDataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.BunifuDataGridView3.BackgroundColor = System.Drawing.Color.White
-        Me.BunifuDataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.BunifuDataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.BunifuDataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.BunifuDataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.BunifuDataGridView3.ColumnHeadersHeight = 40
-        Me.BunifuDataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewImageColumn3})
-        Me.BunifuDataGridView3.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(227, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.BunifuDataGridView3.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.BunifuDataGridView3.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black
-        Me.BunifuDataGridView3.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.BunifuDataGridView3.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.White
-        Me.BunifuDataGridView3.CurrentTheme.BackColor = System.Drawing.Color.DodgerBlue
-        Me.BunifuDataGridView3.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.BunifuDataGridView3.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue
-        Me.BunifuDataGridView3.CurrentTheme.HeaderStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
-        Me.BunifuDataGridView3.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.BunifuDataGridView3.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.BunifuDataGridView3.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White
-        Me.BunifuDataGridView3.CurrentTheme.Name = Nothing
-        Me.BunifuDataGridView3.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.BunifuDataGridView3.CurrentTheme.RowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.BunifuDataGridView3.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black
-        Me.BunifuDataGridView3.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.BunifuDataGridView3.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.BunifuDataGridView3.DefaultCellStyle = DataGridViewCellStyle3
-        Me.BunifuDataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.BunifuDataGridView3.EnableHeadersVisualStyles = False
-        Me.BunifuDataGridView3.GridColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.BunifuDataGridView3.HeaderBackColor = System.Drawing.Color.DodgerBlue
-        Me.BunifuDataGridView3.HeaderBgColor = System.Drawing.Color.Empty
-        Me.BunifuDataGridView3.HeaderForeColor = System.Drawing.Color.White
-        Me.BunifuDataGridView3.Location = New System.Drawing.Point(397, 450)
-        Me.BunifuDataGridView3.Name = "BunifuDataGridView3"
-        Me.BunifuDataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.BunifuDataGridView3.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.BunifuDataGridView3.RowHeadersVisible = False
-        Me.BunifuDataGridView3.RowTemplate.Height = 40
-        Me.BunifuDataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.BunifuDataGridView3.Size = New System.Drawing.Size(979, 300)
-        Me.BunifuDataGridView3.TabIndex = 29
-        Me.BunifuDataGridView3.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DodgerBlue
-        '
-        'DataGridViewImageColumn3
-        '
-        Me.DataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DataGridViewImageColumn3.Frozen = True
-        Me.DataGridViewImageColumn3.HeaderText = "QUITAR"
-        Me.DataGridViewImageColumn3.Image = CType(resources.GetObject("DataGridViewImageColumn3.Image"), System.Drawing.Image)
-        Me.DataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.DataGridViewImageColumn3.Name = "DataGridViewImageColumn3"
-        Me.DataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewImageColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.DataGridViewImageColumn3.Width = 75
-        '
         'Compras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1770, 717)
+        Me.ClientSize = New System.Drawing.Size(1386, 717)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Compras"
@@ -480,12 +480,12 @@ Partial Class Compras
         Me.Text = "Compras"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.BunifuDataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BunifuDataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.boton_Busqueda, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BunifuDataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
