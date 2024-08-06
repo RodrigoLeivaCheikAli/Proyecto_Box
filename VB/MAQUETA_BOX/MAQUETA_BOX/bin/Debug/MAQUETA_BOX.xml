@@ -92,6 +92,56 @@ MAQUETA_BOX
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.categoria">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.Clientes">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.Compras">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.presupuesto_de_tareas_de_lista_de_verificacion">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.presupuesto_de_tareas_de_lista_de_verificacion1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.presupuesto_de_tareas_de_lista_de_verificacion2">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.presupuesto_de_tareas_de_lista_de_verificacion3">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.Productos">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.Proveedores">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.Ventas">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="T:MAQUETA_BOX.PIN_GRUPO11DataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.

@@ -61,6 +61,16 @@ Public Class Inicio
         newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
         newForm.Show()
     End Sub
+    Private Sub lbl_Estadisticas_Click(sender As Object, e As EventArgs) Handles lbl_Estadisticas.Click
+        PictureBox1.Visible = False
+        Panel1.Controls.Clear()
+        Dim newForm As New Estadisticas() ' Crea una nueva instancia del formulario que deseas agregar
+        newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
+        Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+
+        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        newForm.Show()
+    End Sub
 
 #Region "Productos"
     Private Sub lbl_Productos_Click(sender As Object, e As EventArgs) Handles lbl_Productos.Click
@@ -112,6 +122,8 @@ Public Class Inicio
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
     End Sub
+
+
 
 
 
