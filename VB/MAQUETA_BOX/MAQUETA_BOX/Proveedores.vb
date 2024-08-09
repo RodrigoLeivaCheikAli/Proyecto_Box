@@ -230,9 +230,6 @@ Public Class Proveedores
         End Using
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        CargarGrilla()
-        Limpiar()
-    End Sub
+
 #End Region
 End Class
