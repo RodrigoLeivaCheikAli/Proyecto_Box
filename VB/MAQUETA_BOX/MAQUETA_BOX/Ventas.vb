@@ -33,6 +33,9 @@ Public Class Ventas
         oDs = Nothing
         conexion.Close()
         AdjustColumnWidths()
+        Dim columnaPrecio As DataGridViewColumn = DataGridView1.Columns("Precio")
+        columnaPrecio.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        columnaPrecio.DefaultCellStyle.Format = "C2"
     End Sub
 
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
