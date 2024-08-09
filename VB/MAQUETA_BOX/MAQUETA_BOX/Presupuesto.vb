@@ -1,7 +1,8 @@
 ﻿Imports System.Data.SqlClient
+Imports DocumentFormat.OpenXml.Spreadsheet
 
 Public Class Presupuesto
-
+    Dim cant As New Dictionary(Of Integer, Integer)
 
 
 
@@ -20,6 +21,7 @@ Public Class Presupuesto
         ' Actualizar la vista del DataGridView para mostrar los cambios
         DataGridView3.Refresh()
     End Sub
+
     Public Sub CopiarDatos(dgvOrigen As DataGridView)
         ' Limpiar cualquier dato existente en el DataGridView destino
         DataGridView3.Rows.Clear()
@@ -48,6 +50,47 @@ Public Class Presupuesto
 
 
     End Sub
+    Public Sub LoadData(ByVal data As Dictionary(Of Integer, Integer))
+        For Each item In data
+            cant.Add(item.Key, item.Value)
+        Next
+    End Sub
+
+    ' Método para actualizar la base de datos
+    Public Sub ActualizarCant()
+        ' Conexión a la base de datos
+        Dim conn As New SqlConnection("data source=168.197.51.109;initial catalog=PIN_GRUPO11;user id=PIN_GRUPO11;password=PIN_GRUPO11123")
+        Dim comando As New SqlCommand
+
+        Try
+            conn.Open()
+
+            ' Recorrer el diccionario cant y actualizar la base de datos
+            For Each kvp As KeyValuePair(Of Integer, Integer) In cant
+                Dim id As Integer = kvp.Key ' La clave del diccionario es el ID del producto (segunda columna)
+                Dim value As Integer = kvp.Value ' El valor del diccionario es la cantidad (última columna)
+
+                comando.Connection = conn
+                comando.CommandType = CommandType.StoredProcedure
+                comando.CommandText = "Modificar_CantidadProductos"
+                comando.Parameters.Clear() ' Limpiar parámetros anteriores
+                comando.Parameters.AddWithValue("@idproducto", id)
+                comando.Parameters.AddWithValue("@Cantidad", value)
+
+                comando.ExecuteNonQuery()
+            Next
+
+            MessageBox.Show("Base de datos actualizada correctamente.")
+        Catch ex As Exception
+            MessageBox.Show("Error al actualizar la base de datos: " & ex.Message)
+        Finally
+            ' Asegurarse de cerrar la conexión
+            If conn IsNot Nothing AndAlso conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
+        End Try
+    End Sub
+
     Private Sub DataGridView3_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs)
         Dim columnName As String = DataGridView3.Columns(e.ColumnIndex).Name
 
@@ -230,7 +273,7 @@ Public Class Presupuesto
         comando.CommandType = CommandType.StoredProcedure
         comando.CommandText = "Cargar_DetallesV"
 
-        ' Suponiendo que tienes un DataGridView llamado DataGridView3
+
         For Each fila As DataGridViewRow In DataGridView3.Rows
             ' Verifica si la fila no está vacía
             If Not fila.IsNewRow Then
@@ -290,7 +333,7 @@ Public Class Presupuesto
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
+        ActualizarCant()
         CargarDetallesV()
         CargarPresupuesto()
         Panel1.Controls.Clear()

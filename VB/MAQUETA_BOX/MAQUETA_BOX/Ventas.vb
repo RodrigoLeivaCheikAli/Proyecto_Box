@@ -6,7 +6,9 @@ Public Class Ventas
     Dim comando As New SqlCommand
     Private addedRows As New Dictionary(Of Integer, Integer)
     Dim Cant As New Dictionary(Of Integer, Integer)
+    Private originalValues As New Dictionary(Of Integer, Integer)
     Dim valor As Integer
+    Private formLoaded As Boolean = False
 
     Private Sub Ventas_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         LlenarGrilla()
@@ -40,6 +42,25 @@ Public Class Ventas
             If e.ColumnIndex = DataGridView1.Columns("ImageColumn").Index AndAlso e.RowIndex >= 0 Then
                 ' Obtener la fila seleccionada
                 Dim selectedRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+                Dim lastColumnIndex As Integer = DataGridView1.ColumnCount - 1
+                Dim currentValue As Integer = Convert.ToInt32(selectedRow.Cells(lastColumnIndex).Value)
+
+                ' Guardar el valor original si no está en el diccionario
+                If Not originalValues.ContainsKey(e.RowIndex) Then
+                    originalValues.Add(e.RowIndex, currentValue)
+                End If
+
+                ' Verificar si el valor es mayor que 0 antes de restar
+                If currentValue > 0 Then
+                    selectedRow.Cells(lastColumnIndex).Value = currentValue - 1
+                Else
+                    If Not formLoaded Then
+                        MsgBox("No Existe Mas Stock Disponible de Este Producto, Para Continuar Esta Venta Debera Realizarse un Pedido ", vbInformation, "TTK")
+
+                        formLoaded = True
+                    End If
+                End If
+
                 Dim newRow As DataGridViewRow = CType(selectedRow.Clone(), DataGridViewRow)
                 For i As Integer = 1 To selectedRow.Cells.Count - 1 ' Ignorar la primera columna
                     newRow.Cells(i).Value = selectedRow.Cells(i).Value
@@ -77,26 +98,36 @@ Public Class Ventas
                     End If
                 Next
 
-                If originalIndex <> -1 AndAlso Cant.ContainsKey(originalIndex) Then
-                    Cant(originalIndex) -= 1
-                    If Cant(originalIndex) > 0 Then
-                        DataGridView2.Rows(e.RowIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(originalIndex)
-                    Else
-                        ' Eliminar de addedRows y Cant antes de eliminar la fila
-                        addedRows.Remove(originalIndex)
-                        Cant.Remove(originalIndex)
-                        DataGridView2.Rows.RemoveAt(e.RowIndex)
+                If originalIndex <> -1 Then
+                    ' Sumar 1 al valor de la última columna en DataGridView1 sin exceder el original
+                    Dim lastColumnIndex As Integer = DataGridView1.ColumnCount - 1
+                    Dim currentValue As Integer = Convert.ToInt32(DataGridView1.Rows(originalIndex).Cells(lastColumnIndex).Value)
+                    Dim originalValue As Integer = originalValues(originalIndex)
+                    If currentValue < originalValue Then
+                        DataGridView1.Rows(originalIndex).Cells(lastColumnIndex).Value = currentValue + 1
+                    End If
 
-                        ' Actualizar los índices en addedRows
-                        Dim updatedAddedRows As New Dictionary(Of Integer, Integer)
-                        For Each pair In addedRows
-                            If pair.Value > e.RowIndex Then
-                                updatedAddedRows.Add(pair.Key, pair.Value - 1)
-                            Else
-                                updatedAddedRows.Add(pair.Key, pair.Value)
-                            End If
-                        Next
-                        addedRows = updatedAddedRows
+                    If Cant.ContainsKey(originalIndex) Then
+                        Cant(originalIndex) -= 1
+                        If Cant(originalIndex) > 0 Then
+                            DataGridView2.Rows(e.RowIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(originalIndex)
+                        Else
+                            ' Eliminar de addedRows y Cant antes de eliminar la fila
+                            addedRows.Remove(originalIndex)
+                            Cant.Remove(originalIndex)
+                            DataGridView2.Rows.RemoveAt(e.RowIndex)
+
+                            ' Actualizar los índices en addedRows
+                            Dim updatedAddedRows As New Dictionary(Of Integer, Integer)
+                            For Each pair In addedRows
+                                If pair.Value > e.RowIndex Then
+                                    updatedAddedRows.Add(pair.Key, pair.Value - 1)
+                                Else
+                                    updatedAddedRows.Add(pair.Key, pair.Value)
+                                End If
+                            Next
+                            addedRows = updatedAddedRows
+                        End If
                     End If
                 End If
             End If
@@ -133,6 +164,19 @@ Public Class Ventas
     Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Panel1.Controls.Clear()
         Dim newForm As New Presupuesto() ' Crea una nueva instancia del formulario que deseas agregar
+        Dim lastColumnValues As New Dictionary(Of Integer, Integer)
+
+        ' Recorrer las filas de DataGridView1 y copiar los valores de la segunda y última columna
+        For Each row As DataGridViewRow In DataGridView1.Rows
+            If Not row.IsNewRow Then
+                Dim secondColumnIndex As Integer = 1 ' Suponiendo que la segunda columna tiene el índice 1
+                Dim lastColumnIndex As Integer = DataGridView1.ColumnCount - 1
+                Dim key As Integer = Convert.ToInt32(row.Cells(secondColumnIndex).Value)
+                Dim value As Integer = Convert.ToInt32(row.Cells(lastColumnIndex).Value)
+                lastColumnValues.Add(key, value)
+            End If
+        Next
+        newForm.LoadData(lastColumnValues)
         newForm.CopiarDatos(DataGridView2)
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
@@ -163,17 +207,24 @@ Public Class Ventas
         Dim isNumericSearch As Boolean = IsNumeric(busqueda)
 
         If isNumericSearch Then
-            query = "SELECT o.Id_Oferta AS PRODUCTO, o.Descripcion AS NOMBRE, v.Tipo AS VEHICULO, p.Nombre AS PROVEEDOR, o.Precio_Costo AS PRECIO_COSTO
-                 FROM Ofertas o
-                 JOIN Vehiculos v ON o.Id_Vehiculo = v.Id_Vehiculo
-                 JOIN Proveedores p ON o.Id_Proveedor = p.Id_Proveedor
-                 WHERE o.Id_Oferta = @Busqueda OR o.Precio_Costo = @Busqueda"
+            query = "select Id_Oferta as [N°] , T.Tipo as Tipo, Descripcion as Descripcion, V.Tipo as Vehiculo,O.Precio_Costo + (O.Precio_Costo*O.Ganancia) as Precio, Cantidad
+                 from Ofertas O
+                 join Tipos_de_Ofertas T
+                 on O.Id_Tipo_Oferta = T.Id_Tipos_Ofertas
+                 join Vehiculos V
+                 on O.Id_Vehiculo = V.Id_Vehiculo
+                WHERE O.Id_Oferta = @Busqueda OR ROUND(O.Precio_Costo + (O.Precio_Costo * O.Ganancia), 2) = @Busqueda"
         Else
-            query = "SELECT o.Id_Oferta AS PRODUCTO, o.Descripcion AS NOMBRE, v.Tipo AS VEHICULO, p.Nombre AS PROVEEDOR, o.Precio_Costo AS PRECIO_COSTO
-                 FROM Ofertas o
-                 JOIN Vehiculos v ON o.Id_Vehiculo = v.Id_Vehiculo
-                 JOIN Proveedores p ON o.Id_Proveedor = p.Id_Proveedor
-                 WHERE o.Descripcion LIKE @Busqueda OR v.Tipo LIKE @Busqueda OR p.Nombre LIKE @Busqueda"
+            query = "SELECT Id_Oferta AS [N°], T.Tipo AS Tipo, Descripcion AS Descripcion, V.Tipo AS Vehiculo, 
+                        ROUND(O.Precio_Costo + (O.Precio_Costo * O.Ganancia), 2) AS Precio, Cantidad
+                 FROM Ofertas O
+                 JOIN Tipos_de_Ofertas T ON O.Id_Tipo_Oferta = T.Id_Tipos_Ofertas
+                 JOIN Vehiculos V ON O.Id_Vehiculo = V.Id_Vehiculo
+                 JOIN Proveedores p ON O.Id_Proveedor = p.Id_Proveedor
+                 WHERE O.Descripcion LIKE @Busqueda OR 
+                       V.Tipo LIKE @Busqueda OR 
+                       T.Tipo like @Busqueda OR 
+                       p.Nombre LIKE @Busqueda"
         End If
 
         Using connection As New SqlConnection(connectionString)
@@ -192,23 +243,23 @@ Public Class Ventas
                     adapter.Fill(dataTable)
                     DataGridView1.DataSource = dataTable
 
-                    ' Renombra las columnas del DataGridView si es necesario
-                    For Each column As DataGridViewColumn In DataGridView1.Columns
-                        If column.Name = "Id_Oferta" Then
-                            column.HeaderText = "PRODUCTO"
-                        ElseIf column.Name = "Descripcion" Then
-                            column.HeaderText = "NOMBRE"
-                        ElseIf column.Name = "Tipo" Then
-                            column.HeaderText = "VEHICULO"
-                        ElseIf column.Name = "Nombre" Then
-                            column.HeaderText = "PROVEEDOR"
-                        ElseIf column.Name = "Precio_Costo" Then
-                            column.HeaderText = "PRECIO_COSTO"
-                        End If
-                    Next
+                    '' Renombra las columnas del DataGridView si es necesario
+                    'For Each column As DataGridViewColumn In DataGridView1.Columns
+                    '    If column.Name = "Id_Oferta" Then
+                    '        column.HeaderText = "PRODUCTO"
+                    '    ElseIf column.Name = "Descripcion" Then
+                    '        column.HeaderText = "NOMBRE"
+                    '    ElseIf column.Name = "Tipo" Then
+                    '        column.HeaderText = "VEHICULO"
+                    '    ElseIf column.Name = "Nombre" Then
+                    '        column.HeaderText = "PROVEEDOR"
+                    '    ElseIf column.Name = "Precio_Costo" Then
+                    '        column.HeaderText = "PRECIO_COSTO"
+                    '    End If
+                    'Next
 
                     ' Establece el estilo y formato para la columna de precio
-                    Dim columnaPrecio As DataGridViewColumn = DataGridView1.Columns("PRECIO_COSTO")
+                    Dim columnaPrecio As DataGridViewColumn = DataGridView1.Columns("Precio")
                     columnaPrecio.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                     columnaPrecio.DefaultCellStyle.Format = "C2"
 
