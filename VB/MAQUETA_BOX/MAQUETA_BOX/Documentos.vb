@@ -17,11 +17,23 @@ Public Class Documentos
         CargarCBOClientes()
         CargarCbosAño()
         CargarCboMes()
+        CargarCbosEstado()
         cboDia.Enabled = False
         cboMes.Enabled = False
     End Sub
 
 #End Region
+
+    Public Sub CargarCbosEstado()
+        cboEstado.Items.Clear()
+
+        Dim estados() As String = {"Vigente", "Descontinuado", "Pedido", "Realizado"}
+
+        For Each estado As String In estados
+            cboEstado.Items.Add(estado)
+        Next
+    End Sub
+
 
     Public Sub CargarCbosAño()
         Dim Año As Integer = 2000
@@ -149,7 +161,8 @@ Public Class Documentos
 #End Region
 
     Private Sub FiltrarGrilla()
-        If cboClientes.SelectedItem IsNot Nothing Then
+        ' Check if any of the filters are selected
+        If cboClientes.SelectedItem IsNot Nothing OrElse cboAño.SelectedItem IsNot Nothing OrElse cboMes.SelectedItem IsNot Nothing OrElse cboDia.SelectedItem IsNot Nothing OrElse cboEstado.SelectedItem IsNot Nothing Then
             Dim dataset As New DataSet()
 
             Try
@@ -162,12 +175,16 @@ Public Class Documentos
                 comando.CommandText = "Consultar_Sortear_Presupuesto"
 
                 comando.Parameters.Clear()
-                comando.Parameters.AddWithValue("@Nombre_Apellido", If(cboClientes.SelectedItem.ToString() = "Ninguno", DBNull.Value, cboClientes.SelectedItem.ToString()))
 
-                ' Convertir valores de los ComboBox a enteros o DBNull
+                ' Nombre_Apellido parameter
+                Dim nombreApellido As Object = If(cboClientes.SelectedItem Is Nothing OrElse cboClientes.SelectedItem.ToString() = "Ninguno", DBNull.Value, cboClientes.SelectedItem.ToString())
+                comando.Parameters.AddWithValue("@Nombre_Apellido", nombreApellido)
+
+                ' Año parameter
                 Dim año As Object = If(cboAño.SelectedItem Is Nothing OrElse cboAño.SelectedItem.ToString() = "Ninguno", DBNull.Value, Convert.ToInt32(cboAño.SelectedItem))
+                comando.Parameters.AddWithValue("@Año", año)
 
-                ' Mapa para convertir los nombres de los meses a números
+                ' Mes parameter
                 Dim meses As New Dictionary(Of String, Integer) From {
                 {"Enero", 1}, {"Febrero", 2}, {"Marzo", 3}, {"Abril", 4},
                 {"Mayo", 5}, {"Junio", 6}, {"Julio", 7}, {"Agosto", 8},
@@ -182,21 +199,34 @@ Public Class Documentos
                 Else
                     mes = DBNull.Value
                 End If
-
-                Dim dia As Object = If(cboDia.SelectedItem Is Nothing OrElse cboDia.SelectedItem.ToString() = "Ninguno", DBNull.Value, Convert.ToInt32(cboDia.SelectedItem))
-
-                comando.Parameters.AddWithValue("@Año", año)
                 comando.Parameters.AddWithValue("@Mes", mes)
+
+                ' Dia parameter
+                Dim dia As Object = If(cboDia.SelectedItem Is Nothing OrElse cboDia.SelectedItem.ToString() = "Ninguno", DBNull.Value, Convert.ToInt32(cboDia.SelectedItem))
                 comando.Parameters.AddWithValue("@Dia", dia)
 
+                ' Estado parameter
+                Dim estado As Object = If(cboEstado.SelectedItem Is Nothing OrElse cboEstado.SelectedItem.ToString() = "Ninguno", DBNull.Value, cboEstado.SelectedItem.ToString())
+                comando.Parameters.AddWithValue("@Estado", estado)
+
+                ' Execute the command and fill the dataset
                 Dim adapter As New SqlDataAdapter(comando)
                 adapter.Fill(dataset)
 
+                ' Bind the data to DataGridView
                 If dataset.Tables.Count > 0 AndAlso dataset.Tables(0).Rows.Count > 0 Then
                     DataGridView1.DataSource = dataset.Tables(0)
                 Else
                     DataGridView1.DataSource = Nothing
                 End If
+
+                ' Clear the selections in the ComboBoxes after filtering
+                cboClientes.SelectedIndex = -1
+                cboAño.SelectedIndex = -1
+                cboMes.SelectedIndex = -1
+                cboDia.SelectedIndex = -1
+                cboEstado.SelectedIndex = -1
+
             Catch ex As Exception
                 MessageBox.Show("Error al cargar documentos del proveedor: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
@@ -206,6 +236,10 @@ Public Class Documentos
             End Try
         End If
     End Sub
+
+
+
+
 
 
 
@@ -306,6 +340,7 @@ Public Class Documentos
         cboAño.Text = "Año"
         cboMes.Text = "Mes"
         cboDia.Text = "Día"
+        cboEstado.Text = "Estado"
         cboMes.Enabled = False
         cboDia.Enabled = False
     End Sub
@@ -314,4 +349,11 @@ Public Class Documentos
         FiltrarGrilla()
     End Sub
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub cboEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboEstado.SelectedIndexChanged
+        FiltrarGrilla()
+    End Sub
 End Class
