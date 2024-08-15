@@ -21,8 +21,7 @@ Public Class Inicio
 
 
 #Region "Botones e Imagenes redirección"
-
-    Private Sub lbl_Ventas_Click_1(sender As Object, e As EventArgs) Handles lbl_Ventas.Click
+    Private Sub btnVentas_Click(sender As Object, e As EventArgs) Handles btnVentas.Click
         PictureBox1.Visible = False
         Panel1.Controls.Clear()
         Dim newForm As New Ventas() ' Crea una nueva instancia del formulario que deseas agregar
@@ -32,8 +31,7 @@ Public Class Inicio
         newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
         newForm.Show()
     End Sub
-
-    Private Sub lbl_Compras_Click(sender As Object, e As EventArgs) Handles lbl_Compras.Click
+    Private Sub btnCompras_Click(sender As Object, e As EventArgs) Handles btnCompras.Click
         PictureBox1.Visible = False
         Panel1.Controls.Clear()
         Dim newForm As New Compras() ' Crea una nueva instancia del formulario que deseas agregar
@@ -42,7 +40,7 @@ Public Class Inicio
         newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
         newForm.Show() ' Muestra el formulario
     End Sub
-    Private Sub lbl_Documentos_Click(sender As Object, e As EventArgs) Handles lbl_Documentos.Click
+    Private Sub btnDocumentos_Click(sender As Object, e As EventArgs) Handles btnDocumentos.Click
         PictureBox1.Visible = False
         Panel1.Controls.Clear()
         Dim newForm As New Documentos() ' Crea una nueva instancia del formulario que deseas agregar
@@ -51,7 +49,7 @@ Public Class Inicio
         newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
         newForm.Show() ' Muestra el formulario
     End Sub
-    Private Sub lbl_Proveedores_Click(sender As Object, e As EventArgs) Handles lbl_Proveedores.Click
+    Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
         PictureBox1.Visible = False
         Panel1.Controls.Clear()
         Dim newForm As New Proveedores() ' Crea una nueva instancia del formulario que deseas agregar
@@ -61,7 +59,7 @@ Public Class Inicio
         newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
         newForm.Show()
     End Sub
-    Private Sub lbl_Estadisticas_Click(sender As Object, e As EventArgs) Handles lbl_Estadisticas.Click
+    Private Sub btnEstadisticas_Click(sender As Object, e As EventArgs) Handles btnEstadisticas.Click
         PictureBox1.Visible = False
         Panel1.Controls.Clear()
         Dim newForm As New Estadisticas() ' Crea una nueva instancia del formulario que deseas agregar
@@ -73,8 +71,7 @@ Public Class Inicio
     End Sub
 
 #Region "Productos"
-    Private Sub lbl_Productos_Click(sender As Object, e As EventArgs) Handles lbl_Productos.Click
-
+    Private Sub btnProductos_Click(sender As Object, e As EventArgs) Handles btnProductos.Click
         ' Crear una instancia del formulario Productos
         Dim productosForm As New Productos(Me.Panel1)
 
@@ -95,8 +92,7 @@ Public Class Inicio
     End Sub
 
 #End Region
-
-    Private Sub lbl_Clientes_Click(sender As Object, e As EventArgs) Handles lbl_Clientes.Click
+    Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
         ' Instancia de la clase Clientes pasando el Panel1 como parámetro
         Dim ClientesForm As New Clientes(Me.Panel1)
 
@@ -110,6 +106,7 @@ Public Class Inicio
         ' Mostrar el formulario dentro del panel
         ClientesForm.Show()
     End Sub
+
 #End Region
 #Region "Estados del Formulario"
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
@@ -131,6 +128,20 @@ Public Class Inicio
     Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #End Region
 
 #Region "Codigo para restaurar el panel (Comentado por error en otra linea)"
