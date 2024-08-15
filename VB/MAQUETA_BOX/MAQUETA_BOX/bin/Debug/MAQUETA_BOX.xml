@@ -22,6 +22,11 @@ MAQUETA_BOX
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
 </member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.basura">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:MAQUETA_BOX.My.Resources.Resources.btnACEPTAR_BLUE">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -108,6 +113,11 @@ MAQUETA_BOX
 </summary>
 </member>
 <member name="P:MAQUETA_BOX.My.Resources.Resources.cruz_white_16x16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.guardar">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
