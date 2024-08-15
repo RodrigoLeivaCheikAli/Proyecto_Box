@@ -243,6 +243,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property icono4() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("icono4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property icons8_minimizar_16() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("icons8-minimizar-16", resourceCulture)
@@ -266,6 +276,16 @@ Namespace My.Resources
         Friend ReadOnly Property icons8_restore_down_20x20() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("icons8-restore-down-20x20", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property id_card() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("id-card", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

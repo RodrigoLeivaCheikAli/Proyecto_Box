@@ -118,29 +118,56 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnINFO-BLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnINFO-BLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="categoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\categoria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="presupuesto-de-tareas-de-lista-de-verificacion2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\presupuesto-de-tareas-de-lista-de-verificacion2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="presupuesto-de-tareas-de-lista-de-verificacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\presupuesto-de-tareas-de-lista-de-verificacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnGESTION-PRODUCTOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnGESTION-PRODUCTOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnPRODUCTOS-BLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnPRODUCTOS-BLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-restore-down-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-restore-down-161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnACEPTAR-BLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnACEPTAR-BLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ventas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ventas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnLISTADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnLISTADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnLISTADO PRODUCTOS - WHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnLISTADO PRODUCTOS - WHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-restore-down-20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-restore-down-20x201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="id-card" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\id-card1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnVENDIDOS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnVENDIDOS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnCANCELAR-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnCANCELAR-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="presupuesto-de-tareas-de-lista-de-verificacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\presupuesto-de-tareas-de-lista-de-verificacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minimizar-white-16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimizar-white-16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnVENDIDOS-WHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnVENDIDOS-WHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnVENDIDOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnVENDIDOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnHISTORIAL-BLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnHISTORIAL-BLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnPRODUCTOS-WHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnPRODUCTOS-WHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,61 +178,40 @@
   <data name="presupuesto-de-tareas-de-lista-de-verificacion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\presupuesto-de-tareas-de-lista-de-verificacion1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnLISTADO PRODUCTOS - WHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnLISTADO PRODUCTOS - WHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="maximizar-16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maximizar-16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ventas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ventas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnACEPTAR-BLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnACEPTAR-BLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Proveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Proveedores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnLISTADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnLISTADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnINFO-BLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnINFO-BLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnPRODUCTOS-BLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnPRODUCTOS-BLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="presupuesto-de-tareas-de-lista-de-verificacion3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\presupuesto-de-tareas-de-lista-de-verificacion3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnVENDIDOS-WHITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnVENDIDOS-WHITE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnMODIFICAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMODIFICAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnELIMINAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnELIMINAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnVENDIDOS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnVENDIDOS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnMODIFICAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnMODIFICAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnHISTORIAL-BLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnHISTORIAL-BLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnVENDIDOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnVENDIDOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cruz-white-16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cruz-white-16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnGESTION-PRODUCTOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnGESTION-PRODUCTOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-minimizar-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-minimizar-161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-restore-down-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-restore-down-161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="presupuesto-de-tareas-de-lista-de-verificacion3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\presupuesto-de-tareas-de-lista-de-verificacion3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-restore-down-20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-restore-down-20x201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cruz-white-16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cruz-white-16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="maximizar-16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\maximizar-16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimizar-white-16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimizar-white-16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icono4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

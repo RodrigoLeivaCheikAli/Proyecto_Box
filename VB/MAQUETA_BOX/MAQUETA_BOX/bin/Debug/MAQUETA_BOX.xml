@@ -112,6 +112,11 @@ MAQUETA_BOX
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.icono4">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:MAQUETA_BOX.My.Resources.Resources.icons8_minimizar_16">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -123,6 +128,11 @@ MAQUETA_BOX
 </summary>
 </member>
 <member name="P:MAQUETA_BOX.My.Resources.Resources.icons8_restore_down_20x20">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.id_card">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
