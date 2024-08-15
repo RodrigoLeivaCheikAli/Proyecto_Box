@@ -4,15 +4,18 @@ Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Configuration
 Imports System.Collections
+Imports System.Windows.Forms.DataVisualization.Charting
 Public Class Estadisticas
     Dim conexion As SqlConnection = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
     Dim dr As SqlDataReader
     Dim comando As New SqlCommand
-    Dim Rubro As New ArrayList
-    Dim CantProduct As New ArrayList
+     Dim Rubro As New List(Of String)()
+    Dim CantProduct As New List(Of Integer)()
     Dim Producto As New ArrayList
     Dim Cant As New ArrayList
-
+    Dim Productos As New List(Of String)()
+    Dim CantidadProductos As New List(Of Integer)()
+    Dim vistaInicial As Boolean = True
     Private Sub Estadisticas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GrafCategorias()
         ProdPreferidos()
@@ -34,6 +37,9 @@ Public Class Estadisticas
 
 
     End Sub
+
+
+
     Public Sub ProdPreferidos()
         comando = New SqlCommand("ProdPreferidos", conexion)
         comando.CommandType = CommandType.StoredProcedure
@@ -82,4 +88,13 @@ Public Class Estadisticas
     End Sub
 
 
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+        Panel1.Controls.Clear()
+        Dim newForm As New EstadisticasVentas() ' Crea una nueva instancia del formulario que deseas agregar
+        newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
+        Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        newForm.Show() ' Muestra el formulario
+    End Sub
 End Class

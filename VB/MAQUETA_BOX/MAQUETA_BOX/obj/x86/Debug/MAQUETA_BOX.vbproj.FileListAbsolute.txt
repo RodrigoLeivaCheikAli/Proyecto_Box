@@ -677,3 +677,4 @@ C:\Users\crett\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BO
 C:\Users\crett\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Presupuestos_Compras.resources
 D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Estadisticas.resources
 C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Estadisticas.resources
+C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.EstadisticasVentas.resources
