@@ -23,9 +23,9 @@ Partial Class Documentos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.cboClientes = New System.Windows.Forms.ComboBox()
         Me.btnExportar = New System.Windows.Forms.Button()
@@ -36,6 +36,7 @@ Partial Class Documentos
         Me.ConsultardocumentosOrVentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Consultar_documentos_OrVentasTableAdapter = New MAQUETA_BOX.PIN_GRUPO11DataSetTableAdapters.consultar_documentos_OrVentasTableAdapter()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cboEstado = New System.Windows.Forms.ComboBox()
         Me.btnCargarTodo = New System.Windows.Forms.Button()
         Me.cboDia = New System.Windows.Forms.ComboBox()
         Me.cboMes = New System.Windows.Forms.ComboBox()
@@ -55,14 +56,14 @@ Partial Class Documentos
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 27
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView1.EnableHeadersVisualStyles = False
@@ -70,22 +71,22 @@ Partial Class Documentos
         Me.DataGridView1.Location = New System.Drawing.Point(213, 135)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(716, 334)
         Me.DataGridView1.TabIndex = 5
@@ -95,7 +96,7 @@ Partial Class Documentos
         Me.cboClientes.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cboClientes.FormattingEnabled = True
         Me.cboClientes.Items.AddRange(New Object() {"Deseleccionado"})
-        Me.cboClientes.Location = New System.Drawing.Point(147, 59)
+        Me.cboClientes.Location = New System.Drawing.Point(103, 59)
         Me.cboClientes.Name = "cboClientes"
         Me.cboClientes.Size = New System.Drawing.Size(121, 21)
         Me.cboClientes.TabIndex = 8
@@ -142,6 +143,7 @@ Partial Class Documentos
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.cboEstado)
         Me.Panel1.Controls.Add(Me.btnCargarTodo)
         Me.Panel1.Controls.Add(Me.cboDia)
         Me.Panel1.Controls.Add(Me.cboMes)
@@ -155,9 +157,19 @@ Partial Class Documentos
         Me.Panel1.Size = New System.Drawing.Size(1105, 674)
         Me.Panel1.TabIndex = 13
         '
+        'cboEstado
+        '
+        Me.cboEstado.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboEstado.FormattingEnabled = True
+        Me.cboEstado.Location = New System.Drawing.Point(614, 59)
+        Me.cboEstado.Name = "cboEstado"
+        Me.cboEstado.Size = New System.Drawing.Size(121, 21)
+        Me.cboEstado.TabIndex = 17
+        Me.cboEstado.Text = "Estado"
+        '
         'btnCargarTodo
         '
-        Me.btnCargarTodo.Location = New System.Drawing.Point(655, 57)
+        Me.btnCargarTodo.Location = New System.Drawing.Point(742, 57)
         Me.btnCargarTodo.Name = "btnCargarTodo"
         Me.btnCargarTodo.Size = New System.Drawing.Size(121, 23)
         Me.btnCargarTodo.TabIndex = 16
@@ -168,7 +180,7 @@ Partial Class Documentos
         '
         Me.cboDia.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cboDia.FormattingEnabled = True
-        Me.cboDia.Location = New System.Drawing.Point(528, 59)
+        Me.cboDia.Location = New System.Drawing.Point(489, 59)
         Me.cboDia.Name = "cboDia"
         Me.cboDia.Size = New System.Drawing.Size(121, 21)
         Me.cboDia.TabIndex = 15
@@ -178,7 +190,7 @@ Partial Class Documentos
         '
         Me.cboMes.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cboMes.FormattingEnabled = True
-        Me.cboMes.Location = New System.Drawing.Point(401, 59)
+        Me.cboMes.Location = New System.Drawing.Point(359, 59)
         Me.cboMes.Name = "cboMes"
         Me.cboMes.Size = New System.Drawing.Size(121, 21)
         Me.cboMes.TabIndex = 14
@@ -188,7 +200,7 @@ Partial Class Documentos
         '
         Me.cboAño.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cboAño.FormattingEnabled = True
-        Me.cboAño.Location = New System.Drawing.Point(274, 59)
+        Me.cboAño.Location = New System.Drawing.Point(230, 59)
         Me.cboAño.Name = "cboAño"
         Me.cboAño.Size = New System.Drawing.Size(121, 21)
         Me.cboAño.TabIndex = 13
@@ -227,4 +239,5 @@ Partial Class Documentos
     Friend WithEvents cboMes As ComboBox
     Friend WithEvents cboAño As ComboBox
     Friend WithEvents btnCargarTodo As Button
+    Friend WithEvents cboEstado As ComboBox
 End Class

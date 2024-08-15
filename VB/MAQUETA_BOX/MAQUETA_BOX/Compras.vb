@@ -6,9 +6,14 @@ Public Class Compras
     Dim conexion As SqlConnection
     Dim comando As New SqlCommand
     Private addedRows As New Dictionary(Of Integer, Integer)
-    Dim Cant As New Dictionary(Of Integer, Integer)
     Dim valor As Integer
+
+    Dim Cant As New Dictionary(Of Integer, Integer)
+    Private originalValues As New Dictionary(Of Integer, Integer)
+
+    Private formLoaded As Boolean = False
     Public Property IdPresupuesto As Integer
+
 
 #Region "Llenar Grilla"
 
@@ -30,9 +35,9 @@ Public Class Compras
         datadapter.Fill(oDs)
         If oDs.Tables(0).Rows.Count > 0 Then
             dt = oDs.Tables(0)
-            BunifuDataGridView1.AutoGenerateColumns = True
-            BunifuDataGridView1.DataSource = dt
-            BunifuDataGridView1.Refresh()
+            DataGridView1.AutoGenerateColumns = True
+            DataGridView1.DataSource = dt
+            DataGridView1.Refresh()
         End If
 
         oDs = Nothing
@@ -45,15 +50,15 @@ Public Class Compras
 
     Private Sub Compras_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Llenar_Grilla()
-        Dim columnaPrecio As DataGridViewColumn = BunifuDataGridView1.Columns(5)
+        Dim columnaPrecio As DataGridViewColumn = DataGridView1.Columns(5)
         columnaPrecio.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         columnaPrecio.DefaultCellStyle.Format = "C2"
 
-        Dim columnaPrecio2 As DataGridViewColumn = BunifuDataGridView2.Columns(6)
+        Dim columnaPrecio2 As DataGridViewColumn = DataGridView2.Columns(5)
         columnaPrecio2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         columnaPrecio2.DefaultCellStyle.Format = "C2"
 
-        BunifuDataGridView3.Hide()
+        CalculateTotalPriceCost()
     End Sub
 
 #End Region
@@ -100,10 +105,10 @@ Public Class Compras
                 Try
                     connection.Open()
                     adapter.Fill(dataTable)
-                    BunifuDataGridView1.DataSource = dataTable
+                    DataGridView1.DataSource = dataTable
 
                     ' Renombra las columnas del DataGridView si es necesario
-                    For Each column As DataGridViewColumn In BunifuDataGridView1.Columns
+                    For Each column As DataGridViewColumn In DataGridView1.Columns
                         If column.Name = "Id_Oferta" Then
                             column.HeaderText = "PRODUCTO"
                         ElseIf column.Name = "Descripcion" Then
@@ -118,7 +123,7 @@ Public Class Compras
                     Next
 
                     ' Establece el estilo y formato para la columna de precio
-                    Dim columnaPrecio As DataGridViewColumn = BunifuDataGridView1.Columns("PRECIO_COSTO")
+                    Dim columnaPrecio As DataGridViewColumn = DataGridView1.Columns("PRECIO_COSTO")
                     columnaPrecio.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                     columnaPrecio.DefaultCellStyle.Format = "C2"
 
@@ -128,100 +133,6 @@ Public Class Compras
             End Using
         End Using
     End Sub
-
-
-#End Region
-
-#Region "GRILLAS ACT"
-    Private Sub BunifuDataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellContentClick
-        Dim senderGrid = DirectCast(sender, DataGridView)
-
-        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
-            If e.ColumnIndex = BunifuDataGridView1.Columns("Column1").Index AndAlso e.RowIndex >= 0 Then
-                ' Obtener la fila seleccionada
-                Dim selectedRow As DataGridViewRow = BunifuDataGridView1.Rows(e.RowIndex)
-                Dim newRow As DataGridViewRow = CType(selectedRow.Clone(), DataGridViewRow)
-
-                ' Copiar valores de las celdas, incluyendo la columna 4
-                For i As Integer = 1 To selectedRow.Cells.Count - 1
-                    newRow.Cells(i).Value = selectedRow.Cells(i).Value
-                Next
-
-                ' Obtener el precio de la columna 4
-                Dim price As Double = selectedRow.Cells(5).Value
-
-                ' Agregar la nueva fila al DataGridView2
-                If addedRows.ContainsKey(selectedRow.Index) Then
-                    ' Si la fila ya fue agregada, incrementar la cantidad
-                    Cant(selectedRow.Index) += 1
-                    Dim targetIndex As Integer = addedRows(selectedRow.Index)
-                    BunifuDataGridView2.Rows(targetIndex).Cells(BunifuDataGridView2.ColumnCount - 2).Value = Cant(selectedRow.Index)
-                    ' Multiplicar el precio y actualizar la columna correspondiente en la segunda grilla
-                    BunifuDataGridView2.Rows(targetIndex).Cells(BunifuDataGridView2.ColumnCount - 1).Value = price * Cant(selectedRow.Index)
-                Else
-                    ' Si la fila no fue agregada, agregarla al DataGridView2 y al diccionario
-                    Cant.Add(selectedRow.Index, 1)
-                    Dim newIndex As Integer = BunifuDataGridView2.Rows.Add(newRow)
-                    addedRows.Add(selectedRow.Index, newIndex)
-                    BunifuDataGridView2.Rows(newIndex).Cells(BunifuDataGridView2.ColumnCount - 2).Value = Cant(selectedRow.Index)
-                    ' Multiplicar el precio y actualizar la columna correspondiente en la segunda grilla
-                    BunifuDataGridView2.Rows(newIndex).Cells(BunifuDataGridView2.ColumnCount - 1).Value = price * Cant(selectedRow.Index)
-                End If
-            End If
-        End If
-    End Sub
-
-    Private Sub BunifuDataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView2.CellContentClick
-        Dim senderGrid = DirectCast(sender, DataGridView)
-
-        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
-            If e.ColumnIndex = BunifuDataGridView2.Columns("DataGridViewImageColumn1").Index AndAlso e.RowIndex >= 0 Then
-                ' Evitar la fila nueva sin confirmar
-                If BunifuDataGridView2.Rows(e.RowIndex).IsNewRow Then
-                    Return
-                End If
-
-                ' Obtener la fila seleccionada
-                Dim selectedRow As DataGridViewRow = BunifuDataGridView2.Rows(e.RowIndex)
-
-                ' Buscar el índice original de la fila en addedRows
-                Dim originalIndex As Integer = addedRows.FirstOrDefault(Function(pair) pair.Value = e.RowIndex).Key
-
-                If originalIndex <> -1 AndAlso Cant.ContainsKey(originalIndex) Then
-                    Cant(originalIndex) -= 1
-                    If Cant(originalIndex) > 0 Then
-                        BunifuDataGridView2.Rows(e.RowIndex).Cells(BunifuDataGridView2.ColumnCount - 2).Value = Cant(originalIndex)
-                        ' Obtener el precio original
-                        Dim price As Decimal = Convert.ToDecimal(BunifuDataGridView1.Rows(originalIndex).Cells(5).Value)
-                        ' Actualizar el precio multiplicado
-                        BunifuDataGridView2.Rows(e.RowIndex).Cells(BunifuDataGridView2.ColumnCount - 1).Value = price * Cant(originalIndex)
-                    Else
-                        ' Eliminar de addedRows y Cant antes de eliminar la fila
-                        addedRows.Remove(originalIndex)
-                        Cant.Remove(originalIndex)
-                        BunifuDataGridView2.Rows.RemoveAt(e.RowIndex)
-
-                        ' Actualizar los índices en addedRows
-                        Dim updatedAddedRows As New Dictionary(Of Integer, Integer)
-                        For Each pair In addedRows
-                            If pair.Value > e.RowIndex Then
-                                updatedAddedRows.Add(pair.Key, pair.Value - 1)
-                            Else
-                                updatedAddedRows.Add(pair.Key, pair.Value)
-                            End If
-                        Next
-                        addedRows = updatedAddedRows
-                    End If
-                End If
-            End If
-        End If
-    End Sub
-
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Presupuestos_Compras.Show()
-    End Sub
-
 
 
 #End Region
@@ -246,12 +157,12 @@ Public Class Compras
                 datadapter.Fill(oDs)
                 If oDs.Tables(0).Rows.Count > 0 Then
                     Dim dtDetalles As DataTable = oDs.Tables(0)
-                    BunifuDataGridView3.AutoGenerateColumns = True
-                    BunifuDataGridView3.DataSource = dtDetalles
-                    BunifuDataGridView3.Refresh()
-                    BunifuDataGridView3.Show()
+                    DataGridView2.AutoGenerateColumns = True
+                    DataGridView2.DataSource = dtDetalles
+                    DataGridView2.Refresh()
+                    DataGridView2.Show()
                 Else
-                    BunifuDataGridView3.DataSource = Nothing
+                    DataGridView2.DataSource = Nothing
                 End If
             Catch ex As Exception
                 MessageBox.Show("Error al cargar los detalles: " & ex.Message)
@@ -262,6 +173,165 @@ Public Class Compras
     End Sub
 
 
+
 #End Region
+
+
+#Region "GRILLAS DEFINITIVO"
+
+    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Dim senderGrid = DirectCast(sender, DataGridView)
+
+        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
+            If e.ColumnIndex = DataGridView1.Columns("Column1").Index AndAlso e.RowIndex >= 0 Then
+                ' Obtener la fila seleccionada
+                Dim selectedRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+                Dim lastColumnIndex As Integer = DataGridView1.ColumnCount - 1
+                Dim currentValue As Integer = Convert.ToInt32(selectedRow.Cells(lastColumnIndex).Value)
+
+                ' Guardar el valor original si no está en el diccionario
+                If Not originalValues.ContainsKey(e.RowIndex) Then
+                    originalValues.Add(e.RowIndex, currentValue)
+                End If
+
+
+
+                Dim newRow As DataGridViewRow = CType(selectedRow.Clone(), DataGridViewRow)
+                For i As Integer = 1 To selectedRow.Cells.Count - 1 ' Ignorar la primera columna
+                    newRow.Cells(i).Value = selectedRow.Cells(i).Value
+                Next
+
+                ' Agregar la nueva fila al DataGridView2
+                If addedRows.ContainsKey(selectedRow.Index) Then
+                    ' Si la fila ya fue agregada, incrementar la cantidad
+                    Cant(selectedRow.Index) += 1
+                    Dim targetIndex As Integer = addedRows(selectedRow.Index)
+
+                    ' Actualizar la cantidad en la segunda grilla
+                    DataGridView2.Rows(targetIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
+
+                    ' Actualizar el total (Precio Costo * Cantidad) en la segunda grilla
+                    UpdateTotal(targetIndex)
+                Else
+                    ' Si la fila no fue agregada, agregarla al DataGridView2 y al diccionario
+                    Cant.Add(selectedRow.Index, 1)
+                    Dim newIndex As Integer = DataGridView2.Rows.Add(newRow)
+                    addedRows.Add(selectedRow.Index, newIndex)
+
+                    ' Establecer la cantidad inicial
+                    DataGridView2.Rows(newIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
+
+                    ' Actualizar el total (Precio Costo * Cantidad) en la segunda grilla
+                    UpdateTotal(newIndex)
+                End If
+            End If
+        End If
+        CalculateTotalPriceCost()
+    End Sub
+
+
+    Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+        Dim senderGrid = DirectCast(sender, DataGridView)
+        Dim selectedRow As DataGridViewRow = DataGridView2.Rows(e.RowIndex)
+
+        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
+            If e.ColumnIndex = DataGridView2.Columns("Column2").Index AndAlso e.RowIndex >= 0 Then
+                ' Eliminar la fila seleccionada
+                Dim originalIndex As Integer = -1
+                For Each pair In addedRows
+                    If pair.Value = selectedRow.Index Then
+                        originalIndex = pair.Key
+                        Exit For
+                    End If
+                Next
+
+
+
+                If Cant.ContainsKey(originalIndex) Then
+                    Cant(originalIndex) -= 1
+                    If Cant(originalIndex) > 0 Then
+                        DataGridView2.Rows(e.RowIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(originalIndex)
+                    Else
+                        ' Eliminar de addedRows y Cant antes de eliminar la fila
+                        addedRows.Remove(originalIndex)
+                        Cant.Remove(originalIndex)
+                        DataGridView2.Rows.RemoveAt(e.RowIndex)
+
+                        ' Actualizar los índices en addedRows
+                        Dim updatedAddedRows As New Dictionary(Of Integer, Integer)
+                        For Each pair In addedRows
+                            If pair.Value > e.RowIndex Then
+                                updatedAddedRows.Add(pair.Key, pair.Value - 1)
+                            Else
+                                updatedAddedRows.Add(pair.Key, pair.Value)
+                            End If
+                        Next
+                        addedRows = updatedAddedRows
+                    End If
+                End If
+            End If
+        End If
+        CalculateTotalPriceCost()
+    End Sub
+
+
+#Region "FUNCIONES PARA LOS PRECIOS ACTUALIZABLES"
+    Private Sub UpdateTotal(rowIndex As Integer)
+        ' Índices de columnas en DataGridView2
+        Dim priceCostIndex As Integer = DataGridView1.Columns("PRECIO COSTO").Index  ' Índice de la columna de precio costo en DataGridView1
+        Dim quantityIndex As Integer = 6 ' Índice de la columna de cantidad en DataGridView2
+        Dim totalIndex As Integer = 5
+
+        ' Obtener valores de precio costo y cantidad
+        Dim priceCost As Decimal
+        Dim quantity As Integer
+
+        ' Verificar que el índice de fila es válido
+        If rowIndex >= 0 AndAlso rowIndex < DataGridView2.Rows.Count Then
+            ' Obtener el precio costo de DataGridView1
+            Dim priceCostValue As Object = DataGridView1.Rows(rowIndex).Cells(priceCostIndex).Value
+
+            ' Intentar convertir el precio costo y la cantidad
+            If Decimal.TryParse(priceCostValue.ToString(), priceCost) AndAlso Integer.TryParse(DataGridView2.Rows(rowIndex).Cells(quantityIndex).Value.ToString(), quantity) Then
+                ' Calcular el total y establecerlo en la columna correspondiente en DataGridView2
+                DataGridView2.Rows(rowIndex).Cells(totalIndex).Value = priceCost * quantity
+            Else
+                ' Manejar el caso en que los valores no sean válidos
+                DataGridView2.Rows(rowIndex).Cells(totalIndex).Value = 0
+            End If
+        End If
+    End Sub
+
+    Private Sub CalculateTotalPriceCost()
+        Dim totalPriceCost As Decimal = 0
+
+        ' Obtener el índice de la columna "PRECIO COSTO" en DataGridView2
+        Dim priceCostColumnIndex As Integer = 5
+
+        ' Iterar sobre todas las filas en DataGridView2
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            ' Verificar si la fila es una fila de datos (no una fila nueva en blanco)
+            If Not row.IsNewRow Then
+                Dim priceCost As Decimal
+                ' Intentar convertir el valor de la celda a Decimal
+                If Decimal.TryParse(row.Cells(priceCostColumnIndex).Value.ToString(), priceCost) Then
+                    ' Sumar el valor al total
+                    totalPriceCost += priceCost
+                End If
+            End If
+        Next
+
+        ' Mostrar el total en un Label o TextBox (reemplaza Label1 con el nombre de tu control)
+        Label4.Text = "Total Precio Costo: " & totalPriceCost.ToString("C")
+    End Sub
+
+
+
+#End Region
+
+#End Region
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Presupuestos_Compras.Show()
+    End Sub
 
 End Class

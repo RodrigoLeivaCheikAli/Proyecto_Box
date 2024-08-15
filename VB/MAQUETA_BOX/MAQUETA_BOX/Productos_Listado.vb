@@ -3,6 +3,7 @@
 Public Class Productos_Listado
 #Region "Load"
     Private Sub Productos_Listado_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
         cboTipo.Items.Add("Todos")
         cboTipo.Items.Add("Producto")
         cboTipo.Items.Add("Servicio")
@@ -11,7 +12,6 @@ Public Class Productos_Listado
         CargarComboVehiculo()
         CargarComboProducto()
         CargarComboServicio()
-        CargarComboTipo()
     End Sub
 #End Region
 #Region "Cargar Grilla"
@@ -98,15 +98,6 @@ Public Class Productos_Listado
 #End Region
 #End Region
 #Region "Filtrar por Tipo"
-    Private Sub CargarComboTipo()
-        If dt IsNot Nothing Then
-            Dim tipo = dt.AsEnumerable().Select(Function(row) row.Field(Of String)("Tipo")).Distinct().ToList()
-            cboTipo.Items.Clear()
-            cboTipo.Items.Add("Todos")
-            cboTipo.Items.AddRange(tipo.ToArray())
-            cboTipo.SelectedIndex = 0
-        End If
-    End Sub
     Private Sub cboTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTipo.SelectedIndexChanged
         ' Filtrar el DataGridView
         FiltrarGrilla()
@@ -132,7 +123,7 @@ Public Class Productos_Listado
         If dt IsNot Nothing Then
             ' Filtrar las filas donde la columna Tipo es "Producto" y obtener los valores únicos de la columna Descripción
             Dim productos = dt.AsEnumerable().
-                         Where(Function(row) row.Field(Of String)("Tipo") <> "Servicio").
+                         Where(Function(row) row.Field(Of String)("Tipo") = "Producto").
                          Select(Function(row) row.Field(Of String)("Descripción")).
                          Distinct().
                          ToList()
