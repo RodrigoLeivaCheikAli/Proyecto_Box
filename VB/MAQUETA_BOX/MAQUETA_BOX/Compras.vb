@@ -14,6 +14,9 @@ Public Class Compras
     Private formLoaded As Boolean = False
     Public Property IdPresupuesto As Integer
 
+    Dim maxId As Integer
+    Dim totalPriceCost As Decimal = 0
+
 
 #Region "Llenar Grilla"
 
@@ -58,7 +61,9 @@ Public Class Compras
         columnaPrecio2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         columnaPrecio2.DefaultCellStyle.Format = "C2"
 
+
         CalculateTotalPriceCost()
+        SeleccionarUltimoID()
     End Sub
 
 #End Region
@@ -156,11 +161,30 @@ Public Class Compras
                 conexion.Open()
                 datadapter.Fill(oDs)
                 If oDs.Tables(0).Rows.Count > 0 Then
+                    ' Guardar las primeras columnas
+                    Dim firstColumns As New List(Of DataGridViewColumn)
+                    For i As Integer = 0 To 0 ' Conservar solo la primera columna
+                        firstColumns.Add(DataGridView2.Columns(i))
+                    Next
+
+                    ' Limpiar columnas excepto las primeras
+                    DataGridView2.Columns.Clear()
+                    For Each col As DataGridViewColumn In firstColumns
+                        DataGridView2.Columns.Add(col)
+                    Next
+
+                    ' Asignar el DataSource
                     Dim dtDetalles As DataTable = oDs.Tables(0)
                     DataGridView2.AutoGenerateColumns = True
                     DataGridView2.DataSource = dtDetalles
                     DataGridView2.Refresh()
                     DataGridView2.Show()
+
+                    CalculateTotalPriceCost()
+                    Dim columnaPrecio2 As DataGridViewColumn = DataGridView2.Columns(5)
+                    columnaPrecio2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                    columnaPrecio2.DefaultCellStyle.Format = "C2"
+
                 Else
                     DataGridView2.DataSource = Nothing
                 End If
@@ -176,6 +200,9 @@ Public Class Compras
 
 #End Region
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Presupuestos_Compras.Show()
+    End Sub
 
 #Region "GRILLAS DEFINITIVO"
 
@@ -201,16 +228,12 @@ Public Class Compras
                     newRow.Cells(i).Value = selectedRow.Cells(i).Value
                 Next
 
-                ' Agregar la nueva fila al DataGridView2
                 If addedRows.ContainsKey(selectedRow.Index) Then
-                    ' Si la fila ya fue agregada, incrementar la cantidad
                     Cant(selectedRow.Index) += 1
                     Dim targetIndex As Integer = addedRows(selectedRow.Index)
 
-                    ' Actualizar la cantidad en la segunda grilla
                     DataGridView2.Rows(targetIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
 
-                    ' Actualizar el total (Precio Costo * Cantidad) en la segunda grilla
                     UpdateTotal(targetIndex)
                 Else
                     ' Si la fila no fue agregada, agregarla al DataGridView2 y al diccionario
@@ -226,6 +249,7 @@ Public Class Compras
                 End If
             End If
         End If
+
         CalculateTotalPriceCost()
     End Sub
 
@@ -303,7 +327,7 @@ Public Class Compras
     End Sub
 
     Private Sub CalculateTotalPriceCost()
-        Dim totalPriceCost As Decimal = 0
+
 
         ' Obtener el índice de la columna "PRECIO COSTO" en DataGridView2
         Dim priceCostColumnIndex As Integer = 5
@@ -330,8 +354,117 @@ Public Class Compras
 #End Region
 
 #End Region
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Presupuestos_Compras.Show()
+
+
+
+
+
+
+#Region "GUARDAR PEDIDO"
+
+    Private Sub SeleccionarUltimoID()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
+
+
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+        Try
+            conexion.Open()
+            comando.Connection = conexion
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = "Maximo_Id_Orden_Compra"
+
+            ' Ejecutar el comando y obtener el valor
+            maxId = Convert.ToInt32(comando.ExecuteScalar())
+
+        Catch ex As Exception
+            MessageBox.Show("Error al obtener el ID máximo: " & ex.Message)
+        Finally
+            conexion.Close()
+        End Try
     End Sub
 
+    Private Sub BunifuButton1_Click(sender As Object, e As EventArgs) Handles BunifuButton1.Click
+
+    End Sub
+
+    Public Sub CargarDetallePedido()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
+
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+        Try
+            conexion.Open()
+            comando.Connection = conexion
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = "Cargar_Detalles_Compras"
+
+            For Each fila As DataGridViewRow In DataGridView2.Rows
+                If Not fila.IsNewRow Then
+                    ' Toma los valores de la columna 1 y la columna 6
+                    Dim idOferta As Integer = Convert.ToInt32(fila.Cells(1).Value) ' Columna 1
+                    Dim cantidad As Integer = Convert.ToInt32(fila.Cells(6).Value) ' Columna 6
+
+                    With comando.Parameters
+                        .Clear() ' Limpia los parámetros antes de agregar nuevos valores
+                        .AddWithValue("@ID_Orden_Compra", maxId)
+                        .AddWithValue("@ID_Oferta", idOferta)
+                        .AddWithValue("@Cantidad", cantidad)
+                    End With
+
+                    comando.ExecuteNonQuery() ' Ejecuta el comando para cada fila
+                    MsgBox("Pedido guardado correctamente", vbInformation, "Pedidos")
+                End If
+            Next
+
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los detalles: " & ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+    End Sub
+
+    Public Sub CargarPedido()
+        Dim fechaPedido As DateTime
+
+        Using frmFecha As New FechaForm
+            If frmFecha.ShowDialog() = DialogResult.OK Then
+                fechaPedido = frmFecha.FechaSeleccionada
+            Else
+                MessageBox.Show("Operación cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Exit Sub
+            End If
+        End Using
+
+        ' Si se seleccionó una fecha, continúa con la carga del pedido
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
+
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+        Try
+            conexion.Open()
+            comando.Connection = conexion
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = "Cargar_Pedido_Compras"
+
+            With comando.Parameters
+                .AddWithValue("@fecha", fechaPedido)
+                .AddWithValue("@total", totalPriceCost)
+            End With
+
+            comando.ExecuteNonQuery() ' Ejecuta el comando
+            MsgBox("Pedido guardado correctamente", vbInformation, "Pedidos")
+
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los detalles: " & ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+    End Sub
+
+
+#End Region
 End Class
