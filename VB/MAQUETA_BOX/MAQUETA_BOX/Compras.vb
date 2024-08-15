@@ -17,6 +17,66 @@ Public Class Compras
     Dim maxId As Integer
     Dim totalPriceCost As Decimal = 0
 
+#Region "FUNCIONES PARA LOS PRECIOS ACTUALIZABLES"
+    Private Sub UpdateTotal(rowIndex As Integer)
+        ' Índices de columnas en DataGridView1 y DataGridView2
+        Dim priceCostIndex As Integer = DataGridView1.Columns(5).Index  ' Índice de la columna de precio costo en DataGridView1
+        Dim quantityIndex As Integer = DataGridView2.Columns(6).Index  ' Índice de la columna de cantidad en DataGridView2
+
+        ' Obtener valores de precio costo y cantidad
+        Dim priceCost As Decimal
+        Dim quantity As Integer
+
+        ' Verificar que el índice de fila es válido
+        If rowIndex >= 0 AndAlso rowIndex < DataGridView2.Rows.Count Then
+            ' Obtener el precio costo desde DataGridView1 usando el índice de fila correcto
+            Dim selectedRowIndex As Integer = addedRows.FirstOrDefault(Function(x) x.Value = rowIndex).Key
+            If selectedRowIndex <> -1 Then
+                Dim priceCostValue As Object = DataGridView1.Rows(selectedRowIndex).Cells(priceCostIndex).Value
+
+                ' Intentar convertir el precio costo y la cantidad
+                If Decimal.TryParse(priceCostValue.ToString(), priceCost) AndAlso Integer.TryParse(DataGridView2.Rows(rowIndex).Cells(quantityIndex).Value.ToString(), quantity) Then
+                    ' Calcular el total y usar el valor para otras operaciones si es necesario
+                    Dim total As Decimal = priceCost * quantity
+
+                Else
+                    ' Manejar el caso en que los valores no sean válidos
+                    ' Puedes poner un valor por defecto o simplemente no hacer nada
+                End If
+            End If
+        End If
+
+        ' Actualiza el total general después de cambiar una fila
+        CalculateTotalPriceCost()
+    End Sub
+    Private Sub CalculateTotalPriceCost()
+        ' Reinicia el total antes de la suma
+        totalPriceCost = 0
+
+        ' Obtener el índice de la columna "PRECIO COSTO" en DataGridView2
+        ' Asegúrate de que este índice sea el correcto
+        Dim priceCostColumnIndex As Integer = 5 ' Cambia esto si es necesario
+
+        ' Iterar sobre todas las filas en DataGridView2
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            ' Verificar si la fila es una fila de datos (no una fila nueva en blanco)
+            If Not row.IsNewRow Then
+                Dim priceCost As Decimal
+                ' Intentar convertir el valor de la celda a Decimal
+                If Decimal.TryParse(row.Cells(priceCostColumnIndex).Value.ToString(), priceCost) Then
+                    ' Sumar el valor al total
+                    totalPriceCost += priceCost
+                Else
+                    ' Opcional: Manejar valores no válidos
+                    Debug.WriteLine("Valor no válido en la celda: " & row.Cells(priceCostColumnIndex).Value.ToString())
+                End If
+            End If
+        Next
+
+        ' Mostrar el total en un Label o TextBox (reemplaza Label4 con el nombre de tu control)
+        Label4.Text = "Total Precio Costo: " & totalPriceCost.ToString("C")
+    End Sub
+#End Region
 
 #Region "Llenar Grilla"
 
@@ -221,8 +281,6 @@ Public Class Compras
                     originalValues.Add(e.RowIndex, currentValue)
                 End If
 
-
-
                 Dim newRow As DataGridViewRow = CType(selectedRow.Clone(), DataGridViewRow)
                 For i As Integer = 1 To selectedRow.Cells.Count - 1 ' Ignorar la primera columna
                     newRow.Cells(i).Value = selectedRow.Cells(i).Value
@@ -233,6 +291,11 @@ Public Class Compras
                     Dim targetIndex As Integer = addedRows(selectedRow.Index)
 
                     DataGridView2.Rows(targetIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
+
+
+
+
+                    'ERROR ACA 
 
                     UpdateTotal(targetIndex)
                 Else
@@ -296,64 +359,12 @@ Public Class Compras
             End If
         End If
         CalculateTotalPriceCost()
+
     End Sub
-
-
-#Region "FUNCIONES PARA LOS PRECIOS ACTUALIZABLES"
-    Private Sub UpdateTotal(rowIndex As Integer)
-        ' Índices de columnas en DataGridView2
-        Dim priceCostIndex As Integer = DataGridView1.Columns("PRECIO COSTO").Index  ' Índice de la columna de precio costo en DataGridView1
-        Dim quantityIndex As Integer = 6 ' Índice de la columna de cantidad en DataGridView2
-        Dim totalIndex As Integer = 5
-
-        ' Obtener valores de precio costo y cantidad
-        Dim priceCost As Decimal
-        Dim quantity As Integer
-
-        ' Verificar que el índice de fila es válido
-        If rowIndex >= 0 AndAlso rowIndex < DataGridView2.Rows.Count Then
-            ' Obtener el precio costo de DataGridView1
-            Dim priceCostValue As Object = DataGridView1.Rows(rowIndex).Cells(priceCostIndex).Value
-
-            ' Intentar convertir el precio costo y la cantidad
-            If Decimal.TryParse(priceCostValue.ToString(), priceCost) AndAlso Integer.TryParse(DataGridView2.Rows(rowIndex).Cells(quantityIndex).Value.ToString(), quantity) Then
-                ' Calcular el total y establecerlo en la columna correspondiente en DataGridView2
-                DataGridView2.Rows(rowIndex).Cells(totalIndex).Value = priceCost * quantity
-            Else
-                ' Manejar el caso en que los valores no sean válidos
-                DataGridView2.Rows(rowIndex).Cells(totalIndex).Value = 0
-            End If
-        End If
-    End Sub
-
-    Private Sub CalculateTotalPriceCost()
-
-
-        ' Obtener el índice de la columna "PRECIO COSTO" en DataGridView2
-        Dim priceCostColumnIndex As Integer = 5
-
-        ' Iterar sobre todas las filas en DataGridView2
-        For Each row As DataGridViewRow In DataGridView2.Rows
-            ' Verificar si la fila es una fila de datos (no una fila nueva en blanco)
-            If Not row.IsNewRow Then
-                Dim priceCost As Decimal
-                ' Intentar convertir el valor de la celda a Decimal
-                If Decimal.TryParse(row.Cells(priceCostColumnIndex).Value.ToString(), priceCost) Then
-                    ' Sumar el valor al total
-                    totalPriceCost += priceCost
-                End If
-            End If
-        Next
-
-        ' Mostrar el total en un Label o TextBox (reemplaza Label1 con el nombre de tu control)
-        Label4.Text = "Total Precio Costo: " & totalPriceCost.ToString("C")
-    End Sub
-
-
 
 #End Region
 
-#End Region
+
 
 
 
@@ -464,6 +475,12 @@ Public Class Compras
             conexion.Close()
         End Try
     End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+
 
 
 #End Region
