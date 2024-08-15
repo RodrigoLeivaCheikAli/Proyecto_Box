@@ -150,6 +150,7 @@ Partial Class Productos_Listado
         Me.BunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White
         Me.BunifuDataGridView1.Location = New System.Drawing.Point(116, 222)
         Me.BunifuDataGridView1.Name = "BunifuDataGridView1"
+        Me.BunifuDataGridView1.ReadOnly = True
         Me.BunifuDataGridView1.RowHeadersVisible = False
         Me.BunifuDataGridView1.RowTemplate.Height = 40
         Me.BunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect

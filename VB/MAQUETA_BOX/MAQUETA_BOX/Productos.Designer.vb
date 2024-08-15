@@ -23,9 +23,9 @@ Partial Class Productos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -73,7 +73,7 @@ Partial Class Productos
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(87, 31)
+        Me.Label9.Location = New System.Drawing.Point(74, 31)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(73, 25)
         Me.Label9.TabIndex = 6
@@ -84,7 +84,7 @@ Partial Class Productos
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(432, 80)
+        Me.Label1.Location = New System.Drawing.Point(419, 80)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 25)
         Me.Label1.TabIndex = 7
@@ -95,7 +95,7 @@ Partial Class Productos
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(57, 80)
+        Me.Label5.Location = New System.Drawing.Point(44, 80)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(100, 25)
         Me.Label5.TabIndex = 8
@@ -105,7 +105,7 @@ Partial Class Productos
         '
         Me.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtCodigo.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(168, 28)
+        Me.txtCodigo.Location = New System.Drawing.Point(155, 28)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(122, 33)
         Me.txtCodigo.TabIndex = 0
@@ -115,7 +115,7 @@ Partial Class Productos
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(401, 31)
+        Me.Label2.Location = New System.Drawing.Point(388, 31)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(112, 25)
         Me.Label2.TabIndex = 12
@@ -125,7 +125,7 @@ Partial Class Productos
         '
         Me.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtDescripcion.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescripcion.Location = New System.Drawing.Point(526, 28)
+        Me.txtDescripcion.Location = New System.Drawing.Point(513, 28)
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(181, 33)
         Me.txtDescripcion.TabIndex = 1
@@ -135,7 +135,7 @@ Partial Class Productos
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(756, 81)
+        Me.Label4.Location = New System.Drawing.Point(743, 81)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(66, 25)
         Me.Label4.TabIndex = 21
@@ -146,7 +146,7 @@ Partial Class Productos
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(99, 128)
+        Me.Label7.Location = New System.Drawing.Point(86, 128)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(61, 25)
         Me.Label7.TabIndex = 23
@@ -156,15 +156,13 @@ Partial Class Productos
         '
         Me.txtCosto.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtCosto.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCosto.Location = New System.Drawing.Point(166, 125)
+        Me.txtCosto.Location = New System.Drawing.Point(153, 125)
         Me.txtCosto.Name = "txtCosto"
         Me.txtCosto.Size = New System.Drawing.Size(122, 33)
         Me.txtCosto.TabIndex = 6
         '
         'Panel1
         '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel1.Controls.Add(Me.txtCantidad)
         Me.Panel1.Controls.Add(Me.Label8)
@@ -185,16 +183,17 @@ Partial Class Productos
         Me.Panel1.Controls.Add(Me.txtDescripcion)
         Me.Panel1.Controls.Add(Me.txtCodigo)
         Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Location = New System.Drawing.Point(-2, 375)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 374)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1100, 252)
+        Me.Panel1.Size = New System.Drawing.Size(1074, 252)
         Me.Panel1.TabIndex = 31
         '
         'txtCantidad
         '
         Me.txtCantidad.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtCantidad.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCantidad.Location = New System.Drawing.Point(828, 125)
+        Me.txtCantidad.Location = New System.Drawing.Point(815, 125)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(122, 33)
         Me.txtCantidad.TabIndex = 8
@@ -204,7 +203,7 @@ Partial Class Productos
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(730, 128)
+        Me.Label8.Location = New System.Drawing.Point(717, 128)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(89, 25)
         Me.Label8.TabIndex = 27
@@ -214,7 +213,7 @@ Partial Class Productos
         '
         Me.txtGanancia.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtGanancia.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtGanancia.Location = New System.Drawing.Point(526, 125)
+        Me.txtGanancia.Location = New System.Drawing.Point(513, 125)
         Me.txtGanancia.Name = "txtGanancia"
         Me.txtGanancia.Size = New System.Drawing.Size(122, 33)
         Me.txtGanancia.TabIndex = 7
@@ -224,7 +223,7 @@ Partial Class Productos
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(424, 128)
+        Me.Label6.Location = New System.Drawing.Point(411, 128)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(91, 25)
         Me.Label6.TabIndex = 25
@@ -236,7 +235,7 @@ Partial Class Productos
         Me.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipo.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTipo.FormattingEnabled = True
-        Me.cboTipo.Location = New System.Drawing.Point(828, 28)
+        Me.cboTipo.Location = New System.Drawing.Point(815, 28)
         Me.cboTipo.Name = "cboTipo"
         Me.cboTipo.Size = New System.Drawing.Size(140, 33)
         Me.cboTipo.TabIndex = 2
@@ -246,7 +245,7 @@ Partial Class Productos
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(773, 31)
+        Me.Label3.Location = New System.Drawing.Point(760, 31)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 25)
         Me.Label3.TabIndex = 23
@@ -258,7 +257,7 @@ Partial Class Productos
         Me.cboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboProveedor.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboProveedor.FormattingEnabled = True
-        Me.cboProveedor.Location = New System.Drawing.Point(168, 78)
+        Me.cboProveedor.Location = New System.Drawing.Point(155, 78)
         Me.cboProveedor.Name = "cboProveedor"
         Me.cboProveedor.Size = New System.Drawing.Size(140, 33)
         Me.cboProveedor.TabIndex = 3
@@ -269,7 +268,7 @@ Partial Class Productos
         Me.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboMarca.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboMarca.FormattingEnabled = True
-        Me.cboMarca.Location = New System.Drawing.Point(828, 77)
+        Me.cboMarca.Location = New System.Drawing.Point(815, 77)
         Me.cboMarca.Name = "cboMarca"
         Me.cboMarca.Size = New System.Drawing.Size(140, 33)
         Me.cboMarca.TabIndex = 5
@@ -280,7 +279,7 @@ Partial Class Productos
         Me.cboVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboVehiculo.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboVehiculo.FormattingEnabled = True
-        Me.cboVehiculo.Location = New System.Drawing.Point(526, 77)
+        Me.cboVehiculo.Location = New System.Drawing.Point(513, 77)
         Me.cboVehiculo.Name = "cboVehiculo"
         Me.cboVehiculo.Size = New System.Drawing.Size(140, 33)
         Me.cboVehiculo.TabIndex = 4
@@ -289,7 +288,7 @@ Partial Class Productos
         '
         Me.btnCargar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnCargar.Image = CType(resources.GetObject("btnCargar.Image"), System.Drawing.Image)
-        Me.btnCargar.Location = New System.Drawing.Point(289, 183)
+        Me.btnCargar.Location = New System.Drawing.Point(276, 183)
         Me.btnCargar.Name = "btnCargar"
         Me.btnCargar.Size = New System.Drawing.Size(118, 46)
         Me.btnCargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -299,23 +298,23 @@ Partial Class Productos
         'BunifuDataGridView1
         '
         Me.BunifuDataGridView1.AllowCustomTheming = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.BunifuDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.BunifuDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.BunifuDataGridView1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BunifuDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.BunifuDataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.BunifuDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.BunifuDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.BunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.BunifuDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.BunifuDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.BunifuDataGridView1.ColumnHeadersHeight = 40
         Me.BunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
@@ -335,14 +334,14 @@ Partial Class Productos
         Me.BunifuDataGridView1.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black
         Me.BunifuDataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BunifuDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.BunifuDataGridView1.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.BunifuDataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Me.BunifuDataGridView1.EnableHeadersVisualStyles = False
         Me.BunifuDataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue
@@ -350,6 +349,7 @@ Partial Class Productos
         Me.BunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White
         Me.BunifuDataGridView1.Location = New System.Drawing.Point(141, 87)
         Me.BunifuDataGridView1.Name = "BunifuDataGridView1"
+        Me.BunifuDataGridView1.ReadOnly = True
         Me.BunifuDataGridView1.RowHeadersVisible = False
         Me.BunifuDataGridView1.RowTemplate.Height = 40
         Me.BunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect

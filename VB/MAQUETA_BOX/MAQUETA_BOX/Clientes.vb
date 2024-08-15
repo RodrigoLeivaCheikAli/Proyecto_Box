@@ -110,6 +110,33 @@ Public Class Clientes
         conexion.Close()
     End Sub
 #End Region
+#Region "Cargar Combo Estados"
+    Private Sub cargar_cbo_estados()
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
+
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+
+
+
+        conexion.Open()
+        comando.Connection = conexion
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = ("Cargar_CboEstado_Cliente")
+
+        Dim datadapter As New SqlDataAdapter(comando)
+        Dim oDs As New DataSet
+        datadapter.Fill(oDs)
+
+        If oDs.Tables(0).Rows.Count > 0 Then
+            cboEstado.DataSource = oDs.Tables(0)
+            cboEstado.DisplayMember = oDs.Tables(0).Columns(1).ToString
+            cboEstado.ValueMember = oDs.Tables(0).Columns(0).ToString
+        End If
+        oDs = Nothing
+        conexion.Close()
+    End Sub
+#End Region
 #Region "Limpiar"
     Private Sub Limpiar()
         txtNombre.Text = Nothing
@@ -125,6 +152,7 @@ Public Class Clientes
 #Region "Load"
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cargar_Grilla()
+        cargar_cbo_estados()
     End Sub
 #End Region
 #Region "Cargar Clientes"
@@ -147,8 +175,10 @@ Public Class Clientes
                 .AddWithValue("@rubro", txtRubro.Text)
                 .AddWithValue("@razonsocial", txtRazonSocial.Text)
                 .AddWithValue("@telefono", txtTelefono.Text)
-                .AddWithValue("@mail", txtMail.Text)
                 .AddWithValue("@direccion", txtDireccion.Text)
+                .AddWithValue("@mail", txtMail.Text)
+                .AddWithValue("@idestado", cboEstado.SelectedValue)
+
 
             End With
 
@@ -161,7 +191,8 @@ Public Class Clientes
             MsgBox("Complete los datos", vbInformation, Me.Text)
         End If
     End Sub
-
+#End Region
+#Region "Modificar_Clientes"
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         If txtCodigo.Text <> Nothing And txtNombre.Text <> Nothing And txtTelefono.Text <> Nothing Then
             Dim conexion As SqlConnection
@@ -181,8 +212,9 @@ Public Class Clientes
                 .AddWithValue("@rubro", txtRubro.Text)
                 .AddWithValue("@razonsocial", txtRazonSocial.Text)
                 .AddWithValue("@telefono", txtTelefono.Text)
-                .AddWithValue("@mail", txtMail.Text)
                 .AddWithValue("@direccion", txtDireccion.Text)
+                .AddWithValue("@mail", txtMail.Text)
+                .AddWithValue("@idestado", cboEstado.SelectedValue)
             End With
 
             comando.ExecuteNonQuery()
@@ -194,8 +226,6 @@ Public Class Clientes
             MsgBox("Complete los datos para modificar", MsgBoxStyle.Exclamation, "Error")
         End If
     End Sub
-
-
 #End Region
 #Region "Eliminar Clientes"
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
@@ -235,6 +265,7 @@ Public Class Clientes
             txtTelefono.Text = row.Cells("Telefono").Value.ToString()
             txtMail.Text = row.Cells("Mail").Value.ToString()
             txtDireccion.Text = row.Cells("Direccion").Value.ToString()
+            cboEstado.Text = row.Cells("Estado").Value.ToString()
         End If
     End Sub
 #End Region

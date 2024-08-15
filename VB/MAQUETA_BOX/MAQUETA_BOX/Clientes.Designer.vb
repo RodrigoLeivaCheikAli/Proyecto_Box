@@ -52,6 +52,8 @@ Partial Class Clientes
         Me.txtBuscarClientes = New System.Windows.Forms.TextBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.btnMenu = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cboEstado = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,9 +67,9 @@ Partial Class Clientes
         '
         'Panel1
         '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.cboEstado)
+        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.txtMail)
         Me.Panel1.Controls.Add(Me.txtDireccion)
         Me.Panel1.Controls.Add(Me.txtTelefono)
@@ -87,16 +89,17 @@ Partial Class Clientes
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Label10)
-        Me.Panel1.Location = New System.Drawing.Point(1, 376)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 374)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1100, 252)
+        Me.Panel1.Size = New System.Drawing.Size(1074, 252)
         Me.Panel1.TabIndex = 3
         '
         'txtMail
         '
         Me.txtMail.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtMail.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMail.Location = New System.Drawing.Point(508, 131)
+        Me.txtMail.Location = New System.Drawing.Point(495, 131)
         Me.txtMail.Name = "txtMail"
         Me.txtMail.Size = New System.Drawing.Size(181, 33)
         Me.txtMail.TabIndex = 7
@@ -105,7 +108,7 @@ Partial Class Clientes
         '
         Me.txtDireccion.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtDireccion.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccion.Location = New System.Drawing.Point(146, 131)
+        Me.txtDireccion.Location = New System.Drawing.Point(133, 131)
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(181, 33)
         Me.txtDireccion.TabIndex = 6
@@ -114,7 +117,7 @@ Partial Class Clientes
         '
         Me.txtTelefono.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtTelefono.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(802, 77)
+        Me.txtTelefono.Location = New System.Drawing.Point(789, 77)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(181, 33)
         Me.txtTelefono.TabIndex = 5
@@ -123,7 +126,7 @@ Partial Class Clientes
         '
         Me.txtRazonSocial.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtRazonSocial.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRazonSocial.Location = New System.Drawing.Point(508, 77)
+        Me.txtRazonSocial.Location = New System.Drawing.Point(495, 77)
         Me.txtRazonSocial.Name = "txtRazonSocial"
         Me.txtRazonSocial.Size = New System.Drawing.Size(181, 33)
         Me.txtRazonSocial.TabIndex = 4
@@ -132,7 +135,7 @@ Partial Class Clientes
         '
         Me.txtRubro.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtRubro.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRubro.Location = New System.Drawing.Point(146, 77)
+        Me.txtRubro.Location = New System.Drawing.Point(133, 77)
         Me.txtRubro.Name = "txtRubro"
         Me.txtRubro.Size = New System.Drawing.Size(181, 33)
         Me.txtRubro.TabIndex = 3
@@ -141,7 +144,7 @@ Partial Class Clientes
         '
         Me.txtCUIL.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtCUIL.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCUIL.Location = New System.Drawing.Point(802, 24)
+        Me.txtCUIL.Location = New System.Drawing.Point(789, 24)
         Me.txtCUIL.Name = "txtCUIL"
         Me.txtCUIL.Size = New System.Drawing.Size(181, 33)
         Me.txtCUIL.TabIndex = 2
@@ -151,7 +154,7 @@ Partial Class Clientes
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(419, 27)
+        Me.Label2.Location = New System.Drawing.Point(406, 27)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(83, 25)
         Me.Label2.TabIndex = 48
@@ -161,7 +164,7 @@ Partial Class Clientes
         '
         Me.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtCodigo.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(146, 22)
+        Me.txtCodigo.Location = New System.Drawing.Point(133, 22)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(181, 33)
         Me.txtCodigo.TabIndex = 0
@@ -170,7 +173,7 @@ Partial Class Clientes
         '
         Me.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtNombre.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(508, 24)
+        Me.txtNombre.Location = New System.Drawing.Point(495, 24)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(181, 33)
         Me.txtNombre.TabIndex = 1
@@ -180,7 +183,7 @@ Partial Class Clientes
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(74, 80)
+        Me.Label1.Location = New System.Drawing.Point(61, 80)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(64, 25)
         Me.Label1.TabIndex = 45
@@ -190,7 +193,7 @@ Partial Class Clientes
         '
         Me.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnEliminar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnELIMINAR
-        Me.btnEliminar.Location = New System.Drawing.Point(652, 178)
+        Me.btnEliminar.Location = New System.Drawing.Point(639, 178)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(118, 51)
         Me.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -201,7 +204,7 @@ Partial Class Clientes
         '
         Me.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnModificar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnMODIFICAR
-        Me.btnModificar.Location = New System.Drawing.Point(485, 181)
+        Me.btnModificar.Location = New System.Drawing.Point(472, 181)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(118, 48)
         Me.btnModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -213,7 +216,7 @@ Partial Class Clientes
         Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(43, 134)
+        Me.Label14.Location = New System.Drawing.Point(30, 134)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(93, 25)
         Me.Label14.TabIndex = 5
@@ -223,7 +226,7 @@ Partial Class Clientes
         '
         Me.btnCargar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnCargar.Image = CType(resources.GetObject("btnCargar.Image"), System.Drawing.Image)
-        Me.btnCargar.Location = New System.Drawing.Point(314, 181)
+        Me.btnCargar.Location = New System.Drawing.Point(301, 181)
         Me.btnCargar.Name = "btnCargar"
         Me.btnCargar.Size = New System.Drawing.Size(118, 46)
         Me.btnCargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -235,7 +238,7 @@ Partial Class Clientes
         Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(455, 136)
+        Me.Label15.Location = New System.Drawing.Point(442, 136)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(50, 25)
         Me.Label15.TabIndex = 4
@@ -246,7 +249,7 @@ Partial Class Clientes
         Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(374, 80)
+        Me.Label12.Location = New System.Drawing.Point(361, 80)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(120, 25)
         Me.Label12.TabIndex = 4
@@ -257,7 +260,7 @@ Partial Class Clientes
         Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(708, 80)
+        Me.Label11.Location = New System.Drawing.Point(695, 80)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(85, 25)
         Me.Label11.TabIndex = 4
@@ -268,7 +271,7 @@ Partial Class Clientes
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(65, 25)
+        Me.Label9.Location = New System.Drawing.Point(52, 25)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(73, 25)
         Me.Label9.TabIndex = 4
@@ -279,7 +282,7 @@ Partial Class Clientes
         Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(741, 27)
+        Me.Label10.Location = New System.Drawing.Point(728, 27)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(52, 25)
         Me.Label10.TabIndex = 4
@@ -339,6 +342,7 @@ Partial Class Clientes
         Me.BunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White
         Me.BunifuDataGridView1.Location = New System.Drawing.Point(147, 80)
         Me.BunifuDataGridView1.Name = "BunifuDataGridView1"
+        Me.BunifuDataGridView1.ReadOnly = True
         Me.BunifuDataGridView1.RowHeadersVisible = False
         Me.BunifuDataGridView1.RowTemplate.Height = 40
         Me.BunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -396,6 +400,28 @@ Partial Class Clientes
         Me.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btnMenu.TabIndex = 44
         Me.btnMenu.TabStop = False
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(711, 136)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(69, 25)
+        Me.Label3.TabIndex = 49
+        Me.Label3.Text = "Estado"
+        '
+        'cboEstado
+        '
+        Me.cboEstado.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboEstado.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboEstado.FormattingEnabled = True
+        Me.cboEstado.Location = New System.Drawing.Point(789, 133)
+        Me.cboEstado.Name = "cboEstado"
+        Me.cboEstado.Size = New System.Drawing.Size(181, 33)
+        Me.cboEstado.TabIndex = 50
         '
         'Clientes
         '
@@ -455,4 +481,6 @@ Partial Class Clientes
     Friend WithEvents txtBuscarClientes As TextBox
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents btnMenu As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cboEstado As ComboBox
 End Class
