@@ -279,6 +279,12 @@
     <Compile Include="Estadisticas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EstadisticaVentas.Designer.vb">
+      <DependentUpon>EstadisticaVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EstadisticaVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmFecha.Designer.vb">
       <DependentUpon>frmFecha.vb</DependentUpon>
     </Compile>
@@ -375,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas.resx">
       <DependentUpon>Estadisticas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadisticaVentas.resx">
+      <DependentUpon>EstadisticaVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFecha.resx">
       <DependentUpon>frmFecha.vb</DependentUpon>
