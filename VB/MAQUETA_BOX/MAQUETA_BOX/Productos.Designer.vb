@@ -22,10 +22,10 @@ Partial Class Productos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -45,6 +45,7 @@ Partial Class Productos
         Me.cboProveedor = New System.Windows.Forms.ComboBox()
         Me.cboMarca = New System.Windows.Forms.ComboBox()
         Me.cboVehiculo = New System.Windows.Forms.ComboBox()
+        Me.btnCargar = New System.Windows.Forms.PictureBox()
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.txtBuscarProductos = New System.Windows.Forms.TextBox()
         Me.btnGestion = New System.Windows.Forms.PictureBox()
@@ -54,9 +55,9 @@ Partial Class Productos
         Me.btnMenu = New System.Windows.Forms.PictureBox()
         Me.btnEliminar = New System.Windows.Forms.PictureBox()
         Me.btnModificar = New System.Windows.Forms.PictureBox()
-        Me.btnCargar = New System.Windows.Forms.PictureBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
+        CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnGestion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,12 +66,11 @@ Partial Class Productos
         CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label9
         '
-        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(74, 31)
@@ -92,7 +92,7 @@ Partial Class Productos
         '
         'Label5
         '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(44, 80)
@@ -103,7 +103,7 @@ Partial Class Productos
         '
         'txtCodigo
         '
-        Me.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtCodigo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtCodigo.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodigo.Location = New System.Drawing.Point(155, 28)
         Me.txtCodigo.Name = "txtCodigo"
@@ -143,7 +143,7 @@ Partial Class Productos
         '
         'Label7
         '
-        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(86, 128)
@@ -154,7 +154,7 @@ Partial Class Productos
         '
         'txtCosto
         '
-        Me.txtCosto.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtCosto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtCosto.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCosto.Location = New System.Drawing.Point(153, 125)
         Me.txtCosto.Name = "txtCosto"
@@ -253,7 +253,7 @@ Partial Class Productos
         '
         'cboProveedor
         '
-        Me.cboProveedor.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.cboProveedor.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboProveedor.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboProveedor.FormattingEnabled = True
@@ -283,6 +283,17 @@ Partial Class Productos
         Me.cboVehiculo.Name = "cboVehiculo"
         Me.cboVehiculo.Size = New System.Drawing.Size(140, 33)
         Me.cboVehiculo.TabIndex = 4
+        '
+        'btnCargar
+        '
+        Me.btnCargar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnCargar.Image = CType(resources.GetObject("btnCargar.Image"), System.Drawing.Image)
+        Me.btnCargar.Location = New System.Drawing.Point(276, 183)
+        Me.btnCargar.Name = "btnCargar"
+        Me.btnCargar.Size = New System.Drawing.Size(118, 46)
+        Me.btnCargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnCargar.TabIndex = 15
+        Me.btnCargar.TabStop = False
         '
         'BunifuDataGridView1
         '
@@ -411,6 +422,7 @@ Partial Class Productos
         'btnEliminar
         '
         Me.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnEliminar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnELIMINAR
         Me.btnEliminar.Location = New System.Drawing.Point(671, 549)
         Me.btnEliminar.Name = "btnEliminar"
@@ -422,6 +434,7 @@ Partial Class Productos
         'btnModificar
         '
         Me.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnModificar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnMODIFICAR
         Me.btnModificar.Location = New System.Drawing.Point(479, 549)
         Me.btnModificar.Name = "btnModificar"
@@ -429,17 +442,6 @@ Partial Class Productos
         Me.btnModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btnModificar.TabIndex = 16
         Me.btnModificar.TabStop = False
-        '
-        'btnCargar
-        '
-        Me.btnCargar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnCargar.Image = CType(resources.GetObject("btnCargar.Image"), System.Drawing.Image)
-        Me.btnCargar.Location = New System.Drawing.Point(276, 183)
-        Me.btnCargar.Name = "btnCargar"
-        Me.btnCargar.Size = New System.Drawing.Size(118, 46)
-        Me.btnCargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnCargar.TabIndex = 15
-        Me.btnCargar.TabStop = False
         '
         'DataGridViewImageColumn1
         '
@@ -471,6 +473,7 @@ Partial Class Productos
         Me.Text = "Productos"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnGestion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -479,7 +482,6 @@ Partial Class Productos
         CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -27,6 +27,8 @@ Partial Class Clientes
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cboEstado = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.txtMail = New System.Windows.Forms.TextBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
@@ -52,8 +54,6 @@ Partial Class Clientes
         Me.txtBuscarClientes = New System.Windows.Forms.TextBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.btnMenu = New System.Windows.Forms.PictureBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cboEstado = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,6 +95,28 @@ Partial Class Clientes
         Me.Panel1.Size = New System.Drawing.Size(1074, 252)
         Me.Panel1.TabIndex = 3
         '
+        'cboEstado
+        '
+        Me.cboEstado.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboEstado.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboEstado.FormattingEnabled = True
+        Me.cboEstado.Location = New System.Drawing.Point(789, 133)
+        Me.cboEstado.Name = "cboEstado"
+        Me.cboEstado.Size = New System.Drawing.Size(181, 33)
+        Me.cboEstado.TabIndex = 50
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(711, 136)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(69, 25)
+        Me.Label3.TabIndex = 49
+        Me.Label3.Text = "Estado"
+        '
         'txtMail
         '
         Me.txtMail.Anchor = System.Windows.Forms.AnchorStyles.Bottom
@@ -106,7 +128,7 @@ Partial Class Clientes
         '
         'txtDireccion
         '
-        Me.txtDireccion.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtDireccion.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtDireccion.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDireccion.Location = New System.Drawing.Point(133, 131)
         Me.txtDireccion.Name = "txtDireccion"
@@ -133,7 +155,7 @@ Partial Class Clientes
         '
         'txtRubro
         '
-        Me.txtRubro.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtRubro.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtRubro.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRubro.Location = New System.Drawing.Point(133, 77)
         Me.txtRubro.Name = "txtRubro"
@@ -162,7 +184,7 @@ Partial Class Clientes
         '
         'txtCodigo
         '
-        Me.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtCodigo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtCodigo.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodigo.Location = New System.Drawing.Point(133, 22)
         Me.txtCodigo.Name = "txtCodigo"
@@ -180,7 +202,7 @@ Partial Class Clientes
         '
         'Label1
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(61, 80)
@@ -213,7 +235,7 @@ Partial Class Clientes
         '
         'Label14
         '
-        Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.Location = New System.Drawing.Point(30, 134)
@@ -268,7 +290,7 @@ Partial Class Clientes
         '
         'Label9
         '
-        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(52, 25)
@@ -400,28 +422,6 @@ Partial Class Clientes
         Me.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btnMenu.TabIndex = 44
         Me.btnMenu.TabStop = False
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(711, 136)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(69, 25)
-        Me.Label3.TabIndex = 49
-        Me.Label3.Text = "Estado"
-        '
-        'cboEstado
-        '
-        Me.cboEstado.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboEstado.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboEstado.FormattingEnabled = True
-        Me.cboEstado.Location = New System.Drawing.Point(789, 133)
-        Me.cboEstado.Name = "cboEstado"
-        Me.cboEstado.Size = New System.Drawing.Size(181, 33)
-        Me.cboEstado.TabIndex = 50
         '
         'Clientes
         '
