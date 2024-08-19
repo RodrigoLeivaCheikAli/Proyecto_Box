@@ -1,8 +1,40 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Configuration
 
-Public Class Form1
+Public Class Proveedores
     Private ReadOnly connectionString As String = "data source = 168.197.51.109; initial catalog = PIN_GRUPO11; user id = PIN_GRUPO11; password = PIN_GRUPO11123"
+
+#Region "Direcciones"
+
+    Private panelContenedor As Panel
+    ' Constructor para recibir el panel contenedor
+    Public Sub New(panel As Panel)
+        InitializeComponent()
+        Me.panelContenedor = panel
+    End Sub
+
+    Private Sub btnComparacion_Click(sender As Object, e As EventArgs) Handles btnComparacion.Click
+        ' Crear una instancia del formulario Productos_Listado
+        Dim compaForm As New ProvComparaciones(panelContenedor)
+
+        ' Configurar el formulario Productos_Listado para que no sea de nivel superior
+        compaForm.TopLevel = False
+
+        ' Limpiar el panelContenedor antes de agregar el nuevo formulario
+        panelContenedor.Controls.Clear()
+
+        ' Agregar el formulario Productos_Listado al panelContenedor
+        panelContenedor.Controls.Add(compaForm)
+
+        ' Ajustar el tamaño del formulario al panel
+        compaForm.Dock = DockStyle.Fill
+
+        ' Mostrar el formulario dentro del panel
+        compaForm.Show()
+    End Sub
+
+
+#End Region
 
 #Region "Load"
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -246,6 +278,8 @@ Public Class Form1
             e.Handled = True
         End If
     End Sub
+
+
 #End Region
 
 End Class

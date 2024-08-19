@@ -101,7 +101,7 @@ Partial Class ProvComparaciones
         Me.DataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue
         Me.DataGridView1.HeaderBgColor = System.Drawing.Color.Empty
         Me.DataGridView1.HeaderForeColor = System.Drawing.Color.White
-        Me.DataGridView1.Location = New System.Drawing.Point(140, 354)
+        Me.DataGridView1.Location = New System.Drawing.Point(140, 284)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
@@ -114,7 +114,7 @@ Partial Class ProvComparaciones
         '
         'cboProveedor
         '
-        Me.cboProveedor.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.cboProveedor.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboProveedor.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboProveedor.FormattingEnabled = True
@@ -125,7 +125,7 @@ Partial Class ProvComparaciones
         '
         'cboProducto
         '
-        Me.cboProducto.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.cboProducto.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cboProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboProducto.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboProducto.FormattingEnabled = True
@@ -139,6 +139,7 @@ Partial Class ProvComparaciones
         Me.ButtonComparar.AllowAnimations = True
         Me.ButtonComparar.AllowMouseEffects = True
         Me.ButtonComparar.AllowToggling = False
+        Me.ButtonComparar.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ButtonComparar.AnimationSpeed = 200
         Me.ButtonComparar.AutoGenerateColors = False
         Me.ButtonComparar.AutoRoundBorders = False
@@ -225,7 +226,7 @@ Partial Class ProvComparaciones
         '
         'cboMarca
         '
-        Me.cboMarca.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.cboMarca.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboMarca.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboMarca.FormattingEnabled = True
@@ -239,6 +240,7 @@ Partial Class ProvComparaciones
         Me.btnLimpiar.AllowAnimations = True
         Me.btnLimpiar.AllowMouseEffects = True
         Me.btnLimpiar.AllowToggling = False
+        Me.btnLimpiar.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnLimpiar.AnimationSpeed = 200
         Me.btnLimpiar.AutoGenerateColors = False
         Me.btnLimpiar.AutoRoundBorders = False
@@ -325,7 +327,7 @@ Partial Class ProvComparaciones
         '
         'txtPrecioMin
         '
-        Me.txtPrecioMin.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtPrecioMin.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtPrecioMin.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.txtPrecioMin.Location = New System.Drawing.Point(675, 159)
         Me.txtPrecioMin.Name = "txtPrecioMin"
@@ -334,7 +336,7 @@ Partial Class ProvComparaciones
         '
         'Label6
         '
-        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Label6.Location = New System.Drawing.Point(12, 9)
@@ -345,7 +347,7 @@ Partial Class ProvComparaciones
         '
         'Label1
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Label1.Location = New System.Drawing.Point(70, 67)
@@ -356,7 +358,7 @@ Partial Class ProvComparaciones
         '
         'Label2
         '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Label2.Location = New System.Drawing.Point(12, 141)
@@ -367,7 +369,7 @@ Partial Class ProvComparaciones
         '
         'Label3
         '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Label3.Location = New System.Drawing.Point(460, 67)
@@ -378,7 +380,7 @@ Partial Class ProvComparaciones
         '
         'Label4
         '
-        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Label4.Location = New System.Drawing.Point(460, 141)
@@ -389,7 +391,7 @@ Partial Class ProvComparaciones
         '
         'Label5
         '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Label5.Location = New System.Drawing.Point(58, 223)
@@ -400,7 +402,7 @@ Partial Class ProvComparaciones
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtDescripcion.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.txtDescripcion.Location = New System.Drawing.Point(217, 220)
         Me.txtDescripcion.Name = "txtDescripcion"
@@ -409,7 +411,7 @@ Partial Class ProvComparaciones
         '
         'Label7
         '
-        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Label7.Location = New System.Drawing.Point(562, 223)
@@ -420,7 +422,7 @@ Partial Class ProvComparaciones
         '
         'Label8
         '
-        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Label8.Location = New System.Drawing.Point(562, 162)
@@ -431,7 +433,7 @@ Partial Class ProvComparaciones
         '
         'txtPrecioMax
         '
-        Me.txtPrecioMax.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtPrecioMax.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtPrecioMax.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.txtPrecioMax.Location = New System.Drawing.Point(675, 223)
         Me.txtPrecioMax.Name = "txtPrecioMax"

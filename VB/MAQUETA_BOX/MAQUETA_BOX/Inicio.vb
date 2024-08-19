@@ -49,16 +49,7 @@ Public Class Inicio
         newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
         newForm.Show() ' Muestra el formulario
     End Sub
-    Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
-        PictureBox1.Visible = False
-        Panel1.Controls.Clear()
-        Dim newForm As New form1() ' Crea una nueva instancia del formulario que deseas agregar
-        newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
-        Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
 
-        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
-        newForm.Show()
-    End Sub
     Private Sub btnEstadisticas_Click(sender As Object, e As EventArgs) Handles btnEstadisticas.Click
         PictureBox1.Visible = False
         Panel1.Controls.Clear()
@@ -91,6 +82,28 @@ Public Class Inicio
         productosForm.Show()
     End Sub
 
+#End Region
+
+#Region "Proveedores"
+    Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
+        ' Crear una instancia del formulario Productos
+        Dim proveedoresForm As New Proveedores(Me.Panel1)
+
+        ' Configurar el formulario Productos para que no sea de nivel superior
+        proveedoresForm.TopLevel = False
+
+        ' Limpiar el panelContenedor antes de agregar el nuevo formulario
+        Panel1.Controls.Clear()
+
+        ' Agregar el formulario Productos al panelContenedor
+        Panel1.Controls.Add(proveedoresForm)
+
+        ' Ajustar el tamaño del formulario al panel
+        proveedoresForm.Dock = DockStyle.Fill
+
+        ' Mostrar el formulario dentro del panel
+        proveedoresForm.Show()
+    End Sub
 #End Region
     Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
         ' Instancia de la clase Clientes pasando el Panel1 como parámetro
