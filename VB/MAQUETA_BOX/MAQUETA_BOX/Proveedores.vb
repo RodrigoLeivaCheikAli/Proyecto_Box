@@ -4,9 +4,13 @@ Public Class Proveedores
     Dim conexion As SqlConnection
     Dim comando As New SqlCommand
 
-    Private Sub Proveedores_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+#Region "Load"
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CargarEstados()
         CargarGrilla()
     End Sub
+
+#End Region
 
 #Region "Llenar textboxes al tocar grilla"
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles grillaProv.CellClick
@@ -18,6 +22,7 @@ Public Class Proveedores
             txtCuit.Text = row.Cells("CUIT").Value.ToString()
             txtDireccion.Text = row.Cells("Direccion").Value.ToString()
             txtLocalidad.Text = row.Cells("Localidad").Value.ToString()
+            cboEstado.Text = row.Cells("Estado").Value.ToString()
             txtTelefono.Text = row.Cells("Telefono").Value.ToString()
             txtMail.Text = row.Cells("Mail").Value.ToString()
             txtNotas.Text = row.Cells("Notas").Value.ToString()
@@ -68,6 +73,7 @@ Public Class Proveedores
         txtMail.Text = Nothing
         txtNotas.Text = Nothing
         txtBuscar.Text = Nothing
+        cboEstado.SelectedItem = "Activo"
 
     End Sub
 
@@ -96,6 +102,7 @@ Public Class Proveedores
                 .AddWithValue("@telefono", txtTelefono.Text)
                 .AddWithValue("@mail", txtMail.Text)
                 .AddWithValue("@notas", txtNotas.Text)
+                .AddWithValue("id_estado", cboEstado.SelectedValue)
 
             End With
 
@@ -134,6 +141,7 @@ Public Class Proveedores
                 .AddWithValue("@telefono", txtTelefono.Text)
                 .AddWithValue("@mail", txtMail.Text)
                 .AddWithValue("@notas", txtNotas.Text)
+                .AddWithValue("id_estado", cboEstado.SelectedValue)
 
             End With
 
@@ -189,12 +197,17 @@ Public Class Proveedores
         Dim isNumericSearch As Boolean = IsNumeric(busqueda)
 
         If isNumericSearch Then
-            query = "SELECT Id_Proveedor AS Id, Nombre, Direccion, Telefono, Localidad, Mail, Rubro, CUIT, Notas FROM Proveedores WHERE Id_Proveedor = @Busqueda"
+            query = "SELECT p.Id_Proveedor AS Id, p.Nombre, p.Direccion, p.Telefono, p.Localidad, p.Mail, p.Rubro, p.CUIT, p.Notas, e.Nombre AS Estado " &
+                    "FROM Proveedores p " &
+                    "INNER JOIN Estados e ON p.Id_Estado = e.Id_Estado " &
+                    "WHERE p.Id_Proveedor = @Busqueda OR p.Telefono = @Busqueda"
         Else
-            query = "SELECT Id_Proveedor AS Id, Nombre, Direccion, Telefono, Localidad, Mail, Rubro, CUIT, Notas FROM Proveedores WHERE Nombre LIKE @Busqueda OR Direccion LIKE @Busqueda OR Localidad LIKE @Busqueda OR Mail LIKE @Busqueda OR Rubro LIKE @Busqueda OR Notas LIKE @Busqueda OR Telefono LIKE @Busqueda OR CUIT LIKE @Busqueda"
+            query = "SELECT p.Id_Proveedor AS Id, p.Nombre, p.Direccion, p.Telefono, p.Localidad, p.Mail, p.Rubro, p.CUIT, p.Notas, e.Nombre AS Estado " &
+                    "FROM Proveedores p " &
+                    "INNER JOIN Estados e ON p.Id_Estado = e.Id_Estado " &
+                    "WHERE p.Nombre LIKE @Busqueda OR p.Direccion LIKE @Busqueda OR p.Localidad LIKE @Busqueda OR p.Mail LIKE @Busqueda OR p.Rubro LIKE @Busqueda OR p.Notas LIKE @Busqueda"
         End If
 
-        ' Usa Using para asegurar que los recursos se liberan correctamente
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand(query, connection)
                 If isNumericSearch Then
@@ -203,33 +216,81 @@ Public Class Proveedores
                     command.Parameters.AddWithValue("@Busqueda", "%" & busqueda & "%")
                 End If
 
-                ' Crea un adaptador de datos y un DataTable
                 Dim adapter As New SqlDataAdapter(command)
                 Dim dataTable As New DataTable()
 
                 Try
-                    ' Abre la conexión a la base de datos
                     connection.Open()
-
-                    ' Llena el DataTable con los resultados de la consulta
                     adapter.Fill(dataTable)
-
-                    ' Asigna el DataTable como origen de datos del DataGridView
                     grillaProv.DataSource = dataTable
 
-                    ' Cambia el nombre de la columna en el DataGridView
                     If grillaProv.Columns.Contains("Id") Then
                         grillaProv.Columns("Id").HeaderText = "Id"
                     End If
 
                 Catch ex As Exception
-                    ' Muestra un mensaje de error si ocurre algún problema
                     MessageBox.Show("Error al buscar los proveedores: " & ex.Message)
                 End Try
             End Using
         End Using
     End Sub
 
+#End Region
+
+#Region "Estado"
+    Private Sub CargarEstados()
+        Dim connectionString As String = "data source=168.197.51.109;initial catalog=PIN_GRUPO11;user id=PIN_GRUPO11;password=PIN_GRUPO11123"
+        Try
+            Using conexion As New SqlConnection(connectionString)
+                conexion.Open()
+
+                Using comando As New SqlCommand("Cargar_cbo_EstadosProv", conexion)
+                    comando.CommandType = CommandType.StoredProcedure
+
+                    Dim dt As New DataTable()
+                    Dim adapter As New SqlDataAdapter(comando)
+                    adapter.Fill(dt)
+
+                    cboEstado.DataSource = dt
+                    cboEstado.DisplayMember = "Nombre"  ' Lo que se muestra
+                    cboEstado.ValueMember = "Id_Estado" ' El valor asociado
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
 
 #End Region
+
+#Region "Otros"
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+        Limpiar()
+        CargarGrilla()
+    End Sub
+
+
+    Private Sub txtId_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtId.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelefono.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtCUIT_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCuit.KeyPress
+        Dim allowedChars As String = "0123456789-"
+        If Not (Char.IsDigit(e.KeyChar) OrElse allowedChars.Contains(e.KeyChar) OrElse Char.IsControl(e.KeyChar)) Then
+            e.Handled = True
+        End If
+    End Sub
+
+
+#End Region
+
 End Class

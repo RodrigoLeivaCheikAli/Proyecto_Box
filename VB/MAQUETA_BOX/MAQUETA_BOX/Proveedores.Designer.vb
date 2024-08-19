@@ -23,9 +23,9 @@ Partial Class Proveedores
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Proveedores))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
@@ -33,31 +33,35 @@ Partial Class Proveedores
         Me.btnEliminar = New System.Windows.Forms.PictureBox()
         Me.btnModificar = New System.Windows.Forms.PictureBox()
         Me.btnCargar = New System.Windows.Forms.PictureBox()
-        Me.txtNotas = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtLocalidad = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtRubro = New System.Windows.Forms.TextBox()
-        Me.txtMail = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtCuit = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.grillaProv = New Bunifu.UI.WinForms.BunifuDataGridView()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cboEstado = New System.Windows.Forms.ComboBox()
+        Me.txtNotas = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtMail = New System.Windows.Forms.TextBox()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grillaProv, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridViewImageColumn1
@@ -76,6 +80,7 @@ Partial Class Proveedores
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.PictureBox7)
         Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.grillaProv)
@@ -86,9 +91,9 @@ Partial Class Proveedores
         '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(51, 32)
+        Me.txtBuscar.Location = New System.Drawing.Point(167, 27)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(205, 20)
+        Me.txtBuscar.Size = New System.Drawing.Size(243, 20)
         Me.txtBuscar.TabIndex = 38
         '
         'Panel2
@@ -96,23 +101,25 @@ Partial Class Proveedores
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.cboEstado)
+        Me.Panel2.Controls.Add(Me.txtNotas)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.txtMail)
+        Me.Panel2.Controls.Add(Me.txtTelefono)
+        Me.Panel2.Controls.Add(Me.Label15)
+        Me.Panel2.Controls.Add(Me.Label11)
         Me.Panel2.Controls.Add(Me.btnEliminar)
         Me.Panel2.Controls.Add(Me.btnModificar)
         Me.Panel2.Controls.Add(Me.btnCargar)
-        Me.Panel2.Controls.Add(Me.txtNotas)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.txtLocalidad)
-        Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.txtRubro)
-        Me.Panel2.Controls.Add(Me.txtMail)
         Me.Panel2.Controls.Add(Me.Label14)
-        Me.Panel2.Controls.Add(Me.txtTelefono)
         Me.Panel2.Controls.Add(Me.txtDireccion)
-        Me.Panel2.Controls.Add(Me.Label15)
         Me.Panel2.Controls.Add(Me.Label12)
         Me.Panel2.Controls.Add(Me.txtCuit)
-        Me.Panel2.Controls.Add(Me.Label11)
         Me.Panel2.Controls.Add(Me.txtNombre)
         Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.txtId)
@@ -155,15 +162,6 @@ Partial Class Proveedores
         Me.btnCargar.TabIndex = 17
         Me.btnCargar.TabStop = False
         '
-        'txtNotas
-        '
-        Me.txtNotas.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.txtNotas.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.txtNotas.Location = New System.Drawing.Point(912, 127)
-        Me.txtNotas.Name = "txtNotas"
-        Me.txtNotas.Size = New System.Drawing.Size(181, 33)
-        Me.txtNotas.TabIndex = 10
-        '
         'Label1
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
@@ -183,17 +181,6 @@ Partial Class Proveedores
         Me.txtLocalidad.Name = "txtLocalidad"
         Me.txtLocalidad.Size = New System.Drawing.Size(181, 33)
         Me.txtLocalidad.TabIndex = 11
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(793, 130)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 25)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Notas"
         '
         'Label3
         '
@@ -215,15 +202,6 @@ Partial Class Proveedores
         Me.txtRubro.Size = New System.Drawing.Size(181, 33)
         Me.txtRubro.TabIndex = 9
         '
-        'txtMail
-        '
-        Me.txtMail.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.txtMail.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.txtMail.Location = New System.Drawing.Point(912, 79)
-        Me.txtMail.Name = "txtMail"
-        Me.txtMail.Size = New System.Drawing.Size(181, 33)
-        Me.txtMail.TabIndex = 4
-        '
         'Label14
         '
         Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Bottom
@@ -235,15 +213,6 @@ Partial Class Proveedores
         Me.Label14.TabIndex = 5
         Me.Label14.Text = "Dirección"
         '
-        'txtTelefono
-        '
-        Me.txtTelefono.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.txtTelefono.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.txtTelefono.Location = New System.Drawing.Point(912, 22)
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(181, 33)
-        Me.txtTelefono.TabIndex = 4
-        '
         'txtDireccion
         '
         Me.txtDireccion.Anchor = System.Windows.Forms.AnchorStyles.Bottom
@@ -252,17 +221,6 @@ Partial Class Proveedores
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(181, 33)
         Me.txtDireccion.TabIndex = 4
-        '
-        'Label15
-        '
-        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.Label15.Location = New System.Drawing.Point(806, 82)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(50, 25)
-        Me.Label15.TabIndex = 4
-        Me.Label15.Text = "Mail"
         '
         'Label12
         '
@@ -283,17 +241,6 @@ Partial Class Proveedores
         Me.txtCuit.Name = "txtCuit"
         Me.txtCuit.Size = New System.Drawing.Size(181, 33)
         Me.txtCuit.TabIndex = 4
-        '
-        'Label11
-        '
-        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.Label11.Location = New System.Drawing.Point(771, 28)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(85, 25)
-        Me.Label11.TabIndex = 4
-        Me.Label11.Text = "Teléfono"
         '
         'txtNombre
         '
@@ -338,23 +285,24 @@ Partial Class Proveedores
         'grillaProv
         '
         Me.grillaProv.AllowCustomTheming = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.grillaProv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.grillaProv.AllowUserToResizeRows = False
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.grillaProv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.grillaProv.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grillaProv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.grillaProv.BackgroundColor = System.Drawing.Color.White
         Me.grillaProv.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.grillaProv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.grillaProv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grillaProv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grillaProv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.grillaProv.ColumnHeadersHeight = 40
         Me.grillaProv.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.grillaProv.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
@@ -374,14 +322,14 @@ Partial Class Proveedores
         Me.grillaProv.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black
         Me.grillaProv.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.grillaProv.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grillaProv.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grillaProv.DefaultCellStyle = DataGridViewCellStyle6
         Me.grillaProv.EnableHeadersVisualStyles = False
         Me.grillaProv.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.grillaProv.HeaderBackColor = System.Drawing.Color.DodgerBlue
@@ -389,6 +337,7 @@ Partial Class Proveedores
         Me.grillaProv.HeaderForeColor = System.Drawing.Color.White
         Me.grillaProv.Location = New System.Drawing.Point(23, 78)
         Me.grillaProv.Name = "grillaProv"
+        Me.grillaProv.ReadOnly = True
         Me.grillaProv.RowHeadersVisible = False
         Me.grillaProv.RowTemplate.Height = 40
         Me.grillaProv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -396,6 +345,98 @@ Partial Class Proveedores
         Me.grillaProv.TabIndex = 41
         Me.grillaProv.TabStop = False
         Me.grillaProv.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Location = New System.Drawing.Point(787, 28)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(69, 25)
+        Me.Label4.TabIndex = 29
+        Me.Label4.Text = "Estado"
+        '
+        'cboEstado
+        '
+        Me.cboEstado.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboEstado.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboEstado.FormattingEnabled = True
+        Me.cboEstado.Location = New System.Drawing.Point(912, 22)
+        Me.cboEstado.Name = "cboEstado"
+        Me.cboEstado.Size = New System.Drawing.Size(181, 33)
+        Me.cboEstado.TabIndex = 28
+        '
+        'txtNotas
+        '
+        Me.txtNotas.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtNotas.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.txtNotas.Location = New System.Drawing.Point(912, 190)
+        Me.txtNotas.Name = "txtNotas"
+        Me.txtNotas.Size = New System.Drawing.Size(181, 33)
+        Me.txtNotas.TabIndex = 27
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.Label2.Location = New System.Drawing.Point(793, 193)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(63, 25)
+        Me.Label2.TabIndex = 26
+        Me.Label2.Text = "Notas"
+        '
+        'txtMail
+        '
+        Me.txtMail.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtMail.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.txtMail.Location = New System.Drawing.Point(912, 127)
+        Me.txtMail.Name = "txtMail"
+        Me.txtMail.Size = New System.Drawing.Size(181, 33)
+        Me.txtMail.TabIndex = 22
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtTelefono.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.txtTelefono.Location = New System.Drawing.Point(912, 70)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(181, 33)
+        Me.txtTelefono.TabIndex = 23
+        '
+        'Label15
+        '
+        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.Label15.Location = New System.Drawing.Point(806, 130)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(50, 25)
+        Me.Label15.TabIndex = 24
+        Me.Label15.Text = "Mail"
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.Label11.Location = New System.Drawing.Point(771, 76)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(85, 25)
+        Me.Label11.TabIndex = 25
+        Me.Label11.Text = "Teléfono"
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(416, 23)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(28, 31)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox7.TabIndex = 43
+        Me.PictureBox7.TabStop = False
         '
         'Proveedores
         '
@@ -415,6 +456,7 @@ Partial Class Proveedores
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grillaProv, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -422,20 +464,14 @@ Partial Class Proveedores
     Friend WithEvents Panel1 As Panel
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents txtNotas As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtLocalidad As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents txtRubro As TextBox
-    Friend WithEvents txtMail As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents txtTelefono As TextBox
     Friend WithEvents txtDireccion As TextBox
-    Friend WithEvents Label15 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents txtCuit As TextBox
-    Friend WithEvents Label11 As Label
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtId As TextBox
@@ -444,4 +480,13 @@ Partial Class Proveedores
     Friend WithEvents btnModificar As PictureBox
     Friend WithEvents btnEliminar As PictureBox
     Friend WithEvents grillaProv As Bunifu.UI.WinForms.BunifuDataGridView
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents cboEstado As ComboBox
+    Friend WithEvents txtNotas As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtMail As TextBox
+    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label11 As Label
 End Class
