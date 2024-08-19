@@ -30,7 +30,6 @@ Partial Class Presupuesto
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BunifuCheckBox1 = New Bunifu.UI.WinForms.BunifuCheckBox()
         Me.cboCliente = New System.Windows.Forms.ComboBox()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.cboMediosP = New System.Windows.Forms.ComboBox()
         Me.BunifuDatePicker1 = New Bunifu.UI.WinForms.BunifuDatePicker()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -67,7 +66,6 @@ Partial Class Presupuesto
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.BunifuCheckBox1)
         Me.Panel1.Controls.Add(Me.cboCliente)
-        Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.cboMediosP)
         Me.Panel1.Controls.Add(Me.BunifuDatePicker1)
         Me.Panel1.Controls.Add(Me.PictureBox2)
@@ -88,7 +86,7 @@ Partial Class Presupuesto
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(911, -14)
+        Me.Label1.Location = New System.Drawing.Point(911, 35)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(142, 24)
         Me.Label1.TabIndex = 41
@@ -113,7 +111,7 @@ Partial Class Presupuesto
         Me.BunifuCheckBox1.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked
         Me.BunifuCheckBox1.Cursor = System.Windows.Forms.Cursors.Default
         Me.BunifuCheckBox1.CustomCheckmarkImage = Nothing
-        Me.BunifuCheckBox1.Location = New System.Drawing.Point(1059, -14)
+        Me.BunifuCheckBox1.Location = New System.Drawing.Point(1059, 35)
         Me.BunifuCheckBox1.MinimumSize = New System.Drawing.Size(17, 17)
         Me.BunifuCheckBox1.Name = "BunifuCheckBox1"
         Me.BunifuCheckBox1.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue
@@ -152,27 +150,16 @@ Partial Class Presupuesto
         '
         Me.cboCliente.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cboCliente.FormattingEnabled = True
-        Me.cboCliente.Location = New System.Drawing.Point(178, -12)
+        Me.cboCliente.Location = New System.Drawing.Point(178, 48)
         Me.cboCliente.Name = "cboCliente"
         Me.cboCliente.Size = New System.Drawing.Size(160, 21)
         Me.cboCliente.TabIndex = 38
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(0, 0)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(155, 39)
-        Me.Label16.TabIndex = 37
-        Me.Label16.Text = "VENTAS"
         '
         'cboMediosP
         '
         Me.cboMediosP.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cboMediosP.FormattingEnabled = True
-        Me.cboMediosP.Location = New System.Drawing.Point(769, -11)
+        Me.cboMediosP.Location = New System.Drawing.Point(767, 47)
         Me.cboMediosP.Name = "cboMediosP"
         Me.cboMediosP.Size = New System.Drawing.Size(121, 21)
         Me.cboMediosP.TabIndex = 29
@@ -196,7 +183,7 @@ Partial Class Presupuesto
         Me.BunifuDatePicker1.IconColor = System.Drawing.Color.Gray
         Me.BunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right
         Me.BunifuDatePicker1.LeftTextMargin = 5
-        Me.BunifuDatePicker1.Location = New System.Drawing.Point(418, -12)
+        Me.BunifuDatePicker1.Location = New System.Drawing.Point(418, 37)
         Me.BunifuDatePicker1.MinimumSize = New System.Drawing.Size(4, 32)
         Me.BunifuDatePicker1.Name = "BunifuDatePicker1"
         Me.BunifuDatePicker1.Size = New System.Drawing.Size(220, 32)
@@ -231,7 +218,7 @@ Partial Class Presupuesto
         Me.BunifuLabel6.AutoEllipsis = False
         Me.BunifuLabel6.CursorType = Nothing
         Me.BunifuLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuLabel6.Location = New System.Drawing.Point(657, -11)
+        Me.BunifuLabel6.Location = New System.Drawing.Point(655, 48)
         Me.BunifuLabel6.Name = "BunifuLabel6"
         Me.BunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BunifuLabel6.Size = New System.Drawing.Size(106, 20)
@@ -247,7 +234,7 @@ Partial Class Presupuesto
         Me.BunifuLabel5.AutoEllipsis = False
         Me.BunifuLabel5.CursorType = Nothing
         Me.BunifuLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuLabel5.Location = New System.Drawing.Point(367, -12)
+        Me.BunifuLabel5.Location = New System.Drawing.Point(367, 48)
         Me.BunifuLabel5.Name = "BunifuLabel5"
         Me.BunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BunifuLabel5.Size = New System.Drawing.Size(45, 20)
@@ -264,7 +251,7 @@ Partial Class Presupuesto
         Me.BunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default
         Me.BunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default
         Me.BunifuLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuLabel2.Location = New System.Drawing.Point(113, -12)
+        Me.BunifuLabel2.Location = New System.Drawing.Point(113, 48)
         Me.BunifuLabel2.Name = "BunifuLabel2"
         Me.BunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BunifuLabel2.Size = New System.Drawing.Size(49, 20)
@@ -550,7 +537,6 @@ Partial Class Presupuesto
     Friend WithEvents BunifuLabel3 As Bunifu.UI.WinForms.BunifuLabel
     Friend WithEvents BunifuLabel1 As Bunifu.UI.WinForms.BunifuLabel
     Friend WithEvents DataGridView3 As DataGridView
-    Friend WithEvents Label16 As Label
     Friend WithEvents cboCliente As ComboBox
     Friend WithEvents BunifuCheckBox1 As Bunifu.UI.WinForms.BunifuCheckBox
     Friend WithEvents colOferta As DataGridViewTextBoxColumn

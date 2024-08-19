@@ -143,7 +143,7 @@ Partial Class Inicio
         Me.PanelLateral.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelLateral.Location = New System.Drawing.Point(0, 38)
         Me.PanelLateral.Name = "PanelLateral"
-        Me.PanelLateral.Size = New System.Drawing.Size(355, 750)
+        Me.PanelLateral.Size = New System.Drawing.Size(285, 750)
         Me.PanelLateral.TabIndex = 94
         '
         'btnEstadisticas
@@ -194,7 +194,7 @@ Partial Class Inicio
         Me.btnEstadisticas.IdleIconLeftImage = Nothing
         Me.btnEstadisticas.IdleIconRightImage = Nothing
         Me.btnEstadisticas.IndicateFocus = True
-        Me.btnEstadisticas.Location = New System.Drawing.Point(51, 590)
+        Me.btnEstadisticas.Location = New System.Drawing.Point(31, 591)
         Me.btnEstadisticas.Name = "btnEstadisticas"
         Me.btnEstadisticas.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnEstadisticas.OnDisabledState.BorderRadius = 30
@@ -228,7 +228,7 @@ Partial Class Inicio
         Me.btnEstadisticas.OnPressedState.ForeColor = System.Drawing.Color.White
         Me.btnEstadisticas.OnPressedState.IconLeftImage = Nothing
         Me.btnEstadisticas.OnPressedState.IconRightImage = Nothing
-        Me.btnEstadisticas.Size = New System.Drawing.Size(247, 64)
+        Me.btnEstadisticas.Size = New System.Drawing.Size(210, 64)
         Me.btnEstadisticas.TabIndex = 122
         Me.btnEstadisticas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnEstadisticas.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
@@ -284,7 +284,7 @@ Partial Class Inicio
         Me.btnCompras.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.Compras
         Me.btnCompras.IdleIconRightImage = Nothing
         Me.btnCompras.IndicateFocus = True
-        Me.btnCompras.Location = New System.Drawing.Point(51, 450)
+        Me.btnCompras.Location = New System.Drawing.Point(31, 451)
         Me.btnCompras.Name = "btnCompras"
         Me.btnCompras.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnCompras.OnDisabledState.BorderRadius = 30
@@ -318,7 +318,7 @@ Partial Class Inicio
         Me.btnCompras.OnPressedState.ForeColor = System.Drawing.Color.White
         Me.btnCompras.OnPressedState.IconLeftImage = Nothing
         Me.btnCompras.OnPressedState.IconRightImage = Nothing
-        Me.btnCompras.Size = New System.Drawing.Size(247, 64)
+        Me.btnCompras.Size = New System.Drawing.Size(210, 64)
         Me.btnCompras.TabIndex = 121
         Me.btnCompras.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnCompras.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
@@ -374,7 +374,7 @@ Partial Class Inicio
         Me.btnDocumentos.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.icono4
         Me.btnDocumentos.IdleIconRightImage = Nothing
         Me.btnDocumentos.IndicateFocus = True
-        Me.btnDocumentos.Location = New System.Drawing.Point(51, 520)
+        Me.btnDocumentos.Location = New System.Drawing.Point(31, 521)
         Me.btnDocumentos.Name = "btnDocumentos"
         Me.btnDocumentos.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnDocumentos.OnDisabledState.BorderRadius = 30
@@ -408,7 +408,7 @@ Partial Class Inicio
         Me.btnDocumentos.OnPressedState.ForeColor = System.Drawing.Color.White
         Me.btnDocumentos.OnPressedState.IconLeftImage = Nothing
         Me.btnDocumentos.OnPressedState.IconRightImage = Nothing
-        Me.btnDocumentos.Size = New System.Drawing.Size(247, 64)
+        Me.btnDocumentos.Size = New System.Drawing.Size(210, 64)
         Me.btnDocumentos.TabIndex = 116
         Me.btnDocumentos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnDocumentos.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
@@ -464,7 +464,7 @@ Partial Class Inicio
         Me.btnVentas.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.Ventas
         Me.btnVentas.IdleIconRightImage = Nothing
         Me.btnVentas.IndicateFocus = True
-        Me.btnVentas.Location = New System.Drawing.Point(51, 380)
+        Me.btnVentas.Location = New System.Drawing.Point(31, 381)
         Me.btnVentas.Name = "btnVentas"
         Me.btnVentas.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnVentas.OnDisabledState.BorderRadius = 30
@@ -498,7 +498,7 @@ Partial Class Inicio
         Me.btnVentas.OnPressedState.ForeColor = System.Drawing.Color.White
         Me.btnVentas.OnPressedState.IconLeftImage = Nothing
         Me.btnVentas.OnPressedState.IconRightImage = Nothing
-        Me.btnVentas.Size = New System.Drawing.Size(247, 64)
+        Me.btnVentas.Size = New System.Drawing.Size(210, 64)
         Me.btnVentas.TabIndex = 120
         Me.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnVentas.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
@@ -554,7 +554,7 @@ Partial Class Inicio
         Me.btnProveedores.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.Proveedores
         Me.btnProveedores.IdleIconRightImage = Nothing
         Me.btnProveedores.IndicateFocus = True
-        Me.btnProveedores.Location = New System.Drawing.Point(51, 310)
+        Me.btnProveedores.Location = New System.Drawing.Point(31, 311)
         Me.btnProveedores.Name = "btnProveedores"
         Me.btnProveedores.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnProveedores.OnDisabledState.BorderRadius = 30
@@ -588,7 +588,7 @@ Partial Class Inicio
         Me.btnProveedores.OnPressedState.ForeColor = System.Drawing.Color.White
         Me.btnProveedores.OnPressedState.IconLeftImage = Nothing
         Me.btnProveedores.OnPressedState.IconRightImage = Nothing
-        Me.btnProveedores.Size = New System.Drawing.Size(247, 64)
+        Me.btnProveedores.Size = New System.Drawing.Size(210, 64)
         Me.btnProveedores.TabIndex = 119
         Me.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnProveedores.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
@@ -600,9 +600,9 @@ Partial Class Inicio
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(18, 9)
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 6)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(124, 139)
+        Me.PictureBox2.Size = New System.Drawing.Size(88, 113)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 124
         Me.PictureBox2.TabStop = False
@@ -655,7 +655,7 @@ Partial Class Inicio
         Me.btnProductos.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.Productos
         Me.btnProductos.IdleIconRightImage = Nothing
         Me.btnProductos.IndicateFocus = True
-        Me.btnProductos.Location = New System.Drawing.Point(51, 240)
+        Me.btnProductos.Location = New System.Drawing.Point(31, 241)
         Me.btnProductos.Name = "btnProductos"
         Me.btnProductos.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnProductos.OnDisabledState.BorderRadius = 30
@@ -689,7 +689,7 @@ Partial Class Inicio
         Me.btnProductos.OnPressedState.ForeColor = System.Drawing.Color.White
         Me.btnProductos.OnPressedState.IconLeftImage = Nothing
         Me.btnProductos.OnPressedState.IconRightImage = Nothing
-        Me.btnProductos.Size = New System.Drawing.Size(247, 64)
+        Me.btnProductos.Size = New System.Drawing.Size(210, 64)
         Me.btnProductos.TabIndex = 118
         Me.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnProductos.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
@@ -745,7 +745,7 @@ Partial Class Inicio
         Me.btnClientes.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.Clientes
         Me.btnClientes.IdleIconRightImage = Nothing
         Me.btnClientes.IndicateFocus = True
-        Me.btnClientes.Location = New System.Drawing.Point(51, 170)
+        Me.btnClientes.Location = New System.Drawing.Point(31, 171)
         Me.btnClientes.Name = "btnClientes"
         Me.btnClientes.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnClientes.OnDisabledState.BorderRadius = 30
@@ -779,7 +779,7 @@ Partial Class Inicio
         Me.btnClientes.OnPressedState.ForeColor = System.Drawing.Color.White
         Me.btnClientes.OnPressedState.IconLeftImage = Nothing
         Me.btnClientes.OnPressedState.IconRightImage = Nothing
-        Me.btnClientes.Size = New System.Drawing.Size(247, 64)
+        Me.btnClientes.Size = New System.Drawing.Size(210, 64)
         Me.btnClientes.TabIndex = 117
         Me.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.btnClientes.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
@@ -791,11 +791,11 @@ Partial Class Inicio
         '
         Me.lbl_Tire_Task.AutoSize = True
         Me.lbl_Tire_Task.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.lbl_Tire_Task.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Tire_Task.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Tire_Task.ForeColor = System.Drawing.Color.White
-        Me.lbl_Tire_Task.Location = New System.Drawing.Point(150, 71)
+        Me.lbl_Tire_Task.Location = New System.Drawing.Point(106, 54)
         Me.lbl_Tire_Task.Name = "lbl_Tire_Task"
-        Me.lbl_Tire_Task.Size = New System.Drawing.Size(173, 33)
+        Me.lbl_Tire_Task.Size = New System.Drawing.Size(146, 29)
         Me.lbl_Tire_Task.TabIndex = 125
         Me.lbl_Tire_Task.Text = "TIRE TASK"
         '
@@ -803,9 +803,9 @@ Partial Class Inicio
         '
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(355, 38)
+        Me.Panel1.Location = New System.Drawing.Point(285, 38)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(945, 750)
+        Me.Panel1.Size = New System.Drawing.Size(1015, 750)
         Me.Panel1.TabIndex = 95
         '
         'PictureBox1
@@ -814,7 +814,7 @@ Partial Class Inicio
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(945, 750)
+        Me.PictureBox1.Size = New System.Drawing.Size(1015, 750)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 109
         Me.PictureBox1.TabStop = False

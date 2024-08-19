@@ -100,4 +100,5 @@ Public Class Estadisticas
         newForm.Show() ' Muestra el formulario
     End Sub
 
+
 End Class

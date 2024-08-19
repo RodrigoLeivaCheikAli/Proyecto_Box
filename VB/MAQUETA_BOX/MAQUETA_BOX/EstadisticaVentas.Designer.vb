@@ -77,7 +77,7 @@ Partial Class EstadisticaVentas
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ImageColumn})
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.SteelBlue
-        Me.DataGridView1.Location = New System.Drawing.Point(53, 327)
+        Me.DataGridView1.Location = New System.Drawing.Point(87, 330)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -99,7 +99,7 @@ Partial Class EstadisticaVentas
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1025, 334)
+        Me.DataGridView1.Size = New System.Drawing.Size(951, 295)
         Me.DataGridView1.TabIndex = 12
         '
         'ImageColumn
@@ -121,7 +121,7 @@ Partial Class EstadisticaVentas
         Me.ChartVentas2.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
         Me.ChartVentas2.Legends.Add(Legend1)
-        Me.ChartVentas2.Location = New System.Drawing.Point(619, 21)
+        Me.ChartVentas2.Location = New System.Drawing.Point(585, 21)
         Me.ChartVentas2.Name = "ChartVentas2"
         Series1.ChartArea = "ChartArea1"
         Series1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -130,7 +130,7 @@ Partial Class EstadisticaVentas
         Series1.Name = "Series1"
         Series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
         Me.ChartVentas2.Series.Add(Series1)
-        Me.ChartVentas2.Size = New System.Drawing.Size(519, 300)
+        Me.ChartVentas2.Size = New System.Drawing.Size(470, 284)
         Me.ChartVentas2.TabIndex = 1
         Me.ChartVentas2.Text = "Chart2"
         Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -147,7 +147,7 @@ Partial Class EstadisticaVentas
         Me.ChartVentas.ChartAreas.Add(ChartArea2)
         Legend2.Name = "Legend1"
         Me.ChartVentas.Legends.Add(Legend2)
-        Me.ChartVentas.Location = New System.Drawing.Point(3, 21)
+        Me.ChartVentas.Location = New System.Drawing.Point(64, 21)
         Me.ChartVentas.Name = "ChartVentas"
         Me.ChartVentas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale
         Series2.BorderColor = System.Drawing.Color.Red
@@ -166,7 +166,7 @@ Partial Class EstadisticaVentas
         Series2.SmartLabelStyle.IsOverlappedHidden = False
         Series2.SmartLabelStyle.MinMovingDistance = 10.0R
         Me.ChartVentas.Series.Add(Series2)
-        Me.ChartVentas.Size = New System.Drawing.Size(630, 300)
+        Me.ChartVentas.Size = New System.Drawing.Size(470, 284)
         Me.ChartVentas.TabIndex = 0
         Me.ChartVentas.Text = "Chart1"
         Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

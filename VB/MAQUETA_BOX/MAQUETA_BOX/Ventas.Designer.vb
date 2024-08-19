@@ -81,7 +81,7 @@ Partial Class Ventas
         '
         'DataGridView2
         '
-        Me.DataGridView2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -119,7 +119,7 @@ Partial Class Ventas
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(740, 334)
+        Me.DataGridView2.Size = New System.Drawing.Size(553, 306)
         Me.DataGridView2.TabIndex = 13
         '
         'DataGridViewImageColumn1
@@ -173,7 +173,7 @@ Partial Class Ventas
         '
         Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(604, 464)
+        Me.PictureBox3.Location = New System.Drawing.Point(571, 507)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(159, 117)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -182,7 +182,7 @@ Partial Class Ventas
         '
         'DataGridView1
         '
-        Me.DataGridView1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -200,7 +200,7 @@ Partial Class Ventas
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ImageColumn})
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.SteelBlue
-        Me.DataGridView1.Location = New System.Drawing.Point(-145, 152)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 152)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -221,7 +221,7 @@ Partial Class Ventas
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(689, 334)
+        Me.DataGridView1.Size = New System.Drawing.Size(553, 306)
         Me.DataGridView1.TabIndex = 11
         '
         'ImageColumn
@@ -249,7 +249,7 @@ Partial Class Ventas
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(437, 464)
+        Me.PictureBox1.Location = New System.Drawing.Point(406, 507)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(159, 117)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom

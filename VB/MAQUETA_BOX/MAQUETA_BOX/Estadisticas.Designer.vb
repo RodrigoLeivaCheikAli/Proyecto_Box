@@ -23,17 +23,16 @@ Partial Class Estadisticas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Estadisticas))
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title3 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title4 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.lblProveedores = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -90,7 +89,6 @@ Partial Class Estadisticas
         'Panel1
         '
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Controls.Add(Me.lblProveedores)
         Me.Panel1.Controls.Add(Me.Label9)
@@ -122,17 +120,6 @@ Partial Class Estadisticas
         Me.Panel1.Size = New System.Drawing.Size(1141, 676)
         Me.Panel1.TabIndex = 0
         '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(0, 0)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(265, 39)
-        Me.Label16.TabIndex = 94
-        Me.Label16.Text = "ESTADISTICAS"
-        '
         'PictureBox3
         '
         Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -151,7 +138,7 @@ Partial Class Estadisticas
         Me.lblProveedores.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblProveedores.AutoSize = True
         Me.lblProveedores.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProveedores.Location = New System.Drawing.Point(960, 587)
+        Me.lblProveedores.Location = New System.Drawing.Point(904, 587)
         Me.lblProveedores.Name = "lblProveedores"
         Me.lblProveedores.Size = New System.Drawing.Size(30, 31)
         Me.lblProveedores.TabIndex = 92
@@ -163,7 +150,7 @@ Partial Class Estadisticas
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(925, 567)
+        Me.Label9.Location = New System.Drawing.Point(869, 567)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(109, 20)
         Me.Label9.TabIndex = 91
@@ -175,7 +162,7 @@ Partial Class Estadisticas
         Me.PictureBox9.BackColor = System.Drawing.Color.DodgerBlue
         Me.PictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox9.Image = Global.MAQUETA_BOX.My.Resources.Resources.Proveedores
-        Me.PictureBox9.Location = New System.Drawing.Point(830, 564)
+        Me.PictureBox9.Location = New System.Drawing.Point(774, 564)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(74, 71)
         Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -189,7 +176,7 @@ Partial Class Estadisticas
         Me.PictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox10.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox10.Location = New System.Drawing.Point(830, 564)
+        Me.PictureBox10.Location = New System.Drawing.Point(774, 564)
         Me.PictureBox10.Name = "PictureBox10"
         Me.PictureBox10.Size = New System.Drawing.Size(233, 71)
         Me.PictureBox10.TabIndex = 89
@@ -200,7 +187,7 @@ Partial Class Estadisticas
         Me.lblClientes.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblClientes.AutoSize = True
         Me.lblClientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblClientes.Location = New System.Drawing.Point(960, 461)
+        Me.lblClientes.Location = New System.Drawing.Point(904, 461)
         Me.lblClientes.Name = "lblClientes"
         Me.lblClientes.Size = New System.Drawing.Size(30, 31)
         Me.lblClientes.TabIndex = 88
@@ -212,7 +199,7 @@ Partial Class Estadisticas
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(940, 441)
+        Me.Label11.Location = New System.Drawing.Point(884, 441)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(74, 20)
         Me.Label11.TabIndex = 87
@@ -224,7 +211,7 @@ Partial Class Estadisticas
         Me.PictureBox11.BackColor = System.Drawing.Color.DodgerBlue
         Me.PictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox11.Image = Global.MAQUETA_BOX.My.Resources.Resources.Clientes
-        Me.PictureBox11.Location = New System.Drawing.Point(830, 438)
+        Me.PictureBox11.Location = New System.Drawing.Point(774, 438)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(74, 71)
         Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -238,7 +225,7 @@ Partial Class Estadisticas
         Me.PictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox12.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox12.Location = New System.Drawing.Point(830, 438)
+        Me.PictureBox12.Location = New System.Drawing.Point(774, 438)
         Me.PictureBox12.Name = "PictureBox12"
         Me.PictureBox12.Size = New System.Drawing.Size(233, 71)
         Me.PictureBox12.TabIndex = 85
@@ -249,7 +236,7 @@ Partial Class Estadisticas
         Me.lblCategorias.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblCategorias.AutoSize = True
         Me.lblCategorias.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCategorias.Location = New System.Drawing.Point(621, 587)
+        Me.lblCategorias.Location = New System.Drawing.Point(565, 587)
         Me.lblCategorias.Name = "lblCategorias"
         Me.lblCategorias.Size = New System.Drawing.Size(30, 31)
         Me.lblCategorias.TabIndex = 84
@@ -261,7 +248,7 @@ Partial Class Estadisticas
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(590, 567)
+        Me.Label5.Location = New System.Drawing.Point(534, 567)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(96, 20)
         Me.Label5.TabIndex = 83
@@ -273,7 +260,7 @@ Partial Class Estadisticas
         Me.PictureBox5.BackColor = System.Drawing.Color.DodgerBlue
         Me.PictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox5.Image = Global.MAQUETA_BOX.My.Resources.Resources.categoria
-        Me.PictureBox5.Location = New System.Drawing.Point(491, 564)
+        Me.PictureBox5.Location = New System.Drawing.Point(435, 564)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(74, 71)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -287,7 +274,7 @@ Partial Class Estadisticas
         Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox6.Location = New System.Drawing.Point(491, 564)
+        Me.PictureBox6.Location = New System.Drawing.Point(435, 564)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(233, 71)
         Me.PictureBox6.TabIndex = 81
@@ -298,7 +285,7 @@ Partial Class Estadisticas
         Me.lblProductos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblProductos.AutoSize = True
         Me.lblProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProductos.Location = New System.Drawing.Point(621, 461)
+        Me.lblProductos.Location = New System.Drawing.Point(565, 461)
         Me.lblProductos.Name = "lblProductos"
         Me.lblProductos.Size = New System.Drawing.Size(30, 31)
         Me.lblProductos.TabIndex = 80
@@ -310,7 +297,7 @@ Partial Class Estadisticas
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(596, 441)
+        Me.Label7.Location = New System.Drawing.Point(540, 441)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(90, 20)
         Me.Label7.TabIndex = 79
@@ -322,7 +309,7 @@ Partial Class Estadisticas
         Me.PictureBox7.BackColor = System.Drawing.Color.DodgerBlue
         Me.PictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox7.Image = Global.MAQUETA_BOX.My.Resources.Resources.Productos
-        Me.PictureBox7.Location = New System.Drawing.Point(491, 438)
+        Me.PictureBox7.Location = New System.Drawing.Point(435, 438)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(74, 71)
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -336,7 +323,7 @@ Partial Class Estadisticas
         Me.PictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox8.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox8.Location = New System.Drawing.Point(491, 438)
+        Me.PictureBox8.Location = New System.Drawing.Point(435, 438)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(233, 71)
         Me.PictureBox8.TabIndex = 77
@@ -430,58 +417,58 @@ Partial Class Estadisticas
         'ChartProdPreferidos
         '
         Me.ChartProdPreferidos.Anchor = System.Windows.Forms.AnchorStyles.None
-        ChartArea1.Name = "ChartArea1"
-        Me.ChartProdPreferidos.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.ChartProdPreferidos.Legends.Add(Legend1)
-        Me.ChartProdPreferidos.Location = New System.Drawing.Point(611, 62)
+        ChartArea3.Name = "ChartArea1"
+        Me.ChartProdPreferidos.ChartAreas.Add(ChartArea3)
+        Legend3.Name = "Legend1"
+        Me.ChartProdPreferidos.Legends.Add(Legend3)
+        Me.ChartProdPreferidos.Location = New System.Drawing.Point(611, 65)
         Me.ChartProdPreferidos.Name = "ChartProdPreferidos"
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
-        Series1.IsValueShownAsLabel = True
-        Series1.LabelForeColor = System.Drawing.Color.White
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Series1.YValuesPerPoint = 4
-        Me.ChartProdPreferidos.Series.Add(Series1)
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
+        Series3.IsValueShownAsLabel = True
+        Series3.LabelForeColor = System.Drawing.Color.White
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Series3.YValuesPerPoint = 4
+        Me.ChartProdPreferidos.Series.Add(Series3)
         Me.ChartProdPreferidos.Size = New System.Drawing.Size(452, 263)
         Me.ChartProdPreferidos.TabIndex = 69
         Me.ChartProdPreferidos.Text = "Chart1"
-        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title1.Name = "Title1"
-        Title1.Text = "Top Productos Mas Vendidos"
-        Me.ChartProdPreferidos.Titles.Add(Title1)
+        Title3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title3.Name = "Title1"
+        Title3.Text = "Top Productos Mas Vendidos"
+        Me.ChartProdPreferidos.Titles.Add(Title3)
         '
         'chartProductoPorCategoria
         '
         Me.chartProductoPorCategoria.Anchor = System.Windows.Forms.AnchorStyles.None
-        ChartArea2.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
-        ChartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent
-        ChartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent
-        ChartArea2.Name = "ChartArea1"
-        Me.chartProductoPorCategoria.ChartAreas.Add(ChartArea2)
-        Legend2.Enabled = False
-        Legend2.Name = "Legend1"
-        Legend2.Title = "Productos por Categorias"
-        Me.chartProductoPorCategoria.Legends.Add(Legend2)
-        Me.chartProductoPorCategoria.Location = New System.Drawing.Point(74, 53)
+        ChartArea4.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
+        ChartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent
+        ChartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent
+        ChartArea4.Name = "ChartArea1"
+        Me.chartProductoPorCategoria.ChartAreas.Add(ChartArea4)
+        Legend4.Enabled = False
+        Legend4.Name = "Legend1"
+        Legend4.Title = "Productos por Categorias"
+        Me.chartProductoPorCategoria.Legends.Add(Legend4)
+        Me.chartProductoPorCategoria.Location = New System.Drawing.Point(74, 65)
         Me.chartProductoPorCategoria.Name = "chartProductoPorCategoria"
-        Series2.ChartArea = "ChartArea1"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar
-        Series2.Color = System.Drawing.Color.DodgerBlue
-        Series2.IsValueShownAsLabel = True
-        Series2.LabelForeColor = System.Drawing.Color.White
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
-        Me.chartProductoPorCategoria.Series.Add(Series2)
+        Series4.ChartArea = "ChartArea1"
+        Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar
+        Series4.Color = System.Drawing.Color.DodgerBlue
+        Series4.IsValueShownAsLabel = True
+        Series4.LabelForeColor = System.Drawing.Color.White
+        Series4.Legend = "Legend1"
+        Series4.Name = "Series1"
+        Series4.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
+        Me.chartProductoPorCategoria.Series.Add(Series4)
         Me.chartProductoPorCategoria.Size = New System.Drawing.Size(531, 300)
         Me.chartProductoPorCategoria.TabIndex = 68
         Me.chartProductoPorCategoria.Text = "Productos por Rubros"
-        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title2.Name = "Title1"
-        Title2.Text = "Cantidad de Productos por Categorias"
-        Me.chartProductoPorCategoria.Titles.Add(Title2)
+        Title4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title4.Name = "Title1"
+        Title4.Text = "Cantidad de Productos por Categorias"
+        Me.chartProductoPorCategoria.Titles.Add(Title4)
         '
         'Estadisticas
         '
@@ -515,7 +502,6 @@ Partial Class Estadisticas
 
     Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label16 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents lblProveedores As Label
     Friend WithEvents Label9 As Label

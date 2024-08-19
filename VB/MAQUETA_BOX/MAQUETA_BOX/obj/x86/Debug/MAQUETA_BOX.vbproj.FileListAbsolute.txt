@@ -534,7 +534,6 @@ C:\Users\gaite\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\bin\Debu
 C:\Users\gaite\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\gaite\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\gaite\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Proveedores.resources
-C:\Users\valle\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Proveedores.resources
 D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\bin\Debug\ClosedXML.dll
 D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\bin\Debug\DocumentFormat.OpenXml.dll
 D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\bin\Debug\ExcelNumberFormat.dll
@@ -680,3 +679,6 @@ C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\Proyecto_Box\VB\MAQUETA_BO
 C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.EstadisticasVentas.resources
 D:\DESCARGAS\GITHUB\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.FechaForm.resources
 C:\Users\valle\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.FechaForm.resources
+C:\Users\valle\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.EstadisticaVentas.resources
+C:\Users\valle\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.ProvComparaciones.resources
+C:\Users\valle\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Form1.resources
