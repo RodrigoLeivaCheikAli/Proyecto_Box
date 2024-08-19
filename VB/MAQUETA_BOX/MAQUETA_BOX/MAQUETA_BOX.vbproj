@@ -279,6 +279,12 @@
     <Compile Include="Estadisticas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EstadisticaVentas.Designer.vb">
+      <DependentUpon>EstadisticaVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EstadisticaVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmFecha.Designer.vb">
       <DependentUpon>frmFecha.vb</DependentUpon>
     </Compile>
@@ -290,12 +296,6 @@
     </Compile>
     <Compile Include="Inicio.Designer.vb">
       <DependentUpon>Inicio.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Mantenimientos.Designer.vb">
-      <DependentUpon>Mantenimientos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Mantenimientos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulo.vb" />
@@ -350,6 +350,12 @@
     <Compile Include="Productos_Vendidos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ProvComparaciones.Designer.vb">
+      <DependentUpon>ProvComparaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProvComparaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Proveedores.Designer.vb">
       <DependentUpon>Proveedores.vb</DependentUpon>
     </Compile>
@@ -375,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas.resx">
       <DependentUpon>Estadisticas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadisticaVentas.resx">
+      <DependentUpon>EstadisticaVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFecha.resx">
       <DependentUpon>frmFecha.vb</DependentUpon>
@@ -403,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos_Vendidos.resx">
       <DependentUpon>Productos_Vendidos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProvComparaciones.resx">
+      <DependentUpon>ProvComparaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.vb</DependentUpon>

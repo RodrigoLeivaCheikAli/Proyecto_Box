@@ -1,10 +1,8 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Windows.Forms.DataVisualization.Charting
-Imports ClosedXML.Excel
-Imports DocumentFormat.OpenXml.Vml.Office
 
-Public Class EstadisticasVentas
+Public Class EstadisticaVentas
     Dim conexion As SqlConnection = New SqlConnection("data source=168.197.51.109;initial catalog=PIN_GRUPO11;user id=PIN_GRUPO11;password=PIN_GRUPO11123")
     Dim comando As SqlCommand
     Dim dr As SqlDataReader
@@ -12,8 +10,7 @@ Public Class EstadisticasVentas
     Dim Ventas As New List(Of Double)
     Dim Fechas2 As New List(Of DateTime)
     Dim Ventas2 As New List(Of Double)
-
-    Private Sub EstadisticasVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub EstadisticaVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GrafVentas()
         GrafVentasColumn()
         LlenarGrilla()
@@ -250,43 +247,5 @@ Public Class EstadisticasVentas
         LlenarGrilla()
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        If DataGridView1.Rows.Count = 0 Then
-            MessageBox.Show("No hay datos para exportar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
 
-        Dim dataTable As New DataTable()
-        For Each column As DataGridViewColumn In DataGridView1.Columns
-            dataTable.Columns.Add(column.HeaderText, column.ValueType)
-        Next
-
-        For Each row As DataGridViewRow In DataGridView1.Rows
-            If Not row.IsNewRow Then
-                Dim dataRow As DataRow = dataTable.NewRow()
-                For Each column As DataGridViewColumn In DataGridView1.Columns
-                    dataRow(column.HeaderText) = row.Cells(column.Index).Value
-                Next
-                dataTable.Rows.Add(dataRow)
-            End If
-        Next
-
-        Try
-            Dim workbook As New XLWorkbook()
-            Dim worksheet As IXLWorksheet = workbook.Worksheets.Add("Datos")
-            worksheet.Cell(1, 1).InsertTable(dataTable)
-
-            Dim saveFileDialog As New SaveFileDialog()
-            saveFileDialog.Filter = "Excel files (.xlsx)|.xlsx"
-            saveFileDialog.Title = "Guardar archivo Excel"
-
-            If saveFileDialog.ShowDialog() = DialogResult.OK Then
-                workbook.SaveAs(saveFileDialog.FileName)
-                MessageBox.Show("Datos exportados exitosamente.", "Exportación completada", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Ocurrió un error al exportar los datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
 End Class
-
