@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Configuration
-Public Class Proveedores
+Public Class form1
     Dim conexion As SqlConnection
     Dim comando As New SqlCommand
 
@@ -13,13 +13,13 @@ Public Class Proveedores
 #End Region
 
 #Region "Llenar textboxes al tocar grilla"
-    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles grillaProv.CellClick
+    Private Sub grillaProv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles grillaProv.CellClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = grillaProv.Rows(e.RowIndex)
             txtId.Text = row.Cells("ID").Value.ToString()
             txtNombre.Text = row.Cells("Nombre").Value.ToString()
             txtRubro.Text = row.Cells("Rubro").Value.ToString()
-            txtCuit.Text = row.Cells("CUIT").Value.ToString()
+            txtCUIT.Text = row.Cells("CUIT").Value.ToString()
             txtDireccion.Text = row.Cells("Direccion").Value.ToString()
             txtLocalidad.Text = row.Cells("Localidad").Value.ToString()
             cboEstado.Text = row.Cells("Estado").Value.ToString()
@@ -80,7 +80,7 @@ Public Class Proveedores
 #End Region
 
 #Region "Cargar"
-    Private Sub btnCargar_Click(sender As Object, e As EventArgs) Handles btnCargar.Click
+    Private Sub brnGuardar_Click(sender As Object, e As EventArgs) Handles brnGuardar.Click
         If txtNombre.Text <> Nothing Then
 
             Dim conexion As SqlConnection
@@ -96,7 +96,7 @@ Public Class Proveedores
             With comando.Parameters
                 .AddWithValue("@nombre", txtNombre.Text)
                 .AddWithValue("@rubro", txtRubro.Text)
-                .AddWithValue("@cuit", txtCuit.Text)
+                .AddWithValue("@cuit", txtCUIT.Text)
                 .AddWithValue("@direccion", txtDireccion.Text)
                 .AddWithValue("@localidad", txtLocalidad.Text)
                 .AddWithValue("@telefono", txtTelefono.Text)
@@ -119,7 +119,7 @@ Public Class Proveedores
 #End Region
 
 #Region "Modificar"
-    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+    Private Sub btnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
         If txtId.Text <> Nothing Then
             Dim conexion As SqlConnection
             Dim comando As New SqlCommand
@@ -135,7 +135,7 @@ Public Class Proveedores
                 .AddWithValue("@id", txtId.Text)
                 .AddWithValue("@nombre", txtNombre.Text)
                 .AddWithValue("@rubro", txtRubro.Text)
-                .AddWithValue("@cuit", txtCuit.Text)
+                .AddWithValue("@cuit", txtCUIT.Text)
                 .AddWithValue("@direccion", txtDireccion.Text)
                 .AddWithValue("@localidad", txtLocalidad.Text)
                 .AddWithValue("@telefono", txtTelefono.Text)
@@ -158,7 +158,7 @@ Public Class Proveedores
 #End Region
 
 #Region "Eliminar"
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click_1(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If txtId.Text <> Nothing Then
             Dim conexion As SqlConnection
             Dim comando As New SqlCommand
@@ -188,7 +188,7 @@ Public Class Proveedores
     Private connectionString As String = "data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123"
 
     ' Maneja el evento TextChanged del TextBox para actualizar la grilla en tiempo real
-    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+    Private Sub txtBuscar_TextChanged_1(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         BuscarProveedores(txtBuscar.Text)
     End Sub
 
@@ -265,7 +265,7 @@ Public Class Proveedores
 
 #Region "Otros"
 
-    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+    Private Sub PictureBox3_Click_1(sender As Object, e As EventArgs) Handles PictureBox3.Click
         Limpiar()
         CargarGrilla()
     End Sub
@@ -283,7 +283,7 @@ Public Class Proveedores
         End If
     End Sub
 
-    Private Sub txtCUIT_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCuit.KeyPress
+    Private Sub txtCUIT_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCUIT.KeyPress
         Dim allowedChars As String = "0123456789-"
         If Not (Char.IsDigit(e.KeyChar) OrElse allowedChars.Contains(e.KeyChar) OrElse Char.IsControl(e.KeyChar)) Then
             e.Handled = True
@@ -292,5 +292,15 @@ Public Class Proveedores
 
 
 #End Region
+
+#Region "Comparacion"
+
+    Private Sub btnComparacion_Click(sender As Object, e As EventArgs) Handles btnComparacion.Click
+
+    End Sub
+
+
+#End Region
+
 
 End Class

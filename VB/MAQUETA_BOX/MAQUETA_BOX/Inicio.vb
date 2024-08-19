@@ -52,7 +52,7 @@ Public Class Inicio
     Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
         PictureBox1.Visible = False
         Panel1.Controls.Clear()
-        Dim newForm As New Proveedores() ' Crea una nueva instancia del formulario que deseas agregar
+        Dim newForm As New form1() ' Crea una nueva instancia del formulario que deseas agregar
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
 
