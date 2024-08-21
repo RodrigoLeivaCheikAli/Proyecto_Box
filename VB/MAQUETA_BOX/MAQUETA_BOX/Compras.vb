@@ -400,8 +400,34 @@ Public Class Compras
         SeleccionarUltimoID()
         CargarDetallePedido()
         MsgBox("Pedido guardado correctamente", vbInformation, "Pedidos")
-        DataGridView2.Rows.Clear()
         totalPrecio = 0
+        If IdPresupuesto = 0 Then
+            DataGridView2.Rows.Clear()
+        End If
+
+        If IdPresupuesto <> 0 Then
+            ActualizarEstadoPresupuesto(IdPresupuesto, "Pedido")
+        End If
+    End Sub
+
+    Private Sub ActualizarEstadoPresupuesto(idPresupuesto As Integer, nuevoEstado As String)
+        Dim conexion As SqlConnection
+        Dim comando As New SqlCommand
+
+        conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+        comando.Connection = conexion
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = "Actualizar_Estado_Presupuesto"
+        comando.Parameters.AddWithValue("@Id_Presupuesto", idPresupuesto)
+
+        Try
+            conexion.Open()
+            comando.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show("Error al actualizar el estado del presupuesto: " & ex.Message)
+        Finally
+            conexion.Close()
+        End Try
     End Sub
 
     Public Sub CargarDetallePedido()
@@ -419,8 +445,8 @@ Public Class Compras
             For Each fila As DataGridViewRow In DataGridView2.Rows
                 If Not fila.IsNewRow Then
                     ' Toma los valores de la columna 1 y la columna 6
-                    Dim idOferta As Integer = Convert.ToInt32(fila.Cells(1).Value) ' Columna 1
-                    Dim cantidad As Integer = Convert.ToInt32(fila.Cells(6).Value) ' Columna 6
+                    Dim idOferta As Integer = Convert.ToInt32(fila.Cells(1).Value)
+                    Dim cantidad As Integer = Convert.ToInt32(fila.Cells(6).Value)
 
                     With comando.Parameters
                         .Clear() ' Limpia los parámetros antes de agregar nuevos valores
@@ -428,9 +454,7 @@ Public Class Compras
                         .AddWithValue("@ID_Oferta", idOferta)
                         .AddWithValue("@Cantidad", cantidad)
                     End With
-
-                    comando.ExecuteNonQuery() ' Ejecuta el comando para cada fila
-                    'MsgBox("Pedido guardado correctamente", vbInformation, "Pedidos")
+                    comando.ExecuteNonQuery()
                 End If
             Next
 
@@ -471,7 +495,7 @@ Public Class Compras
             End With
 
             comando.ExecuteNonQuery()
-            'MsgBox("Pedido guardado correctamente", vbInformation, "Pedidos")
+
 
         Catch ex As Exception
             MessageBox.Show("Error al cargar los detalles: " & ex.Message)
