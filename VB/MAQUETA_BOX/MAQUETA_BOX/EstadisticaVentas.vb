@@ -121,7 +121,51 @@ Public Class EstadisticaVentas
     End Sub
 
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub FiltrarPresupuestosPorFecha(fecha As DateTime)
+        Try
+            comando = New SqlCommand("EstadisticaFiltrarPorFecha", conexion)
+            comando.CommandType = CommandType.StoredProcedure
+            comando.Parameters.AddWithValue("@Fecha", fecha)
+
+            Dim datadapter As New SqlDataAdapter(comando)
+            Dim oDs As New DataSet
+            datadapter.Fill(oDs)
+
+            If oDs.Tables(0).Rows.Count > 0 Then
+                DataGridView1.DataSource = oDs.Tables(0)
+            Else
+                MessageBox.Show("No se encontraron presupuestos para la fecha seleccionada.")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+    End Sub
+
+
+
+    Private Sub ChartVentas2_MouseClick(sender As Object, e As MouseEventArgs) Handles ChartVentas2.MouseClick
+        Dim resultadoHitTest As HitTestResult = ChartVentas2.HitTest(e.X, e.Y)
+
+        ' Verifica si se hizo clic en un punto de la serie
+        If resultadoHitTest.ChartElementType = ChartElementType.DataPoint Then
+            ' Obtén el punto clickeado
+            Dim punto As DataPoint = ChartVentas2.Series(0).Points(resultadoHitTest.PointIndex)
+
+            ' Obtén la fecha del punto clickeado (usando Fechas2 que está sincronizada con el gráfico)
+            Dim fechaSeleccionada As DateTime = Fechas2(resultadoHitTest.PointIndex)
+
+            ' Llama al método para filtrar los presupuestos por la fecha seleccionada
+            FiltrarPresupuestosPorFecha(fechaSeleccionada)
+        End If
+    End Sub
+
+    Private Sub ChartVentas_Click(sender As Object, e As EventArgs) Handles ChartVentas.Click
+        LlenarGrilla()
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         Try
             ' Verificar que el índice de la fila sea válido
             If e.RowIndex < 0 Then Return
@@ -169,7 +213,7 @@ Public Class EstadisticaVentas
                         If resultTable.Rows.Count > 0 Then
                             ' Marcar la fila principal como expandida
                             DataGridView1.Rows(e.RowIndex).Tag = "Expanded"
-                            DataGridView1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.LightGray
+                            DataGridView1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.White
 
                             ' Agregar una fila para los encabezados del sub-DataGridView
                             Dim headerRow As DataRow = dt.NewRow()
@@ -214,53 +258,4 @@ Public Class EstadisticaVentas
 
         End Try
     End Sub
-
-
-
-
-    Private Sub FiltrarPresupuestosPorFecha(fecha As DateTime)
-        Try
-            comando = New SqlCommand("EstadisticaFiltrarPorFecha", conexion)
-            comando.CommandType = CommandType.StoredProcedure
-            comando.Parameters.AddWithValue("@Fecha", fecha)
-
-            Dim datadapter As New SqlDataAdapter(comando)
-            Dim oDs As New DataSet
-            datadapter.Fill(oDs)
-
-            If oDs.Tables(0).Rows.Count > 0 Then
-                DataGridView1.DataSource = oDs.Tables(0)
-            Else
-                MessageBox.Show("No se encontraron presupuestos para la fecha seleccionada.")
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        Finally
-            conexion.Close()
-        End Try
-    End Sub
-
-
-
-    Private Sub ChartVentas2_MouseClick(sender As Object, e As MouseEventArgs) Handles ChartVentas2.MouseClick
-        Dim resultadoHitTest As HitTestResult = ChartVentas2.HitTest(e.X, e.Y)
-
-        ' Verifica si se hizo clic en un punto de la serie
-        If resultadoHitTest.ChartElementType = ChartElementType.DataPoint Then
-            ' Obtén el punto clickeado
-            Dim punto As DataPoint = ChartVentas2.Series(0).Points(resultadoHitTest.PointIndex)
-
-            ' Obtén la fecha del punto clickeado (usando Fechas2 que está sincronizada con el gráfico)
-            Dim fechaSeleccionada As DateTime = Fechas2(resultadoHitTest.PointIndex)
-
-            ' Llama al método para filtrar los presupuestos por la fecha seleccionada
-            FiltrarPresupuestosPorFecha(fechaSeleccionada)
-        End If
-    End Sub
-
-    Private Sub ChartVentas_Click(sender As Object, e As EventArgs) Handles ChartVentas.Click
-        LlenarGrilla()
-    End Sub
-
-
 End Class

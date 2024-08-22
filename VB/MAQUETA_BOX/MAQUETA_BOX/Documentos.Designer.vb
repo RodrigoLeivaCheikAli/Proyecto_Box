@@ -54,7 +54,7 @@ Partial Class Documentos
         '
         'cboClientes
         '
-        Me.cboClientes.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboClientes.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cboClientes.FormattingEnabled = True
         Me.cboClientes.Items.AddRange(New Object() {"Deseleccionado"})
         Me.cboClientes.Location = New System.Drawing.Point(103, 59)
@@ -65,7 +65,7 @@ Partial Class Documentos
         '
         'btnExportar
         '
-        Me.btnExportar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnExportar.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnExportar.Location = New System.Drawing.Point(704, 58)
         Me.btnExportar.Name = "btnExportar"
         Me.btnExportar.Size = New System.Drawing.Size(121, 23)
@@ -121,7 +121,7 @@ Partial Class Documentos
         '
         'cboDescripcion
         '
-        Me.cboDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cboDescripcion.FormattingEnabled = True
         Me.cboDescripcion.Location = New System.Drawing.Point(504, 59)
         Me.cboDescripcion.Name = "cboDescripcion"
@@ -187,7 +187,7 @@ Partial Class Documentos
         '
         'cboEstado
         '
-        Me.cboEstado.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboEstado.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cboEstado.FormattingEnabled = True
         Me.cboEstado.Location = New System.Drawing.Point(604, 59)
         Me.cboEstado.Name = "cboEstado"
@@ -197,7 +197,8 @@ Partial Class Documentos
         '
         'btnCargarTodo
         '
-        Me.btnCargarTodo.Location = New System.Drawing.Point(649, 191)
+        Me.btnCargarTodo.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnCargarTodo.Location = New System.Drawing.Point(879, 134)
         Me.btnCargarTodo.Name = "btnCargarTodo"
         Me.btnCargarTodo.Size = New System.Drawing.Size(121, 23)
         Me.btnCargarTodo.TabIndex = 16
@@ -206,7 +207,7 @@ Partial Class Documentos
         '
         'cboDia
         '
-        Me.cboDia.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboDia.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cboDia.FormattingEnabled = True
         Me.cboDia.Location = New System.Drawing.Point(407, 59)
         Me.cboDia.Name = "cboDia"
@@ -216,7 +217,7 @@ Partial Class Documentos
         '
         'cboMes
         '
-        Me.cboMes.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboMes.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cboMes.FormattingEnabled = True
         Me.cboMes.Location = New System.Drawing.Point(306, 59)
         Me.cboMes.Name = "cboMes"
@@ -226,7 +227,7 @@ Partial Class Documentos
         '
         'cboAño
         '
-        Me.cboAño.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboAño.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cboAño.FormattingEnabled = True
         Me.cboAño.Location = New System.Drawing.Point(204, 59)
         Me.cboAño.Name = "cboAño"
