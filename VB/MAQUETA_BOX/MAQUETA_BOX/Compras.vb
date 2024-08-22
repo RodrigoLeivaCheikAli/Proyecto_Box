@@ -78,7 +78,7 @@ Public Class Compras
         Next
 
         ' Mostrar el total en el Label
-        lbl_Total.Text = "TOTAL: " & totalPrecio.ToString("C")
+        BunifuLabel1.Text = "TOTAL: " & totalPrecio.ToString("C")
     End Sub
 
 
@@ -503,6 +503,32 @@ Public Class Compras
             conexion.Close()
         End Try
     End Sub
+
+    Public Sub AgregarProductoAPresupuesto(IdPresupuesto As Integer, IdProducto As Integer, Cantidad As Integer)
+        Try
+            Using conexion As New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+                Using comando As New SqlCommand("Agregar_Producto_A_Presupuesto", conexion)
+                    comando.CommandType = CommandType.StoredProcedure
+
+                    ' Añadir los parámetros necesarios
+                    comando.Parameters.AddWithValue("@Id_Presupuesto", IdPresupuesto)
+                    comando.Parameters.AddWithValue("@Id_Producto", IdProducto)
+                    comando.Parameters.AddWithValue("@Cantidad", Cantidad)
+
+                    ' Abrir la conexión y ejecutar el comando
+                    conexion.Open()
+                    comando.ExecuteNonQuery()
+                End Using
+            End Using
+
+            MessageBox.Show("Producto agregado al presupuesto correctamente.")
+        Catch ex As Exception
+            MessageBox.Show("Error al agregar el producto al presupuesto: " & ex.Message)
+        End Try
+    End Sub
+
+
+
 
 #End Region
 End Class

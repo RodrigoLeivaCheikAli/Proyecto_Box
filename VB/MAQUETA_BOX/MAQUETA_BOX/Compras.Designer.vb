@@ -23,7 +23,6 @@ Partial Class Compras
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Compras))
         Dim BorderEdges1 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -33,11 +32,11 @@ Partial Class Compras
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Compras))
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BunifuButton1 = New Bunifu.UI.WinForms.BunifuButton.BunifuButton()
-        Me.lbl_Total = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Column2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,11 +53,14 @@ Partial Class Compras
         Me.boton_Busqueda = New System.Windows.Forms.PictureBox()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.BunifuPanel1 = New Bunifu.UI.WinForms.BunifuPanel()
+        Me.BunifuLabel1 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.boton_Busqueda, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BunifuPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'BunifuElipse1
@@ -74,8 +76,8 @@ Partial Class Compras
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.BunifuPanel1)
         Me.Panel1.Controls.Add(Me.BunifuButton1)
-        Me.Panel1.Controls.Add(Me.lbl_Total)
         Me.Panel1.Controls.Add(Me.DataGridView2)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
@@ -136,7 +138,7 @@ Partial Class Compras
         Me.BunifuButton1.IdleIconLeftImage = CType(resources.GetObject("BunifuButton1.IdleIconLeftImage"), System.Drawing.Image)
         Me.BunifuButton1.IdleIconRightImage = Nothing
         Me.BunifuButton1.IndicateFocus = True
-        Me.BunifuButton1.Location = New System.Drawing.Point(595, 630)
+        Me.BunifuButton1.Location = New System.Drawing.Point(605, 690)
         Me.BunifuButton1.Name = "BunifuButton1"
         Me.BunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.BunifuButton1.OnDisabledState.BorderRadius = 25
@@ -177,16 +179,6 @@ Partial Class Compras
         Me.BunifuButton1.TextMarginLeft = 0
         Me.BunifuButton1.TextPadding = New System.Windows.Forms.Padding(0)
         Me.BunifuButton1.UseDefaultRadiusAndThickness = True
-        '
-        'lbl_Total
-        '
-        Me.lbl_Total.AutoSize = True
-        Me.lbl_Total.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Total.Location = New System.Drawing.Point(33, 591)
-        Me.lbl_Total.Name = "lbl_Total"
-        Me.lbl_Total.Size = New System.Drawing.Size(115, 37)
-        Me.lbl_Total.TabIndex = 34
-        Me.lbl_Total.Text = "TOTAL : "
         '
         'DataGridView2
         '
@@ -238,7 +230,7 @@ Partial Class Compras
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
         Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(719, 212)
+        Me.DataGridView2.Size = New System.Drawing.Size(719, 87)
         Me.DataGridView2.TabIndex = 32
         '
         'Column2
@@ -338,7 +330,7 @@ Partial Class Compras
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(676, 334)
+        Me.DataGridView1.Size = New System.Drawing.Size(676, 63)
         Me.DataGridView1.TabIndex = 31
         '
         'Column1
@@ -417,6 +409,38 @@ Partial Class Compras
         Me.DataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.DataGridViewImageColumn2.Width = 75
         '
+        'BunifuPanel1
+        '
+        Me.BunifuPanel1.BackgroundColor = System.Drawing.Color.DodgerBlue
+        Me.BunifuPanel1.BackgroundImage = CType(resources.GetObject("BunifuPanel1.BackgroundImage"), System.Drawing.Image)
+        Me.BunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuPanel1.BorderColor = System.Drawing.Color.Transparent
+        Me.BunifuPanel1.BorderRadius = 3
+        Me.BunifuPanel1.BorderThickness = 1
+        Me.BunifuPanel1.Controls.Add(Me.BunifuLabel1)
+        Me.BunifuPanel1.Location = New System.Drawing.Point(22, 589)
+        Me.BunifuPanel1.Name = "BunifuPanel1"
+        Me.BunifuPanel1.ShowBorders = True
+        Me.BunifuPanel1.Size = New System.Drawing.Size(320, 100)
+        Me.BunifuPanel1.TabIndex = 37
+        '
+        'BunifuLabel1
+        '
+        Me.BunifuLabel1.AllowParentOverrides = False
+        Me.BunifuLabel1.AutoEllipsis = False
+        Me.BunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.BunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default
+        Me.BunifuLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuLabel1.ForeColor = System.Drawing.Color.White
+        Me.BunifuLabel1.Location = New System.Drawing.Point(14, 26)
+        Me.BunifuLabel1.Name = "BunifuLabel1"
+        Me.BunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BunifuLabel1.Size = New System.Drawing.Size(107, 45)
+        Me.BunifuLabel1.TabIndex = 37
+        Me.BunifuLabel1.Text = "TOTAL:"
+        Me.BunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft
+        Me.BunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.[Default]
+        '
         'Compras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -434,6 +458,8 @@ Partial Class Compras
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.boton_Busqueda, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.BunifuPanel1.ResumeLayout(False)
+        Me.BunifuPanel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -456,6 +482,7 @@ Partial Class Compras
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewImageColumn
-    Friend WithEvents lbl_Total As Label
     Friend WithEvents BunifuButton1 As Bunifu.UI.WinForms.BunifuButton.BunifuButton
+    Friend WithEvents BunifuPanel1 As Bunifu.UI.WinForms.BunifuPanel
+    Friend WithEvents BunifuLabel1 As Bunifu.UI.WinForms.BunifuLabel
 End Class
