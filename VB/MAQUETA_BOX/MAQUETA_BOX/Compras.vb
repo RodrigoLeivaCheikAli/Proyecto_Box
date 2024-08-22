@@ -111,14 +111,15 @@ Public Class Compras
                     Cant(selectedRow.Index) += 1
                     Dim targetIndex As Integer = addedRows(selectedRow.Index)
 
-                    ' Verificar si targetIndex es el correcto
-                    Debug.WriteLine("targetIndex: " & targetIndex)
+                    ' Verificar si targetIndex es válido
+                    If targetIndex >= 0 AndAlso targetIndex < DataGridView2.Rows.Count Then
+                        DataGridView2.Rows(targetIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
 
-                    DataGridView2.Rows(targetIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
-
-                    ' Llamada a UpdateTotal
-                    UpdateTotal(targetIndex)
-
+                        ' Llamada a UpdateTotal
+                        UpdateTotal(targetIndex)
+                    Else
+                        MessageBox.Show("El índice de la fila es inválido, no se puede actualizar la cantidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
                 Else
                     ' Si la fila no fue agregada, agregarla al DataGridView2 y al diccionario
                     Cant.Add(selectedRow.Index, 1)
@@ -133,8 +134,6 @@ Public Class Compras
                 End If
             End If
         End If
-
-
 
         CalcularTotal()
     End Sub
@@ -342,14 +341,33 @@ Public Class Compras
                         DataGridView2.Columns.Add(col)
                     Next
 
-                    ' Asignar el DataSource
-                    Dim dtDetalles As DataTable = oDs.Tables(0)
-                    DataGridView2.AutoGenerateColumns = True
-                    DataGridView2.DataSource = dtDetalles
+                    ' Asegurar que las columnas se agregan correctamente
+                    While DataGridView2.Columns.Count < oDs.Tables(0).Columns.Count + 1
+                        DataGridView2.Columns.Add(New DataGridViewTextBoxColumn())
+                    End While
+
+                    ' Asignar nombres a las cabeceras manualmente
+                    DataGridView2.Columns(1).HeaderText = "N° PRODUCTO"
+                    DataGridView2.Columns(2).HeaderText = "NOMBRE"
+                    DataGridView2.Columns(3).HeaderText = "VEHICULO"
+                    DataGridView2.Columns(4).HeaderText = "PROVEEDOR"
+                    DataGridView2.Columns(5).HeaderText = "PRECIO COSTO"
+                    DataGridView2.Columns(6).HeaderText = "CANTIDAD"
+
+                    ' Iterar sobre el DataTable y agregar manualmente cada fila al DataGridView2
+                    For Each row As DataRow In oDs.Tables(0).Rows
+                        Dim index As Integer = DataGridView2.Rows.Add()
+                        For i As Integer = 0 To oDs.Tables(0).Columns.Count - 1
+                            DataGridView2.Rows(index).Cells(i + 1).Value = row(i)
+                        Next
+                    Next
+
                     DataGridView2.Refresh()
                     DataGridView2.Show()
 
                     CalcularTotal()
+
+                    ' Formatear la columna de precio
                     Dim columnaPrecio2 As DataGridViewColumn = DataGridView2.Columns(5)
                     columnaPrecio2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                     columnaPrecio2.DefaultCellStyle.Format = "C2"
@@ -404,10 +422,22 @@ Public Class Compras
         totalPrecio = 0
         If IdPresupuesto = 0 Then
             DataGridView2.Rows.Clear()
+
+            addedRows.Clear()
+            Cant.Clear()
+            originalValues.Clear()
+            CalcularTotal()
         End If
 
         If IdPresupuesto <> 0 Then
             ActualizarEstadoPresupuesto(IdPresupuesto, "Pedido")
+            DataGridView2.Rows.Clear()
+
+            addedRows.Clear()
+            Cant.Clear()
+            originalValues.Clear()
+            CalcularTotal()
+            IdPresupuesto = 0
         End If
     End Sub
 
@@ -529,7 +559,15 @@ Public Class Compras
     End Sub
 
     Private Sub BunifuButton2_Click(sender As Object, e As EventArgs) Handles BunifuButton2.Click
+        IdPresupuesto = 0
         DataGridView2.Rows.Clear()
+
+
+        addedRows.Clear()
+        Cant.Clear()
+        originalValues.Clear()
+        CalcularTotal()
+
     End Sub
 
 
