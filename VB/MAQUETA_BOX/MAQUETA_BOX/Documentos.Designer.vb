@@ -36,13 +36,14 @@ Partial Class Documentos
         Me.ConsultardocumentosOrVentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Consultar_documentos_OrVentasTableAdapter = New MAQUETA_BOX.PIN_GRUPO11DataSetTableAdapters.consultar_documentos_OrVentasTableAdapter()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cboDescripcion = New System.Windows.Forms.ComboBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ImageColumn = New System.Windows.Forms.DataGridViewImageColumn()
         Me.cboEstado = New System.Windows.Forms.ComboBox()
         Me.btnCargarTodo = New System.Windows.Forms.Button()
         Me.cboDia = New System.Windows.Forms.ComboBox()
         Me.cboMes = New System.Windows.Forms.ComboBox()
         Me.cboAño = New System.Windows.Forms.ComboBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ImageColumn = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.PIN_GRUPO11DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PINGRUPO11DataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultardocumentosOrComprasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,16 +59,16 @@ Partial Class Documentos
         Me.cboClientes.Items.AddRange(New Object() {"Deseleccionado"})
         Me.cboClientes.Location = New System.Drawing.Point(103, 59)
         Me.cboClientes.Name = "cboClientes"
-        Me.cboClientes.Size = New System.Drawing.Size(121, 21)
+        Me.cboClientes.Size = New System.Drawing.Size(100, 21)
         Me.cboClientes.TabIndex = 8
         Me.cboClientes.Text = "Cliente"
         '
         'btnExportar
         '
         Me.btnExportar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnExportar.Location = New System.Drawing.Point(867, 59)
+        Me.btnExportar.Location = New System.Drawing.Point(704, 58)
         Me.btnExportar.Name = "btnExportar"
-        Me.btnExportar.Size = New System.Drawing.Size(147, 23)
+        Me.btnExportar.Size = New System.Drawing.Size(121, 23)
         Me.btnExportar.TabIndex = 12
         Me.btnExportar.Text = "Exportar"
         Me.btnExportar.UseVisualStyleBackColor = True
@@ -103,6 +104,7 @@ Partial Class Documentos
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.cboDescripcion)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.cboEstado)
         Me.Panel1.Controls.Add(Me.btnCargarTodo)
@@ -117,54 +119,15 @@ Partial Class Documentos
         Me.Panel1.Size = New System.Drawing.Size(1105, 674)
         Me.Panel1.TabIndex = 13
         '
-        'cboEstado
+        'cboDescripcion
         '
-        Me.cboEstado.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.cboEstado.FormattingEnabled = True
-        Me.cboEstado.Location = New System.Drawing.Point(614, 59)
-        Me.cboEstado.Name = "cboEstado"
-        Me.cboEstado.Size = New System.Drawing.Size(121, 21)
-        Me.cboEstado.TabIndex = 17
-        Me.cboEstado.Text = "Estado"
-        '
-        'btnCargarTodo
-        '
-        Me.btnCargarTodo.Location = New System.Drawing.Point(742, 57)
-        Me.btnCargarTodo.Name = "btnCargarTodo"
-        Me.btnCargarTodo.Size = New System.Drawing.Size(121, 23)
-        Me.btnCargarTodo.TabIndex = 16
-        Me.btnCargarTodo.Text = "Cargar Todo"
-        Me.btnCargarTodo.UseVisualStyleBackColor = True
-        '
-        'cboDia
-        '
-        Me.cboDia.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.cboDia.FormattingEnabled = True
-        Me.cboDia.Location = New System.Drawing.Point(489, 59)
-        Me.cboDia.Name = "cboDia"
-        Me.cboDia.Size = New System.Drawing.Size(121, 21)
-        Me.cboDia.TabIndex = 15
-        Me.cboDia.Text = "Dia"
-        '
-        'cboMes
-        '
-        Me.cboMes.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.cboMes.FormattingEnabled = True
-        Me.cboMes.Location = New System.Drawing.Point(359, 59)
-        Me.cboMes.Name = "cboMes"
-        Me.cboMes.Size = New System.Drawing.Size(121, 21)
-        Me.cboMes.TabIndex = 14
-        Me.cboMes.Text = "Mes"
-        '
-        'cboAño
-        '
-        Me.cboAño.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.cboAño.FormattingEnabled = True
-        Me.cboAño.Location = New System.Drawing.Point(230, 59)
-        Me.cboAño.Name = "cboAño"
-        Me.cboAño.Size = New System.Drawing.Size(121, 21)
-        Me.cboAño.TabIndex = 13
-        Me.cboAño.Text = "Año"
+        Me.cboDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboDescripcion.FormattingEnabled = True
+        Me.cboDescripcion.Location = New System.Drawing.Point(504, 59)
+        Me.cboDescripcion.Name = "cboDescripcion"
+        Me.cboDescripcion.Size = New System.Drawing.Size(99, 21)
+        Me.cboDescripcion.TabIndex = 19
+        Me.cboDescripcion.Text = "Descripcion"
         '
         'DataGridView1
         '
@@ -186,7 +149,7 @@ Partial Class Documentos
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ImageColumn})
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.SteelBlue
-        Me.DataGridView1.Location = New System.Drawing.Point(103, 245)
+        Me.DataGridView1.Location = New System.Drawing.Point(103, 238)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -221,6 +184,55 @@ Partial Class Documentos
         Me.ImageColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.ImageColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
         Me.ImageColumn.Width = 45
+        '
+        'cboEstado
+        '
+        Me.cboEstado.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboEstado.FormattingEnabled = True
+        Me.cboEstado.Location = New System.Drawing.Point(604, 59)
+        Me.cboEstado.Name = "cboEstado"
+        Me.cboEstado.Size = New System.Drawing.Size(99, 21)
+        Me.cboEstado.TabIndex = 17
+        Me.cboEstado.Text = "Estado"
+        '
+        'btnCargarTodo
+        '
+        Me.btnCargarTodo.Location = New System.Drawing.Point(649, 191)
+        Me.btnCargarTodo.Name = "btnCargarTodo"
+        Me.btnCargarTodo.Size = New System.Drawing.Size(121, 23)
+        Me.btnCargarTodo.TabIndex = 16
+        Me.btnCargarTodo.Text = "Cargar Todo"
+        Me.btnCargarTodo.UseVisualStyleBackColor = True
+        '
+        'cboDia
+        '
+        Me.cboDia.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboDia.FormattingEnabled = True
+        Me.cboDia.Location = New System.Drawing.Point(407, 59)
+        Me.cboDia.Name = "cboDia"
+        Me.cboDia.Size = New System.Drawing.Size(96, 21)
+        Me.cboDia.TabIndex = 15
+        Me.cboDia.Text = "Día"
+        '
+        'cboMes
+        '
+        Me.cboMes.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboMes.FormattingEnabled = True
+        Me.cboMes.Location = New System.Drawing.Point(306, 59)
+        Me.cboMes.Name = "cboMes"
+        Me.cboMes.Size = New System.Drawing.Size(100, 21)
+        Me.cboMes.TabIndex = 14
+        Me.cboMes.Text = "Mes"
+        '
+        'cboAño
+        '
+        Me.cboAño.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cboAño.FormattingEnabled = True
+        Me.cboAño.Location = New System.Drawing.Point(204, 59)
+        Me.cboAño.Name = "cboAño"
+        Me.cboAño.Size = New System.Drawing.Size(101, 21)
+        Me.cboAño.TabIndex = 13
+        Me.cboAño.Text = "Año"
         '
         'Documentos
         '
@@ -257,4 +269,5 @@ Partial Class Documentos
     Friend WithEvents cboEstado As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ImageColumn As DataGridViewImageColumn
+    Friend WithEvents cboDescripcion As ComboBox
 End Class

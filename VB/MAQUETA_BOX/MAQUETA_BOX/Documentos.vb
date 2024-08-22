@@ -12,6 +12,7 @@ Public Class Documentos
     Dim comando As New SqlCommand
 
     Dim nombreApellido As Object = Nothing
+    Dim descripcion As Object = Nothing
     Dim año As Object = Nothing
     Dim mes As Object = Nothing
     Dim dia As Object = Nothing
@@ -25,6 +26,7 @@ Public Class Documentos
         CargarCbosAño()
         CargarCboMes()
         CargarCbosEstado()
+        CargarCbosDescripcion()
         cboDia.Enabled = False
         cboMes.Enabled = False
     End Sub
@@ -41,6 +43,15 @@ Public Class Documentos
         Next
     End Sub
 
+    Public Sub CargarCbosDescripcion()
+        cboDescripcion.Items.Clear()
+
+        Dim Descripciones() As String = {"Efectivo", "Debito", "Credito"}
+
+        For Each Descripcion As String In Descripciones
+            cboDescripcion.Items.Add(Descripcion)
+        Next
+    End Sub
 
     Public Sub CargarCbosAño()
         Dim Año As Integer = 2000
@@ -194,12 +205,16 @@ Public Class Documentos
             Dim nombreApellido As Object = If(cboClientes.SelectedItem Is Nothing OrElse cboClientes.SelectedItem.ToString() = "Cliente", DBNull.Value, cboClientes.SelectedItem.ToString())
             comando.Parameters.AddWithValue("@Nombre_Apellido", nombreApellido)
 
-            ' Año parameter
-            Dim año As Object = If(cboAño.SelectedItem Is Nothing OrElse cboAño.SelectedItem.ToString() = "Año", DBNull.Value, Convert.ToInt32(cboAño.SelectedItem))
-            comando.Parameters.AddWithValue("@Año", año)
-
             ' Mes parameter
             Dim mes As Object = If(cboMes.SelectedItem Is Nothing OrElse cboMes.SelectedItem.ToString() = "Mes", DBNull.Value, DBNull.Value)
+
+            ' Descripcion parameter
+            Dim descripcion As Object = If(cboDescripcion.SelectedItem Is Nothing OrElse cboDescripcion.SelectedItem.ToString() = "Descripcion", DBNull.Value, cboDescripcion.SelectedItem.ToString())
+            comando.Parameters.AddWithValue("@Descripcion", descripcion)
+
+            ' Dia parameter
+            Dim dia As Object = If(cboDia.SelectedItem Is Nothing OrElse cboDia.SelectedItem.ToString() = "Día", DBNull.Value, Convert.ToInt32(cboDia.SelectedItem))
+            comando.Parameters.AddWithValue("@Dia", dia)
 
             ' Si hay un mes válido, lo obtengo del diccionario
             If cboMes.SelectedItem IsNot Nothing AndAlso meses.ContainsKey(cboMes.SelectedItem.ToString()) Then
@@ -207,9 +222,9 @@ Public Class Documentos
             End If
             comando.Parameters.AddWithValue("@Mes", mes)
 
-            ' Dia parameter
-            Dim dia As Object = If(cboDia.SelectedItem Is Nothing OrElse cboDia.SelectedItem.ToString() = "Dia", DBNull.Value, Convert.ToInt32(cboDia.SelectedItem))
-            comando.Parameters.AddWithValue("@Dia", dia)
+            ' Año parameter
+            Dim año As Object = If(cboAño.SelectedItem Is Nothing OrElse cboAño.SelectedItem.ToString() = "Año", DBNull.Value, Convert.ToInt32(cboAño.SelectedItem))
+            comando.Parameters.AddWithValue("@Año", año)
 
             ' Estado parameter
             Dim estado As Object = If(cboEstado.SelectedItem Is Nothing OrElse cboEstado.SelectedItem.ToString() = "Estado", DBNull.Value, cboEstado.SelectedItem.ToString())
@@ -374,7 +389,7 @@ Public Class Documentos
 
 
     Private Sub cboMes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboMes.SelectedIndexChanged
-        If cboMes.Text <> "Mes" Then
+        If cboMes.SelectedIndex > -1 AndAlso cboMes.Text <> "Mes" Then
             FiltrarGrilla()
             cboDia.Enabled = True
             CargarDiasDelMes()
@@ -388,10 +403,8 @@ Public Class Documentos
 
         cboDia.Items.Clear()
 
-
         Dim AñoSeleccionado As Integer
         If Not Integer.TryParse(cboAño.Text, AñoSeleccionado) Then
-            ' Si no es un valor numérico válido, salir del procedimiento para evitar errores
             MessageBox.Show("Por favor, selecciona un año válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
@@ -421,13 +434,22 @@ Public Class Documentos
         cboDia.Enabled = False
 
         ' Restablece los valores seleccionados de los ComboBox
-        cboClientes.SelectedIndex = -1 ' Desselecciona cualquier valor
-        cboAño.SelectedIndex = -1
-        cboMes.SelectedIndex = -1
-        cboDia.SelectedIndex = -1
+        cboClientes.SelectedIndex = -1
+        cboDescripcion.SelectedIndex = -1
         cboEstado.SelectedIndex = -1
+        cboDia.SelectedIndex = -1
+        cboMes.SelectedIndex = -1
+        cboAño.SelectedIndex = -1
+
+        cboClientes.Text = "Cliente"
+        cboAño.Text = "Año"
+        cboMes.Text = "Mes"
+        cboDia.Text = "Día"
+        cboDescripcion.Text = "Descripcion"
+        cboEstado.Text = "Estado"
 
         nombreApellido = Nothing
+        descripcion = Nothing
         año = Nothing
         mes = Nothing
         dia = Nothing
@@ -445,7 +467,11 @@ Public Class Documentos
         FiltrarGrilla()
     End Sub
 
-    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub cboDescripcion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDescripcion.SelectedIndexChanged
+        FiltrarGrilla()
+    End Sub
+
+    Private Sub CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
         Try
             ' Verificar que el índice de la fila sea válido
             If e.RowIndex < 0 Then Return
@@ -533,9 +559,6 @@ Public Class Documentos
             ' Manejo de cualquier otra excepción
         End Try
     End Sub
-
-
-
 End Class
 
 'grilla anidada que muestre estado
