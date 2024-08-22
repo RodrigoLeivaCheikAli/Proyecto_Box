@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Configuration
+Imports Bunifu.UI.WinForms
 
 Public Class Compras
 
@@ -525,6 +526,10 @@ Public Class Compras
         Catch ex As Exception
             MessageBox.Show("Error al agregar el producto al presupuesto: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub BunifuButton2_Click(sender As Object, e As EventArgs) Handles BunifuButton2.Click
+        DataGridView2.Rows.Clear()
     End Sub
 
 
