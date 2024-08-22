@@ -35,7 +35,6 @@ Partial Class Productos_Listado
         Me.btnGestion = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnListado = New System.Windows.Forms.PictureBox()
-        Me.btnVendidos = New System.Windows.Forms.PictureBox()
         Me.btnMenu = New System.Windows.Forms.PictureBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -47,7 +46,6 @@ Partial Class Productos_Listado
         CType(Me.btnGestion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnListado, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnVendidos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -198,17 +196,6 @@ Partial Class Productos_Listado
         Me.btnListado.TabIndex = 41
         Me.btnListado.TabStop = False
         '
-        'btnVendidos
-        '
-        Me.btnVendidos.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnVendidos.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnVENDIDOS1
-        Me.btnVendidos.Location = New System.Drawing.Point(934, 11)
-        Me.btnVendidos.Name = "btnVendidos"
-        Me.btnVendidos.Size = New System.Drawing.Size(112, 55)
-        Me.btnVendidos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnVendidos.TabIndex = 37
-        Me.btnVendidos.TabStop = False
-        '
         'btnMenu
         '
         Me.btnMenu.Image = CType(resources.GetObject("btnMenu.Image"), System.Drawing.Image)
@@ -294,7 +281,6 @@ Partial Class Productos_Listado
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.btnListado)
         Me.Controls.Add(Me.BunifuDataGridView1)
-        Me.Controls.Add(Me.btnVendidos)
         Me.Controls.Add(Me.cboVehiculo)
         Me.Controls.Add(Me.cboProducto)
         Me.Controls.Add(Me.cboServicio)
@@ -307,7 +293,6 @@ Partial Class Productos_Listado
         CType(Me.btnGestion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnListado, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnVendidos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -318,7 +303,6 @@ Partial Class Productos_Listado
     Friend WithEvents cboServicio As ComboBox
     Friend WithEvents cboProducto As ComboBox
     Friend WithEvents cboVehiculo As ComboBox
-    Friend WithEvents btnVendidos As PictureBox
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents BunifuDataGridView1 As Bunifu.UI.WinForms.BunifuDataGridView
     Friend WithEvents btnListado As PictureBox

@@ -76,7 +76,7 @@ Public Class Productos_Listado
     End Sub
 #End Region
 #Region "Vendidos"
-    Private Sub btnVendidos_Click(sender As Object, e As EventArgs) Handles btnVendidos.Click
+    Private Sub btnVendidos_Click(sender As Object, e As EventArgs)
         ' Crear una instancia del formulario Productos_Listado
         Dim vendidosForm As New Productos_Vendidos(panelContenedor)
 

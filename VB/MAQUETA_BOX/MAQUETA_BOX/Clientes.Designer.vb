@@ -49,8 +49,6 @@ Partial Class Clientes
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.btnInfo = New System.Windows.Forms.PictureBox()
-        Me.btnHistorial = New System.Windows.Forms.PictureBox()
         Me.txtBuscarClientes = New System.Windows.Forms.TextBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.btnMenu = New System.Windows.Forms.PictureBox()
@@ -59,8 +57,6 @@ Partial Class Clientes
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnInfo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -373,28 +369,6 @@ Partial Class Clientes
         Me.BunifuDataGridView1.TabStop = False
         Me.BunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
         '
-        'btnInfo
-        '
-        Me.btnInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnInfo.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnINFO_BLUE
-        Me.btnInfo.Location = New System.Drawing.Point(901, 12)
-        Me.btnInfo.Name = "btnInfo"
-        Me.btnInfo.Size = New System.Drawing.Size(100, 50)
-        Me.btnInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnInfo.TabIndex = 6
-        Me.btnInfo.TabStop = False
-        '
-        'btnHistorial
-        '
-        Me.btnHistorial.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnHistorial.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnHISTORIAL_BLUE
-        Me.btnHistorial.Location = New System.Drawing.Point(774, 12)
-        Me.btnHistorial.Name = "btnHistorial"
-        Me.btnHistorial.Size = New System.Drawing.Size(100, 50)
-        Me.btnHistorial.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnHistorial.TabIndex = 6
-        Me.btnHistorial.TabStop = False
-        '
         'txtBuscarClientes
         '
         Me.txtBuscarClientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -433,8 +407,6 @@ Partial Class Clientes
         Me.Controls.Add(Me.txtBuscarClientes)
         Me.Controls.Add(Me.PictureBox7)
         Me.Controls.Add(Me.BunifuDataGridView1)
-        Me.Controls.Add(Me.btnInfo)
-        Me.Controls.Add(Me.btnHistorial)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Location = New System.Drawing.Point(103, 157)
@@ -447,8 +419,6 @@ Partial Class Clientes
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnInfo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnHistorial, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -462,8 +432,6 @@ Partial Class Clientes
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents btnHistorial As System.Windows.Forms.PictureBox
-    Friend WithEvents btnInfo As System.Windows.Forms.PictureBox
     Friend WithEvents BunifuDataGridView1 As Bunifu.UI.WinForms.BunifuDataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents btnEliminar As PictureBox
