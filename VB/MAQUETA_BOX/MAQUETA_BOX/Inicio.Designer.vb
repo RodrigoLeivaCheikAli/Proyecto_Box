@@ -191,7 +191,7 @@ Partial Class Inicio
         Me.btnEstadisticas.IdleBorderRadius = 30
         Me.btnEstadisticas.IdleBorderThickness = 1
         Me.btnEstadisticas.IdleFillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.btnEstadisticas.IdleIconLeftImage = Nothing
+        Me.btnEstadisticas.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.estadisticas
         Me.btnEstadisticas.IdleIconRightImage = Nothing
         Me.btnEstadisticas.IndicateFocus = True
         Me.btnEstadisticas.Location = New System.Drawing.Point(31, 591)
@@ -218,7 +218,7 @@ Partial Class Inicio
         Me.btnEstadisticas.OnIdleState.BorderThickness = 1
         Me.btnEstadisticas.OnIdleState.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.btnEstadisticas.OnIdleState.ForeColor = System.Drawing.Color.White
-        Me.btnEstadisticas.OnIdleState.IconLeftImage = Nothing
+        Me.btnEstadisticas.OnIdleState.IconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.estadisticas
         Me.btnEstadisticas.OnIdleState.IconRightImage = Nothing
         Me.btnEstadisticas.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(144, Byte), Integer))
         Me.btnEstadisticas.OnPressedState.BorderRadius = 30
