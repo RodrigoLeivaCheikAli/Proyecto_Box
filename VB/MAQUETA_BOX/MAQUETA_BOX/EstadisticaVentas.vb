@@ -64,10 +64,17 @@ Public Class EstadisticaVentas
 
             While dr.Read()
                 Fechas.Add(dr.GetDateTime(0))
-                Ventas.Add(dr.GetDouble(1))
+                ' Redondea el valor a 2 decimales y lo agrega a la lista de Ventas
+                Ventas.Add(Math.Round(dr.GetDouble(1), 2))
             End While
 
+            ' Asigna los datos al gráfico y formatea los puntos
             ChartVentas.Series(0).Points.DataBindXY(Fechas, Ventas)
+
+            ' Formatea los puntos del gráfico para mostrar el símbolo de moneda
+            For Each point As DataVisualization.Charting.DataPoint In ChartVentas.Series(0).Points
+                point.Label = String.Format("{0:C2}", point.YValues(0))
+            Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         Finally
@@ -75,6 +82,7 @@ Public Class EstadisticaVentas
             conexion.Close()
         End Try
     End Sub
+
 
     Public Sub GrafVentasColumn()
         Try
@@ -89,10 +97,16 @@ Public Class EstadisticaVentas
 
             While dr.Read()
                 Fechas2.Add(dr.GetString(0))
-                Ventas2.Add(dr.GetDouble(1))
+                ' Redondea el valor a 2 decimales y lo agrega a la lista de Ventas2
+                Ventas2.Add(Math.Round(dr.GetDouble(1), 2))
             End While
 
             ChartVentas2.Series(0).Points.DataBindXY(Fechas2, Ventas2)
+
+            ' Formatea los puntos del gráfico para mostrar el símbolo de moneda
+            For Each point As DataVisualization.Charting.DataPoint In ChartVentas2.Series(0).Points
+                point.Label = String.Format("{0:C2}", point.YValues(0))
+            Next
 
             Dim chartArea As ChartArea = ChartVentas2.ChartAreas(0)
             chartArea.AxisX.IntervalType = DateTimeIntervalType.Months
@@ -105,6 +119,7 @@ Public Class EstadisticaVentas
             conexion.Close()
         End Try
     End Sub
+
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         Try
