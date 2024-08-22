@@ -35,7 +35,6 @@ Partial Class Productos_Listado
         Me.btnGestion = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnListado = New System.Windows.Forms.PictureBox()
-        Me.btnMenu = New System.Windows.Forms.PictureBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -46,7 +45,6 @@ Partial Class Productos_Listado
         CType(Me.btnGestion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnListado, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cboTipo
@@ -196,16 +194,6 @@ Partial Class Productos_Listado
         Me.btnListado.TabIndex = 41
         Me.btnListado.TabStop = False
         '
-        'btnMenu
-        '
-        Me.btnMenu.Image = CType(resources.GetObject("btnMenu.Image"), System.Drawing.Image)
-        Me.btnMenu.Location = New System.Drawing.Point(18, 15)
-        Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(100, 50)
-        Me.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnMenu.TabIndex = 28
-        Me.btnMenu.TabStop = False
-        '
         'DataGridViewImageColumn1
         '
         Me.DataGridViewImageColumn1.HeaderText = ""
@@ -285,7 +273,6 @@ Partial Class Productos_Listado
         Me.Controls.Add(Me.cboProducto)
         Me.Controls.Add(Me.cboServicio)
         Me.Controls.Add(Me.cboTipo)
-        Me.Controls.Add(Me.btnMenu)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Productos_Listado"
         Me.Text = "Productos_Listado"
@@ -293,12 +280,10 @@ Partial Class Productos_Listado
         CType(Me.btnGestion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnListado, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnMenu As PictureBox
     Friend WithEvents cboTipo As ComboBox
     Friend WithEvents cboServicio As ComboBox
     Friend WithEvents cboProducto As ComboBox

@@ -227,4 +227,17 @@ Public Class Productos_Listado
         FiltrarGrilla()
     End Sub
 #End Region
+#Region "Otros"
+    Private Sub BunifuDataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles BunifuDataGridView1.CellFormatting
+        ' Verifica si la columna es la que deseas formatear
+        If e.ColumnIndex = BunifuDataGridView1.Columns("Precio").Index Then
+            ' Verifica si el valor es un número
+            If e.Value IsNot Nothing AndAlso IsNumeric(e.Value) Then
+                ' Formatea el valor a dos decimales
+                e.Value = String.Format("{0:F2}", Convert.ToDecimal(e.Value))
+                e.FormattingApplied = True
+            End If
+        End If
+    End Sub
+#End Region
 End Class

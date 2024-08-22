@@ -51,7 +51,6 @@ Partial Class Productos
         Me.btnGestion = New System.Windows.Forms.PictureBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.btnListado = New System.Windows.Forms.PictureBox()
-        Me.btnMenu = New System.Windows.Forms.PictureBox()
         Me.btnEliminar = New System.Windows.Forms.PictureBox()
         Me.btnModificar = New System.Windows.Forms.PictureBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
@@ -61,7 +60,6 @@ Partial Class Productos
         CType(Me.btnGestion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnListado, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -396,16 +394,6 @@ Partial Class Productos
         Me.btnListado.TabIndex = 28
         Me.btnListado.TabStop = False
         '
-        'btnMenu
-        '
-        Me.btnMenu.Image = CType(resources.GetObject("btnMenu.Image"), System.Drawing.Image)
-        Me.btnMenu.Location = New System.Drawing.Point(18, 15)
-        Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(100, 50)
-        Me.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnMenu.TabIndex = 25
-        Me.btnMenu.TabStop = False
-        '
         'btnEliminar
         '
         Me.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
@@ -450,7 +438,6 @@ Partial Class Productos
         Me.Controls.Add(Me.BunifuDataGridView1)
         Me.Controls.Add(Me.PictureBox7)
         Me.Controls.Add(Me.btnListado)
-        Me.Controls.Add(Me.btnMenu)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.Panel1)
@@ -464,7 +451,6 @@ Partial Class Productos
         CType(Me.btnGestion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnListado, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -483,7 +469,6 @@ Partial Class Productos
     Friend WithEvents Label4 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents txtCosto As TextBox
-    Friend WithEvents btnMenu As PictureBox
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents btnListado As PictureBox
     Friend WithEvents PictureBox7 As PictureBox

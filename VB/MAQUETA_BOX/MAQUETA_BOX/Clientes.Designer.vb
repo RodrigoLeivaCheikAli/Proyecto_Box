@@ -51,14 +51,12 @@ Partial Class Clientes
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.txtBuscarClientes = New System.Windows.Forms.TextBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.btnMenu = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -387,23 +385,12 @@ Partial Class Clientes
         Me.PictureBox7.TabIndex = 42
         Me.PictureBox7.TabStop = False
         '
-        'btnMenu
-        '
-        Me.btnMenu.Image = CType(resources.GetObject("btnMenu.Image"), System.Drawing.Image)
-        Me.btnMenu.Location = New System.Drawing.Point(27, 12)
-        Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(100, 50)
-        Me.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnMenu.TabIndex = 44
-        Me.btnMenu.TabStop = False
-        '
         'Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1074, 626)
-        Me.Controls.Add(Me.btnMenu)
         Me.Controls.Add(Me.txtBuscarClientes)
         Me.Controls.Add(Me.PictureBox7)
         Me.Controls.Add(Me.BunifuDataGridView1)
@@ -420,7 +407,6 @@ Partial Class Clientes
         CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -448,7 +434,6 @@ Partial Class Clientes
     Friend WithEvents txtCodigo As TextBox
     Friend WithEvents txtBuscarClientes As TextBox
     Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents btnMenu As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents cboEstado As ComboBox
 End Class
