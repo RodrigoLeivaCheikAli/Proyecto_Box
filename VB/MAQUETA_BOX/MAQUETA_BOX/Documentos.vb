@@ -36,7 +36,7 @@ Public Class Documentos
     Public Sub CargarCbosEstado()
         cboEstado.Items.Clear()
 
-        Dim estados() As String = {"Vigente", "Descontinuado", "Pedido", "Realizado"}
+        Dim estados() As String = {"Pedido", "Realizado"}
 
         For Each estado As String In estados
             cboEstado.Items.Add(estado)
