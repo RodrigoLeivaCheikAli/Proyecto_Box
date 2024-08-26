@@ -373,7 +373,7 @@ Partial Class Inicio
         Me.btnDocumentos.IdleFillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.btnDocumentos.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.icono4
         Me.btnDocumentos.IdleIconRightImage = Nothing
-        Me.btnDocumentos.IndicateFocus = True
+        Me.btnDocumentos.IndicateFocus = False
         Me.btnDocumentos.Location = New System.Drawing.Point(31, 521)
         Me.btnDocumentos.Name = "btnDocumentos"
         Me.btnDocumentos.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))

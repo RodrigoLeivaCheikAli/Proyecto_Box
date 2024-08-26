@@ -28,7 +28,8 @@ Public Class Inicio
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
 
-        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        'newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        newForm.Dock = DockStyle.Fill
         newForm.Show()
     End Sub
     Private Sub btnCompras_Click(sender As Object, e As EventArgs) Handles btnCompras.Click
@@ -37,7 +38,8 @@ Public Class Inicio
         Dim newForm As New Compras() ' Crea una nueva instancia del formulario que deseas agregar
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
-        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        'newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        newForm.Dock = DockStyle.Fill
         newForm.Show() ' Muestra el formulario
     End Sub
     Private Sub btnDocumentos_Click(sender As Object, e As EventArgs) Handles btnDocumentos.Click
@@ -46,7 +48,8 @@ Public Class Inicio
         Dim newForm As New Documentos() ' Crea una nueva instancia del formulario que deseas agregar
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
-        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        'newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        newForm.Dock = DockStyle.Fill
         newForm.Show() ' Muestra el formulario
     End Sub
 
@@ -57,7 +60,8 @@ Public Class Inicio
         newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
         Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
 
-        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        'newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        newForm.Dock = DockStyle.Fill
         newForm.Show()
     End Sub
 
@@ -143,6 +147,10 @@ Public Class Inicio
     End Sub
 
     Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
 
     End Sub
 
