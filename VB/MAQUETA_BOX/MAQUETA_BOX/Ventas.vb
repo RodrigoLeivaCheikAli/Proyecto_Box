@@ -11,9 +11,19 @@ Public Class Ventas
     Private formLoaded As Boolean = False
 
     Private Sub Ventas_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Redimensionar()
         LlenarGrilla()
     End Sub
-
+    Public Sub Redimensionar()
+        DataGridView1.Width = Me.ClientSize.Width * 0.5
+        DataGridView1.Height = Me.ClientSize.Height * 0.65
+        DataGridView2.Width = Me.ClientSize.Width * 0.5
+        DataGridView2.Height = Me.ClientSize.Height * 0.65
+        PictureBox1.Width = Me.ClientSize.Width * 0.1
+        PictureBox1.Height = Me.ClientSize.Height * 0.09
+        PictureBox3.Width = Me.ClientSize.Width * 0.1
+        PictureBox3.Height = Me.ClientSize.Height * 0.09
+    End Sub
     Private Sub LlenarGrilla()
         conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
         conexion.Open()
@@ -55,7 +65,12 @@ Public Class Ventas
 
                 ' Verificar si el valor es mayor que 0 antes de restar
                 If currentValue > 0 Then
-                    selectedRow.Cells(lastColumnIndex).Value = currentValue - 1
+                    If Not selectedRow.Cells(2).Value.ToString().Equals("Servicio", StringComparison.OrdinalIgnoreCase) Then
+                        selectedRow.Cells(lastColumnIndex).Value = currentValue - 1
+                    Else
+
+                    End If
+
                 Else
                     If Not formLoaded Then
                         MsgBox("No Existe Mas Stock Disponible de Este Producto, Para Continuar Esta Venta Debera Realizarse un Pedido ", vbInformation, "TTK")
