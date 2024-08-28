@@ -365,9 +365,7 @@
     <Compile Include="Ventas.Designer.vb">
       <DependentUpon>Ventas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ventas.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Ventas.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Clientes.resx">
