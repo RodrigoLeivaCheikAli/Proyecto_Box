@@ -100,5 +100,12 @@ Public Class Estadisticas
         newForm.Show() ' Muestra el formulario
     End Sub
 
-
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
+        Panel1.Controls.Clear()
+        Dim newForm As New EstadisticaClientes() ' Crea una nueva instancia del formulario que deseas agregar
+        newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
+        Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+        newForm.Show() ' Muestra el formulario
+    End Sub
 End Class

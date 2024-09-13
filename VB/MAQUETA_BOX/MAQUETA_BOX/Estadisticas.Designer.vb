@@ -22,16 +22,15 @@ Partial Class Estadisticas
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Estadisticas))
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title3 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title4 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.lblProveedores = New System.Windows.Forms.Label()
@@ -59,6 +58,7 @@ Partial Class Estadisticas
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ChartProdPreferidos = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.chartProductoPorCategoria = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,16 +75,6 @@ Partial Class Estadisticas
         CType(Me.ChartProdPreferidos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chartProductoPorCategoria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DataGridViewImageColumn2
-        '
-        Me.DataGridViewImageColumn2.HeaderText = ""
-        Me.DataGridViewImageColumn2.Image = CType(resources.GetObject("DataGridViewImageColumn2.Image"), System.Drawing.Image)
-        Me.DataGridViewImageColumn2.MinimumWidth = 2
-        Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
-        Me.DataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
-        Me.DataGridViewImageColumn2.Width = 45
         '
         'Panel1
         '
@@ -417,58 +407,68 @@ Partial Class Estadisticas
         'ChartProdPreferidos
         '
         Me.ChartProdPreferidos.Anchor = System.Windows.Forms.AnchorStyles.None
-        ChartArea3.Name = "ChartArea1"
-        Me.ChartProdPreferidos.ChartAreas.Add(ChartArea3)
-        Legend3.Name = "Legend1"
-        Me.ChartProdPreferidos.Legends.Add(Legend3)
+        ChartArea1.Name = "ChartArea1"
+        Me.ChartProdPreferidos.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.ChartProdPreferidos.Legends.Add(Legend1)
         Me.ChartProdPreferidos.Location = New System.Drawing.Point(611, 65)
         Me.ChartProdPreferidos.Name = "ChartProdPreferidos"
-        Series3.ChartArea = "ChartArea1"
-        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
-        Series3.IsValueShownAsLabel = True
-        Series3.LabelForeColor = System.Drawing.Color.White
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Series3.YValuesPerPoint = 4
-        Me.ChartProdPreferidos.Series.Add(Series3)
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
+        Series1.IsValueShownAsLabel = True
+        Series1.LabelForeColor = System.Drawing.Color.White
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Series1.YValuesPerPoint = 4
+        Me.ChartProdPreferidos.Series.Add(Series1)
         Me.ChartProdPreferidos.Size = New System.Drawing.Size(452, 263)
         Me.ChartProdPreferidos.TabIndex = 69
         Me.ChartProdPreferidos.Text = "Chart1"
-        Title3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title3.Name = "Title1"
-        Title3.Text = "Top Productos Mas Vendidos"
-        Me.ChartProdPreferidos.Titles.Add(Title3)
+        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title1.Name = "Title1"
+        Title1.Text = "Top Productos Mas Vendidos"
+        Me.ChartProdPreferidos.Titles.Add(Title1)
         '
         'chartProductoPorCategoria
         '
         Me.chartProductoPorCategoria.Anchor = System.Windows.Forms.AnchorStyles.None
-        ChartArea4.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
-        ChartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent
-        ChartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent
-        ChartArea4.Name = "ChartArea1"
-        Me.chartProductoPorCategoria.ChartAreas.Add(ChartArea4)
-        Legend4.Enabled = False
-        Legend4.Name = "Legend1"
-        Legend4.Title = "Productos por Categorias"
-        Me.chartProductoPorCategoria.Legends.Add(Legend4)
+        ChartArea2.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
+        ChartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent
+        ChartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent
+        ChartArea2.Name = "ChartArea1"
+        Me.chartProductoPorCategoria.ChartAreas.Add(ChartArea2)
+        Legend2.Enabled = False
+        Legend2.Name = "Legend1"
+        Legend2.Title = "Productos por Categorias"
+        Me.chartProductoPorCategoria.Legends.Add(Legend2)
         Me.chartProductoPorCategoria.Location = New System.Drawing.Point(74, 65)
         Me.chartProductoPorCategoria.Name = "chartProductoPorCategoria"
-        Series4.ChartArea = "ChartArea1"
-        Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar
-        Series4.Color = System.Drawing.Color.DodgerBlue
-        Series4.IsValueShownAsLabel = True
-        Series4.LabelForeColor = System.Drawing.Color.White
-        Series4.Legend = "Legend1"
-        Series4.Name = "Series1"
-        Series4.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
-        Me.chartProductoPorCategoria.Series.Add(Series4)
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar
+        Series2.Color = System.Drawing.Color.DodgerBlue
+        Series2.IsValueShownAsLabel = True
+        Series2.LabelForeColor = System.Drawing.Color.White
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
+        Me.chartProductoPorCategoria.Series.Add(Series2)
         Me.chartProductoPorCategoria.Size = New System.Drawing.Size(531, 300)
         Me.chartProductoPorCategoria.TabIndex = 68
         Me.chartProductoPorCategoria.Text = "Productos por Rubros"
-        Title4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title4.Name = "Title1"
-        Title4.Text = "Cantidad de Productos por Categorias"
-        Me.chartProductoPorCategoria.Titles.Add(Title4)
+        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title2.Name = "Title1"
+        Title2.Text = "Cantidad de Productos por Categorias"
+        Me.chartProductoPorCategoria.Titles.Add(Title2)
+        '
+        'DataGridViewImageColumn2
+        '
+        Me.DataGridViewImageColumn2.HeaderText = ""
+        Me.DataGridViewImageColumn2.Image = CType(resources.GetObject("DataGridViewImageColumn2.Image"), System.Drawing.Image)
+        Me.DataGridViewImageColumn2.MinimumWidth = 2
+        Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
+        Me.DataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        Me.DataGridViewImageColumn2.Width = 45
         '
         'Estadisticas
         '

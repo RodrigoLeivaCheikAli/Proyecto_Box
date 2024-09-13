@@ -65,7 +65,7 @@ Public Class EstadisticaVentas
             While dr.Read()
                 Fechas.Add(dr.GetDateTime(0))
                 ' Redondea el valor a 2 decimales y lo agrega a la lista de Ventas
-                Ventas.Add(Math.Round(dr.GetDouble(1), 2))
+                Ventas.Add(Math.Round(dr.GetDouble(1)))
             End While
 
             ' Asigna los datos al gráfico y formatea los puntos
