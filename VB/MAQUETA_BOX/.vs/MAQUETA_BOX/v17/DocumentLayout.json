@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\patof\\OneDrive\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\patof\\OneDrive\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\patof\\onedrive\\documents\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\patof\\onedrive\\documents\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|C:\\Users\\patof\\OneDrive\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
@@ -38,8 +38,7 @@
               "RelativeToolTip": "MAQUETA_BOX\\Ventas.vb",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-08-28T15:52:28.318Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T15:52:28.318Z"
             },
             {
               "$type": "Document",
@@ -50,8 +49,7 @@
               "ToolTip": "C:\\Users\\patof\\OneDrive\\Documents\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb [Dise\u00F1o]",
               "RelativeToolTip": "MAQUETA_BOX\\Ventas.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-08-28T15:51:41.318Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-08-28T15:51:41.318Z"
             },
             {
               "$type": "Document",
