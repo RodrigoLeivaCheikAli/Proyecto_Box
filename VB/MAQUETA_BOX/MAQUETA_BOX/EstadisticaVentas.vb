@@ -1,6 +1,7 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Windows.Forms.DataVisualization.Charting
+Imports System.Drawing.Printing
 
 Public Class EstadisticaVentas
     Dim conexion As SqlConnection = New SqlConnection("data source=168.197.51.109;initial catalog=PIN_GRUPO11;user id=PIN_GRUPO11;password=PIN_GRUPO11123")
@@ -257,5 +258,29 @@ Public Class EstadisticaVentas
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Public Sub ExportarFormularioAPDF()
+        Dim printDocument As New PrintDocument()
+        AddHandler printDocument.PrintPage, AddressOf Me.PrintPage
+
+        Dim printDialog As New PrintDialog()
+        printDialog.Document = printDocument
+        printDialog.PrinterSettings.PrinterName = "Microsoft Print To PDF"
+
+        If printDialog.ShowDialog() = DialogResult.OK Then
+            printDocument.Print()
+        End If
+    End Sub
+
+    Private Sub PrintPage(sender As Object, e As PrintPageEventArgs)
+        ' Configura la impresión del formulario
+        Dim formBitmap As New Bitmap(Me.Width, Me.Height)
+        Me.DrawToBitmap(formBitmap, New Rectangle(0, 0, Me.Width, Me.Height))
+        e.Graphics.DrawImage(formBitmap, e.MarginBounds)
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+        ExportarFormularioAPDF()
     End Sub
 End Class
