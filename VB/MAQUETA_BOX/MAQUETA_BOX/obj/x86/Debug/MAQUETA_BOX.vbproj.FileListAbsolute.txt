@@ -804,3 +804,4 @@ C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX
 C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.vbproj.CoreCompileInputs.cache
 C:\Users\patof\OneDrive\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_.93607FCC.Up2Date
 C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.EstadisticaClientes.resources
+C:\Users\valle\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.EstadisticaClientes.resources

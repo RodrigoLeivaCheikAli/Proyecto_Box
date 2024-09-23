@@ -3,14 +3,13 @@
 Public Class Productos_Listado
 #Region "Load"
     Private Sub Productos_Listado_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
         cboTipo.Items.Add("Todos")
         cboTipo.Items.Add("Producto")
         cboTipo.Items.Add("Servicio")
         cboTipo.SelectedIndex = 0
         Cargar_Grilla()
         CargarComboVehiculo()
-        CargarComboProducto()
+        'CargarComboProducto()
         CargarComboServicio()
         CargarComboTipo()
     End Sub
@@ -134,24 +133,24 @@ Public Class Productos_Listado
 #End Region
 
 #Region "Filtrar por Producto"
-    Private Sub CargarComboProducto()
-        If dt IsNot Nothing Then
-            ' Filtrar las filas donde la columna Tipo es "Producto" y obtener los valores únicos de la columna Descripción
-            Dim productos = dt.AsEnumerable().
-                         Where(Function(row) row.Field(Of String)("Tipo") <> "Servicio").
-                         Select(Function(row) row.Field(Of String)("Descripción")).
-                         Distinct().
-                         ToList()
+    'Private Sub CargarComboProducto()
+    'If dt IsNot Nothing Then
+    ' Filtrar las filas donde la columna Tipo es "Producto" y obtener los valores únicos de la columna Descripción
+    'Dim productos = dt.AsEnumerable().
+    '                    Where(Function(row) row.Field(Of String)("Tipo") <> "Servicio").
+    'Select Case (Function(row) row.Field(Of String)("Descripción")).
+    '                    Distinct().
+    '                   ToList()
 
-            cboProducto.Items.Clear()
-            cboProducto.Items.Add("Todos")
-            cboProducto.Items.AddRange(productos.ToArray())
-            cboProducto.SelectedIndex = 0
-        End If
-    End Sub
-    Private Sub cboProducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboProducto.SelectedIndexChanged
-        FiltrarGrilla()
-    End Sub
+    '      cboProducto.Items.Clear()
+    '     cboProducto.Items.Add("Todos")
+    '    cboProducto.Items.AddRange(productos.ToArray())
+    '   cboProducto.SelectedIndex = 0
+    'End If
+    'End Sub
+    'Private Sub cboProducto_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '   FiltrarGrilla()
+    'End Sub
 #End Region
 
 #Region "Filtrar por Servicio"
@@ -178,11 +177,11 @@ Public Class Productos_Listado
 #Region "Metodo Filtrar Grilla"
     Private Sub FiltrarGrilla()
         ' Asegúrate de que haya elementos seleccionados en todos los ComboBoxes
-        If cboTipo.SelectedItem Is Nothing OrElse cboVehiculo.SelectedItem Is Nothing OrElse cboProducto.SelectedItem Is Nothing OrElse cboServicio.SelectedItem Is Nothing Then Exit Sub
+        If cboTipo.SelectedItem Is Nothing OrElse cboVehiculo.SelectedItem Is Nothing OrElse cboServicio.SelectedItem Is Nothing Then Exit Sub
 
         Dim tipoSeleccionado As String = cboTipo.SelectedItem.ToString()
         Dim vehiculoSeleccionado As String = cboVehiculo.SelectedItem.ToString()
-        Dim productoSeleccionado As String = cboProducto.SelectedItem.ToString()
+        'Dim productoSeleccionado As String = cboProducto.SelectedItem.ToString()
         Dim servicioSeleccionado As String = cboServicio.SelectedItem.ToString()
         Dim textoBusqueda As String = txtBuscarProductos.Text.Trim()
 
@@ -200,10 +199,10 @@ Public Class Productos_Listado
                 If filtro <> String.Empty Then filtro &= " AND "
                 filtro &= $"Vehículo = '{vehiculoSeleccionado}'"
             End If
-            If productoSeleccionado <> "Todos" Then
-                If filtro <> String.Empty Then filtro &= " AND "
-                filtro &= $"Descripción = '{productoSeleccionado}'"
-            End If
+            'If productoSeleccionado <> "Todos" Then
+            'If filtro <> String.Empty Then filtro &= " AND "
+            'filtro &= $"Descripción = '{productoSeleccionado}'"
+            'End If
             If servicioSeleccionado <> "Todos" Then
                 If filtro <> String.Empty Then filtro &= " AND "
                 filtro &= $"Descripción = '{servicioSeleccionado}'"

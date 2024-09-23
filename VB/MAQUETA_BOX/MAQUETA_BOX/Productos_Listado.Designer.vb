@@ -28,7 +28,6 @@ Partial Class Productos_Listado
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos_Listado))
         Me.cboTipo = New System.Windows.Forms.ComboBox()
         Me.cboServicio = New System.Windows.Forms.ComboBox()
-        Me.cboProducto = New System.Windows.Forms.ComboBox()
         Me.cboVehiculo = New System.Windows.Forms.ComboBox()
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.txtBuscarProductos = New System.Windows.Forms.TextBox()
@@ -38,7 +37,6 @@ Partial Class Productos_Listado
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,27 +59,17 @@ Partial Class Productos_Listado
         '
         Me.cboServicio.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboServicio.FormattingEnabled = True
-        Me.cboServicio.Location = New System.Drawing.Point(428, 168)
+        Me.cboServicio.Location = New System.Drawing.Point(270, 168)
         Me.cboServicio.Name = "cboServicio"
         Me.cboServicio.Size = New System.Drawing.Size(121, 29)
         Me.cboServicio.TabIndex = 34
         Me.cboServicio.Text = "Servicio"
         '
-        'cboProducto
-        '
-        Me.cboProducto.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboProducto.FormattingEnabled = True
-        Me.cboProducto.Location = New System.Drawing.Point(272, 168)
-        Me.cboProducto.Name = "cboProducto"
-        Me.cboProducto.Size = New System.Drawing.Size(121, 29)
-        Me.cboProducto.TabIndex = 35
-        Me.cboProducto.Text = "Producto"
-        '
         'cboVehiculo
         '
         Me.cboVehiculo.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboVehiculo.FormattingEnabled = True
-        Me.cboVehiculo.Location = New System.Drawing.Point(579, 168)
+        Me.cboVehiculo.Location = New System.Drawing.Point(421, 168)
         Me.cboVehiculo.Name = "cboVehiculo"
         Me.cboVehiculo.Size = New System.Drawing.Size(121, 29)
         Me.cboVehiculo.TabIndex = 36
@@ -223,21 +211,11 @@ Partial Class Productos_Listado
         Me.Label1.TabIndex = 46
         Me.Label1.Text = "Tipo"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(268, 140)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(73, 21)
-        Me.Label2.TabIndex = 47
-        Me.Label2.Text = "Producto"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(424, 140)
+        Me.Label3.Location = New System.Drawing.Point(266, 140)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(65, 21)
         Me.Label3.TabIndex = 48
@@ -247,7 +225,7 @@ Partial Class Productos_Listado
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(575, 140)
+        Me.Label4.Location = New System.Drawing.Point(417, 140)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(69, 21)
         Me.Label4.TabIndex = 49
@@ -261,7 +239,6 @@ Partial Class Productos_Listado
         Me.ClientSize = New System.Drawing.Size(1074, 626)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnGestion)
@@ -270,7 +247,6 @@ Partial Class Productos_Listado
         Me.Controls.Add(Me.btnListado)
         Me.Controls.Add(Me.BunifuDataGridView1)
         Me.Controls.Add(Me.cboVehiculo)
-        Me.Controls.Add(Me.cboProducto)
         Me.Controls.Add(Me.cboServicio)
         Me.Controls.Add(Me.cboTipo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -286,7 +262,6 @@ Partial Class Productos_Listado
     End Sub
     Friend WithEvents cboTipo As ComboBox
     Friend WithEvents cboServicio As ComboBox
-    Friend WithEvents cboProducto As ComboBox
     Friend WithEvents cboVehiculo As ComboBox
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents BunifuDataGridView1 As Bunifu.UI.WinForms.BunifuDataGridView
@@ -296,7 +271,6 @@ Partial Class Productos_Listado
     Friend WithEvents btnGestion As PictureBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
 End Class
