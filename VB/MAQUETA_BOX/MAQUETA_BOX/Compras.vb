@@ -87,7 +87,7 @@ Public Class Compras
 
 #Region "GRILLAS"
 
-    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs)
         Dim senderGrid = DirectCast(sender, DataGridView)
 
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
@@ -139,7 +139,7 @@ Public Class Compras
     End Sub
 
 
-    Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+    Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs)
         Dim senderGrid = DirectCast(sender, DataGridView)
         Dim selectedRow As DataGridViewRow = DataGridView2.Rows(e.RowIndex)
 
@@ -414,7 +414,7 @@ Public Class Compras
         End Try
     End Sub
 
-    Private Sub BunifuButton1_Click(sender As Object, e As EventArgs) Handles BunifuButton1.Click
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         CargarPedido()
         SeleccionarUltimoID()
         CargarDetallePedido()
@@ -558,7 +558,8 @@ Public Class Compras
         End Try
     End Sub
 
-    Private Sub BunifuButton2_Click(sender As Object, e As EventArgs) Handles BunifuButton2.Click
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         IdPresupuesto = 0
         DataGridView2.Rows.Clear()
 
@@ -569,6 +570,9 @@ Public Class Compras
         CalcularTotal()
 
     End Sub
+
+
+
 
 
 
