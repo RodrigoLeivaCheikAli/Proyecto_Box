@@ -182,13 +182,13 @@ Public Class ProvComparaciones
 #End Region
 
 #Region "Otros"
-    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
+    Private Sub Precio_grilla(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
         ' Verifica si la columna es la que deseas formatear
-        If e.ColumnIndex = DataGridView1.Columns("Precio").Index Then
+        If e.ColumnIndex = DataGridView1.Columns(4).Index Then
             ' Verifica si el valor es un número
             If e.Value IsNot Nothing AndAlso IsNumeric(e.Value) Then
-                ' Formatea el valor a dos decimales
-                e.Value = String.Format("{0:F2}", Convert.ToDecimal(e.Value))
+                ' Formatea el valor a moneda usando la configuración regional actual del sistema
+                e.Value = String.Format(Globalization.CultureInfo.CurrentCulture, "{0:C}", Convert.ToDecimal(e.Value))
                 e.FormattingApplied = True
             End If
         End If

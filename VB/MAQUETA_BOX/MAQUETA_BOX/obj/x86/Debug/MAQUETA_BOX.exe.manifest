@@ -498,14 +498,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MAQUETA_BOX.exe" size="828328">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MAQUETA_BOX.exe" size="828840">
       <assemblyIdentity name="MAQUETA_BOX" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rW2YAX9QBgq4AcZ3SDcPNGua1tNZzeGaKfstEx5Op9E=</dsig:DigestValue>
+        <dsig:DigestValue>vld0YHk7gtULC1T2Nc4Hp2MDhG9UwJgyHAQCIuMAipQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

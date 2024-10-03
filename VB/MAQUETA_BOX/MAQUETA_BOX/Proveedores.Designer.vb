@@ -180,7 +180,7 @@ Partial Class Proveedores
         '
         'txtMail
         '
-        Me.txtMail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txtMail.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtMail.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.txtMail.Location = New System.Drawing.Point(480, 140)
         Me.txtMail.Name = "txtMail"
@@ -189,7 +189,7 @@ Partial Class Proveedores
         '
         'txtTelefono
         '
-        Me.txtTelefono.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txtTelefono.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtTelefono.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.txtTelefono.Location = New System.Drawing.Point(480, 33)
         Me.txtTelefono.Name = "txtTelefono"
@@ -198,7 +198,7 @@ Partial Class Proveedores
         '
         'Label7
         '
-        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Label7.Location = New System.Drawing.Point(424, 143)
@@ -209,7 +209,7 @@ Partial Class Proveedores
         '
         'Label8
         '
-        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Label8.Location = New System.Drawing.Point(389, 41)
@@ -253,7 +253,7 @@ Partial Class Proveedores
         '
         'Label13
         '
-        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Label13.Location = New System.Drawing.Point(381, 95)
@@ -264,7 +264,7 @@ Partial Class Proveedores
         '
         'txtLocalidad
         '
-        Me.txtLocalidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txtLocalidad.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtLocalidad.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold)
         Me.txtLocalidad.Location = New System.Drawing.Point(480, 92)
         Me.txtLocalidad.Name = "txtLocalidad"
