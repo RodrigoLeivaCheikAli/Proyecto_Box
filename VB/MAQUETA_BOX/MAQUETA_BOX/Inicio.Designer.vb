@@ -793,7 +793,7 @@ Partial Class Inicio
         Me.lbl_Tire_Task.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.lbl_Tire_Task.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Tire_Task.ForeColor = System.Drawing.Color.White
-        Me.lbl_Tire_Task.Location = New System.Drawing.Point(77, 159)
+        Me.lbl_Tire_Task.Location = New System.Drawing.Point(65, 159)
         Me.lbl_Tire_Task.Name = "lbl_Tire_Task"
         Me.lbl_Tire_Task.Size = New System.Drawing.Size(146, 29)
         Me.lbl_Tire_Task.TabIndex = 125
