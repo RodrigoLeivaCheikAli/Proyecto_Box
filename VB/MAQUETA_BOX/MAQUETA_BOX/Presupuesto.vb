@@ -4,9 +4,6 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 Public Class Presupuesto
     Dim cant As New Dictionary(Of Integer, Integer)
 
-
-
-
     Private Sub Presupuesto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         idPresupuesto()
         Modulo.Presupuesto = Modulo.Presupuesto + 1
@@ -91,15 +88,7 @@ Public Class Presupuesto
         End Try
     End Sub
 
-    Private Sub DataGridView3_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs)
-        Dim columnName As String = DataGridView3.Columns(e.ColumnIndex).Name
 
-        If columnName = "quantity" Or columnName = "rate" Then
-            CalcularPrecio(e.RowIndex)
-            ' Actualizar la vista del DataGridView para mostrar los cambios
-            DataGridView3.Refresh()
-        End If
-    End Sub
 
     Private Sub idPresupuesto()
         Using conn As New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
@@ -124,14 +113,14 @@ Public Class Presupuesto
         Dim rate As Double
 
         ' Intentar convertir los valores de las celdas a Double
-        If Double.TryParse(Convert.ToString(DataGridView3.Rows(rowIndex).Cells("quantity").Value), quantity) AndAlso
-       Double.TryParse(Convert.ToString(DataGridView3.Rows(rowIndex).Cells("rate").Value), rate) Then
+        If Double.TryParse(Convert.ToString(DataGridView3.Rows(rowIndex).Cells("ColumnCantidad").Value), quantity) AndAlso
+       Double.TryParse(Convert.ToString(DataGridView3.Rows(rowIndex).Cells("ColumnPrecio").Value), rate) Then
             Dim price As Double = quantity * rate
-            DataGridView3.Rows(rowIndex).Cells("price").Value = price.ToString()
+            DataGridView3.Rows(rowIndex).Cells("ColumnTotal").Value = price.ToString()
         Else
             ' Manejar el caso donde la conversión falló
             ' Por ejemplo, podrías mostrar un mensaje de error o reiniciar el valor de la celda 'price'
-            DataGridView3.Rows(rowIndex).Cells("price").Value = String.Empty
+            DataGridView3.Rows(rowIndex).Cells("ColumnTotal").Value = String.Empty
         End If
     End Sub
 
@@ -141,7 +130,7 @@ Public Class Presupuesto
         For Each row As DataGridViewRow In DataGridView3.Rows
             If Not row.IsNewRow Then
                 Dim price As Double
-                If Double.TryParse(Convert.ToString(row.Cells("price").Value), price) Then
+                If Double.TryParse(Convert.ToString(row.Cells("ColumnTotal").Value), price) Then
                     total += price
                 End If
             End If
@@ -277,8 +266,8 @@ Public Class Presupuesto
         For Each fila As DataGridViewRow In DataGridView3.Rows
             ' Verifica si la fila no está vacía
             If Not fila.IsNewRow Then
-                Dim idOferta As Integer = Convert.ToInt32(fila.Cells("colOferta").Value)
-                Dim cantidad As Integer = Convert.ToInt32(fila.Cells("quantity").Value)
+                Dim idOferta As Integer = Convert.ToInt32(fila.Cells("ColumnID").Value)
+                Dim cantidad As Integer = Convert.ToInt32(fila.Cells("ColumnCantidad").Value)
 
                 With comando.Parameters
                     .Clear() ' Limpia los parámetros antes de agregar nuevos valores
@@ -346,5 +335,15 @@ Public Class Presupuesto
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
+    End Sub
+
+    Private Sub DataGridView3_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellEndEdit
+        Dim columnName As String = DataGridView3.Columns(e.ColumnIndex).Name
+
+        If columnName = "ColumnCantidad" Or columnName = "ColumnPrecio" Then
+            CalcularPrecio(e.RowIndex)
+            ' Actualizar la vista del DataGridView para mostrar los cambios
+            DataGridView3.Refresh()
+        End If
     End Sub
 End Class

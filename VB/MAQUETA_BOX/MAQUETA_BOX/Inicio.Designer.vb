@@ -194,7 +194,7 @@ Partial Class Inicio
         Me.btnEstadisticas.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.estadisticas
         Me.btnEstadisticas.IdleIconRightImage = Nothing
         Me.btnEstadisticas.IndicateFocus = True
-        Me.btnEstadisticas.Location = New System.Drawing.Point(41, 673)
+        Me.btnEstadisticas.Location = New System.Drawing.Point(39, 641)
         Me.btnEstadisticas.Name = "btnEstadisticas"
         Me.btnEstadisticas.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnEstadisticas.OnDisabledState.BorderRadius = 30
@@ -284,7 +284,7 @@ Partial Class Inicio
         Me.btnCompras.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.Compras
         Me.btnCompras.IdleIconRightImage = Nothing
         Me.btnCompras.IndicateFocus = True
-        Me.btnCompras.Location = New System.Drawing.Point(41, 533)
+        Me.btnCompras.Location = New System.Drawing.Point(39, 500)
         Me.btnCompras.Name = "btnCompras"
         Me.btnCompras.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnCompras.OnDisabledState.BorderRadius = 30
@@ -374,7 +374,7 @@ Partial Class Inicio
         Me.btnDocumentos.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.icono4
         Me.btnDocumentos.IdleIconRightImage = Nothing
         Me.btnDocumentos.IndicateFocus = False
-        Me.btnDocumentos.Location = New System.Drawing.Point(41, 603)
+        Me.btnDocumentos.Location = New System.Drawing.Point(39, 570)
         Me.btnDocumentos.Name = "btnDocumentos"
         Me.btnDocumentos.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnDocumentos.OnDisabledState.BorderRadius = 30
@@ -464,7 +464,7 @@ Partial Class Inicio
         Me.btnVentas.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.Ventas
         Me.btnVentas.IdleIconRightImage = Nothing
         Me.btnVentas.IndicateFocus = True
-        Me.btnVentas.Location = New System.Drawing.Point(41, 463)
+        Me.btnVentas.Location = New System.Drawing.Point(39, 430)
         Me.btnVentas.Name = "btnVentas"
         Me.btnVentas.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnVentas.OnDisabledState.BorderRadius = 30
@@ -554,7 +554,7 @@ Partial Class Inicio
         Me.btnProveedores.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.Proveedores
         Me.btnProveedores.IdleIconRightImage = Nothing
         Me.btnProveedores.IndicateFocus = True
-        Me.btnProveedores.Location = New System.Drawing.Point(41, 393)
+        Me.btnProveedores.Location = New System.Drawing.Point(39, 360)
         Me.btnProveedores.Name = "btnProveedores"
         Me.btnProveedores.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnProveedores.OnDisabledState.BorderRadius = 30
@@ -655,7 +655,7 @@ Partial Class Inicio
         Me.btnProductos.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.Productos
         Me.btnProductos.IdleIconRightImage = Nothing
         Me.btnProductos.IndicateFocus = True
-        Me.btnProductos.Location = New System.Drawing.Point(41, 323)
+        Me.btnProductos.Location = New System.Drawing.Point(39, 290)
         Me.btnProductos.Name = "btnProductos"
         Me.btnProductos.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnProductos.OnDisabledState.BorderRadius = 30
@@ -745,7 +745,7 @@ Partial Class Inicio
         Me.btnClientes.IdleIconLeftImage = Global.MAQUETA_BOX.My.Resources.Resources.Clientes
         Me.btnClientes.IdleIconRightImage = Nothing
         Me.btnClientes.IndicateFocus = True
-        Me.btnClientes.Location = New System.Drawing.Point(41, 253)
+        Me.btnClientes.Location = New System.Drawing.Point(39, 220)
         Me.btnClientes.Name = "btnClientes"
         Me.btnClientes.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnClientes.OnDisabledState.BorderRadius = 30
@@ -791,11 +791,11 @@ Partial Class Inicio
         '
         Me.lbl_Tire_Task.AutoSize = True
         Me.lbl_Tire_Task.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.lbl_Tire_Task.Font = New System.Drawing.Font("Sk-Modernist Bold", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Tire_Task.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Tire_Task.ForeColor = System.Drawing.Color.White
         Me.lbl_Tire_Task.Location = New System.Drawing.Point(77, 159)
         Me.lbl_Tire_Task.Name = "lbl_Tire_Task"
-        Me.lbl_Tire_Task.Size = New System.Drawing.Size(127, 29)
+        Me.lbl_Tire_Task.Size = New System.Drawing.Size(146, 29)
         Me.lbl_Tire_Task.TabIndex = 125
         Me.lbl_Tire_Task.Text = "TIRE TASK"
         '
