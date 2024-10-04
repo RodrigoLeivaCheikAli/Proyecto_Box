@@ -27,6 +27,16 @@ MAQUETA_BOX
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.boton_mas">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:MAQUETA_BOX.My.Resources.Resources.boton_menos">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:MAQUETA_BOX.My.Resources.Resources.btnACEPTAR_BLUE">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

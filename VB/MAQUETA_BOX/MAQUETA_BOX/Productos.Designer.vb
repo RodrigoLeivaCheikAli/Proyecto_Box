@@ -54,6 +54,16 @@ Partial Class Productos
         Me.btnEliminar = New System.Windows.Forms.PictureBox()
         Me.btnModificar = New System.Windows.Forms.PictureBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ColumnID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnMarca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnGanancia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnPrecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -312,6 +322,7 @@ Partial Class Productos
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.BunifuDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.BunifuDataGridView1.ColumnHeadersHeight = 40
+        Me.BunifuDataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnID, Me.ColumnTipo, Me.ColumnDescripcion, Me.ColumnMarca, Me.ColumnVehiculo, Me.ColumnProveedor, Me.ColumnCosto, Me.ColumnGanancia, Me.ColumnPrecio, Me.ColumnStock})
         Me.BunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.BunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black
@@ -427,6 +438,76 @@ Partial Class Productos
         Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
         '
+        'ColumnID
+        '
+        Me.ColumnID.DataPropertyName = "ID"
+        Me.ColumnID.HeaderText = "ID"
+        Me.ColumnID.Name = "ColumnID"
+        Me.ColumnID.ReadOnly = True
+        '
+        'ColumnTipo
+        '
+        Me.ColumnTipo.DataPropertyName = "Tipo"
+        Me.ColumnTipo.HeaderText = "Tipo"
+        Me.ColumnTipo.Name = "ColumnTipo"
+        Me.ColumnTipo.ReadOnly = True
+        '
+        'ColumnDescripcion
+        '
+        Me.ColumnDescripcion.DataPropertyName = "Descripcion"
+        Me.ColumnDescripcion.HeaderText = "Descripción"
+        Me.ColumnDescripcion.Name = "ColumnDescripcion"
+        Me.ColumnDescripcion.ReadOnly = True
+        '
+        'ColumnMarca
+        '
+        Me.ColumnMarca.DataPropertyName = "Marca"
+        Me.ColumnMarca.HeaderText = "Marca"
+        Me.ColumnMarca.Name = "ColumnMarca"
+        Me.ColumnMarca.ReadOnly = True
+        '
+        'ColumnVehiculo
+        '
+        Me.ColumnVehiculo.DataPropertyName = "Vehiculo"
+        Me.ColumnVehiculo.HeaderText = "Vehiculo"
+        Me.ColumnVehiculo.Name = "ColumnVehiculo"
+        Me.ColumnVehiculo.ReadOnly = True
+        '
+        'ColumnProveedor
+        '
+        Me.ColumnProveedor.DataPropertyName = "Proveedor"
+        Me.ColumnProveedor.HeaderText = "Proveedor"
+        Me.ColumnProveedor.Name = "ColumnProveedor"
+        Me.ColumnProveedor.ReadOnly = True
+        '
+        'ColumnCosto
+        '
+        Me.ColumnCosto.DataPropertyName = "Costo"
+        Me.ColumnCosto.HeaderText = "Costo"
+        Me.ColumnCosto.Name = "ColumnCosto"
+        Me.ColumnCosto.ReadOnly = True
+        '
+        'ColumnGanancia
+        '
+        Me.ColumnGanancia.DataPropertyName = "Ganancia"
+        Me.ColumnGanancia.HeaderText = "Ganancia"
+        Me.ColumnGanancia.Name = "ColumnGanancia"
+        Me.ColumnGanancia.ReadOnly = True
+        '
+        'ColumnPrecio
+        '
+        Me.ColumnPrecio.DataPropertyName = "Precio"
+        Me.ColumnPrecio.HeaderText = "Precio"
+        Me.ColumnPrecio.Name = "ColumnPrecio"
+        Me.ColumnPrecio.ReadOnly = True
+        '
+        'ColumnStock
+        '
+        Me.ColumnStock.DataPropertyName = "Stock"
+        Me.ColumnStock.HeaderText = "Stock"
+        Me.ColumnStock.Name = "ColumnStock"
+        Me.ColumnStock.ReadOnly = True
+        '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -485,4 +566,14 @@ Partial Class Productos
     Friend WithEvents Label8 As Label
     Friend WithEvents txtBuscarProductos As TextBox
     Friend WithEvents btnGestion As PictureBox
+    Friend WithEvents ColumnID As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnTipo As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnDescripcion As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnMarca As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnVehiculo As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnProveedor As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnCosto As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnGanancia As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnPrecio As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnStock As DataGridViewTextBoxColumn
 End Class

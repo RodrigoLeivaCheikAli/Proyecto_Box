@@ -13,12 +13,22 @@ Public Class Productos
         cargar_cbo_marcas()
 
         'Prueba 
-        Dim columnaPrecio As DataGridViewColumn = BunifuDataGridView1.Columns(7)
-        Dim columnaPrecio2 As DataGridViewColumn = BunifuDataGridView1.Columns(9)
+        Dim columnaCosto As DataGridViewColumn = BunifuDataGridView1.Columns("ColumnCosto")
+        Dim columnaPrecio As DataGridViewColumn = BunifuDataGridView1.Columns("ColumnPrecio")
+        Dim columnaGanancia As DataGridViewColumn = BunifuDataGridView1.Columns("ColumnGanancia")
+
+        ' Configuración para la columna de Costo
+        columnaCosto.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        columnaCosto.DefaultCellStyle.Format = "C2"
+
+        ' Configuración para la columna de Precio
         columnaPrecio.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         columnaPrecio.DefaultCellStyle.Format = "C2"
-        columnaPrecio2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-        columnaPrecio2.DefaultCellStyle.Format = "C2"
+
+        ' Configuración para la columna de Ganancia
+        columnaGanancia.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        columnaGanancia.DefaultCellStyle.Format = "C2"
+
 
     End Sub
 #End Region
