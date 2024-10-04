@@ -57,7 +57,7 @@ Partial Class Estadisticas
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ChartProdPreferidos = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.chartProductoPorCategoria = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.chartProductodelDia = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,7 +73,7 @@ Partial Class Estadisticas
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProdPreferidos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chartProductoPorCategoria, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chartProductodelDia, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -104,7 +104,7 @@ Partial Class Estadisticas
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.ChartProdPreferidos)
-        Me.Panel1.Controls.Add(Me.chartProductoPorCategoria)
+        Me.Panel1.Controls.Add(Me.chartProductodelDia)
         Me.Panel1.Location = New System.Drawing.Point(-2, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1141, 676)
@@ -429,20 +429,20 @@ Partial Class Estadisticas
         Title1.Text = "Top Productos Mas Vendidos"
         Me.ChartProdPreferidos.Titles.Add(Title1)
         '
-        'chartProductoPorCategoria
+        'chartProductodelDia
         '
-        Me.chartProductoPorCategoria.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.chartProductodelDia.Anchor = System.Windows.Forms.AnchorStyles.None
         ChartArea2.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
         ChartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent
         ChartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent
         ChartArea2.Name = "ChartArea1"
-        Me.chartProductoPorCategoria.ChartAreas.Add(ChartArea2)
+        Me.chartProductodelDia.ChartAreas.Add(ChartArea2)
         Legend2.Enabled = False
         Legend2.Name = "Legend1"
         Legend2.Title = "Productos por Categorias"
-        Me.chartProductoPorCategoria.Legends.Add(Legend2)
-        Me.chartProductoPorCategoria.Location = New System.Drawing.Point(74, 65)
-        Me.chartProductoPorCategoria.Name = "chartProductoPorCategoria"
+        Me.chartProductodelDia.Legends.Add(Legend2)
+        Me.chartProductodelDia.Location = New System.Drawing.Point(14, 65)
+        Me.chartProductodelDia.Name = "chartProductodelDia"
         Series2.ChartArea = "ChartArea1"
         Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar
         Series2.Color = System.Drawing.Color.DodgerBlue
@@ -451,14 +451,14 @@ Partial Class Estadisticas
         Series2.Legend = "Legend1"
         Series2.Name = "Series1"
         Series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
-        Me.chartProductoPorCategoria.Series.Add(Series2)
-        Me.chartProductoPorCategoria.Size = New System.Drawing.Size(531, 300)
-        Me.chartProductoPorCategoria.TabIndex = 68
-        Me.chartProductoPorCategoria.Text = "Productos por Rubros"
+        Me.chartProductodelDia.Series.Add(Series2)
+        Me.chartProductodelDia.Size = New System.Drawing.Size(591, 300)
+        Me.chartProductodelDia.TabIndex = 68
+        Me.chartProductodelDia.Text = "Productos por Rubros"
         Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Title2.Name = "Title1"
-        Title2.Text = "Cantidad de Productos por Categorias"
-        Me.chartProductoPorCategoria.Titles.Add(Title2)
+        Title2.Text = "Productos del Dia"
+        Me.chartProductodelDia.Titles.Add(Title2)
         '
         'DataGridViewImageColumn2
         '
@@ -495,7 +495,7 @@ Partial Class Estadisticas
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChartProdPreferidos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chartProductoPorCategoria, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chartProductodelDia, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -527,5 +527,5 @@ Partial Class Estadisticas
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ChartProdPreferidos As DataVisualization.Charting.Chart
-    Friend WithEvents chartProductoPorCategoria As DataVisualization.Charting.Chart
+    Friend WithEvents chartProductodelDia As DataVisualization.Charting.Chart
 End Class
