@@ -6,8 +6,8 @@ Public Class Ventas
     Private Sub Ventas_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         'Redimensionar()
         LlenarGrilla()
-        AddHandler DataGridView1.CellPainting, AddressOf DataGridView1_CellPainting
-        AddHandler DataGridView2.CellPainting, AddressOf DataGridView2_CellPainting
+        'AddHandler DataGridView1.CellPainting, AddressOf DataGridView1_CellPainting
+        'AddHandler DataGridView2.CellPainting, AddressOf DataGridView2_CellPainting
     End Sub
 
 #Region "Variables"

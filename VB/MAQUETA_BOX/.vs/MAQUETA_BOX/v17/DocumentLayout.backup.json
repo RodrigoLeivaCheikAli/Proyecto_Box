@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\crett\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\crett\\onedrive\\documentos\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\proveedores.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\proveedores.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\crett\\onedrive\\documentos\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\crett\\onedrive\\documentos\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\provcomparaciones.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\provcomparaciones.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|c:\\users\\crett\\onedrive\\documentos\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\ventas.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,25 +27,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProvComparaciones.vb [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\crett\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\ProvComparaciones.vb",
-              "RelativeDocumentMoniker": "MAQUETA_BOX\\ProvComparaciones.vb",
-              "ToolTip": "C:\\Users\\crett\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\ProvComparaciones.vb [Dise\u00F1o]",
-              "RelativeToolTip": "MAQUETA_BOX\\ProvComparaciones.vb [Dise\u00F1o]",
+              "Title": "Ventas.vb",
+              "DocumentMoniker": "C:\\Users\\crett\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb",
+              "RelativeDocumentMoniker": "MAQUETA_BOX\\Ventas.vb",
+              "ToolTip": "C:\\Users\\crett\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb",
+              "RelativeToolTip": "MAQUETA_BOX\\Ventas.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-10-03T20:40:31.674Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-10-04T19:17:44.544Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Proveedores.vb [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\crett\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Proveedores.vb",
-              "RelativeDocumentMoniker": "MAQUETA_BOX\\Proveedores.vb",
-              "ToolTip": "C:\\Users\\crett\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Proveedores.vb [Dise\u00F1o]",
-              "RelativeToolTip": "MAQUETA_BOX\\Proveedores.vb [Dise\u00F1o]",
+              "Title": "Ventas.vb [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\crett\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb",
+              "RelativeDocumentMoniker": "MAQUETA_BOX\\Ventas.vb",
+              "ToolTip": "C:\\Users\\crett\\OneDrive\\Documentos\\GitHub\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Ventas.vb [Dise\u00F1o]",
+              "RelativeToolTip": "MAQUETA_BOX\\Ventas.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-10-03T20:40:31.052Z",
+              "WhenOpened": "2024-10-04T19:16:44.929Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]
