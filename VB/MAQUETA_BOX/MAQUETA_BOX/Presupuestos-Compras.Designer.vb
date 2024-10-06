@@ -52,6 +52,7 @@ Partial Class Presupuestos_Compras
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
         Me.BunifuDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.BunifuDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.BunifuDataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
         Me.BunifuDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.BunifuDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.BunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -132,6 +133,7 @@ Partial Class Presupuestos_Compras
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
         Me.BunifuDataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.BunifuDataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.BunifuDataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
         Me.BunifuDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.BunifuDataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.BunifuDataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -208,6 +210,7 @@ Partial Class Presupuestos_Compras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(808, 562)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
