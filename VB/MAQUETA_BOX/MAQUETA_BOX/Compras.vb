@@ -87,102 +87,6 @@ Public Class Compras
 
 #Region "GRILLAS"
 
-    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs)
-        Dim senderGrid = DirectCast(sender, DataGridView)
-
-        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
-            If e.ColumnIndex = DataGridView1.Columns("Column1").Index AndAlso e.RowIndex >= 0 Then
-                ' Obtener la fila seleccionada
-                Dim selectedRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-                Dim lastColumnIndex As Integer = DataGridView1.ColumnCount - 1
-                Dim currentValue As Integer = Convert.ToInt32(selectedRow.Cells(lastColumnIndex).Value)
-
-                ' Guardar el valor original si no está en el diccionario
-                If Not originalValues.ContainsKey(e.RowIndex) Then
-                    originalValues.Add(e.RowIndex, currentValue)
-                End If
-
-                Dim newRow As DataGridViewRow = CType(selectedRow.Clone(), DataGridViewRow)
-                For i As Integer = 1 To selectedRow.Cells.Count - 1 ' Ignorar la primera columna
-                    newRow.Cells(i).Value = selectedRow.Cells(i).Value
-                Next
-
-                If addedRows.ContainsKey(selectedRow.Index) Then
-                    Cant(selectedRow.Index) += 1
-                    Dim targetIndex As Integer = addedRows(selectedRow.Index)
-
-                    ' Verificar si targetIndex es válido
-                    If targetIndex >= 0 AndAlso targetIndex < DataGridView2.Rows.Count Then
-                        DataGridView2.Rows(targetIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
-
-                        ' Llamada a UpdateTotal
-                        UpdateTotal(targetIndex)
-                    Else
-                        MessageBox.Show("El índice de la fila es inválido, no se puede actualizar la cantidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End If
-                Else
-                    ' Si la fila no fue agregada, agregarla al DataGridView2 y al diccionario
-                    Cant.Add(selectedRow.Index, 1)
-                    Dim newIndex As Integer = DataGridView2.Rows.Add(newRow)
-                    addedRows.Add(selectedRow.Index, newIndex)
-
-                    ' Establecer la cantidad inicial
-                    DataGridView2.Rows(newIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
-
-                    ' Llamada a UpdateTotal
-                    UpdateTotal(newIndex)
-                End If
-            End If
-        End If
-
-        CalcularTotal()
-    End Sub
-
-
-    Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs)
-        Dim senderGrid = DirectCast(sender, DataGridView)
-        Dim selectedRow As DataGridViewRow = DataGridView2.Rows(e.RowIndex)
-
-        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
-            If e.ColumnIndex = DataGridView2.Columns("Column2").Index AndAlso e.RowIndex >= 0 Then
-                ' Eliminar la fila seleccionada
-                Dim originalIndex As Integer = -1
-                For Each pair In addedRows
-                    If pair.Value = selectedRow.Index Then
-                        originalIndex = pair.Key
-                        Exit For
-                    End If
-                Next
-
-                If Cant.ContainsKey(originalIndex) Then
-                    Cant(originalIndex) -= 1
-                    If Cant(originalIndex) > 0 Then
-                        DataGridView2.Rows(e.RowIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(originalIndex)
-
-                        ' Actualizar el total de la fila en la grilla 2
-                        UpdateTotal(e.RowIndex)
-                    Else
-                        ' Eliminar de addedRows y Cant antes de eliminar la fila
-                        addedRows.Remove(originalIndex)
-                        Cant.Remove(originalIndex)
-                        DataGridView2.Rows.RemoveAt(e.RowIndex)
-
-                        ' Actualizar los índices en addedRows
-                        Dim updatedAddedRows As New Dictionary(Of Integer, Integer)
-                        For Each pair In addedRows
-                            If pair.Value > e.RowIndex Then
-                                updatedAddedRows.Add(pair.Key, pair.Value - 1)
-                            Else
-                                updatedAddedRows.Add(pair.Key, pair.Value)
-                            End If
-                        Next
-                        addedRows = updatedAddedRows
-                    End If
-                End If
-            End If
-        End If
-        CalcularTotal()
-    End Sub
 
 #End Region
 
@@ -571,11 +475,197 @@ Public Class Compras
 
     End Sub
 
+    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs)
+        Dim senderGrid = DirectCast(sender, DataGridView)
 
+        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
+            If e.ColumnIndex = DataGridView1.Columns("Column1").Index AndAlso e.RowIndex >= 0 Then
+                ' Obtener la fila seleccionada
+                Dim selectedRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+                Dim lastColumnIndex As Integer = DataGridView1.ColumnCount - 1
+                Dim currentValue As Integer = Convert.ToInt32(selectedRow.Cells(lastColumnIndex).Value)
 
+                ' Guardar el valor original si no está en el diccionario
+                If Not originalValues.ContainsKey(e.RowIndex) Then
+                    originalValues.Add(e.RowIndex, currentValue)
+                End If
 
+                Dim newRow As DataGridViewRow = CType(selectedRow.Clone(), DataGridViewRow)
+                For i As Integer = 1 To selectedRow.Cells.Count - 1 ' Ignorar la primera columna
+                    newRow.Cells(i).Value = selectedRow.Cells(i).Value
+                Next
 
+                If addedRows.ContainsKey(selectedRow.Index) Then
+                    Cant(selectedRow.Index) += 1
+                    Dim targetIndex As Integer = addedRows(selectedRow.Index)
 
+                    ' Verificar si targetIndex es válido
+                    If targetIndex >= 0 AndAlso targetIndex < DataGridView2.Rows.Count Then
+                        DataGridView2.Rows(targetIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
+
+                        ' Llamada a UpdateTotal
+                        UpdateTotal(targetIndex)
+                    Else
+                        MessageBox.Show("El índice de la fila es inválido, no se puede actualizar la cantidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                Else
+                    ' Si la fila no fue agregada, agregarla al DataGridView2 y al diccionario
+                    Cant.Add(selectedRow.Index, 1)
+                    Dim newIndex As Integer = DataGridView2.Rows.Add(newRow)
+                    addedRows.Add(selectedRow.Index, newIndex)
+
+                    ' Establecer la cantidad inicial
+                    DataGridView2.Rows(newIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
+
+                    ' Llamada a UpdateTotal
+                    UpdateTotal(newIndex)
+                End If
+            End If
+        End If
+
+        CalcularTotal()
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs)
+        Dim senderGrid = DirectCast(sender, DataGridView)
+        Dim selectedRow As DataGridViewRow = DataGridView2.Rows(e.RowIndex)
+
+        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
+            If e.ColumnIndex = DataGridView2.Columns("Column2").Index AndAlso e.RowIndex >= 0 Then
+                ' Eliminar la fila seleccionada
+                Dim originalIndex As Integer = -1
+                For Each pair In addedRows
+                    If pair.Value = selectedRow.Index Then
+                        originalIndex = pair.Key
+                        Exit For
+                    End If
+                Next
+
+                If Cant.ContainsKey(originalIndex) Then
+                    Cant(originalIndex) -= 1
+                    If Cant(originalIndex) > 0 Then
+                        DataGridView2.Rows(e.RowIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(originalIndex)
+
+                        ' Actualizar el total de la fila en la grilla 2
+                        UpdateTotal(e.RowIndex)
+                    Else
+                        ' Eliminar de addedRows y Cant antes de eliminar la fila
+                        addedRows.Remove(originalIndex)
+                        Cant.Remove(originalIndex)
+                        DataGridView2.Rows.RemoveAt(e.RowIndex)
+
+                        ' Actualizar los índices en addedRows
+                        Dim updatedAddedRows As New Dictionary(Of Integer, Integer)
+                        For Each pair In addedRows
+                            If pair.Value > e.RowIndex Then
+                                updatedAddedRows.Add(pair.Key, pair.Value - 1)
+                            Else
+                                updatedAddedRows.Add(pair.Key, pair.Value)
+                            End If
+                        Next
+                        addedRows = updatedAddedRows
+                    End If
+                End If
+            End If
+        End If
+        CalcularTotal()
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Dim senderGrid = DirectCast(sender, DataGridView)
+
+        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
+            If e.ColumnIndex = DataGridView1.Columns("Column9").Index AndAlso e.RowIndex >= 0 Then
+                ' Obtener la fila seleccionada
+                Dim selectedRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+                Dim lastColumnIndex As Integer = DataGridView1.ColumnCount - 1
+                Dim currentValue As Integer = Convert.ToInt32(selectedRow.Cells(lastColumnIndex).Value)
+
+                ' Guardar el valor original si no está en el diccionario
+                If Not originalValues.ContainsKey(e.RowIndex) Then
+                    originalValues.Add(e.RowIndex, currentValue)
+                End If
+
+                Dim newRow As DataGridViewRow = CType(selectedRow.Clone(), DataGridViewRow)
+                For i As Integer = 1 To selectedRow.Cells.Count - 1 ' Ignorar la primera columna
+                    newRow.Cells(i).Value = selectedRow.Cells(i).Value
+                Next
+
+                If addedRows.ContainsKey(selectedRow.Index) Then
+                    Cant(selectedRow.Index) += 1
+                    Dim targetIndex As Integer = addedRows(selectedRow.Index)
+
+                    ' Verificar si targetIndex es válido
+                    If targetIndex >= 0 AndAlso targetIndex < DataGridView2.Rows.Count Then
+                        DataGridView2.Rows(targetIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
+
+                        ' Llamada a UpdateTotal
+                        UpdateTotal(targetIndex)
+                    Else
+                        MessageBox.Show("El índice de la fila es inválido, no se puede actualizar la cantidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                Else
+                    ' Si la fila no fue agregada, agregarla al DataGridView2 y al diccionario
+                    Cant.Add(selectedRow.Index, 1)
+                    Dim newIndex As Integer = DataGridView2.Rows.Add(newRow)
+                    addedRows.Add(selectedRow.Index, newIndex)
+
+                    ' Establecer la cantidad inicial
+                    DataGridView2.Rows(newIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(selectedRow.Index)
+
+                    ' Llamada a UpdateTotal
+                    UpdateTotal(newIndex)
+                End If
+            End If
+        End If
+
+        CalcularTotal()
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+        Dim senderGrid = DirectCast(sender, DataGridView)
+        Dim selectedRow As DataGridViewRow = DataGridView2.Rows(e.RowIndex)
+
+        If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
+            If e.ColumnIndex = DataGridView2.Columns("Column1").Index AndAlso e.RowIndex >= 0 Then
+                ' Eliminar la fila seleccionada
+                Dim originalIndex As Integer = -1
+                For Each pair In addedRows
+                    If pair.Value = selectedRow.Index Then
+                        originalIndex = pair.Key
+                        Exit For
+                    End If
+                Next
+
+                If Cant.ContainsKey(originalIndex) Then
+                    Cant(originalIndex) -= 1
+                    If Cant(originalIndex) > 0 Then
+                        DataGridView2.Rows(e.RowIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(originalIndex)
+
+                        ' Actualizar el total de la fila en la grilla 2
+                        UpdateTotal(e.RowIndex)
+                    Else
+                        ' Eliminar de addedRows y Cant antes de eliminar la fila
+                        addedRows.Remove(originalIndex)
+                        Cant.Remove(originalIndex)
+                        DataGridView2.Rows.RemoveAt(e.RowIndex)
+
+                        ' Actualizar los índices en addedRows
+                        Dim updatedAddedRows As New Dictionary(Of Integer, Integer)
+                        For Each pair In addedRows
+                            If pair.Value > e.RowIndex Then
+                                updatedAddedRows.Add(pair.Key, pair.Value - 1)
+                            Else
+                                updatedAddedRows.Add(pair.Key, pair.Value)
+                            End If
+                        Next
+                        addedRows = updatedAddedRows
+                    End If
+                End If
+            End If
+        End If
+        CalcularTotal()
+    End Sub
 
 
 #End Region

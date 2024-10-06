@@ -44,7 +44,6 @@ Partial Class Compras
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.BunifuPanel1 = New Bunifu.UI.WinForms.BunifuPanel()
         Me.BunifuLabel1 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -54,6 +53,7 @@ Partial Class Compras
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -275,12 +275,6 @@ Partial Class Compras
         Me.DataGridView1.TabIndex = 39
         Me.DataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
         '
-        'Column9
-        '
-        Me.Column9.HeaderText = "AGREGAR"
-        Me.Column9.Image = CType(resources.GetObject("Column9.Image"), System.Drawing.Image)
-        Me.Column9.Name = "Column9"
-        '
         'BunifuPanel1
         '
         Me.BunifuPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -393,6 +387,12 @@ Partial Class Compras
         Me.DataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.DataGridViewImageColumn2.Width = 75
         '
+        'Column9
+        '
+        Me.Column9.HeaderText = "AGREGAR"
+        Me.Column9.Image = CType(resources.GetObject("Column9.Image"), System.Drawing.Image)
+        Me.Column9.Name = "Column9"
+        '
         'Compras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -430,7 +430,6 @@ Partial Class Compras
     Friend WithEvents BunifuLabel1 As Bunifu.UI.WinForms.BunifuLabel
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents DataGridView1 As Bunifu.UI.WinForms.BunifuDataGridView
-    Friend WithEvents Column9 As DataGridViewImageColumn
     Friend WithEvents DataGridView2 As Bunifu.UI.WinForms.BunifuDataGridView
     Friend WithEvents Column1 As DataGridViewImageColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -441,4 +440,5 @@ Partial Class Compras
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Column9 As DataGridViewImageColumn
 End Class
