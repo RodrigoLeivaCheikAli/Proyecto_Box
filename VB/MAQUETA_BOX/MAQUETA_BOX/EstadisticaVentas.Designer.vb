@@ -22,35 +22,35 @@ Partial Class EstadisticaVentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.ChartVentas2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.ChartVentas = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ChartVentas = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.ChartVentas2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Label = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ChartVentas2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ChartVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        CType(Me.ChartVentas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChartVentas2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Label)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -58,14 +58,85 @@ Partial Class EstadisticaVentas
         Me.Panel1.Size = New System.Drawing.Size(1141, 676)
         Me.Panel1.TabIndex = 0
         '
-        'Label1
+        'Panel2
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 21)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 49
-        Me.Label1.Text = "Label1"
+        Me.Panel2.Controls.Add(Me.ChartVentas)
+        Me.Panel2.Controls.Add(Me.ChartVentas2)
+        Me.Panel2.Location = New System.Drawing.Point(58, 21)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1080, 295)
+        Me.Panel2.TabIndex = 50
+        '
+        'ChartVentas
+        '
+        ChartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent
+        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent
+        ChartArea1.Name = "ChartArea1"
+        Me.ChartVentas.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.ChartVentas.Legends.Add(Legend1)
+        Me.ChartVentas.Location = New System.Drawing.Point(-46, 11)
+        Me.ChartVentas.Name = "ChartVentas"
+        Me.ChartVentas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale
+        Series1.BorderColor = System.Drawing.Color.Red
+        Series1.BorderWidth = 3
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series1.Color = System.Drawing.Color.Red
+        Series1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series1.IsValueShownAsLabel = True
+        Series1.IsXValueIndexed = True
+        Series1.LabelBorderWidth = 5
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.Yes
+        Series1.SmartLabelStyle.CalloutLineWidth = 10
+        Series1.SmartLabelStyle.IsOverlappedHidden = False
+        Series1.SmartLabelStyle.MinMovingDistance = 10.0R
+        Me.ChartVentas.Series.Add(Series1)
+        Me.ChartVentas.Size = New System.Drawing.Size(545, 281)
+        Me.ChartVentas.TabIndex = 0
+        Me.ChartVentas.Text = "Chart1"
+        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title1.Name = "Title1"
+        Title1.Text = "Ventas"
+        Me.ChartVentas.Titles.Add(Title1)
+        '
+        'ChartVentas2
+        '
+        Me.ChartVentas2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        ChartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent
+        ChartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent
+        ChartArea2.Name = "ChartArea1"
+        Me.ChartVentas2.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.ChartVentas2.Legends.Add(Legend2)
+        Me.ChartVentas2.Location = New System.Drawing.Point(525, 11)
+        Me.ChartVentas2.Name = "ChartVentas2"
+        Series2.ChartArea = "ChartArea1"
+        Series2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series2.IsValueShownAsLabel = True
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
+        Me.ChartVentas2.Series.Add(Series2)
+        Me.ChartVentas2.Size = New System.Drawing.Size(546, 281)
+        Me.ChartVentas2.TabIndex = 1
+        Me.ChartVentas2.Text = "Chart2"
+        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title2.Name = "Title1"
+        Title2.Text = "Ventas por Mes"
+        Me.ChartVentas2.Titles.Add(Title2)
+        '
+        'Label
+        '
+        Me.Label.AutoSize = True
+        Me.Label.Location = New System.Drawing.Point(12, 9)
+        Me.Label.Name = "Label"
+        Me.Label.Size = New System.Drawing.Size(46, 13)
+        Me.Label.TabIndex = 49
+        Me.Label.Text = "Exportar"
         '
         'DataGridView1
         '
@@ -131,76 +202,6 @@ Partial Class EstadisticaVentas
         Me.DataGridView1.TabStop = False
         Me.DataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
         '
-        'ChartVentas2
-        '
-        ChartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent
-        ChartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent
-        ChartArea2.Name = "ChartArea1"
-        Me.ChartVentas2.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.ChartVentas2.Legends.Add(Legend2)
-        Me.ChartVentas2.Location = New System.Drawing.Point(525, 11)
-        Me.ChartVentas2.Name = "ChartVentas2"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series2.IsValueShownAsLabel = True
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
-        Me.ChartVentas2.Series.Add(Series2)
-        Me.ChartVentas2.Size = New System.Drawing.Size(546, 281)
-        Me.ChartVentas2.TabIndex = 1
-        Me.ChartVentas2.Text = "Chart2"
-        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title2.Name = "Title1"
-        Title2.Text = "Ventas por Mes"
-        Me.ChartVentas2.Titles.Add(Title2)
-        '
-        'ChartVentas
-        '
-        ChartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent
-        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent
-        ChartArea1.Name = "ChartArea1"
-        Me.ChartVentas.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.ChartVentas.Legends.Add(Legend1)
-        Me.ChartVentas.Location = New System.Drawing.Point(3, 11)
-        Me.ChartVentas.Name = "ChartVentas"
-        Me.ChartVentas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale
-        Series1.BorderColor = System.Drawing.Color.Red
-        Series1.BorderWidth = 3
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series1.Color = System.Drawing.Color.Red
-        Series1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series1.IsValueShownAsLabel = True
-        Series1.IsXValueIndexed = True
-        Series1.LabelBorderWidth = 5
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.Yes
-        Series1.SmartLabelStyle.CalloutLineWidth = 10
-        Series1.SmartLabelStyle.IsOverlappedHidden = False
-        Series1.SmartLabelStyle.MinMovingDistance = 10.0R
-        Me.ChartVentas.Series.Add(Series1)
-        Me.ChartVentas.Size = New System.Drawing.Size(496, 281)
-        Me.ChartVentas.TabIndex = 0
-        Me.ChartVentas.Text = "Chart1"
-        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title1.Name = "Title1"
-        Title1.Text = "Ventas"
-        Me.ChartVentas.Titles.Add(Title1)
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.ChartVentas)
-        Me.Panel2.Controls.Add(Me.ChartVentas2)
-        Me.Panel2.Location = New System.Drawing.Point(58, 21)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1080, 295)
-        Me.Panel2.TabIndex = 50
-        '
         'EstadisticaVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -212,10 +213,10 @@ Partial Class EstadisticaVentas
         Me.Text = "EstadisticaVentas"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ChartVentas2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ChartVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        CType(Me.ChartVentas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChartVentas2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -224,6 +225,6 @@ Partial Class EstadisticaVentas
     Friend WithEvents ChartVentas As DataVisualization.Charting.Chart
     Friend WithEvents ChartVentas2 As DataVisualization.Charting.Chart
     Friend WithEvents DataGridView1 As Bunifu.UI.WinForms.BunifuDataGridView
-    Friend WithEvents Label1 As Label
+    Friend WithEvents Label As Label
     Friend WithEvents Panel2 As Panel
 End Class

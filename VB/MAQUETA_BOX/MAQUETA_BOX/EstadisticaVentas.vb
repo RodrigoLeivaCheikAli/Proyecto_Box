@@ -454,7 +454,7 @@ Public Class EstadisticaVentas
     End Function
 
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label.Click
         ExpandAllRows()
         ExportarFormularioAPDF()
     End Sub
