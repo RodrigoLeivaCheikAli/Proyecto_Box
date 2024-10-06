@@ -95,6 +95,7 @@ Partial Class Compras
         '
         'PictureBox3
         '
+        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(1052, 629)
         Me.PictureBox3.Name = "PictureBox3"
@@ -105,6 +106,7 @@ Partial Class Compras
         '
         'PictureBox2
         '
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(642, 621)
         Me.PictureBox2.Name = "PictureBox2"
@@ -119,7 +121,9 @@ Partial Class Compras
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
         Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView2.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -215,7 +219,9 @@ Partial Class Compras
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
         Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -321,7 +327,7 @@ Partial Class Compras
         '
         'Label2
         '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.Location = New System.Drawing.Point(1008, 113)
@@ -332,7 +338,7 @@ Partial Class Compras
         '
         'Label1
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(257, 113)

@@ -577,5 +577,6 @@ Public Class Compras
 
 
 
+
 #End Region
 End Class
