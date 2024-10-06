@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\DESCARGAS\\GITHUB\\Proyecto_Box\\VB\\MAQUETA_BOX\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|d:\\descargas\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\compras.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\compras.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|d:\\descargas\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\presupuestos-compras.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\presupuestos-compras.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|d:\\descargas\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\compras.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\compras.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|d:\\descargas\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|solutionrelative:maqueta_box\\presupuesto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E6F6021-2A98-4BF1-BD7F-B4D4A20E84AA}|MAQUETA_BOX\\MAQUETA_BOX.vbproj|d:\\descargas\\github\\proyecto_box\\vb\\maqueta_box\\maqueta_box\\inicio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
@@ -31,26 +31,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Compras.vb",
-              "DocumentMoniker": "D:\\DESCARGAS\\GITHUB\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb",
-              "RelativeDocumentMoniker": "MAQUETA_BOX\\Compras.vb",
-              "ToolTip": "D:\\DESCARGAS\\GITHUB\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb*",
-              "RelativeToolTip": "MAQUETA_BOX\\Compras.vb*",
-              "ViewState": "AgIAAGECAAAAAAAAAAAIwHwCAAAaAAAAAAAAAA==",
+              "Title": "Presupuestos-Compras.vb [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\DESCARGAS\\GITHUB\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuestos-Compras.vb",
+              "RelativeDocumentMoniker": "MAQUETA_BOX\\Presupuestos-Compras.vb",
+              "ToolTip": "D:\\DESCARGAS\\GITHUB\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuestos-Compras.vb [Dise\u00F1o]",
+              "RelativeToolTip": "MAQUETA_BOX\\Presupuestos-Compras.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-10-06T17:55:15.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-06T18:05:32.315Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Compras.vb [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\DESCARGAS\\GITHUB\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb",
-              "RelativeDocumentMoniker": "MAQUETA_BOX\\Compras.vb",
-              "ToolTip": "D:\\DESCARGAS\\GITHUB\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Compras.vb [Dise\u00F1o]*",
-              "RelativeToolTip": "MAQUETA_BOX\\Compras.vb [Dise\u00F1o]*",
+              "Title": "Presupuesto.vb [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\DESCARGAS\\GITHUB\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.vb",
+              "RelativeDocumentMoniker": "MAQUETA_BOX\\Presupuesto.vb",
+              "ToolTip": "D:\\DESCARGAS\\GITHUB\\Proyecto_Box\\VB\\MAQUETA_BOX\\MAQUETA_BOX\\Presupuesto.vb [Dise\u00F1o]",
+              "RelativeToolTip": "MAQUETA_BOX\\Presupuesto.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-10-06T17:55:12.956Z",
+              "WhenOpened": "2024-10-06T18:05:29.445Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {

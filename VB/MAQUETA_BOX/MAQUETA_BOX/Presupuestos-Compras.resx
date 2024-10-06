@@ -123,14 +123,11 @@
   <metadata name="PIN_GRUPO11DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="PIN_GRUPO11DataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQ4AAABRCAYAAAAjHkgzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAFVRJREFUeF7tnV2MXVd1xzOO7RnbYzsxdsZWBnvsexPoVIUkJoW4lFg8ICo1VVvJ
+        DAAACwwBP0AiyAAAFVRJREFUeF7tnV2MXVd1xzOO7RnbYzsxdsZWBnvsexPoVIUkJoW4lFg8ICo1VVvJ
         rQSVSl6iEBBqKoXQMPbwVZ5QRCoU3hz6QqEhkSrUVIIWHlAJ5aGWqsZIRYLSkDhxDMbmI0AL0/Xfd6/t
         ddZde59z7z33jjN3Lennc87+WHufc/b+n733OXd8zaC2trY2s7R68bru6kvHO6fOf7J76qUz3VMXLtJ2
         zXGcqx3qqydf+ir6bmflwh+iP8eu3b6xcwjGzasvfciFwnE2Bp1TF77bPfnih6hvL1E/T319ZIMj0F09

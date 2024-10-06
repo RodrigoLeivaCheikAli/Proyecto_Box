@@ -33,6 +33,7 @@ Partial Class FechaForm
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Location = New System.Drawing.Point(287, 125)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
@@ -41,9 +42,10 @@ Partial Class FechaForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(264, 77)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(184, 75)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(239, 13)
+        Me.Label1.Size = New System.Drawing.Size(406, 25)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "POR FAVOR INDIQUE LA FECHA DEL PEDIDO"
         '
