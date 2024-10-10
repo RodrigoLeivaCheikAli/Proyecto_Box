@@ -27,7 +27,7 @@ Public Class Productos
 
         ' Configuración para la columna de Ganancia
         columnaGanancia.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-        columnaGanancia.DefaultCellStyle.Format = "C2"
+        columnaGanancia.DefaultCellStyle.Format = "P2"
 
 
     End Sub
@@ -350,14 +350,15 @@ Public Class Productos
     Private Sub BunifuDataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = BunifuDataGridView1.Rows(e.RowIndex)
-            txtCodigo.Text = row.Cells("ID").Value.ToString()
-            txtDescripcion.Text = row.Cells("Descripción").Value.ToString()
-            cboMarca.Text = row.Cells("Marca").Value.ToString()
-            cboVehiculo.Text = row.Cells("Vehículo").Value.ToString()
-            cboProveedor.Text = row.Cells("Proveedor").Value.ToString()
-            txtCantidad.Text = row.Cells("Stock").Value.ToString()
-            txtCosto.Text = row.Cells("Costo").Value.ToString()
-            txtGanancia.Text = row.Cells("Ganancia").Value.ToString()
+            txtCodigo.Text = row.Cells("ColumnID").Value.ToString()
+            cboTipo.Text = row.Cells("ColumnTipo").Value.ToString
+            txtDescripcion.Text = row.Cells("ColumnDescripcion").Value.ToString()
+            cboMarca.Text = row.Cells("ColumnMarca").Value.ToString()
+            cboVehiculo.Text = row.Cells("ColumnVehiculo").Value.ToString()
+            cboProveedor.Text = row.Cells("ColumnProveedor").Value.ToString()
+            txtCantidad.Text = row.Cells("ColumnStock").Value.ToString()
+            txtCosto.Text = row.Cells("ColumnCosto").Value.ToString()
+            txtGanancia.Text = row.Cells("ColumnGanancia").Value.ToString()
         End If
     End Sub
 #End Region
@@ -374,7 +375,7 @@ Public Class Productos
             Dim filtro As String = String.Empty
             If Not String.IsNullOrEmpty(textoBusqueda) Then
                 If filtro <> String.Empty Then filtro &= " AND "
-                filtro &= $"Descripción LIKE '%{textoBusqueda}%'"
+                filtro &= $"Descripcion LIKE '%{textoBusqueda}%'"
             End If
 
             ' Aplicar el filtro

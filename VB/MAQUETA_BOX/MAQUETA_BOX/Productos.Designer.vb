@@ -354,13 +354,13 @@ Partial Class Productos
         Me.BunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue
         Me.BunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty
         Me.BunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White
-        Me.BunifuDataGridView1.Location = New System.Drawing.Point(141, 87)
+        Me.BunifuDataGridView1.Location = New System.Drawing.Point(91, 91)
         Me.BunifuDataGridView1.Name = "BunifuDataGridView1"
         Me.BunifuDataGridView1.ReadOnly = True
         Me.BunifuDataGridView1.RowHeadersVisible = False
         Me.BunifuDataGridView1.RowTemplate.Height = 40
         Me.BunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.BunifuDataGridView1.Size = New System.Drawing.Size(808, 261)
+        Me.BunifuDataGridView1.Size = New System.Drawing.Size(899, 261)
         Me.BunifuDataGridView1.TabIndex = 40
         Me.BunifuDataGridView1.TabStop = False
         Me.BunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
@@ -440,6 +440,7 @@ Partial Class Productos
         '
         'ColumnID
         '
+        Me.ColumnID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.ColumnID.DataPropertyName = "ID"
         Me.ColumnID.HeaderText = "ID"
         Me.ColumnID.Name = "ColumnID"
@@ -503,10 +504,12 @@ Partial Class Productos
         '
         'ColumnStock
         '
+        Me.ColumnStock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.ColumnStock.DataPropertyName = "Stock"
         Me.ColumnStock.HeaderText = "Stock"
         Me.ColumnStock.Name = "ColumnStock"
         Me.ColumnStock.ReadOnly = True
+        Me.ColumnStock.Width = 74
         '
         'Productos
         '
