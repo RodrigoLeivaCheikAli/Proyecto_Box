@@ -44,6 +44,7 @@ Partial Class Compras
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
+        Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.BunifuPanel1 = New Bunifu.UI.WinForms.BunifuPanel()
         Me.BunifuLabel1 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -53,7 +54,6 @@ Partial Class Compras
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -170,6 +170,7 @@ Partial Class Compras
         Me.DataGridView2.HeaderForeColor = System.Drawing.Color.White
         Me.DataGridView2.Location = New System.Drawing.Point(712, 157)
         Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.RowTemplate.Height = 40
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -182,36 +183,43 @@ Partial Class Compras
         Me.Column1.HeaderText = "QUITAR"
         Me.Column1.Image = CType(resources.GetObject("Column1.Image"), System.Drawing.Image)
         Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
         '
         'Column3
         '
         Me.Column3.HeaderText = "N° PRODUCTO"
         Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
         '
         'Column4
         '
         Me.Column4.HeaderText = "NOMBRE"
         Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
         '
         'Column5
         '
         Me.Column5.HeaderText = "VEHICULO"
         Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
         '
         'Column6
         '
         Me.Column6.HeaderText = "PROVEEDOR"
         Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
         '
         'Column7
         '
         Me.Column7.HeaderText = "PRECIO COSTO"
         Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
         '
         'Column8
         '
         Me.Column8.HeaderText = "CANTIDAD"
         Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
         '
         'DataGridView1
         '
@@ -274,6 +282,12 @@ Partial Class Compras
         Me.DataGridView1.Size = New System.Drawing.Size(670, 349)
         Me.DataGridView1.TabIndex = 39
         Me.DataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "AGREGAR"
+        Me.Column9.Image = CType(resources.GetObject("Column9.Image"), System.Drawing.Image)
+        Me.Column9.Name = "Column9"
         '
         'BunifuPanel1
         '
@@ -386,12 +400,6 @@ Partial Class Compras
         Me.DataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.DataGridViewImageColumn2.Width = 75
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "AGREGAR"
-        Me.Column9.Image = CType(resources.GetObject("Column9.Image"), System.Drawing.Image)
-        Me.Column9.Name = "Column9"
         '
         'Compras
         '

@@ -18,6 +18,24 @@ Public Class Compras
     Dim maxId As Integer
     Dim totalPrecio As Decimal = 0
 
+#Region "FORMULARIO"
+
+    Private Sub Compras_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Llenar_Grilla()
+        Dim columnaPrecio As DataGridViewColumn = DataGridView1.Columns(5)
+        columnaPrecio.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        columnaPrecio.DefaultCellStyle.Format = "C2"
+
+        Dim columnaPrecio2 As DataGridViewColumn = DataGridView2.Columns(5)
+        columnaPrecio2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        columnaPrecio2.DefaultCellStyle.Format = "C2"
+
+
+        SeleccionarUltimoID()
+    End Sub
+
+#End Region
+
 #Region "FUNCIONES PARA LOS PRECIOS ACTUALIZABLES Y PARA EL TOTAL"
     Private Sub UpdateTotal(rowIndex As Integer)
         ' Índices de columnas en DataGridView1 y DataGridView2
@@ -85,12 +103,6 @@ Public Class Compras
 
 #End Region
 
-#Region "GRILLAS"
-
-
-#End Region
-
-
 #Region "LLENAR GRILLAS"
 
     Dim dt As DataTable
@@ -118,24 +130,6 @@ Public Class Compras
 
         oDs = Nothing
         conexion.Close()
-    End Sub
-
-#End Region
-
-#Region "FORMULARIO"
-
-    Private Sub Compras_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        Llenar_Grilla()
-        Dim columnaPrecio As DataGridViewColumn = DataGridView1.Columns(5)
-        columnaPrecio.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-        columnaPrecio.DefaultCellStyle.Format = "C2"
-
-        Dim columnaPrecio2 As DataGridViewColumn = DataGridView2.Columns(5)
-        columnaPrecio2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-        columnaPrecio2.DefaultCellStyle.Format = "C2"
-
-
-        SeleccionarUltimoID()
     End Sub
 
 #End Region
@@ -219,72 +213,53 @@ Public Class Compras
         If IdPresupuesto <> 0 Then
             Dim conexion As SqlConnection
             Dim comando As New SqlCommand
-
-            conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+            conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123") ' Cambia por tu cadena de conexión
             comando.Connection = conexion
             comando.CommandType = CommandType.StoredProcedure
             comando.CommandText = "Consultar_Detalle_Presupuestos_Compras_2"
             comando.Parameters.AddWithValue("@Id_Presupuesto", IdPresupuesto)
 
-            Dim datadapter As New SqlDataAdapter(comando)
-            Dim oDs As New DataSet
+            Dim oAdapter As New SqlDataAdapter(comando)
+            Dim oDS As New DataSet()
 
             Try
                 conexion.Open()
-                datadapter.Fill(oDs)
-                If oDs.Tables(0).Rows.Count > 0 Then
-                    ' Guardar las primeras columnas
-                    Dim firstColumns As New List(Of DataGridViewColumn)
-                    For i As Integer = 0 To 0 ' Conservar solo la primera columna
-                        firstColumns.Add(DataGridView2.Columns(i))
+                oAdapter.Fill(oDS)
+
+                If oDS.Tables(0).Rows.Count > 0 Then
+                    ' Desactivar la generación automática de columnas
+                    DataGridView2.AutoGenerateColumns = False
+
+                    ' Limpiar las filas actuales
+                    DataGridView2.Rows.Clear()
+
+                    ' Recorrer cada fila del DataTable y agregarla manualmente al DataGridView
+                    For Each row As DataRow In oDS.Tables(0).Rows
+                        DataGridView2.Rows.Add(
+                    Nothing, ' Para la columna de "Quitar", si es de tipo imagen o botón
+                    row("N° PRODUCTO"),
+                    row("NOMBRE"),
+                    row("VEHICULO"),
+                    row("PROVEEDOR"),
+                    row("PRECIO COSTO"),
+                    row("CANTIDAD")
+                )
                     Next
 
-                    ' Limpiar columnas excepto las primeras
-                    DataGridView2.Columns.Clear()
-                    For Each col As DataGridViewColumn In firstColumns
-                        DataGridView2.Columns.Add(col)
-                    Next
-
-                    ' Asegurar que las columnas se agregan correctamente
-                    While DataGridView2.Columns.Count < oDs.Tables(0).Columns.Count + 1
-                        DataGridView2.Columns.Add(New DataGridViewTextBoxColumn())
-                    End While
-
-                    ' Asignar nombres a las cabeceras manualmente
-                    DataGridView2.Columns(1).HeaderText = "N° PRODUCTO"
-                    DataGridView2.Columns(2).HeaderText = "NOMBRE"
-                    DataGridView2.Columns(3).HeaderText = "VEHICULO"
-                    DataGridView2.Columns(4).HeaderText = "PROVEEDOR"
-                    DataGridView2.Columns(5).HeaderText = "PRECIO COSTO"
-                    DataGridView2.Columns(6).HeaderText = "CANTIDAD"
-
-                    ' Iterar sobre el DataTable y agregar manualmente cada fila al DataGridView2
-                    For Each row As DataRow In oDs.Tables(0).Rows
-                        Dim index As Integer = DataGridView2.Rows.Add()
-                        For i As Integer = 0 To oDs.Tables(0).Columns.Count - 1
-                            DataGridView2.Rows(index).Cells(i + 1).Value = row(i)
-                        Next
-                    Next
-
+                    ' Refrescar el DataGridView para que se muestren los cambios
                     DataGridView2.Refresh()
-                    DataGridView2.Show()
-
                     CalcularTotal()
-
-                    ' Formatear la columna de precio
-                    Dim columnaPrecio2 As DataGridViewColumn = DataGridView2.Columns(5)
-                    columnaPrecio2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-                    columnaPrecio2.DefaultCellStyle.Format = "C2"
-
                 Else
                     DataGridView2.DataSource = Nothing
                 End If
+
             Catch ex As Exception
                 MessageBox.Show("Error al cargar los detalles: " & ex.Message)
             Finally
                 conexion.Close()
             End Try
         End If
+
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -319,29 +294,40 @@ Public Class Compras
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        CargarPedido()
-        SeleccionarUltimoID()
-        CargarDetallePedido()
-        MsgBox("Pedido guardado correctamente", vbInformation, "Pedidos")
-        totalPrecio = 0
-        If IdPresupuesto = 0 Then
-            DataGridView2.Rows.Clear()
+        ' Mostrar el formulario que contiene los botones Aceptar y Cancelar
+        Dim fechaForm As New FechaForm()
 
-            addedRows.Clear()
-            Cant.Clear()
-            originalValues.Clear()
-            CalcularTotal()
-        End If
+        ' Abrir el formulario y verificar el resultado
+        If fechaForm.ShowDialog() = DialogResult.OK Then
+            ' Solo si el usuario hace clic en "Aceptar", se ejecuta la lógica del pedido
+            CargarPedido()
+            SeleccionarUltimoID()
+            CargarDetallePedido()
 
-        If IdPresupuesto <> 0 Then
-            ActualizarEstadoPresupuesto(IdPresupuesto, "Pedido")
-            DataGridView2.Rows.Clear()
+            MsgBox("Pedido guardado correctamente", vbInformation, "Pedidos")
 
-            addedRows.Clear()
-            Cant.Clear()
-            originalValues.Clear()
-            CalcularTotal()
-            IdPresupuesto = 0
+            totalPrecio = 0
+            If IdPresupuesto = 0 Then
+                DataGridView2.Rows.Clear()
+                addedRows.Clear()
+                Cant.Clear()
+                originalValues.Clear()
+                CalcularTotal()
+                IdPresupuesto = 0
+            End If
+
+            If IdPresupuesto <> 0 Then
+                ActualizarEstadoPresupuesto(IdPresupuesto, "Pedido")
+                DataGridView2.Rows.Clear()
+                addedRows.Clear()
+                Cant.Clear()
+                originalValues.Clear()
+                CalcularTotal()
+                IdPresupuesto = 0
+            End If
+        Else
+            ' Si el usuario cancela, simplemente no se hace nada
+            ' Aquí puedes agregar cualquier lógica adicional si es necesario
         End If
     End Sub
 
