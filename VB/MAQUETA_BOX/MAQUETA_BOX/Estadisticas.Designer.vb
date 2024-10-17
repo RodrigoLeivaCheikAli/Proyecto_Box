@@ -32,34 +32,36 @@ Partial Class Estadisticas
         Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Estadisticas))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.lblProveedores = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.lblClientes = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.lblCategorias = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.lblProductos = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.lblPresupuesto = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.lblVentas = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ChartProdPreferidos = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.chartProductodelDia = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
+        CType(Me.ChartProdPreferidos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chartProductodelDia, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,8 +74,6 @@ Partial Class Estadisticas
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ChartProdPreferidos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chartProductodelDia, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -110,19 +110,6 @@ Partial Class Estadisticas
         Me.Panel1.Size = New System.Drawing.Size(1141, 676)
         Me.Panel1.TabIndex = 0
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox3.BackColor = System.Drawing.Color.DodgerBlue
-        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox3.Image = Global.MAQUETA_BOX.My.Resources.Resources.presupuesto_de_tareas_de_lista_de_verificacion3
-        Me.PictureBox3.Location = New System.Drawing.Point(102, 564)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(74, 71)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox3.TabIndex = 93
-        Me.PictureBox3.TabStop = False
-        '
         'lblProveedores
         '
         Me.lblProveedores.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -145,32 +132,6 @@ Partial Class Estadisticas
         Me.Label9.Size = New System.Drawing.Size(109, 20)
         Me.Label9.TabIndex = 91
         Me.Label9.Text = "Proveedores"
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox9.BackColor = System.Drawing.Color.DodgerBlue
-        Me.PictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox9.Image = Global.MAQUETA_BOX.My.Resources.Resources.Proveedores
-        Me.PictureBox9.Location = New System.Drawing.Point(774, 564)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(74, 71)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox9.TabIndex = 90
-        Me.PictureBox9.TabStop = False
-        '
-        'PictureBox10
-        '
-        Me.PictureBox10.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox10.BackColor = System.Drawing.Color.White
-        Me.PictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox10.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox10.Location = New System.Drawing.Point(774, 564)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(233, 71)
-        Me.PictureBox10.TabIndex = 89
-        Me.PictureBox10.TabStop = False
         '
         'lblClientes
         '
@@ -195,32 +156,6 @@ Partial Class Estadisticas
         Me.Label11.TabIndex = 87
         Me.Label11.Text = "Clientes"
         '
-        'PictureBox11
-        '
-        Me.PictureBox11.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox11.BackColor = System.Drawing.Color.DodgerBlue
-        Me.PictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox11.Image = Global.MAQUETA_BOX.My.Resources.Resources.Clientes
-        Me.PictureBox11.Location = New System.Drawing.Point(774, 438)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(74, 71)
-        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox11.TabIndex = 86
-        Me.PictureBox11.TabStop = False
-        '
-        'PictureBox12
-        '
-        Me.PictureBox12.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox12.BackColor = System.Drawing.Color.White
-        Me.PictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox12.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox12.Location = New System.Drawing.Point(774, 438)
-        Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(233, 71)
-        Me.PictureBox12.TabIndex = 85
-        Me.PictureBox12.TabStop = False
-        '
         'lblCategorias
         '
         Me.lblCategorias.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -243,32 +178,6 @@ Partial Class Estadisticas
         Me.Label5.Size = New System.Drawing.Size(96, 20)
         Me.Label5.TabIndex = 83
         Me.Label5.Text = "Categorias"
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox5.BackColor = System.Drawing.Color.DodgerBlue
-        Me.PictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox5.Image = Global.MAQUETA_BOX.My.Resources.Resources.categoria
-        Me.PictureBox5.Location = New System.Drawing.Point(435, 564)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(74, 71)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox5.TabIndex = 82
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox6.BackColor = System.Drawing.Color.White
-        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox6.Location = New System.Drawing.Point(435, 564)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(233, 71)
-        Me.PictureBox6.TabIndex = 81
-        Me.PictureBox6.TabStop = False
         '
         'lblProductos
         '
@@ -293,32 +202,6 @@ Partial Class Estadisticas
         Me.Label7.TabIndex = 79
         Me.Label7.Text = "Productos"
         '
-        'PictureBox7
-        '
-        Me.PictureBox7.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox7.BackColor = System.Drawing.Color.DodgerBlue
-        Me.PictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox7.Image = Global.MAQUETA_BOX.My.Resources.Resources.Productos
-        Me.PictureBox7.Location = New System.Drawing.Point(435, 438)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(74, 71)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 78
-        Me.PictureBox7.TabStop = False
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox8.BackColor = System.Drawing.Color.White
-        Me.PictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox8.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox8.Location = New System.Drawing.Point(435, 438)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(233, 71)
-        Me.PictureBox8.TabIndex = 77
-        Me.PictureBox8.TabStop = False
-        '
         'lblPresupuesto
         '
         Me.lblPresupuesto.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -342,19 +225,6 @@ Partial Class Estadisticas
         Me.Label3.TabIndex = 75
         Me.Label3.Text = "Presupuestos"
         '
-        'PictureBox4
-        '
-        Me.PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox4.BackColor = System.Drawing.Color.White
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox4.Location = New System.Drawing.Point(102, 564)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(233, 71)
-        Me.PictureBox4.TabIndex = 74
-        Me.PictureBox4.TabStop = False
-        '
         'lblVentas
         '
         Me.lblVentas.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -377,32 +247,6 @@ Partial Class Estadisticas
         Me.Label1.Size = New System.Drawing.Size(66, 20)
         Me.Label1.TabIndex = 72
         Me.Label1.Text = "Ventas"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox2.BackColor = System.Drawing.Color.DodgerBlue
-        Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox2.Image = Global.MAQUETA_BOX.My.Resources.Resources.Ventas
-        Me.PictureBox2.Location = New System.Drawing.Point(102, 438)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(74, 71)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 71
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox1.BackColor = System.Drawing.Color.White
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PictureBox1.Location = New System.Drawing.Point(102, 438)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(233, 71)
-        Me.PictureBox1.TabIndex = 70
-        Me.PictureBox1.TabStop = False
         '
         'ChartProdPreferidos
         '
@@ -460,6 +304,162 @@ Partial Class Estadisticas
         Title2.Text = "Productos del Dia"
         Me.chartProductodelDia.Titles.Add(Title2)
         '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox3.BackColor = System.Drawing.Color.DodgerBlue
+        Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox3.Image = Global.MAQUETA_BOX.My.Resources.Resources.presupuesto_de_tareas_de_lista_de_verificacion3
+        Me.PictureBox3.Location = New System.Drawing.Point(102, 564)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(74, 71)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox3.TabIndex = 93
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox9.BackColor = System.Drawing.Color.DodgerBlue
+        Me.PictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox9.Image = Global.MAQUETA_BOX.My.Resources.Resources.Proveedores
+        Me.PictureBox9.Location = New System.Drawing.Point(774, 564)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(74, 71)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox9.TabIndex = 90
+        Me.PictureBox9.TabStop = False
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox10.BackColor = System.Drawing.Color.White
+        Me.PictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox10.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PictureBox10.Location = New System.Drawing.Point(774, 564)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(233, 71)
+        Me.PictureBox10.TabIndex = 89
+        Me.PictureBox10.TabStop = False
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox11.BackColor = System.Drawing.Color.DodgerBlue
+        Me.PictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox11.Image = Global.MAQUETA_BOX.My.Resources.Resources.Clientes
+        Me.PictureBox11.Location = New System.Drawing.Point(774, 438)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(74, 71)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox11.TabIndex = 86
+        Me.PictureBox11.TabStop = False
+        '
+        'PictureBox12
+        '
+        Me.PictureBox12.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox12.BackColor = System.Drawing.Color.White
+        Me.PictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox12.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PictureBox12.Location = New System.Drawing.Point(774, 438)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Size = New System.Drawing.Size(233, 71)
+        Me.PictureBox12.TabIndex = 85
+        Me.PictureBox12.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox5.BackColor = System.Drawing.Color.DodgerBlue
+        Me.PictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox5.Image = Global.MAQUETA_BOX.My.Resources.Resources.categoria
+        Me.PictureBox5.Location = New System.Drawing.Point(435, 564)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(74, 71)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox5.TabIndex = 82
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox6.BackColor = System.Drawing.Color.White
+        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PictureBox6.Location = New System.Drawing.Point(435, 564)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(233, 71)
+        Me.PictureBox6.TabIndex = 81
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox7.BackColor = System.Drawing.Color.DodgerBlue
+        Me.PictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox7.Image = Global.MAQUETA_BOX.My.Resources.Resources.Productos
+        Me.PictureBox7.Location = New System.Drawing.Point(435, 438)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(74, 71)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox7.TabIndex = 78
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox8.BackColor = System.Drawing.Color.White
+        Me.PictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox8.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PictureBox8.Location = New System.Drawing.Point(435, 438)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(233, 71)
+        Me.PictureBox8.TabIndex = 77
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox4.BackColor = System.Drawing.Color.White
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PictureBox4.Location = New System.Drawing.Point(102, 564)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(233, 71)
+        Me.PictureBox4.TabIndex = 74
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox2.BackColor = System.Drawing.Color.DodgerBlue
+        Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox2.Image = Global.MAQUETA_BOX.My.Resources.Resources.Ventas
+        Me.PictureBox2.Location = New System.Drawing.Point(102, 438)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(74, 71)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 71
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PictureBox1.Location = New System.Drawing.Point(102, 438)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(233, 71)
+        Me.PictureBox1.TabIndex = 70
+        Me.PictureBox1.TabStop = False
+        '
         'DataGridViewImageColumn2
         '
         Me.DataGridViewImageColumn2.HeaderText = ""
@@ -482,6 +482,8 @@ Partial Class Estadisticas
         Me.Text = "Estadisticas"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.ChartProdPreferidos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chartProductodelDia, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -494,8 +496,6 @@ Partial Class Estadisticas
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ChartProdPreferidos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chartProductodelDia, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -323,6 +323,8 @@ Public Class Presupuesto
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         ActualizarCant()
+        MsgBox("ID Presupuesto: " & Modulo.Presupuesto)
+
         CargarDetallesV()
         CargarPresupuesto()
         Panel1.Controls.Clear()
