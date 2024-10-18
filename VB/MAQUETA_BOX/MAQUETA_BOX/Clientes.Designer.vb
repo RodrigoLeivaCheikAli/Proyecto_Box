@@ -51,6 +51,7 @@ Partial Class Clientes
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.txtBuscarClientes = New System.Windows.Forms.TextBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.btnExportar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnModificar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -307,6 +308,10 @@ Partial Class Clientes
         'BunifuDataGridView1
         '
         Me.BunifuDataGridView1.AllowCustomTheming = False
+        Me.BunifuDataGridView1.AllowUserToAddRows = False
+        Me.BunifuDataGridView1.AllowUserToDeleteRows = False
+        Me.BunifuDataGridView1.AllowUserToResizeColumns = False
+        Me.BunifuDataGridView1.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
         Me.BunifuDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
@@ -385,12 +390,22 @@ Partial Class Clientes
         Me.PictureBox7.TabIndex = 42
         Me.PictureBox7.TabStop = False
         '
+        'btnExportar
+        '
+        Me.btnExportar.Location = New System.Drawing.Point(838, 31)
+        Me.btnExportar.Name = "btnExportar"
+        Me.btnExportar.Size = New System.Drawing.Size(117, 23)
+        Me.btnExportar.TabIndex = 44
+        Me.btnExportar.Text = "Exportar"
+        Me.btnExportar.UseVisualStyleBackColor = True
+        '
         'Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1074, 626)
+        Me.Controls.Add(Me.btnExportar)
         Me.Controls.Add(Me.txtBuscarClientes)
         Me.Controls.Add(Me.PictureBox7)
         Me.Controls.Add(Me.BunifuDataGridView1)
@@ -436,4 +451,5 @@ Partial Class Clientes
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents cboEstado As ComboBox
+    Friend WithEvents btnExportar As Button
 End Class

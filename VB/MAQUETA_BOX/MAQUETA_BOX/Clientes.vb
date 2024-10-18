@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-
+Imports System.Drawing.Printing
 Public Class Clientes
 #Region "Panel"
     Private _panel As Panel
@@ -305,4 +305,55 @@ Public Class Clientes
     End Sub
 
 #End Region
+
+    Public Sub ExportarGrillaAPDF()
+        ' Crear un PrintDocument
+        Dim printDocument As New PrintDocument()
+
+        ' Manejar el evento PrintPage para personalizar la impresión
+        AddHandler printDocument.PrintPage, AddressOf Me.PrintGrilla
+
+        ' Crear el diálogo de impresión
+        Dim printDialog As New PrintDialog()
+        printDialog.Document = printDocument
+        printDialog.PrinterSettings.PrinterName = "Microsoft Print To PDF" ' Seleccionar "Microsoft Print To PDF"
+
+        ' Mostrar el diálogo de impresión y ejecutar la impresión si el usuario hace clic en OK
+        If printDialog.ShowDialog() = DialogResult.OK Then
+            printDocument.Print()
+        End If
+    End Sub
+
+    ' Manejar el evento PrintPage para dibujar la grilla en el PDF
+    Private Sub PrintGrilla(sender As Object, e As PrintPageEventArgs)
+        Dim font As New Font("Arial", 10)
+        Dim brush As New SolidBrush(Color.Black)
+        Dim xPos As Integer = e.MarginBounds.Left
+        Dim yPos As Integer = e.MarginBounds.Top
+        Dim cellHeight As Integer = 20
+
+        ' Imprimir encabezados de las columnas
+        For Each column As DataGridViewColumn In BunifuDataGridView1.Columns
+            e.Graphics.DrawString(column.HeaderText, font, brush, xPos, yPos)
+            xPos += column.Width
+        Next
+
+        ' Imprimir las filas
+        yPos += cellHeight ' Saltar una línea para las filas
+        For Each row As DataGridViewRow In BunifuDataGridView1.Rows
+            xPos = e.MarginBounds.Left ' Reiniciar la posición horizontal
+            For Each cell As DataGridViewCell In row.Cells
+                ' Verificar si el valor de la celda no es Nothing
+                Dim cellValue As String = If(cell.Value IsNot Nothing, cell.Value.ToString(), String.Empty)
+                e.Graphics.DrawString(cellValue, font, brush, xPos, yPos)
+                xPos += BunifuDataGridView1.Columns(cell.ColumnIndex).Width
+            Next
+            yPos += cellHeight ' Saltar a la siguiente fila
+        Next
+    End Sub
+
+
+    Private Sub btnExportar_Click(sender As Object, e As EventArgs) Handles btnExportar.Click
+        ExportarGrillaAPDF()
+    End Sub
 End Class

@@ -47,13 +47,6 @@ Partial Class Productos
         Me.cboVehiculo = New System.Windows.Forms.ComboBox()
         Me.btnCargar = New System.Windows.Forms.PictureBox()
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.txtBuscarProductos = New System.Windows.Forms.TextBox()
-        Me.btnGestion = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.btnListado = New System.Windows.Forms.PictureBox()
-        Me.btnEliminar = New System.Windows.Forms.PictureBox()
-        Me.btnModificar = New System.Windows.Forms.PictureBox()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ColumnID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,6 +57,14 @@ Partial Class Productos
         Me.ColumnGanancia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnPrecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtBuscarProductos = New System.Windows.Forms.TextBox()
+        Me.btnGestion = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.btnListado = New System.Windows.Forms.PictureBox()
+        Me.btnEliminar = New System.Windows.Forms.PictureBox()
+        Me.btnModificar = New System.Windows.Forms.PictureBox()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.btnExportar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCargar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -304,6 +305,10 @@ Partial Class Productos
         'BunifuDataGridView1
         '
         Me.BunifuDataGridView1.AllowCustomTheming = False
+        Me.BunifuDataGridView1.AllowUserToAddRows = False
+        Me.BunifuDataGridView1.AllowUserToDeleteRows = False
+        Me.BunifuDataGridView1.AllowUserToResizeColumns = False
+        Me.BunifuDataGridView1.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
         Me.BunifuDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
@@ -364,79 +369,6 @@ Partial Class Productos
         Me.BunifuDataGridView1.TabIndex = 40
         Me.BunifuDataGridView1.TabStop = False
         Me.BunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
-        '
-        'txtBuscarProductos
-        '
-        Me.txtBuscarProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscarProductos.Location = New System.Drawing.Point(206, 35)
-        Me.txtBuscarProductos.Name = "txtBuscarProductos"
-        Me.txtBuscarProductos.Size = New System.Drawing.Size(243, 22)
-        Me.txtBuscarProductos.TabIndex = 41
-        '
-        'btnGestion
-        '
-        Me.btnGestion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGestion.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnPRODUCTOS_WHITE
-        Me.btnGestion.Location = New System.Drawing.Point(665, 15)
-        Me.btnGestion.Name = "btnGestion"
-        Me.btnGestion.Size = New System.Drawing.Size(115, 50)
-        Me.btnGestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnGestion.TabIndex = 42
-        Me.btnGestion.TabStop = False
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(455, 31)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(28, 31)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 29
-        Me.PictureBox7.TabStop = False
-        '
-        'btnListado
-        '
-        Me.btnListado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnListado.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnLISTADO
-        Me.btnListado.Location = New System.Drawing.Point(809, 14)
-        Me.btnListado.Name = "btnListado"
-        Me.btnListado.Size = New System.Drawing.Size(100, 50)
-        Me.btnListado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnListado.TabIndex = 28
-        Me.btnListado.TabStop = False
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnEliminar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnELIMINAR
-        Me.btnEliminar.Location = New System.Drawing.Point(671, 549)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(118, 65)
-        Me.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnEliminar.TabIndex = 17
-        Me.btnEliminar.TabStop = False
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnModificar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnMODIFICAR
-        Me.btnModificar.Location = New System.Drawing.Point(479, 549)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(118, 65)
-        Me.btnModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnModificar.TabIndex = 16
-        Me.btnModificar.TabStop = False
-        '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Image = CType(resources.GetObject("DataGridViewImageColumn1.Image"), System.Drawing.Image)
-        Me.DataGridViewImageColumn1.MinimumWidth = 2
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
         '
         'ColumnID
         '
@@ -511,12 +443,95 @@ Partial Class Productos
         Me.ColumnStock.ReadOnly = True
         Me.ColumnStock.Width = 74
         '
+        'txtBuscarProductos
+        '
+        Me.txtBuscarProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscarProductos.Location = New System.Drawing.Point(206, 35)
+        Me.txtBuscarProductos.Name = "txtBuscarProductos"
+        Me.txtBuscarProductos.Size = New System.Drawing.Size(243, 22)
+        Me.txtBuscarProductos.TabIndex = 41
+        '
+        'btnGestion
+        '
+        Me.btnGestion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGestion.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnPRODUCTOS_WHITE
+        Me.btnGestion.Location = New System.Drawing.Point(665, 15)
+        Me.btnGestion.Name = "btnGestion"
+        Me.btnGestion.Size = New System.Drawing.Size(115, 50)
+        Me.btnGestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnGestion.TabIndex = 42
+        Me.btnGestion.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(455, 31)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(28, 31)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox7.TabIndex = 29
+        Me.PictureBox7.TabStop = False
+        '
+        'btnListado
+        '
+        Me.btnListado.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnListado.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnLISTADO
+        Me.btnListado.Location = New System.Drawing.Point(809, 14)
+        Me.btnListado.Name = "btnListado"
+        Me.btnListado.Size = New System.Drawing.Size(100, 50)
+        Me.btnListado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnListado.TabIndex = 28
+        Me.btnListado.TabStop = False
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnEliminar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnELIMINAR
+        Me.btnEliminar.Location = New System.Drawing.Point(671, 549)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(118, 65)
+        Me.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnEliminar.TabIndex = 17
+        Me.btnEliminar.TabStop = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnModificar.Image = Global.MAQUETA_BOX.My.Resources.Resources.btnMODIFICAR
+        Me.btnModificar.Location = New System.Drawing.Point(479, 549)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(118, 65)
+        Me.btnModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnModificar.TabIndex = 16
+        Me.btnModificar.TabStop = False
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = CType(resources.GetObject("DataGridViewImageColumn1.Image"), System.Drawing.Image)
+        Me.DataGridViewImageColumn1.MinimumWidth = 2
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        '
+        'btnExportar
+        '
+        Me.btnExportar.Location = New System.Drawing.Point(941, 31)
+        Me.btnExportar.Name = "btnExportar"
+        Me.btnExportar.Size = New System.Drawing.Size(75, 23)
+        Me.btnExportar.TabIndex = 43
+        Me.btnExportar.Text = "Exportar"
+        Me.btnExportar.UseVisualStyleBackColor = True
+        '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1074, 626)
+        Me.Controls.Add(Me.btnExportar)
         Me.Controls.Add(Me.btnGestion)
         Me.Controls.Add(Me.txtBuscarProductos)
         Me.Controls.Add(Me.BunifuDataGridView1)
@@ -579,4 +594,5 @@ Partial Class Productos
     Friend WithEvents ColumnGanancia As DataGridViewTextBoxColumn
     Friend WithEvents ColumnPrecio As DataGridViewTextBoxColumn
     Friend WithEvents ColumnStock As DataGridViewTextBoxColumn
+    Friend WithEvents btnExportar As Button
 End Class
