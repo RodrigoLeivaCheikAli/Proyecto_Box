@@ -392,5 +392,12 @@ Public Class Productos
 
 #End Region
 
+    Private Sub txtCodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodigo.KeyPress, txtCantidad.KeyPress, txtCosto.KeyPress, txtGanancia.KeyPress
+        ' Solo permite números y controla la tecla Backspace
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
 
 End Class

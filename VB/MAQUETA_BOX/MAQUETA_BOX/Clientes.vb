@@ -297,6 +297,12 @@ Public Class Clientes
         FiltrarGrilla()
     End Sub
 
+    Private Sub txtCUIL_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCUIL.KeyPress, txtCodigo.KeyPress, txtTelefono.KeyPress
+        ' Solo permite números y controla la tecla Backspace
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
 
 #End Region
 End Class
