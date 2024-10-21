@@ -27,51 +27,51 @@ Public Class Documentos
         CargarCboMes()
         CargarCbosEstado()
         CargarCbosDescripcion()
-        cboDia.Enabled = False
-        cboMes.Enabled = False
+        cboDia1.Enabled = False
+        cboMes1.Enabled = False
     End Sub
 
 #End Region
 
     Public Sub CargarCbosEstado()
-        cboEstado.Items.Clear()
+        cboEstado1.Items.Clear()
 
         Dim estados() As String = {"Pedido", "Realizado"}
 
         For Each estado As String In estados
-            cboEstado.Items.Add(estado)
+            cboEstado1.Items.Add(estado)
         Next
     End Sub
 
     Public Sub CargarCbosDescripcion()
-        cboDescripcion.Items.Clear()
+        cboDescripcion1.Items.Clear()
 
         Dim Descripciones() As String = {"Efectivo", "Debito", "Credito"}
 
         For Each Descripcion As String In Descripciones
-            cboDescripcion.Items.Add(Descripcion)
+            cboDescripcion1.Items.Add(Descripcion)
         Next
     End Sub
 
     Public Sub CargarCbosAño()
         Dim Año As Integer = 2000
-        cboAño.Items.Clear()
+        cboAño1.Items.Clear()
         For i As Integer = 0 To 50
-            cboAño.Items.Add((Año + i).ToString())
+            cboAño1.Items.Add((Año + i).ToString())
         Next
     End Sub
 
     Public Sub CargarCboMes()
-        cboMes.Items.Clear()
-        cboMes.Items.AddRange(New String() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
+        cboMes1.Items.Clear()
+        cboMes1.Items.AddRange(New String() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
     End Sub
 
     Public Sub CargarCboDiasAñoNormal()
-        cboDia.Items.Clear()
+        cboDia1.Items.Clear()
 
         Dim DiasDelMes As Integer
 
-        Select Case cboMes.Text
+        Select Case cboMes1.Text
             Case "Enero", "Marzo", "Mayo", "Julio", "Agosto", "Octubre", "Diciembre"
                 DiasDelMes = 31
             Case "Abril", "Junio", "Septiembre", "Noviembre"
@@ -83,15 +83,15 @@ Public Class Documentos
         End Select
 
         For i As Integer = 1 To DiasDelMes
-            cboDia.Items.Add(i.ToString())
+            cboDia1.Items.Add(i.ToString())
         Next
     End Sub
 
     Public Sub CargarCboDiasAñoBisiesto()
-        cboDia.Items.Clear()
+        cboDia1.Items.Clear()
         Dim DiasDelMes As Integer
 
-        Select Case cboMes.Text
+        Select Case cboMes1.Text
             Case "Enero", "Marzo", "Mayo", "Julio", "Agosto", "Octubre", "Diciembre"
                 DiasDelMes = 31
             Case "Abril", "Junio", "Septiembre", "Noviembre"
@@ -103,7 +103,7 @@ Public Class Documentos
         End Select
 
         For i As Integer = 1 To DiasDelMes
-            cboDia.Items.Add(i.ToString())
+            cboDia1.Items.Add(i.ToString())
         Next
     End Sub
 
@@ -160,10 +160,10 @@ Public Class Documentos
             conexion.Open()
 
             Dim reader As SqlDataReader = comando.ExecuteReader()
-            cboClientes.Items.Clear()
+            cboClientes1.Items.Clear()
 
             While reader.Read()
-                cboClientes.Items.Add(reader("Nombre_Apellido"))
+                cboClientes1.Items.Add(reader("Nombre_Apellido"))
             End While
 
             reader.Close()
@@ -202,32 +202,32 @@ Public Class Documentos
         }
 
             ' Nombre_Apellido parameter
-            Dim nombreApellido As Object = If(cboClientes.SelectedItem Is Nothing OrElse cboClientes.SelectedItem.ToString() = "Cliente", DBNull.Value, cboClientes.SelectedItem.ToString())
+            Dim nombreApellido As Object = If(cboClientes1.SelectedItem Is Nothing OrElse cboClientes1.SelectedItem.ToString() = "Cliente", DBNull.Value, cboClientes1.SelectedItem.ToString())
             comando.Parameters.AddWithValue("@Nombre_Apellido", nombreApellido)
 
             ' Mes parameter
-            Dim mes As Object = If(cboMes.SelectedItem Is Nothing OrElse cboMes.SelectedItem.ToString() = "Mes", DBNull.Value, DBNull.Value)
+            Dim mes As Object = If(cboMes1.SelectedItem Is Nothing OrElse cboMes1.SelectedItem.ToString() = "Mes", DBNull.Value, DBNull.Value)
 
             ' Descripcion parameter
-            Dim descripcion As Object = If(cboDescripcion.SelectedItem Is Nothing OrElse cboDescripcion.SelectedItem.ToString() = "Descripcion", DBNull.Value, cboDescripcion.SelectedItem.ToString())
+            Dim descripcion As Object = If(cboDescripcion1.SelectedItem Is Nothing OrElse cboDescripcion1.SelectedItem.ToString() = "Descripcion", DBNull.Value, cboDescripcion1.SelectedItem.ToString())
             comando.Parameters.AddWithValue("@Descripcion", descripcion)
 
             ' Dia parameter
-            Dim dia As Object = If(cboDia.SelectedItem Is Nothing OrElse cboDia.SelectedItem.ToString() = "Día", DBNull.Value, Convert.ToInt32(cboDia.SelectedItem))
+            Dim dia As Object = If(cboDia1.SelectedItem Is Nothing OrElse cboDia1.SelectedItem.ToString() = "Día", DBNull.Value, Convert.ToInt32(cboDia1.SelectedItem))
             comando.Parameters.AddWithValue("@Dia", dia)
 
             ' Si hay un mes válido, lo obtengo del diccionario
-            If cboMes.SelectedItem IsNot Nothing AndAlso meses.ContainsKey(cboMes.SelectedItem.ToString()) Then
-                mes = meses(cboMes.SelectedItem.ToString())
+            If cboMes1.SelectedItem IsNot Nothing AndAlso meses.ContainsKey(cboMes1.SelectedItem.ToString()) Then
+                mes = meses(cboMes1.SelectedItem.ToString())
             End If
             comando.Parameters.AddWithValue("@Mes", mes)
 
             ' Año parameter
-            Dim año As Object = If(cboAño.SelectedItem Is Nothing OrElse cboAño.SelectedItem.ToString() = "Año", DBNull.Value, Convert.ToInt32(cboAño.SelectedItem))
+            Dim año As Object = If(cboAño1.SelectedItem Is Nothing OrElse cboAño1.SelectedItem.ToString() = "Año", DBNull.Value, Convert.ToInt32(cboAño1.SelectedItem))
             comando.Parameters.AddWithValue("@Año", año)
 
             ' Estado parameter
-            Dim estado As Object = If(cboEstado.SelectedItem Is Nothing OrElse cboEstado.SelectedItem.ToString() = "Estado", DBNull.Value, cboEstado.SelectedItem.ToString())
+            Dim estado As Object = If(cboEstado1.SelectedItem Is Nothing OrElse cboEstado1.SelectedItem.ToString() = "Estado", DBNull.Value, cboEstado1.SelectedItem.ToString())
             comando.Parameters.AddWithValue("@Estado", estado)
 
             ' Ejecutar el comando y llenar el dataset
@@ -251,165 +251,20 @@ Public Class Documentos
     End Sub
 
 
-#Region "Exportar"
-
-    Public Sub btnExportar_Click(sender As Object, e As EventArgs) Handles btnExportar.Click
-        If DataGridView1.Rows.Count = 0 Then
-            MessageBox.Show("No hay datos para exportar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
-
-        Dim dataTable As New DataTable()
-        For Each column As DataGridViewColumn In DataGridView1.Columns
-            dataTable.Columns.Add(column.HeaderText, column.ValueType)
-        Next
-
-        ' Create a list to track rows that are expanded
-        Dim expandedRows As New HashSet(Of Integer)()
-
-        For Each row As DataGridViewRow In DataGridView1.Rows
-            If Not row.IsNewRow Then
-                Dim dataRow As DataRow = dataTable.NewRow()
-                For Each column As DataGridViewColumn In DataGridView1.Columns
-                    dataRow(column.HeaderText) = row.Cells(column.Index).Value
-                Next
-                dataTable.Rows.Add(dataRow)
-
-                ' Check if the row is expanded
-                If row.Tag IsNot Nothing AndAlso row.Tag.ToString() = "Expanded" Then
-                    expandedRows.Add(dataTable.Rows.Count - 1) ' Track expanded rows
-                End If
-            End If
-        Next
-
-        Try
-            Dim workbook As New XLWorkbook()
-            Dim worksheet As IXLWorksheet = workbook.Worksheets.Add("Datos")
-
-            ' Insert the DataTable into the worksheet
-            worksheet.Cell(1, 1).InsertTable(dataTable)
-
-            ' Apply colors and font styles to the cells
-            Dim table = worksheet.Tables.First()
-            For i As Integer = 1 To table.Rows.Count
-                Dim row = worksheet.Row(i + 1) ' +1 because data starts from row 2 in Excel
-
-                For j As Integer = 1 To table.Columns.Count
-                    Dim cell = row.Cell(j)
-
-                    ' Set font color to black for all cells and make text bold
-                    cell.Style.Font.FontColor = XLColor.Black
-                    cell.Style.Font.Bold = True
-
-                    ' Set cell background color based on row and content
-                    If i = 1 Then ' Header row
-                        cell.Style.Fill.BackgroundColor = XLColor.SteelBlue
-                        cell.Style.Font.FontColor = XLColor.White
-                    ElseIf expandedRows.Contains(i - 1) Then
-                        cell.Style.Fill.BackgroundColor = XLColor.LightGray
-                    Else
-                        cell.Style.Fill.BackgroundColor = XLColor.LightBlue
-                    End If
-
-                    ' Ensure cells with no data do not have a white background
-                    If String.IsNullOrWhiteSpace(cell.Value.ToString()) Then
-                        cell.Style.Fill.BackgroundColor = XLColor.White
-                    End If
-                Next
-
-                ' Special handling for the second row if it's empty
-                If i = 2 AndAlso row.Cells.All(Function(c) String.IsNullOrWhiteSpace(c.Value.ToString())) Then
-                    row.Style.Fill.BackgroundColor = XLColor.Black
-                    row.Style.Font.FontColor = XLColor.White
-                End If
-            Next
-
-            Dim saveFileDialog As New SaveFileDialog()
-            saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx"
-            saveFileDialog.Title = "Guardar archivo Excel"
-
-            If saveFileDialog.ShowDialog() = DialogResult.OK Then
-                workbook.SaveAs(saveFileDialog.FileName)
-                MessageBox.Show("Datos exportados exitosamente.", "Exportación completada", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Ocurrió un error al exportar los datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#End Region
-
-    Private Sub cboClientes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboClientes.SelectedIndexChanged
-        FiltrarGrilla()
-    End Sub
-
-    Public Sub cboAño_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAño.SelectedIndexChanged
-        ' Verifica si el texto de cboAño no es "Año" y no está vacío
-        If cboAño.Text <> "Año" AndAlso Not String.IsNullOrEmpty(cboAño.Text) Then
-            Dim AñoSeleccionado As Integer
-
-            ' Intenta convertir el texto a un número entero
-            If Integer.TryParse(cboAño.Text, AñoSeleccionado) Then
-                AñoBisiesto = DateTime.IsLeapYear(AñoSeleccionado)
-                FiltrarGrilla()
-
-                ' Habilita el ComboBox de Mes y deshabilita el de Día
-                cboMes.Enabled = True
-                cboMes.Text = "Mes"
-                cboDia.Text = "Día"
-                cboDia.Enabled = False
-            Else
-                ' Manejo en caso de que la conversión falle
-                MessageBox.Show("El año ingresado no es válido.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-        Else
-            ' Si el texto es "Año" o está vacío, deshabilita los ComboBox de Mes y Día
-            cboMes.Enabled = False
-            cboMes.Text = "Mes"
-            cboDia.Enabled = False
-            cboDia.Text = "Día"
-        End If
-    End Sub
-
-
-
-    Private Sub cboMes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboMes.SelectedIndexChanged
-        If cboMes.SelectedIndex > -1 AndAlso cboMes.Text <> "Mes" Then
-            FiltrarGrilla()
-            cboDia.Enabled = True
-            CargarDiasDelMes()
-        Else
-            cboDia.Enabled = False
-            cboDia.Text = "Día"
-        End If
-    End Sub
 
     Private Sub CargarDiasDelMes()
 
-        cboDia.Items.Clear()
+        cboDia1.Items.Clear()
 
         Dim AñoSeleccionado As Integer
-        If Not Integer.TryParse(cboAño.Text, AñoSeleccionado) Then
+        If Not Integer.TryParse(cboAño1.Text, AñoSeleccionado) Then
             MessageBox.Show("Por favor, selecciona un año válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
-        Dim MesSeleccionado As Integer = cboMes.SelectedIndex + 1
+        Dim MesSeleccionado As Integer = cboMes1.SelectedIndex + 1
 
         If MesSeleccionado <= 0 OrElse MesSeleccionado > 12 Then
             MessageBox.Show("Por favor, selecciona un mes válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -421,57 +276,12 @@ Public Class Documentos
 
         ' Rellena el ComboBox con los días del mes
         For i As Integer = 1 To DiasEnElMes
-            cboDia.Items.Add(i.ToString())
+            cboDia1.Items.Add(i.ToString())
         Next
 
     End Sub
 
-
-
-    Public Sub btnCargarTodo_Click_1(sender As Object, e As EventArgs) Handles btnCargarTodo.Click
-
-        cboMes.Enabled = False
-        cboDia.Enabled = False
-
-        ' Restablece los valores seleccionados de los ComboBox
-        cboClientes.SelectedIndex = -1
-        cboDescripcion.SelectedIndex = -1
-        cboEstado.SelectedIndex = -1
-        cboDia.SelectedIndex = -1
-        cboMes.SelectedIndex = -1
-        cboAño.SelectedIndex = -1
-
-        cboClientes.Text = "Cliente"
-        cboAño.Text = "Año"
-        cboMes.Text = "Mes"
-        cboDia.Text = "Día"
-        cboDescripcion.Text = "Descripcion"
-        cboEstado.Text = "Estado"
-
-        nombreApellido = Nothing
-        descripcion = Nothing
-        año = Nothing
-        mes = Nothing
-        dia = Nothing
-        estado = Nothing
-
-        FiltrarGrilla()
-
-    End Sub
-
-    Private Sub cboDia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDia.SelectedIndexChanged
-        FiltrarGrilla()
-    End Sub
-
-    Private Sub cboEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboEstado.SelectedIndexChanged
-        FiltrarGrilla()
-    End Sub
-
-    Private Sub cboDescripcion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDescripcion.SelectedIndexChanged
-        FiltrarGrilla()
-    End Sub
-
-    Private Sub CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
+    Private Sub CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
         Try
             ' Verificar que el índice de la fila sea válido
             If e.RowIndex < 0 Then Return
@@ -559,6 +369,184 @@ Public Class Documentos
             ' Manejo de cualquier otra excepción
         End Try
     End Sub
+
+#Region "Exportar"
+
+    Private Sub btnExportar1_Click(sender As Object, e As EventArgs) Handles btnExportar1.Click
+        If DataGridView1.Rows.Count = 0 Then
+            MessageBox.Show("No hay datos para exportar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
+        Dim dataTable As New DataTable()
+        For Each column As DataGridViewColumn In DataGridView1.Columns
+            dataTable.Columns.Add(column.HeaderText, column.ValueType)
+        Next
+
+        ' Create a list to track rows that are expanded
+        Dim expandedRows As New HashSet(Of Integer)()
+
+        For Each row As DataGridViewRow In DataGridView1.Rows
+            If Not row.IsNewRow Then
+                Dim dataRow As DataRow = dataTable.NewRow()
+                For Each column As DataGridViewColumn In DataGridView1.Columns
+                    dataRow(column.HeaderText) = row.Cells(column.Index).Value
+                Next
+                dataTable.Rows.Add(dataRow)
+
+                ' Check if the row is expanded
+                If row.Tag IsNot Nothing AndAlso row.Tag.ToString() = "Expanded" Then
+                    expandedRows.Add(dataTable.Rows.Count - 1) ' Track expanded rows
+                End If
+            End If
+        Next
+
+        Try
+            Dim workbook As New XLWorkbook()
+            Dim worksheet As IXLWorksheet = workbook.Worksheets.Add("Datos")
+
+            ' Insert the DataTable into the worksheet
+            worksheet.Cell(1, 1).InsertTable(dataTable)
+
+            ' Apply colors and font styles to the cells
+            Dim table = worksheet.Tables.First()
+            For i As Integer = 1 To table.Rows.Count
+                Dim row = worksheet.Row(i + 1) ' +1 because data starts from row 2 in Excel
+
+                For j As Integer = 1 To table.Columns.Count
+                    Dim cell = row.Cell(j)
+
+                    ' Set font color to black for all cells and make text bold
+                    cell.Style.Font.FontColor = XLColor.Black
+                    cell.Style.Font.Bold = True
+
+                    ' Set cell background color based on row and content
+                    If i = 1 Then ' Header row
+                        cell.Style.Fill.BackgroundColor = XLColor.SteelBlue
+                        cell.Style.Font.FontColor = XLColor.White
+                    ElseIf expandedRows.Contains(i - 1) Then
+                        cell.Style.Fill.BackgroundColor = XLColor.LightGray
+                    Else
+                        cell.Style.Fill.BackgroundColor = XLColor.LightBlue
+                    End If
+
+                    ' Ensure cells with no data do not have a white background
+                    If String.IsNullOrWhiteSpace(cell.Value.ToString()) Then
+                        cell.Style.Fill.BackgroundColor = XLColor.White
+                    End If
+                Next
+
+                ' Special handling for the second row if it's empty
+                If i = 2 AndAlso row.Cells.All(Function(c) String.IsNullOrWhiteSpace(c.Value.ToString())) Then
+                    row.Style.Fill.BackgroundColor = XLColor.Black
+                    row.Style.Font.FontColor = XLColor.White
+                End If
+            Next
+
+            Dim saveFileDialog As New SaveFileDialog()
+            saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx"
+            saveFileDialog.Title = "Guardar archivo Excel"
+
+            If saveFileDialog.ShowDialog() = DialogResult.OK Then
+                workbook.SaveAs(saveFileDialog.FileName)
+                MessageBox.Show("Datos exportados exitosamente.", "Exportación completada", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Ocurrió un error al exportar los datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+#End Region
+
+
+
+
+    Private Sub btnCargarTodo1_Click(sender As Object, e As EventArgs) Handles btnCargarTodo1.Click
+
+        cboMes1.Enabled = False
+        cboDia1.Enabled = False
+
+        ' Restablece los valores seleccionados de los ComboBox
+        cboClientes1.SelectedIndex = -1
+        cboDescripcion1.SelectedIndex = -1
+        cboEstado1.SelectedIndex = -1
+        cboDia1.SelectedIndex = -1
+        cboMes1.SelectedIndex = -1
+        cboAño1.SelectedIndex = -1
+
+        cboClientes1.Text = "Cliente"
+        cboAño1.Text = "Año"
+        cboMes1.Text = "Mes"
+        cboDia1.Text = "Día"
+        cboDescripcion1.Text = "Descripcion"
+        cboEstado1.Text = "Estado"
+
+        nombreApellido = Nothing
+        descripcion = Nothing
+        año = Nothing
+        mes = Nothing
+        dia = Nothing
+        estado = Nothing
+
+        FiltrarGrilla()
+
+    End Sub
+
+    Private Sub cboClientes1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboClientes1.SelectedIndexChanged
+        FiltrarGrilla()
+    End Sub
+
+    Private Sub cboAño1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAño1.SelectedIndexChanged
+        ' Verifica si el texto de cboAño no es "Año" y no está vacío
+        If cboAño1.Text <> "Año" AndAlso Not String.IsNullOrEmpty(cboAño1.Text) Then
+            Dim AñoSeleccionado As Integer
+
+            ' Intenta convertir el texto a un número entero
+            If Integer.TryParse(cboAño1.Text, AñoSeleccionado) Then
+                AñoBisiesto = DateTime.IsLeapYear(AñoSeleccionado)
+                FiltrarGrilla()
+
+                ' Habilita el ComboBox de Mes y deshabilita el de Día
+                cboMes1.Enabled = True
+                cboMes1.Text = "Mes"
+                cboDia1.Text = "Día"
+                cboDia1.Enabled = False
+            Else
+                ' Manejo en caso de que la conversión falle
+                MessageBox.Show("El año ingresado no es válido.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Else
+            ' Si el texto es "Año" o está vacío, deshabilita los ComboBox de Mes y Día
+            cboMes1.Enabled = False
+            cboMes1.Text = "Mes"
+            cboDia1.Enabled = False
+            cboDia1.Text = "Día"
+        End If
+    End Sub
+
+    Private Sub cboDia1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDia1.SelectedIndexChanged
+        FiltrarGrilla()
+    End Sub
+
+    Private Sub cboMes1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboMes1.SelectedIndexChanged
+        If cboMes1.SelectedIndex > -1 AndAlso cboMes1.Text <> "Mes" Then
+            FiltrarGrilla()
+            cboDia1.Enabled = True
+            CargarDiasDelMes()
+        Else
+            cboDia1.Enabled = False
+            cboDia1.Text = "Día"
+        End If
+    End Sub
+
+    Private Sub cboDescripcion1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDescripcion1.SelectedIndexChanged
+        FiltrarGrilla()
+    End Sub
+
+    Private Sub cboEstado1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboEstado1.SelectedIndexChanged
+        FiltrarGrilla()
+    End Sub
+
 End Class
 
 'grilla anidada que muestre estado
