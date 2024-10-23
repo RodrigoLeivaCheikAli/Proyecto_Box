@@ -23,13 +23,13 @@ Partial Class Documentos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Documentos))
-        Dim BorderEdges19 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
-        Dim BorderEdges20 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
-        Dim BorderEdges21 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim BorderEdges1 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
+        Dim BorderEdges2 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
+        Dim BorderEdges3 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
         Me.PIN_GRUPO11DataSet = New MAQUETA_BOX.PIN_GRUPO11DataSet()
         Me.PINGRUPO11DataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ConsultardocumentosOrComprasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -37,6 +37,7 @@ Partial Class Documentos
         Me.ConsultardocumentosOrVentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Consultar_documentos_OrVentasTableAdapter = New MAQUETA_BOX.PIN_GRUPO11DataSetTableAdapters.consultar_documentos_OrVentasTableAdapter()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.DataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.btnEliminar = New Bunifu.UI.WinForms.BunifuButton.BunifuButton()
         Me.btnCargarTodo1 = New Bunifu.UI.WinForms.BunifuButton.BunifuButton()
         Me.cboEstado1 = New Bunifu.UI.WinForms.BunifuDropdown()
@@ -46,7 +47,6 @@ Partial Class Documentos
         Me.cboAño1 = New Bunifu.UI.WinForms.BunifuDropdown()
         Me.cboClientes1 = New Bunifu.UI.WinForms.BunifuDropdown()
         Me.btnExportar1 = New Bunifu.UI.WinForms.BunifuButton.BunifuButton()
-        Me.DataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
         CType(Me.PIN_GRUPO11DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PINGRUPO11DataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultardocumentosOrComprasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,6 +102,66 @@ Partial Class Documentos
         Me.Panel1.Size = New System.Drawing.Size(1105, 674)
         Me.Panel1.TabIndex = 13
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowCustomTheming = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.ColumnHeadersHeight = 40
+        Me.DataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView1.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.DataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.CurrentTheme.BackColor = System.Drawing.Color.White
+        Me.DataGridView1.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView1.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue
+        Me.DataGridView1.CurrentTheme.HeaderStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
+        Me.DataGridView1.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DataGridView1.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.DataGridView1.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White
+        Me.DataGridView1.CurrentTheme.Name = Nothing
+        Me.DataGridView1.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DataGridView1.CurrentTheme.RowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.DataGridView1.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue
+        Me.DataGridView1.HeaderBgColor = System.Drawing.Color.Empty
+        Me.DataGridView1.HeaderForeColor = System.Drawing.Color.White
+        Me.DataGridView1.Location = New System.Drawing.Point(123, 102)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.RowTemplate.Height = 40
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(807, 532)
+        Me.DataGridView1.TabIndex = 30
+        Me.DataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
+        '
         'btnEliminar
         '
         Me.btnEliminar.AllowAnimations = True
@@ -121,11 +181,11 @@ Partial Class Documentos
         Me.btnEliminar.ColorContrastOnClick = 45
         Me.btnEliminar.ColorContrastOnHover = 45
         Me.btnEliminar.Cursor = System.Windows.Forms.Cursors.Default
-        BorderEdges19.BottomLeft = True
-        BorderEdges19.BottomRight = True
-        BorderEdges19.TopLeft = True
-        BorderEdges19.TopRight = True
-        Me.btnEliminar.CustomizableEdges = BorderEdges19
+        BorderEdges1.BottomLeft = True
+        BorderEdges1.BottomRight = True
+        BorderEdges1.TopLeft = True
+        BorderEdges1.TopRight = True
+        Me.btnEliminar.CustomizableEdges = BorderEdges1
         Me.btnEliminar.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnEliminar.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnEliminar.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -149,7 +209,7 @@ Partial Class Documentos
         Me.btnEliminar.IdleIconLeftImage = Nothing
         Me.btnEliminar.IdleIconRightImage = Nothing
         Me.btnEliminar.IndicateFocus = False
-        Me.btnEliminar.Location = New System.Drawing.Point(709, 118)
+        Me.btnEliminar.Location = New System.Drawing.Point(729, 67)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnEliminar.OnDisabledState.BorderRadius = 1
@@ -210,11 +270,11 @@ Partial Class Documentos
         Me.btnCargarTodo1.ColorContrastOnClick = 45
         Me.btnCargarTodo1.ColorContrastOnHover = 45
         Me.btnCargarTodo1.Cursor = System.Windows.Forms.Cursors.Default
-        BorderEdges20.BottomLeft = True
-        BorderEdges20.BottomRight = True
-        BorderEdges20.TopLeft = True
-        BorderEdges20.TopRight = True
-        Me.btnCargarTodo1.CustomizableEdges = BorderEdges20
+        BorderEdges2.BottomLeft = True
+        BorderEdges2.BottomRight = True
+        BorderEdges2.TopLeft = True
+        BorderEdges2.TopRight = True
+        Me.btnCargarTodo1.CustomizableEdges = BorderEdges2
         Me.btnCargarTodo1.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnCargarTodo1.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnCargarTodo1.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -238,7 +298,7 @@ Partial Class Documentos
         Me.btnCargarTodo1.IdleIconLeftImage = Nothing
         Me.btnCargarTodo1.IdleIconRightImage = Nothing
         Me.btnCargarTodo1.IndicateFocus = False
-        Me.btnCargarTodo1.Location = New System.Drawing.Point(103, 85)
+        Me.btnCargarTodo1.Location = New System.Drawing.Point(123, 34)
         Me.btnCargarTodo1.Name = "btnCargarTodo1"
         Me.btnCargarTodo1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnCargarTodo1.OnDisabledState.BorderRadius = 1
@@ -314,7 +374,7 @@ Partial Class Documentos
         Me.cboEstado1.ItemHighLightColor = System.Drawing.Color.DodgerBlue
         Me.cboEstado1.ItemHighLightForeColor = System.Drawing.Color.White
         Me.cboEstado1.ItemTopMargin = 3
-        Me.cboEstado1.Location = New System.Drawing.Point(608, 118)
+        Me.cboEstado1.Location = New System.Drawing.Point(628, 67)
         Me.cboEstado1.Name = "cboEstado1"
         Me.cboEstado1.Size = New System.Drawing.Size(100, 32)
         Me.cboEstado1.TabIndex = 27
@@ -356,7 +416,7 @@ Partial Class Documentos
         Me.cboDescripcion1.ItemHighLightColor = System.Drawing.Color.DodgerBlue
         Me.cboDescripcion1.ItemHighLightForeColor = System.Drawing.Color.White
         Me.cboDescripcion1.ItemTopMargin = 3
-        Me.cboDescripcion1.Location = New System.Drawing.Point(507, 118)
+        Me.cboDescripcion1.Location = New System.Drawing.Point(527, 67)
         Me.cboDescripcion1.Name = "cboDescripcion1"
         Me.cboDescripcion1.Size = New System.Drawing.Size(100, 32)
         Me.cboDescripcion1.TabIndex = 26
@@ -398,7 +458,7 @@ Partial Class Documentos
         Me.cboDia1.ItemHighLightColor = System.Drawing.Color.DodgerBlue
         Me.cboDia1.ItemHighLightForeColor = System.Drawing.Color.White
         Me.cboDia1.ItemTopMargin = 3
-        Me.cboDia1.Location = New System.Drawing.Point(406, 118)
+        Me.cboDia1.Location = New System.Drawing.Point(426, 67)
         Me.cboDia1.Name = "cboDia1"
         Me.cboDia1.Size = New System.Drawing.Size(100, 32)
         Me.cboDia1.TabIndex = 25
@@ -440,7 +500,7 @@ Partial Class Documentos
         Me.cboMes1.ItemHighLightColor = System.Drawing.Color.DodgerBlue
         Me.cboMes1.ItemHighLightForeColor = System.Drawing.Color.White
         Me.cboMes1.ItemTopMargin = 3
-        Me.cboMes1.Location = New System.Drawing.Point(305, 118)
+        Me.cboMes1.Location = New System.Drawing.Point(325, 67)
         Me.cboMes1.Name = "cboMes1"
         Me.cboMes1.Size = New System.Drawing.Size(100, 32)
         Me.cboMes1.TabIndex = 24
@@ -482,7 +542,7 @@ Partial Class Documentos
         Me.cboAño1.ItemHighLightColor = System.Drawing.Color.DodgerBlue
         Me.cboAño1.ItemHighLightForeColor = System.Drawing.Color.White
         Me.cboAño1.ItemTopMargin = 3
-        Me.cboAño1.Location = New System.Drawing.Point(204, 118)
+        Me.cboAño1.Location = New System.Drawing.Point(224, 67)
         Me.cboAño1.Name = "cboAño1"
         Me.cboAño1.Size = New System.Drawing.Size(100, 32)
         Me.cboAño1.TabIndex = 23
@@ -524,7 +584,7 @@ Partial Class Documentos
         Me.cboClientes1.ItemHighLightColor = System.Drawing.Color.DodgerBlue
         Me.cboClientes1.ItemHighLightForeColor = System.Drawing.Color.White
         Me.cboClientes1.ItemTopMargin = 3
-        Me.cboClientes1.Location = New System.Drawing.Point(103, 118)
+        Me.cboClientes1.Location = New System.Drawing.Point(123, 67)
         Me.cboClientes1.Name = "cboClientes1"
         Me.cboClientes1.Size = New System.Drawing.Size(100, 32)
         Me.cboClientes1.TabIndex = 22
@@ -551,11 +611,11 @@ Partial Class Documentos
         Me.btnExportar1.ColorContrastOnClick = 45
         Me.btnExportar1.ColorContrastOnHover = 45
         Me.btnExportar1.Cursor = System.Windows.Forms.Cursors.Default
-        BorderEdges21.BottomLeft = True
-        BorderEdges21.BottomRight = True
-        BorderEdges21.TopLeft = True
-        BorderEdges21.TopRight = True
-        Me.btnExportar1.CustomizableEdges = BorderEdges21
+        BorderEdges3.BottomLeft = True
+        BorderEdges3.BottomRight = True
+        BorderEdges3.TopLeft = True
+        BorderEdges3.TopRight = True
+        Me.btnExportar1.CustomizableEdges = BorderEdges3
         Me.btnExportar1.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnExportar1.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnExportar1.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -579,7 +639,7 @@ Partial Class Documentos
         Me.btnExportar1.IdleIconLeftImage = Nothing
         Me.btnExportar1.IdleIconRightImage = Nothing
         Me.btnExportar1.IndicateFocus = False
-        Me.btnExportar1.Location = New System.Drawing.Point(507, 85)
+        Me.btnExportar1.Location = New System.Drawing.Point(527, 34)
         Me.btnExportar1.Name = "btnExportar1"
         Me.btnExportar1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.btnExportar1.OnDisabledState.BorderRadius = 1
@@ -620,65 +680,6 @@ Partial Class Documentos
         Me.btnExportar1.TextMarginLeft = 0
         Me.btnExportar1.TextPadding = New System.Windows.Forms.Padding(0)
         Me.btnExportar1.UseDefaultRadiusAndThickness = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowCustomTheming = False
-        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle19
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle20.BackColor = System.Drawing.Color.DodgerBlue
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
-        Me.DataGridView1.ColumnHeadersHeight = 40
-        Me.DataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView1.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.DataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black
-        Me.DataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridView1.CurrentTheme.BackColor = System.Drawing.Color.White
-        Me.DataGridView1.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView1.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue
-        Me.DataGridView1.CurrentTheme.HeaderStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
-        Me.DataGridView1.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.DataGridView1.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.DataGridView1.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White
-        Me.DataGridView1.CurrentTheme.Name = Nothing
-        Me.DataGridView1.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.DataGridView1.CurrentTheme.RowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.DataGridView1.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black
-        Me.DataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle21.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle21.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle21
-        Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue
-        Me.DataGridView1.HeaderBgColor = System.Drawing.Color.Empty
-        Me.DataGridView1.HeaderForeColor = System.Drawing.Color.White
-        Me.DataGridView1.Location = New System.Drawing.Point(103, 153)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.RowTemplate.Height = 40
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(807, 532)
-        Me.DataGridView1.TabIndex = 30
-        Me.DataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
         '
         'Documentos
         '
