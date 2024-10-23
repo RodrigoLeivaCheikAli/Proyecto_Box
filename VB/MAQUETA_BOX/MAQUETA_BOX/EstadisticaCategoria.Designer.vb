@@ -61,7 +61,7 @@ Partial Class EstadisticaCategoria
         Title1.Text = "Cantidad de Productos por Categorias"
         Me.chartProductoPorCategoria.Titles.Add(Title1)
         '
-        'EstadisticaProductos
+        'EstadisticaCategoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -69,7 +69,7 @@ Partial Class EstadisticaCategoria
         Me.ClientSize = New System.Drawing.Size(1141, 676)
         Me.Controls.Add(Me.chartProductoPorCategoria)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "EstadisticaProductos"
+        Me.Name = "EstadisticaCategoria"
         Me.Text = "EstadisticaProductos"
         CType(Me.chartProductoPorCategoria, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

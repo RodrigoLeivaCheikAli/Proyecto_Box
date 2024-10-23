@@ -64,8 +64,14 @@ Public Class EstadisticaProductos
                 Return ' Salir del método si no hay datos
             End If
 
-            ' Aplicar regresión lineal
+            ' Validar que haya suficientes datos para hacer la regresión
             Dim n As Integer = Fechas.Count
+            If n < 2 Then
+                MessageBox.Show("No hay suficientes datos para realizar una proyección.")
+                Return
+            End If
+
+            ' Aplicar regresión lineal
             Dim sumX As Double = Fechas.Select(Function(f) f.ToOADate()).Sum()
             Dim sumY As Double = Cantidades.Sum()
             Dim sumXY As Double = Fechas.Select(Function(f, i) f.ToOADate() * Cantidades(i)).Sum()
@@ -75,7 +81,6 @@ Public Class EstadisticaProductos
             Dim intercept As Double = (sumY - slope * sumX) / n
 
             ' Proyección de demanda
-            Dim fechaActual As DateTime = DateTime.Now.Date
             Dim FechasProyeccion As New List(Of DateTime)(Fechas)
             Dim CantidadesProyeccion As New List(Of Integer)(Cantidades)
 
@@ -108,6 +113,10 @@ Public Class EstadisticaProductos
             chartProyeccion.Series.Clear()
             chartProyeccion.Series.Add(seriesHistoricas)
             chartProyeccion.Series.Add(seriesProyeccion)
+
+            ' Ajustar los límites del gráfico dinámicamente
+            chartProyeccion.ChartAreas(0).AxisY.Maximum = Math.Max(Cantidades.Max(), CantidadesProyeccion.Max()) * 1.2
+            chartProyeccion.ChartAreas(0).AxisY.Minimum = 0 ' Evitar valores negativos en el gráfico
 
             ' Mejorar la visibilidad del gráfico
             chartProyeccion.ChartAreas(0).AxisX.LabelStyle.Format = "dd/MM/yyyy"

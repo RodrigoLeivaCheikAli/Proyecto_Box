@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class EstadisticaVentas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class EstadisticaVentas
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
@@ -64,7 +64,7 @@ Partial Class EstadisticaVentas
         Me.Panel2.Controls.Add(Me.ChartVentas2)
         Me.Panel2.Location = New System.Drawing.Point(58, 21)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1080, 295)
+        Me.Panel2.Size = New System.Drawing.Size(1080, 389)
         Me.Panel2.TabIndex = 50
         '
         'ChartVentas
@@ -76,7 +76,7 @@ Partial Class EstadisticaVentas
         Me.ChartVentas.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
         Me.ChartVentas.Legends.Add(Legend1)
-        Me.ChartVentas.Location = New System.Drawing.Point(-46, 11)
+        Me.ChartVentas.Location = New System.Drawing.Point(3, 3)
         Me.ChartVentas.Name = "ChartVentas"
         Me.ChartVentas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale
         Series1.BorderColor = System.Drawing.Color.Red
@@ -95,7 +95,7 @@ Partial Class EstadisticaVentas
         Series1.SmartLabelStyle.IsOverlappedHidden = False
         Series1.SmartLabelStyle.MinMovingDistance = 10.0R
         Me.ChartVentas.Series.Add(Series1)
-        Me.ChartVentas.Size = New System.Drawing.Size(545, 281)
+        Me.ChartVentas.Size = New System.Drawing.Size(532, 383)
         Me.ChartVentas.TabIndex = 0
         Me.ChartVentas.Text = "Chart1"
         Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -121,7 +121,7 @@ Partial Class EstadisticaVentas
         Series2.Name = "Series1"
         Series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel
         Me.ChartVentas2.Series.Add(Series2)
-        Me.ChartVentas2.Size = New System.Drawing.Size(546, 281)
+        Me.ChartVentas2.Size = New System.Drawing.Size(546, 375)
         Me.ChartVentas2.TabIndex = 1
         Me.ChartVentas2.Text = "Chart2"
         Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -191,13 +191,13 @@ Partial Class EstadisticaVentas
         Me.DataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue
         Me.DataGridView1.HeaderBgColor = System.Drawing.Color.Empty
         Me.DataGridView1.HeaderForeColor = System.Drawing.Color.White
-        Me.DataGridView1.Location = New System.Drawing.Point(151, 322)
+        Me.DataGridView1.Location = New System.Drawing.Point(151, 416)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowTemplate.Height = 40
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(805, 324)
+        Me.DataGridView1.Size = New System.Drawing.Size(805, 230)
         Me.DataGridView1.TabIndex = 48
         Me.DataGridView1.TabStop = False
         Me.DataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
