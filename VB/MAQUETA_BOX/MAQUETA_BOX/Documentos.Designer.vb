@@ -155,6 +155,7 @@ Partial Class Documentos
         Me.DataGridView1.HeaderForeColor = System.Drawing.Color.White
         Me.DataGridView1.Location = New System.Drawing.Point(123, 102)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowTemplate.Height = 40
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect

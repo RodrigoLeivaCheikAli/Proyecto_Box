@@ -10,8 +10,23 @@ Public Class Productos_Listado
         Cargar_Grilla()
         CargarComboVehiculo()
         'CargarComboProducto()
-        CargarComboServicio()
+        'CargarComboServicio()
         CargarComboTipo()
+
+
+        Dim columnaCantidad As DataGridViewColumn = BunifuDataGridView1.Columns("ColumnCantidad")
+        Dim columnaStock As DataGridViewColumn = BunifuDataGridView1.Columns("ColumnStock")
+        Dim columnaPrecio As DataGridViewColumn = BunifuDataGridView1.Columns("ColumnPrecio")
+
+        columnaStock.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+
+        ' Configuración para la columna de Costo
+        columnaCantidad.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+
+        ' Configuración para la columna de Precio
+        columnaPrecio.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        columnaPrecio.DefaultCellStyle.Format = "C2"
+
     End Sub
 #End Region
 #Region "Cargar Grilla"
@@ -154,35 +169,34 @@ Public Class Productos_Listado
 #End Region
 
 #Region "Filtrar por Servicio"
-    Private Sub CargarComboServicio()
-        If dt IsNot Nothing Then
-            ' Filtrar las filas donde la columna Tipo es "Servicio" y obtener los valores únicos de la columna Descripción
-            Dim servicios = dt.AsEnumerable().
-                         Where(Function(row) row.Field(Of String)("Tipo") = "Servicio").
-                         Select(Function(row) row.Field(Of String)("Descripción")).
-                         Distinct().
-                         ToList()
+    'Private Sub CargarComboServicio()
+    '    If dt IsNot Nothing Then
+    '        ' Filtrar las filas donde la columna Tipo es "Servicio" y obtener los valores únicos de la columna Descripción
+    '        Dim servicios = dt.AsEnumerable().
+    '                     Where(Function(row) row.Field(Of String)("Tipo") = "Servicio").
+    '                     Select(Function(row) row.Field(Of String)("Descripción")).
+    '                     Distinct().
+    '                     ToList()
 
-            cboServicio.Items.Clear()
-            cboServicio.Items.Add("Todos")
-            cboServicio.Items.AddRange(servicios.ToArray())
-            cboServicio.SelectedIndex = 0
-        End If
-    End Sub
-    Private Sub cboServicio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboServicio.SelectedIndexChanged
-        FiltrarGrilla()
-    End Sub
+    '        cboServicio.Items.Clear()
+    '        cboServicio.Items.Add("Todos")
+    '        cboServicio.Items.AddRange(servicios.ToArray())
+    '        cboServicio.SelectedIndex = 0
+    '    End If
+    'End Sub
+    'Private Sub cboServicio_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    FiltrarGrilla()
+    'End Sub
 #End Region
 
 #Region "Metodo Filtrar Grilla"
     Private Sub FiltrarGrilla()
         ' Asegúrate de que haya elementos seleccionados en todos los ComboBoxes
-        If cboTipo.SelectedItem Is Nothing OrElse cboVehiculo.SelectedItem Is Nothing OrElse cboServicio.SelectedItem Is Nothing Then Exit Sub
+        If cboTipo.SelectedItem Is Nothing OrElse cboVehiculo.SelectedItem Is Nothing Then Exit Sub
 
         Dim tipoSeleccionado As String = cboTipo.SelectedItem.ToString()
         Dim vehiculoSeleccionado As String = cboVehiculo.SelectedItem.ToString()
         'Dim productoSeleccionado As String = cboProducto.SelectedItem.ToString()
-        Dim servicioSeleccionado As String = cboServicio.SelectedItem.ToString()
         Dim textoBusqueda As String = txtBuscarProductos.Text.Trim()
 
         ' Verificar que dt no sea Nothing
@@ -203,10 +217,7 @@ Public Class Productos_Listado
             'If filtro <> String.Empty Then filtro &= " AND "
             'filtro &= $"Descripción = '{productoSeleccionado}'"
             'End If
-            If servicioSeleccionado <> "Todos" Then
-                If filtro <> String.Empty Then filtro &= " AND "
-                filtro &= $"Descripción = '{servicioSeleccionado}'"
-            End If
+
             If Not String.IsNullOrEmpty(textoBusqueda) Then
                 If filtro <> String.Empty Then filtro &= " AND "
                 filtro &= $"Descripción LIKE '%{textoBusqueda}%'"
@@ -227,16 +238,6 @@ Public Class Productos_Listado
     End Sub
 #End Region
 #Region "Otros"
-    Private Sub BunifuDataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles BunifuDataGridView1.CellFormatting
-        ' Verifica si la columna es la que deseas formatear
-        If e.ColumnIndex = BunifuDataGridView1.Columns("Precio").Index Then
-            ' Verifica si el valor es un número
-            If e.Value IsNot Nothing AndAlso IsNumeric(e.Value) Then
-                ' Formatea el valor a dos decimales
-                e.Value = String.Format("{0:F2}", Convert.ToDecimal(e.Value))
-                e.FormattingApplied = True
-            End If
-        End If
-    End Sub
+
 #End Region
 End Class

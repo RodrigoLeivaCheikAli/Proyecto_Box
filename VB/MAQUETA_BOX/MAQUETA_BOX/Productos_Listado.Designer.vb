@@ -27,7 +27,6 @@ Partial Class Productos_Listado
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos_Listado))
         Me.cboTipo = New System.Windows.Forms.ComboBox()
-        Me.cboServicio = New System.Windows.Forms.ComboBox()
         Me.cboVehiculo = New System.Windows.Forms.ComboBox()
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.txtBuscarProductos = New System.Windows.Forms.TextBox()
@@ -37,8 +36,16 @@ Partial Class Productos_Listado
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.ColumnID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnMarca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnPrecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnGestion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,21 +62,11 @@ Partial Class Productos_Listado
         Me.cboTipo.TabIndex = 33
         Me.cboTipo.Text = "Tipo"
         '
-        'cboServicio
-        '
-        Me.cboServicio.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboServicio.FormattingEnabled = True
-        Me.cboServicio.Location = New System.Drawing.Point(270, 168)
-        Me.cboServicio.Name = "cboServicio"
-        Me.cboServicio.Size = New System.Drawing.Size(121, 29)
-        Me.cboServicio.TabIndex = 34
-        Me.cboServicio.Text = "Servicio"
-        '
         'cboVehiculo
         '
         Me.cboVehiculo.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboVehiculo.FormattingEnabled = True
-        Me.cboVehiculo.Location = New System.Drawing.Point(421, 168)
+        Me.cboVehiculo.Location = New System.Drawing.Point(264, 168)
         Me.cboVehiculo.Name = "cboVehiculo"
         Me.cboVehiculo.Size = New System.Drawing.Size(121, 29)
         Me.cboVehiculo.TabIndex = 36
@@ -101,6 +98,7 @@ Partial Class Productos_Listado
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.BunifuDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.BunifuDataGridView1.ColumnHeadersHeight = 40
+        Me.BunifuDataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnID, Me.ColumnTipo, Me.ColumnDescripcion, Me.ColumnMarca, Me.ColumnVehiculo, Me.ColumnProveedor, Me.ColumnStock, Me.ColumnPrecio, Me.ColumnCantidad})
         Me.BunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.BunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black
@@ -211,25 +209,78 @@ Partial Class Productos_Listado
         Me.Label1.TabIndex = 46
         Me.Label1.Text = "Tipo"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(266, 140)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 21)
-        Me.Label3.TabIndex = 48
-        Me.Label3.Text = "Servicio"
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(417, 140)
+        Me.Label4.Location = New System.Drawing.Point(260, 140)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(69, 21)
         Me.Label4.TabIndex = 49
         Me.Label4.Text = "Vehículo"
+        '
+        'ColumnID
+        '
+        Me.ColumnID.DataPropertyName = "ID"
+        Me.ColumnID.HeaderText = "ID"
+        Me.ColumnID.Name = "ColumnID"
+        Me.ColumnID.ReadOnly = True
+        '
+        'ColumnTipo
+        '
+        Me.ColumnTipo.DataPropertyName = "Tipo"
+        Me.ColumnTipo.HeaderText = "Tipo"
+        Me.ColumnTipo.Name = "ColumnTipo"
+        Me.ColumnTipo.ReadOnly = True
+        '
+        'ColumnDescripcion
+        '
+        Me.ColumnDescripcion.DataPropertyName = "Descripción"
+        Me.ColumnDescripcion.HeaderText = "Descripción"
+        Me.ColumnDescripcion.Name = "ColumnDescripcion"
+        Me.ColumnDescripcion.ReadOnly = True
+        '
+        'ColumnMarca
+        '
+        Me.ColumnMarca.DataPropertyName = "Marca"
+        Me.ColumnMarca.HeaderText = "Marca"
+        Me.ColumnMarca.Name = "ColumnMarca"
+        Me.ColumnMarca.ReadOnly = True
+        '
+        'ColumnVehiculo
+        '
+        Me.ColumnVehiculo.DataPropertyName = "Vehículo"
+        Me.ColumnVehiculo.HeaderText = "Vehículo"
+        Me.ColumnVehiculo.Name = "ColumnVehiculo"
+        Me.ColumnVehiculo.ReadOnly = True
+        '
+        'ColumnProveedor
+        '
+        Me.ColumnProveedor.DataPropertyName = "Proveedor"
+        Me.ColumnProveedor.HeaderText = "Proveedor"
+        Me.ColumnProveedor.Name = "ColumnProveedor"
+        Me.ColumnProveedor.ReadOnly = True
+        '
+        'ColumnStock
+        '
+        Me.ColumnStock.DataPropertyName = "Stock"
+        Me.ColumnStock.HeaderText = "Stock"
+        Me.ColumnStock.Name = "ColumnStock"
+        Me.ColumnStock.ReadOnly = True
+        '
+        'ColumnPrecio
+        '
+        Me.ColumnPrecio.DataPropertyName = "Precio"
+        Me.ColumnPrecio.HeaderText = "Precio"
+        Me.ColumnPrecio.Name = "ColumnPrecio"
+        Me.ColumnPrecio.ReadOnly = True
+        '
+        'ColumnCantidad
+        '
+        Me.ColumnCantidad.DataPropertyName = "Cantidad"
+        Me.ColumnCantidad.HeaderText = "Cantidad"
+        Me.ColumnCantidad.Name = "ColumnCantidad"
+        Me.ColumnCantidad.ReadOnly = True
         '
         'Productos_Listado
         '
@@ -238,7 +289,6 @@ Partial Class Productos_Listado
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1074, 626)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnGestion)
@@ -247,7 +297,6 @@ Partial Class Productos_Listado
         Me.Controls.Add(Me.btnListado)
         Me.Controls.Add(Me.BunifuDataGridView1)
         Me.Controls.Add(Me.cboVehiculo)
-        Me.Controls.Add(Me.cboServicio)
         Me.Controls.Add(Me.cboTipo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Productos_Listado"
@@ -261,7 +310,6 @@ Partial Class Productos_Listado
 
     End Sub
     Friend WithEvents cboTipo As ComboBox
-    Friend WithEvents cboServicio As ComboBox
     Friend WithEvents cboVehiculo As ComboBox
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents BunifuDataGridView1 As Bunifu.UI.WinForms.BunifuDataGridView
@@ -271,6 +319,14 @@ Partial Class Productos_Listado
     Friend WithEvents btnGestion As PictureBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents ColumnID As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnTipo As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnDescripcion As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnMarca As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnVehiculo As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnProveedor As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnStock As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnPrecio As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnCantidad As DataGridViewTextBoxColumn
 End Class

@@ -352,8 +352,7 @@ Public Class Clientes
         Next
     End Sub
 
-
-    Private Sub btnExportar_Click(sender As Object, e As EventArgs) Handles btnExportar.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         ExportarGrillaAPDF()
     End Sub
 End Class
