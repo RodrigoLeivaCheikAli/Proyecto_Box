@@ -263,7 +263,8 @@ Public Class Compras
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Presupuestos_Compras.Show()
+        Dim frmPresupuestos As New Presupuestos_Compras(Me) ' Pasa la referencia de Compras
+        frmPresupuestos.Show()
     End Sub
 
 #End Region

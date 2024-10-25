@@ -218,6 +218,7 @@ Partial Class Presupuestos_Compras
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.BunifuDataGridView1)
         Me.Name = "Presupuestos_Compras"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Presupuestos Compras"
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PINGRUPO11DataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

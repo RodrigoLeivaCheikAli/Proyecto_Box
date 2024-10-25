@@ -4,19 +4,27 @@ Imports System.Configuration
 Public Class Presupuestos_Compras
     Private detallesPresupuesto As DataTable
 
-#Region "Pasar Variable"
+
+    Private frmCompras As Compras ' Referencia al formulario Compras
+
+    ' Constructor que recibe la referencia
+    Public Sub New(comprasForm As Compras)
+        InitializeComponent()
+        frmCompras = comprasForm
+    End Sub
+
     Private Sub PasarIdPresupuestoAlFormularioPrincipal()
         If BunifuDataGridView1.SelectedRows.Count > 0 Then
             Dim idPresupuesto As Integer = Convert.ToInt32(BunifuDataGridView1.SelectedRows(0).Cells(0).Value)
-            If Application.OpenForms.OfType(Of Compras).Any() Then
-                Dim frmCompras As Compras = Application.OpenForms.OfType(Of Compras)().First()
-                frmCompras.IdPresupuesto = idPresupuesto
-                frmCompras.CargarDetalles()
-            End If
+            frmCompras.IdPresupuesto = idPresupuesto
+            frmCompras.CargarDetalles()
         Else
             MessageBox.Show("Por favor seleccione un presupuesto.")
         End If
     End Sub
+
+#Region "Pasar Variable"
+
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         PasarIdPresupuestoAlFormularioPrincipal()
@@ -33,6 +41,11 @@ Public Class Presupuestos_Compras
         Llenar_Grilla()
 
     End Sub
+
+    Private Sub Presupuestos_Compras_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        Llenar_Grilla() ' Recargar la grilla cada vez que el formulario esté activo
+    End Sub
+
 #End Region
 
 #Region "Cargar Grilla"
@@ -58,7 +71,7 @@ Public Class Presupuestos_Compras
         If oDs.Tables(0).Rows.Count > 0 Then
             dt = oDs.Tables(0)
             BunifuDataGridView1.AutoGenerateColumns = True
-            BunifuDataGridView1.DataSource = Nothing  ' Limpiar fuente de datos antes de asignar nueva
+            BunifuDataGridView1.DataSource = Nothing
             BunifuDataGridView1.DataSource = dt
             BunifuDataGridView1.Refresh()
         End If
