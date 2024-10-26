@@ -192,9 +192,9 @@ Partial Class Presupuestos_Compras
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(195, 21)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(329, 21)
+        Me.Label1.Size = New System.Drawing.Size(279, 21)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "PRESUPUESTOS EN ESTADO ""PENDIENTE"""
+        Me.Label1.Text = "PEDIDOS EN ESTADO ""PENDIENTE"""
         '
         'Label2
         '
@@ -202,9 +202,9 @@ Partial Class Presupuestos_Compras
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(257, 368)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(223, 21)
+        Me.Label2.Size = New System.Drawing.Size(173, 21)
         Me.Label2.TabIndex = 4
-        Me.Label2.Text = "DETALLE DE PRESUPUESTOS"
+        Me.Label2.Text = "DETALLE DE PEDIDOS"
         '
         'Presupuestos_Compras
         '
