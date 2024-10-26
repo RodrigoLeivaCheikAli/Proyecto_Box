@@ -26,16 +26,15 @@ Partial Class Ventas
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -43,16 +42,10 @@ Partial Class Ventas
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtBuqueda = New System.Windows.Forms.TextBox()
         Me.DataGridView2 = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.DataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PIN_GRUPO11DataSet = New MAQUETA_BOX.PIN_GRUPO11DataSet()
-        Me.PINGRUPO11DataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ColumnRestar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,6 +53,7 @@ Partial Class Ventas
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.ColumnSumar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ColumnID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -67,6 +61,12 @@ Partial Class Ventas
         Me.ColumnVehiculo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnPrecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PIN_GRUPO11DataSet = New MAQUETA_BOX.PIN_GRUPO11DataSet()
+        Me.PINGRUPO11DataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,6 +165,66 @@ Partial Class Ventas
         Me.DataGridView2.TabIndex = 13
         Me.DataGridView2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
         '
+        'ColumnRestar
+        '
+        Me.ColumnRestar.HeaderText = ""
+        Me.ColumnRestar.Image = Global.MAQUETA_BOX.My.Resources.Resources.boton_menos
+        Me.ColumnRestar.Name = "ColumnRestar"
+        Me.ColumnRestar.Width = 20
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewTextBoxColumn1.HeaderText = "N°"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.DataGridViewTextBoxColumn1.Width = 32
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Tipo"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.DataGridViewTextBoxColumn2.Width = 47
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Descripcion"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Vehiculo"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.Width = 95
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle7
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Precio"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.Width = 79
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle8
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Cantidad"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.Width = 98
+        '
         'DataGridView1
         '
         Me.DataGridView1.AllowCustomTheming = False
@@ -227,115 +287,6 @@ Partial Class Ventas
         Me.DataGridView1.Size = New System.Drawing.Size(553, 359)
         Me.DataGridView1.TabIndex = 12
         Me.DataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(571, 579)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(118, 46)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 12
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(362, 36)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(28, 31)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 10
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(447, 579)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(118, 46)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 9
-        Me.PictureBox1.TabStop = False
-        '
-        'PIN_GRUPO11DataSet
-        '
-        Me.PIN_GRUPO11DataSet.DataSetName = "PIN_GRUPO11DataSet"
-        Me.PIN_GRUPO11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PINGRUPO11DataSetBindingSource
-        '
-        Me.PINGRUPO11DataSetBindingSource.DataSource = Me.PIN_GRUPO11DataSet
-        Me.PINGRUPO11DataSetBindingSource.Position = 0
-        '
-        'DataGridViewImageColumn2
-        '
-        Me.DataGridViewImageColumn2.HeaderText = ""
-        Me.DataGridViewImageColumn2.Image = Global.MAQUETA_BOX.My.Resources.Resources.boton_mas
-        Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
-        Me.DataGridViewImageColumn2.Width = 79
-        '
-        'ColumnRestar
-        '
-        Me.ColumnRestar.HeaderText = ""
-        Me.ColumnRestar.Image = Global.MAQUETA_BOX.My.Resources.Resources.boton_menos
-        Me.ColumnRestar.Name = "ColumnRestar"
-        Me.ColumnRestar.Width = 14
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridViewTextBoxColumn1.HeaderText = "N°"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.DataGridViewTextBoxColumn1.Width = 32
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Tipo"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.DataGridViewTextBoxColumn2.Width = 47
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Descripcion"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle6
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Vehiculo"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Width = 95
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle7
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Precio"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.Width = 79
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle8
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Cantidad"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 98
         '
         'ColumnSumar
         '
@@ -400,6 +351,55 @@ Partial Class Ventas
         Me.ColumnCantidad.DefaultCellStyle = DataGridViewCellStyle18
         Me.ColumnCantidad.HeaderText = "Cantidad"
         Me.ColumnCantidad.Name = "ColumnCantidad"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(571, 579)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(118, 46)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 12
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(362, 36)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(28, 31)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 10
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(447, 579)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(118, 46)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 9
+        Me.PictureBox1.TabStop = False
+        '
+        'PIN_GRUPO11DataSet
+        '
+        Me.PIN_GRUPO11DataSet.DataSetName = "PIN_GRUPO11DataSet"
+        Me.PIN_GRUPO11DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PINGRUPO11DataSetBindingSource
+        '
+        Me.PINGRUPO11DataSetBindingSource.DataSource = Me.PIN_GRUPO11DataSet
+        Me.PINGRUPO11DataSetBindingSource.Position = 0
+        '
+        'DataGridViewImageColumn2
+        '
+        Me.DataGridViewImageColumn2.HeaderText = ""
+        Me.DataGridViewImageColumn2.Image = Global.MAQUETA_BOX.My.Resources.Resources.boton_mas
+        Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
+        Me.DataGridViewImageColumn2.Width = 79
         '
         'Ventas
         '

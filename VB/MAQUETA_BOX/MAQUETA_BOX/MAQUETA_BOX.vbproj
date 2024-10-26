@@ -384,6 +384,12 @@
     <Compile Include="Presupuestos-Compras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presupuesto_Ventas.Designer.vb">
+      <DependentUpon>Presupuesto_Ventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto_Ventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Productos.Designer.vb">
       <DependentUpon>Productos.vb</DependentUpon>
     </Compile>
@@ -467,6 +473,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presupuestos-Compras.resx">
       <DependentUpon>Presupuestos-Compras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto_Ventas.resx">
+      <DependentUpon>Presupuesto_Ventas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.vb</DependentUpon>

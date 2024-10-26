@@ -22,11 +22,14 @@ Partial Class Presupuesto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Presupuesto))
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.BunifuCheckBox2 = New Bunifu.UI.WinForms.BunifuCheckBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.DataGridView3 = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.ColumnID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,6 +58,7 @@ Partial Class Presupuesto
         Me.BunifuLabel3 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.BunifuLabel1 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,6 +67,9 @@ Partial Class Presupuesto
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.BunifuCheckBox2)
+        Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Controls.Add(Me.DataGridView3)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.BunifuCheckBox1)
@@ -81,12 +88,86 @@ Partial Class Presupuesto
         Me.Panel1.Size = New System.Drawing.Size(1123, 635)
         Me.Panel1.TabIndex = 0
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(871, 62)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(188, 24)
+        Me.Label2.TabIndex = 44
+        Me.Label2.Text = "Realizar Presupuesto"
+        '
+        'BunifuCheckBox2
+        '
+        Me.BunifuCheckBox2.AllowBindingControlAnimation = True
+        Me.BunifuCheckBox2.AllowBindingControlColorChanges = False
+        Me.BunifuCheckBox2.AllowBindingControlLocation = True
+        Me.BunifuCheckBox2.AllowCheckBoxAnimation = False
+        Me.BunifuCheckBox2.AllowCheckmarkAnimation = True
+        Me.BunifuCheckBox2.AllowOnHoverStates = True
+        Me.BunifuCheckBox2.AutoCheck = True
+        Me.BunifuCheckBox2.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuCheckBox2.BackgroundImage = CType(resources.GetObject("BunifuCheckBox2.BackgroundImage"), System.Drawing.Image)
+        Me.BunifuCheckBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BunifuCheckBox2.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right
+        Me.BunifuCheckBox2.BorderRadius = 12
+        Me.BunifuCheckBox2.Checked = False
+        Me.BunifuCheckBox2.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Indeterminate
+        Me.BunifuCheckBox2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.BunifuCheckBox2.CustomCheckmarkImage = Nothing
+        Me.BunifuCheckBox2.Location = New System.Drawing.Point(1065, 62)
+        Me.BunifuCheckBox2.MinimumSize = New System.Drawing.Size(17, 17)
+        Me.BunifuCheckBox2.Name = "BunifuCheckBox2"
+        Me.BunifuCheckBox2.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue
+        Me.BunifuCheckBox2.OnCheck.BorderRadius = 12
+        Me.BunifuCheckBox2.OnCheck.BorderThickness = 2
+        Me.BunifuCheckBox2.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue
+        Me.BunifuCheckBox2.OnCheck.CheckmarkColor = System.Drawing.Color.White
+        Me.BunifuCheckBox2.OnCheck.CheckmarkThickness = 2
+        Me.BunifuCheckBox2.OnDisable.BorderColor = System.Drawing.Color.LightGray
+        Me.BunifuCheckBox2.OnDisable.BorderRadius = 12
+        Me.BunifuCheckBox2.OnDisable.BorderThickness = 2
+        Me.BunifuCheckBox2.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.BunifuCheckBox2.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray
+        Me.BunifuCheckBox2.OnDisable.CheckmarkThickness = 2
+        Me.BunifuCheckBox2.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuCheckBox2.OnHoverChecked.BorderRadius = 12
+        Me.BunifuCheckBox2.OnHoverChecked.BorderThickness = 2
+        Me.BunifuCheckBox2.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuCheckBox2.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White
+        Me.BunifuCheckBox2.OnHoverChecked.CheckmarkThickness = 2
+        Me.BunifuCheckBox2.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuCheckBox2.OnHoverUnchecked.BorderRadius = 12
+        Me.BunifuCheckBox2.OnHoverUnchecked.BorderThickness = 1
+        Me.BunifuCheckBox2.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.BunifuCheckBox2.OnUncheck.BorderColor = System.Drawing.Color.DarkGray
+        Me.BunifuCheckBox2.OnUncheck.BorderRadius = 12
+        Me.BunifuCheckBox2.OnUncheck.BorderThickness = 1
+        Me.BunifuCheckBox2.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.BunifuCheckBox2.Size = New System.Drawing.Size(21, 21)
+        Me.BunifuCheckBox2.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu
+        Me.BunifuCheckBox2.TabIndex = 43
+        Me.BunifuCheckBox2.ThreeState = False
+        Me.BunifuCheckBox2.ToolTipText = Nothing
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(808, 529)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(174, 70)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 29
+        Me.PictureBox3.TabStop = False
+        '
         'DataGridView3
         '
         Me.DataGridView3.AllowCustomTheming = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -94,14 +175,14 @@ Partial Class Presupuesto
         Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridView3.ColumnHeadersHeight = 40
         Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnID, Me.ColumnTipo, Me.ColumnDescripcion, Me.ColumnVehiculo, Me.ColumnPrecio, Me.ColumnCantidad, Me.ColumnTotal})
         Me.DataGridView3.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -122,14 +203,14 @@ Partial Class Presupuesto
         Me.DataGridView3.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black
         Me.DataGridView3.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DataGridView3.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView3.EnableHeadersVisualStyles = False
         Me.DataGridView3.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DataGridView3.HeaderBackColor = System.Drawing.Color.DodgerBlue
@@ -203,8 +284,8 @@ Partial Class Presupuesto
         Me.BunifuCheckBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.BunifuCheckBox1.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right
         Me.BunifuCheckBox1.BorderRadius = 12
-        Me.BunifuCheckBox1.Checked = True
-        Me.BunifuCheckBox1.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked
+        Me.BunifuCheckBox1.Checked = False
+        Me.BunifuCheckBox1.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked
         Me.BunifuCheckBox1.Cursor = System.Windows.Forms.Cursors.Default
         Me.BunifuCheckBox1.CustomCheckmarkImage = Nothing
         Me.BunifuCheckBox1.Location = New System.Drawing.Point(1017, 41)
@@ -516,6 +597,7 @@ Partial Class Presupuesto
         Me.Text = "Presupuesto"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -553,4 +635,7 @@ Partial Class Presupuesto
     Friend WithEvents ColumnPrecio As DataGridViewTextBoxColumn
     Friend WithEvents ColumnCantidad As DataGridViewTextBoxColumn
     Friend WithEvents ColumnTotal As DataGridViewTextBoxColumn
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents BunifuCheckBox2 As Bunifu.UI.WinForms.BunifuCheckBox
 End Class

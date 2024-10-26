@@ -3,9 +3,12 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 
 Public Class Presupuesto
     Dim cant As New Dictionary(Of Integer, Integer)
+    Dim PresupuestoVendido As Boolean
+    Public Property IDPresu As Integer
 
     Private Sub Presupuesto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         idPresupuesto()
+        PresupuestoVendido = False
         Modulo.Presupuesto = Modulo.Presupuesto + 1
         Cargar_Combo_MediosP()
         CargarCBOClientes()
@@ -299,6 +302,13 @@ Public Class Presupuesto
             ' El CheckBox no está marcado
             estado = 4
         End If
+        If BunifuCheckBox2.Checked Then
+            ' El CheckBox está marcado
+            estado = 1006
+        Else
+            ' El CheckBox no está marcado
+            estado = 4
+        End If
 
         conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
 
@@ -322,22 +332,34 @@ Public Class Presupuesto
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        ActualizarCant()
-        MsgBox("ID Presupuesto: " & Modulo.Presupuesto)
+        If BunifuCheckBox2.Checked Then
+            CargarDetallesV()
+            CargarPresupuesto()
+            Panel1.Controls.Clear()
+            Dim newForm As New Ventas() ' Crea una nueva instancia del formulario que deseas agregar
+            newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
+            Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+            newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+            newForm.Show() ' Muestra el formulario
+        Else
+            If PresupuestoVendido = True Then
 
-        CargarDetallesV()
-        CargarPresupuesto()
-        Panel1.Controls.Clear()
-        Dim newForm As New Ventas() ' Crea una nueva instancia del formulario que deseas agregar
-        newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
-        Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
-        newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
-        newForm.Show() ' Muestra el formulario
+                EliminarPresupuesto(Modulo.IdPres)
+            End If
+            ActualizarCant()
+            CargarDetallesV()
+            CargarPresupuesto()
+            Panel1.Controls.Clear()
+            Dim newForm As New Ventas() ' Crea una nueva instancia del formulario que deseas agregar
+            newForm.TopLevel = False ' Establece la propiedad TopLevel en False para poder agregarlo a un control
+            Panel1.Controls.Add(newForm) ' Agrega el formulario al panel
+            newForm.WindowState = FormWindowState.Maximized ' Muestra el formulario
+            newForm.Show() ' Muestra el formulario
+        End If
+
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
-    End Sub
 
     Private Sub DataGridView3_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellEndEdit
         Dim columnName As String = DataGridView3.Columns(e.ColumnIndex).Name
@@ -346,6 +368,149 @@ Public Class Presupuesto
             CalcularPrecio(e.RowIndex)
             ' Actualizar la vista del DataGridView para mostrar los cambios
             DataGridView3.Refresh()
+        End If
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Dim Presupuesto_Ventas As New Presupuesto_Ventas(Me)
+        Presupuesto_Ventas.Show()
+
+    End Sub
+
+    Public Sub CargarDetalles()
+        If IDPresu <> 0 Then
+            Dim conexion As SqlConnection
+            Dim comando As New SqlCommand
+            conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+            comando.Connection = conexion
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = "Consultar_Presupuestos_Ventas2"
+            comando.Parameters.AddWithValue("@Id_Presupuesto", IDPresu)
+
+            Dim oAdapter As New SqlDataAdapter(comando)
+            Dim oDS As New DataSet()
+
+            Try
+                conexion.Open()
+                oAdapter.Fill(oDS)
+              
+                If oDS.Tables(0).Rows.Count > 0 Then
+                    DataGridView3.AutoGenerateColumns = False
+                    DataGridView3.Rows.Clear()
+
+                    ' Agregar filas a DataGridView3
+                    For Each row As DataRow In oDS.Tables(0).Rows
+                        DataGridView3.Rows.Add(row("N°"), row("Tipo"), row("Descripcion"), row("Vehiculo"), row("Precio"), row("Cantidad"), row("Total"))
+                    Next
+
+                    DataGridView3.Refresh()
+                    ActualizarTotal()
+
+                    ' Obtener el valor de la primera columna y primera fila de DataGridView3
+
+
+                    ' Llamar a la función para cargar ComboBoxes
+                    CargarCombos(Modulo.IdPres)
+                Else
+
+                    DataGridView3.DataSource = Nothing
+                End If
+                PresupuestoVendido = True
+            Catch ex As Exception
+                MessageBox.Show("Error al cargar los detalles: " & ex.Message)
+            Finally
+                conexion.Close()
+            End Try
+        End If
+    End Sub
+
+    ' Función para cargar cboClientes y cboMediodePago
+    Private Sub CargarCombos(idPresupuesto As Integer)
+        Dim conexion As New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
+        Dim comando As New SqlCommand("Obtener_Cliente_y_MedioPago", conexion)
+        comando.CommandType = CommandType.StoredProcedure
+        comando.Parameters.AddWithValue("@Id_Presupuesto", idPresupuesto)
+
+        Dim oAdapter As New SqlDataAdapter(comando)
+        Dim oDS As New DataSet()
+
+        Try
+            conexion.Open()
+            oAdapter.Fill(oDS)
+
+            If oDS.Tables(0).Rows.Count > 0 Then
+                ' Asignar valores a los ComboBoxes
+                cboCliente.Text = oDS.Tables(0).Rows(0)("Cliente").ToString()
+                cboMediosP.Text = oDS.Tables(0).Rows(0)("Medio de Pago").ToString()
+
+
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los ComboBoxes: " & ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+    End Sub
+
+    Public Sub EliminarPresupuesto(idPresupuesto As Integer)
+        ' Configura la conexión a la base de datos
+        Dim conexion As New SqlConnection("data source=168.197.51.109; initial catalog=PIN_GRUPO11; user id=PIN_GRUPO11; password=PIN_GRUPO11123")
+
+        Try
+            ' Abre la conexión
+            conexion.Open()
+
+            ' Configura el comando para el procedimiento almacenado
+            Dim comando As New SqlCommand("Eliminar_Presupuesto", conexion)
+            comando.CommandType = CommandType.StoredProcedure
+
+            ' Agrega el parámetro de entrada
+            comando.Parameters.AddWithValue("@Id_Presupuesto", idPresupuesto)
+
+            ' Configura el parámetro de salida
+            Dim resultado As New SqlParameter("@Resultado", SqlDbType.Int)
+            resultado.Direction = ParameterDirection.Output
+            comando.Parameters.Add(resultado)
+
+            ' Ejecuta el procedimiento
+            comando.ExecuteNonQuery()
+
+            ' Verifica el valor del parámetro de salida
+            Dim filasAfectadas As Integer = CInt(resultado.Value)
+
+            If filasAfectadas > 0 Then
+                MessageBox.Show("Presupuesto eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ElseIf filasAfectadas = 0 Then
+                MessageBox.Show("No se encontró el presupuesto especificado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MessageBox.Show("Ocurrió un error al eliminar el presupuesto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+
+        Catch ex As Exception
+            ' Maneja cualquier error que ocurra durante la ejecución
+            MessageBox.Show("Error al eliminar el presupuesto: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        Finally
+            ' Cierra la conexión
+            conexion.Close()
+        End Try
+    End Sub
+
+
+    Private Sub BunifuCheckBox2_CheckedChanged(sender As Object, e As Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs) Handles BunifuCheckBox2.CheckedChanged
+        If BunifuCheckBox2.Checked Then
+            ' El CheckBox está marcado
+            BunifuCheckBox1.Checked = False
+
+        End If
+    End Sub
+
+    Private Sub BunifuCheckBox1_CheckedChanged(sender As Object, e As Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs) Handles BunifuCheckBox1.CheckedChanged
+        If BunifuCheckBox1.Checked Then
+            ' El CheckBox está marcado
+            BunifuCheckBox2.Checked = False
+
         End If
     End Sub
 End Class

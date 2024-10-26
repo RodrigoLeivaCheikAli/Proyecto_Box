@@ -306,6 +306,8 @@ Public Class Ventas
             End If
         End If
     End Sub
+
+
 #End Region
 
     'Private Sub AdjustColumnWidths()
