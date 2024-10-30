@@ -565,9 +565,9 @@ Public Class Documentos
     Private selectedPresupuestoId As Integer
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        ' Check if the clicked cell is valid
-        If e.RowIndex >= 0 Then
-            ' Get the selected Presupuesto ID from the grid (assuming it's in the first column)
+        ' Verificar si la celda seleccionada es válida y que no sea una fila de detalle
+        If e.RowIndex >= 0 AndAlso (DataGridView1.Rows(e.RowIndex).Tag Is Nothing OrElse DataGridView1.Rows(e.RowIndex).Tag.ToString() <> "Detail") Then
+            ' Obtener el ID del presupuesto seleccionado de la primera columna
             selectedPresupuestoId = Convert.ToInt32(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
         End If
     End Sub
