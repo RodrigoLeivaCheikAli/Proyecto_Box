@@ -22,14 +22,12 @@ Partial Class Presupuesto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Presupuesto))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.BunifuCheckBox2 = New Bunifu.UI.WinForms.BunifuCheckBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.DataGridView3 = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.ColumnID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -39,15 +37,17 @@ Partial Class Presupuesto
         Me.ColumnCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BunifuCheckBox1 = New Bunifu.UI.WinForms.BunifuCheckBox()
         Me.cboCliente = New System.Windows.Forms.ComboBox()
         Me.cboMediosP = New System.Windows.Forms.ComboBox()
-        Me.BunifuDatePicker1 = New Bunifu.UI.WinForms.BunifuDatePicker()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BunifuLabel6 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.BunifuLabel5 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.BunifuLabel2 = New Bunifu.UI.WinForms.BunifuLabel()
+        Me.BunifuCheckBox2 = New Bunifu.UI.WinForms.BunifuCheckBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.BunifuCheckBox1 = New Bunifu.UI.WinForms.BunifuCheckBox()
+        Me.BunifuDatePicker1 = New Bunifu.UI.WinForms.BunifuDatePicker()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BunifuPanel1 = New Bunifu.UI.WinForms.BunifuPanel()
         Me.lblTotal = New Bunifu.UI.WinForms.BunifuLabel()
         Me.lblSubtotal = New Bunifu.UI.WinForms.BunifuLabel()
@@ -58,8 +58,8 @@ Partial Class Presupuesto
         Me.BunifuLabel3 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.BunifuLabel1 = New Bunifu.UI.WinForms.BunifuLabel()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BunifuPanel1.SuspendLayout()
@@ -97,6 +97,176 @@ Partial Class Presupuesto
         Me.Label2.Size = New System.Drawing.Size(188, 24)
         Me.Label2.TabIndex = 44
         Me.Label2.Text = "Realizar Presupuesto"
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.AllowCustomTheming = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView3.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView3.ColumnHeadersHeight = 40
+        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnID, Me.ColumnTipo, Me.ColumnDescripcion, Me.ColumnVehiculo, Me.ColumnPrecio, Me.ColumnCantidad, Me.ColumnTotal})
+        Me.DataGridView3.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView3.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.DataGridView3.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.DataGridView3.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView3.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridView3.CurrentTheme.BackColor = System.Drawing.Color.White
+        Me.DataGridView3.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView3.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue
+        Me.DataGridView3.CurrentTheme.HeaderStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
+        Me.DataGridView3.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DataGridView3.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.DataGridView3.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White
+        Me.DataGridView3.CurrentTheme.Name = Nothing
+        Me.DataGridView3.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DataGridView3.CurrentTheme.RowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.DataGridView3.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.DataGridView3.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView3.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView3.EnableHeadersVisualStyles = False
+        Me.DataGridView3.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView3.HeaderBackColor = System.Drawing.Color.DodgerBlue
+        Me.DataGridView3.HeaderBgColor = System.Drawing.Color.Empty
+        Me.DataGridView3.HeaderForeColor = System.Drawing.Color.White
+        Me.DataGridView3.Location = New System.Drawing.Point(103, 102)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.RowHeadersVisible = False
+        Me.DataGridView3.RowTemplate.Height = 40
+        Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView3.Size = New System.Drawing.Size(935, 292)
+        Me.DataGridView3.TabIndex = 42
+        Me.DataGridView3.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
+        '
+        'ColumnID
+        '
+        Me.ColumnID.HeaderText = "N°"
+        Me.ColumnID.Name = "ColumnID"
+        '
+        'ColumnTipo
+        '
+        Me.ColumnTipo.HeaderText = "Tipo"
+        Me.ColumnTipo.Name = "ColumnTipo"
+        '
+        'ColumnDescripcion
+        '
+        Me.ColumnDescripcion.HeaderText = "Descripcion"
+        Me.ColumnDescripcion.Name = "ColumnDescripcion"
+        '
+        'ColumnVehiculo
+        '
+        Me.ColumnVehiculo.HeaderText = "Vehiculo"
+        Me.ColumnVehiculo.Name = "ColumnVehiculo"
+        '
+        'ColumnPrecio
+        '
+        Me.ColumnPrecio.HeaderText = "Precio"
+        Me.ColumnPrecio.Name = "ColumnPrecio"
+        '
+        'ColumnCantidad
+        '
+        Me.ColumnCantidad.HeaderText = "Cantidad"
+        Me.ColumnCantidad.Name = "ColumnCantidad"
+        '
+        'ColumnTotal
+        '
+        Me.ColumnTotal.HeaderText = "Total"
+        Me.ColumnTotal.Name = "ColumnTotal"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(869, 40)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(142, 24)
+        Me.Label1.TabIndex = 41
+        Me.Label1.Text = "Realizar Pedido"
+        '
+        'cboCliente
+        '
+        Me.cboCliente.FormattingEnabled = True
+        Me.cboCliente.Location = New System.Drawing.Point(136, 45)
+        Me.cboCliente.Name = "cboCliente"
+        Me.cboCliente.Size = New System.Drawing.Size(160, 21)
+        Me.cboCliente.TabIndex = 38
+        '
+        'cboMediosP
+        '
+        Me.cboMediosP.FormattingEnabled = True
+        Me.cboMediosP.Location = New System.Drawing.Point(725, 44)
+        Me.cboMediosP.Name = "cboMediosP"
+        Me.cboMediosP.Size = New System.Drawing.Size(121, 21)
+        Me.cboMediosP.TabIndex = 29
+        '
+        'BunifuLabel6
+        '
+        Me.BunifuLabel6.AllowParentOverrides = False
+        Me.BunifuLabel6.AutoEllipsis = False
+        Me.BunifuLabel6.CursorType = Nothing
+        Me.BunifuLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BunifuLabel6.Location = New System.Drawing.Point(613, 45)
+        Me.BunifuLabel6.Name = "BunifuLabel6"
+        Me.BunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BunifuLabel6.Size = New System.Drawing.Size(106, 20)
+        Me.BunifuLabel6.TabIndex = 24
+        Me.BunifuLabel6.Text = "Medio de Pago"
+        Me.BunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft
+        Me.BunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.[Default]
+        '
+        'BunifuLabel5
+        '
+        Me.BunifuLabel5.AllowParentOverrides = False
+        Me.BunifuLabel5.AutoEllipsis = False
+        Me.BunifuLabel5.CursorType = Nothing
+        Me.BunifuLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BunifuLabel5.Location = New System.Drawing.Point(325, 45)
+        Me.BunifuLabel5.Name = "BunifuLabel5"
+        Me.BunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BunifuLabel5.Size = New System.Drawing.Size(45, 20)
+        Me.BunifuLabel5.TabIndex = 23
+        Me.BunifuLabel5.Text = "Fecha"
+        Me.BunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft
+        Me.BunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.[Default]
+        '
+        'BunifuLabel2
+        '
+        Me.BunifuLabel2.AllowParentOverrides = False
+        Me.BunifuLabel2.AutoEllipsis = False
+        Me.BunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.BunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default
+        Me.BunifuLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BunifuLabel2.Location = New System.Drawing.Point(71, 45)
+        Me.BunifuLabel2.Name = "BunifuLabel2"
+        Me.BunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BunifuLabel2.Size = New System.Drawing.Size(49, 20)
+        Me.BunifuLabel2.TabIndex = 22
+        Me.BunifuLabel2.Text = "Cliente"
+        Me.BunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft
+        Me.BunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.[Default]
         '
         'BunifuCheckBox2
         '
@@ -162,114 +332,6 @@ Partial Class Presupuesto
         Me.PictureBox3.TabIndex = 29
         Me.PictureBox3.TabStop = False
         '
-        'DataGridView3
-        '
-        Me.DataGridView3.AllowCustomTheming = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView3.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
-        Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridView3.ColumnHeadersHeight = 40
-        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnID, Me.ColumnTipo, Me.ColumnDescripcion, Me.ColumnVehiculo, Me.ColumnPrecio, Me.ColumnCantidad, Me.ColumnTotal})
-        Me.DataGridView3.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView3.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.DataGridView3.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black
-        Me.DataGridView3.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView3.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridView3.CurrentTheme.BackColor = System.Drawing.Color.White
-        Me.DataGridView3.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView3.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue
-        Me.DataGridView3.CurrentTheme.HeaderStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
-        Me.DataGridView3.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.DataGridView3.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.DataGridView3.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White
-        Me.DataGridView3.CurrentTheme.Name = Nothing
-        Me.DataGridView3.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.DataGridView3.CurrentTheme.RowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.DataGridView3.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black
-        Me.DataGridView3.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView3.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle6
-        Me.DataGridView3.EnableHeadersVisualStyles = False
-        Me.DataGridView3.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView3.HeaderBackColor = System.Drawing.Color.DodgerBlue
-        Me.DataGridView3.HeaderBgColor = System.Drawing.Color.Empty
-        Me.DataGridView3.HeaderForeColor = System.Drawing.Color.White
-        Me.DataGridView3.Location = New System.Drawing.Point(103, 102)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.RowHeadersVisible = False
-        Me.DataGridView3.RowTemplate.Height = 40
-        Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView3.Size = New System.Drawing.Size(935, 292)
-        Me.DataGridView3.TabIndex = 42
-        Me.DataGridView3.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
-        '
-        'ColumnID
-        '
-        Me.ColumnID.HeaderText = "N°"
-        Me.ColumnID.Name = "ColumnID"
-        '
-        'ColumnTipo
-        '
-        Me.ColumnTipo.HeaderText = "Tipo"
-        Me.ColumnTipo.Name = "ColumnTipo"
-        '
-        'ColumnDescripcion
-        '
-        Me.ColumnDescripcion.HeaderText = "Descripcion"
-        Me.ColumnDescripcion.Name = "ColumnDescripcion"
-        '
-        'ColumnVehiculo
-        '
-        Me.ColumnVehiculo.HeaderText = "Vehiculo"
-        Me.ColumnVehiculo.Name = "ColumnVehiculo"
-        '
-        'ColumnPrecio
-        '
-        Me.ColumnPrecio.HeaderText = "Precio"
-        Me.ColumnPrecio.Name = "ColumnPrecio"
-        '
-        'ColumnCantidad
-        '
-        Me.ColumnCantidad.HeaderText = "Cantidad"
-        Me.ColumnCantidad.Name = "ColumnCantidad"
-        '
-        'ColumnTotal
-        '
-        Me.ColumnTotal.HeaderText = "Total"
-        Me.ColumnTotal.Name = "ColumnTotal"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(869, 40)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(142, 24)
-        Me.Label1.TabIndex = 41
-        Me.Label1.Text = "Realizar Pedido"
-        '
         'BunifuCheckBox1
         '
         Me.BunifuCheckBox1.AllowBindingControlAnimation = True
@@ -323,22 +385,6 @@ Partial Class Presupuesto
         Me.BunifuCheckBox1.ThreeState = False
         Me.BunifuCheckBox1.ToolTipText = Nothing
         '
-        'cboCliente
-        '
-        Me.cboCliente.FormattingEnabled = True
-        Me.cboCliente.Location = New System.Drawing.Point(136, 45)
-        Me.cboCliente.Name = "cboCliente"
-        Me.cboCliente.Size = New System.Drawing.Size(160, 21)
-        Me.cboCliente.TabIndex = 38
-        '
-        'cboMediosP
-        '
-        Me.cboMediosP.FormattingEnabled = True
-        Me.cboMediosP.Location = New System.Drawing.Point(725, 44)
-        Me.cboMediosP.Name = "cboMediosP"
-        Me.cboMediosP.Size = New System.Drawing.Size(121, 21)
-        Me.cboMediosP.TabIndex = 29
-        '
         'BunifuDatePicker1
         '
         Me.BunifuDatePicker1.BackColor = System.Drawing.Color.Transparent
@@ -384,52 +430,6 @@ Partial Class Presupuesto
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 25
         Me.PictureBox1.TabStop = False
-        '
-        'BunifuLabel6
-        '
-        Me.BunifuLabel6.AllowParentOverrides = False
-        Me.BunifuLabel6.AutoEllipsis = False
-        Me.BunifuLabel6.CursorType = Nothing
-        Me.BunifuLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuLabel6.Location = New System.Drawing.Point(613, 45)
-        Me.BunifuLabel6.Name = "BunifuLabel6"
-        Me.BunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BunifuLabel6.Size = New System.Drawing.Size(106, 20)
-        Me.BunifuLabel6.TabIndex = 24
-        Me.BunifuLabel6.Text = "Medio de Pago"
-        Me.BunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft
-        Me.BunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.[Default]
-        '
-        'BunifuLabel5
-        '
-        Me.BunifuLabel5.AllowParentOverrides = False
-        Me.BunifuLabel5.AutoEllipsis = False
-        Me.BunifuLabel5.CursorType = Nothing
-        Me.BunifuLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuLabel5.Location = New System.Drawing.Point(325, 45)
-        Me.BunifuLabel5.Name = "BunifuLabel5"
-        Me.BunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BunifuLabel5.Size = New System.Drawing.Size(45, 20)
-        Me.BunifuLabel5.TabIndex = 23
-        Me.BunifuLabel5.Text = "Fecha"
-        Me.BunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft
-        Me.BunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.[Default]
-        '
-        'BunifuLabel2
-        '
-        Me.BunifuLabel2.AllowParentOverrides = False
-        Me.BunifuLabel2.AutoEllipsis = False
-        Me.BunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.BunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default
-        Me.BunifuLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuLabel2.Location = New System.Drawing.Point(71, 45)
-        Me.BunifuLabel2.Name = "BunifuLabel2"
-        Me.BunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BunifuLabel2.Size = New System.Drawing.Size(49, 20)
-        Me.BunifuLabel2.TabIndex = 22
-        Me.BunifuLabel2.Text = "Cliente"
-        Me.BunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft
-        Me.BunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.[Default]
         '
         'BunifuPanel1
         '
@@ -597,8 +597,8 @@ Partial Class Presupuesto
         Me.Text = "Presupuesto"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BunifuPanel1.ResumeLayout(False)

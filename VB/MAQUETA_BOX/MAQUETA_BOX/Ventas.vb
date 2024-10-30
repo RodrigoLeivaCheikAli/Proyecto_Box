@@ -205,7 +205,7 @@ Public Class Ventas
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         Dim senderGrid = DirectCast(sender, DataGridView)
-
+        DataGridView2.Columns("DataGridViewTextBoxColumn5").DefaultCellStyle.Format = "C2"
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
             If e.ColumnIndex = DataGridView1.Columns("ColumnSumar").Index AndAlso e.RowIndex >= 0 Then
                 ' Obtener la fila seleccionada
@@ -259,6 +259,7 @@ Public Class Ventas
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
         Dim senderGrid = DirectCast(sender, DataGridView)
         Dim selectedRow As DataGridViewRow = DataGridView2.Rows(e.RowIndex)
+
 
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
             If e.ColumnIndex = DataGridView2.Columns("ColumnRestar").Index AndAlso e.RowIndex >= 0 Then

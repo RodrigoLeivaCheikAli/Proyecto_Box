@@ -9,7 +9,6 @@ Public Class EstadisticaProductos
     Private Sub EstadisticaProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarRentabilidadPorProducto()
     End Sub
-
     Public Sub MostrarRentabilidadPorProducto()
         comando = New SqlCommand("RentabilidadPorProducto", conexion)
         comando.CommandType = CommandType.StoredProcedure
@@ -23,15 +22,15 @@ Public Class EstadisticaProductos
 
             While reader.Read()
                 Dim row As String() = New String() {
-                    reader("Id_Oferta").ToString(),
-                    reader("Descripcion").ToString(),
-                    reader("Precio_Costo").ToString(),
-                    reader("Ganancia").ToString(),
-                    reader("Cantidad").ToString(),
-                    reader("Rentabilidad").ToString(),
-                    reader("Ganancia_Total").ToString(),
-                    reader("Costo_Total").ToString()
-                }
+                reader("Id_Oferta").ToString(),
+                reader("Descripcion").ToString(),
+                Convert.ToDecimal(reader("Precio_Costo")).ToString("C2"),
+                Convert.ToDecimal(reader("Ganancia")).ToString("P2"), ' Formato de porcentaje con dos decimales
+                reader("Cantidad").ToString(),
+                Convert.ToDecimal(reader("Rentabilidad")).ToString("C2"),
+                Convert.ToDecimal(reader("Ganancia_Total")).ToString("C2"),
+                Convert.ToDecimal(reader("Costo_Total")).ToString("C2")
+            }
                 DataGridView1.Rows.Add(row)
             End While
         Catch ex As Exception
@@ -40,6 +39,7 @@ Public Class EstadisticaProductos
             conexion.Close()
         End Try
     End Sub
+
     Public Sub ProyeccionDemandaPorProducto(productoID As Integer, productoNombre As String)
         Try
             ' Obtener ventas históricas
@@ -150,4 +150,6 @@ Public Class EstadisticaProductos
             ProyeccionDemandaPorProducto(idOferta, nombreProd) ' Llamar al procedimiento con el Id_Oferta
         End If
     End Sub
+
+
 End Class

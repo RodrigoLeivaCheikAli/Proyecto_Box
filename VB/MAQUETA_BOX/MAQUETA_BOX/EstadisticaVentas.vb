@@ -66,19 +66,23 @@ Public Class EstadisticaVentas
             conexion.Open()
             dr = comando.ExecuteReader()
 
+            Dim Fechas As New List(Of DateTime)()
+            Dim Ventas As New List(Of Double)()
+
             While dr.Read()
                 Fechas.Add(dr.GetDateTime(0))
-                ' Redondea el valor a 2 decimales y lo agrega a la lista de Ventas
-                Ventas.Add(Math.Round(dr.GetDouble(1)))
+                ' Agrega el valor a la lista de Ventas sin redondeo
+                Ventas.Add(dr.GetDouble(1))
             End While
 
             ' Asigna los datos al gráfico y formatea los puntos
             ChartVentas.Series(0).Points.DataBindXY(Fechas, Ventas)
 
-            ' Formatea los puntos del gráfico para mostrar el símbolo de moneda
+            ' Formatea los puntos del gráfico para mostrar el símbolo de moneda en formato compacto
             For Each point As DataVisualization.Charting.DataPoint In ChartVentas.Series(0).Points
-                point.Label = String.Format("{0:C2}", point.YValues(0))
+                point.Label = FormatNumber(point.YValues(0))
             Next
+
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         Finally
@@ -86,6 +90,20 @@ Public Class EstadisticaVentas
             conexion.Close()
         End Try
     End Sub
+
+    Private Function FormatNumber(value As Double) As String
+        ' Define el símbolo de moneda
+        Dim currencySymbol As String = "€" ' Cambia esto si necesitas otro símbolo
+
+        If value >= 1000000 Then
+            Return String.Format("{0}{1}M", currencySymbol, Math.Round(value / 1000000, 1)) ' Formato para millones
+        ElseIf value >= 1000 Then
+            Return String.Format("{0}{1}k", currencySymbol, Math.Round(value / 1000, 1)) ' Formato para miles
+        Else
+            Return String.Format("{0}{1}", currencySymbol, value) ' Formato normal
+        End If
+    End Function
+
 
 
     Public Sub GrafVentasColumn()
@@ -454,12 +472,16 @@ Public Class EstadisticaVentas
     End Function
 
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label.Click
-        ExpandAllRows()
-        ExportarFormularioAPDF()
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        ExpandAllRows()
+        ExportarFormularioAPDF()
     End Sub
 End Class

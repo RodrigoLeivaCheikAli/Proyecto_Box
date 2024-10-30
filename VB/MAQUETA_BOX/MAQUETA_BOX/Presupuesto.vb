@@ -119,7 +119,10 @@ Public Class Presupuesto
         If Double.TryParse(Convert.ToString(DataGridView3.Rows(rowIndex).Cells("ColumnCantidad").Value), quantity) AndAlso
        Double.TryParse(Convert.ToString(DataGridView3.Rows(rowIndex).Cells("ColumnPrecio").Value), rate) Then
             Dim price As Double = quantity * rate
-            DataGridView3.Rows(rowIndex).Cells("ColumnTotal").Value = price.ToString()
+
+            ' Aplicar formato de moneda al total y asignar el valor
+            DataGridView3.Rows(rowIndex).Cells("ColumnTotal").Value = price.ToString("C2")
+
         Else
             ' Manejar el caso donde la conversión falló
             ' Por ejemplo, podrías mostrar un mensaje de error o reiniciar el valor de la celda 'price'
@@ -127,40 +130,44 @@ Public Class Presupuesto
         End If
     End Sub
 
+
     Private Function SumarColumnaPrice() As Double
         Dim total As Double = 0
 
         For Each row As DataGridViewRow In DataGridView3.Rows
             If Not row.IsNewRow Then
-                Dim price As Double
-                If Double.TryParse(Convert.ToString(row.Cells("ColumnTotal").Value), price) Then
-                    total += price
+                Dim price As String = Convert.ToString(row.Cells("ColumnTotal").Value)
+
+                ' Eliminar el signo de moneda y convertir a Double
+                Dim precio As Double
+                If Double.TryParse(price.Replace("€", "").Replace("$", "").Trim(), precio) Then
+                    total += precio
                 End If
             End If
         Next
 
         Return total
     End Function
+
     Private Sub ActualizarTotal()
         Dim total As Double = SumarColumnaPrice()
-        lblSubtotal.Text = total.ToString()
-        lblTotal.Text = total
-        Dim valor As String
-        If cboMediosP.SelectedIndex().ToString IsNot Nothing Then
+        lblSubtotal.Text = total.ToString("C2") ' Mostrar subtotal como moneda
+        lblTotal.Text = total.ToString("C2")    ' Mostrar total como moneda
 
+        Dim valor As String
+        If cboMediosP.SelectedIndex().ToString() IsNot Nothing Then
 
             If cboMediosP.SelectedIndex = 0 Then
-                lblTotal.Text = total - (total / 10%)
+                lblTotal.Text = (total - (total * 0.1)).ToString("C2") ' Descuento del 10%
             ElseIf cboMediosP.SelectedIndex = 1 Then
-
-                lblTotal.Text = total - ((total * 5) / 100)
+                lblTotal.Text = (total - (total * 0.05)).ToString("C2") ' Descuento del 5%
             Else
-                lblTotal.Text = total
+                lblTotal.Text = total.ToString("C2") ' Sin descuento
             End If
 
         End If
-
     End Sub
+
 
     Private Sub CargarCBOClientes()
         Dim conexion As SqlConnection
@@ -299,16 +306,15 @@ Public Class Presupuesto
             ' El CheckBox está marcado
             estado = 3
         Else
-            ' El CheckBox no está marcado
-            estado = 4
+            If BunifuCheckBox2.Checked Then
+                ' El CheckBox está marcado
+                estado = 1006
+            Else
+                ' El CheckBox no está marcado
+                estado = 4
+            End If
         End If
-        If BunifuCheckBox2.Checked Then
-            ' El CheckBox está marcado
-            estado = 1006
-        Else
-            ' El CheckBox no está marcado
-            estado = 4
-        End If
+
 
         conexion = New SqlConnection("data source = 168.197.51.109; initial catalog = PIN_GRUPO11 ; user id = PIN_GRUPO11; password = PIN_GRUPO11123")
 
@@ -328,7 +334,19 @@ Public Class Presupuesto
         End With
         comando.ExecuteScalar()
         conexion.Close()
-        MsgBox("Se realizo la Venta correctamente ", vbInformation, "TTK")
+        If BunifuCheckBox1.Checked Then
+            ' El CheckBox está marcado
+            MsgBox("Se realizo el Pedido correctamente ", vbInformation, "TTK")
+        Else
+            If BunifuCheckBox2.Checked Then
+                ' El CheckBox está marcado
+                MsgBox("Se realizo el Presupuesto correctamente ", vbInformation, "TTK")
+            Else
+                ' El CheckBox no está marcado
+                MsgBox("Se realizo la Venta correctamente ", vbInformation, "TTK")
+            End If
+        End If
+
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -513,4 +531,5 @@ Public Class Presupuesto
 
         End If
     End Sub
+
 End Class
