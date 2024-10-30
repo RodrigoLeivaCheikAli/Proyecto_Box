@@ -351,10 +351,13 @@
         fwE8LePy6gRwROfb3/eev+fWIl63KgIc2hq/+Xe87ekzMytumh7BJatqwRiYCAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="BunifuLabel1.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 20,25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
+  </data>
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANUAAABSCAYAAADD9ZHjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAFMVJREFUeF7tnXtwXUUdx5s2fTcFY0uohDZt0mILYulDgQqUQVEHn38UFUaFkekg
+        DQAACw0B7QfALAAAFMVJREFUeF7tnXtwXUUdx5s2fTcFY0uohDZt0mILYulDgQqUQVEHn38UFUaFkekg
         RREQqZA29AUIjAIqOuPQ6ohIlSooLxHoqEB5aQEpyEPepY8kTdKkTZrX+vvu3d+5v7N3z7mv3Htjs7+Z
         z5xz9vHbvSf7Pbvnd869GZatKaXKahpaDq1raFxcu3L3jXUrG7fWrWxqoa3yeP6vaaBxvKJxM8b1rIam
         L9BwL8N4T4z8ATZ2DDHNami8yovIMxSoXdn0Rt2KXVfRuK+ROsjb4AjUNez+jlayo3GP52CmtqHpjRkN
@@ -486,9 +489,6 @@
   <metadata name="BunifuElipse2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>142, 17</value>
   </metadata>
-  <data name="BunifuLabel1.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 20,25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
-  </data>
   <data name="DataGridViewImageColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAC0AAAAjCAYAAAAAEIPqAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
