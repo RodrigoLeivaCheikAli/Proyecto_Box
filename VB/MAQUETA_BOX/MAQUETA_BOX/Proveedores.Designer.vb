@@ -379,7 +379,7 @@ Partial Class Proveedores
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
         Me.grillaProv.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.grillaProv.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grillaProv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.grillaProv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.grillaProv.BackgroundColor = System.Drawing.Color.White
         Me.grillaProv.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.grillaProv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
@@ -424,13 +424,13 @@ Partial Class Proveedores
         Me.grillaProv.HeaderBackColor = System.Drawing.Color.DodgerBlue
         Me.grillaProv.HeaderBgColor = System.Drawing.Color.Empty
         Me.grillaProv.HeaderForeColor = System.Drawing.Color.White
-        Me.grillaProv.Location = New System.Drawing.Point(22, 67)
+        Me.grillaProv.Location = New System.Drawing.Point(266, 68)
         Me.grillaProv.Name = "grillaProv"
         Me.grillaProv.ReadOnly = True
         Me.grillaProv.RowHeadersVisible = False
         Me.grillaProv.RowTemplate.Height = 40
         Me.grillaProv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grillaProv.Size = New System.Drawing.Size(1053, 308)
+        Me.grillaProv.Size = New System.Drawing.Size(513, 308)
         Me.grillaProv.TabIndex = 47
         Me.grillaProv.TabStop = False
         Me.grillaProv.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
