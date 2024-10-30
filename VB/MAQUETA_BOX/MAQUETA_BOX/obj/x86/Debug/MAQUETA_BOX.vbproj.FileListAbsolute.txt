@@ -845,3 +845,5 @@ C:\Users\valle\OneDrive\Documentos\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BO
 C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.EstadisticaCategoria.resources
 C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.EstadisticaProveedores.resources
 C:\Users\User\Desktop\Practica\Desarrollo de Aplicaciones\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Presupuesto_Ventas.resources
+C:\Users\gaite\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.EstadisticaProveedores.resources
+C:\Users\gaite\Documents\GitHub\Proyecto_Box\VB\MAQUETA_BOX\MAQUETA_BOX\obj\x86\Debug\MAQUETA_BOX.Presupuesto_Ventas.resources

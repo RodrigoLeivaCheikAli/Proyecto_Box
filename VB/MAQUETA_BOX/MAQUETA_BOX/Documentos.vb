@@ -4,6 +4,7 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 Imports ClosedXML.Excel
 Imports DocumentFormat.OpenXml.Vml.Office
 Imports DocumentFormat.OpenXml
+Imports System.Windows.Forms.DataVisualization.Charting
 
 Public Class Documentos
 
@@ -36,7 +37,7 @@ Public Class Documentos
     Public Sub CargarCbosEstado()
         cboEstado1.Items.Clear()
 
-        Dim estados() As String = {"Pedido", "Realizado"}
+        Dim estados() As String = {"Pedido", "Realizado", "Presupuesto"}
 
         For Each estado As String In estados
             cboEstado1.Items.Add(estado)
@@ -65,6 +66,11 @@ Public Class Documentos
         cboMes1.Items.Clear()
         cboMes1.Items.AddRange(New String() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
     End Sub
+
+
+
+
+
 
     Public Sub CargarCboDiasAñoNormal()
         cboDia1.Items.Clear()
@@ -179,6 +185,8 @@ Public Class Documentos
 
 #End Region
 
+#Region "Filtrar Grilla"
+
     Private Sub FiltrarGrilla()
         Dim dataset As New DataSet()
 
@@ -250,10 +258,9 @@ Public Class Documentos
         End Try
     End Sub
 
+#End Region
 
-
-
-
+#Region "CBO Cargar Dias Del Mes"
     Private Sub CargarDiasDelMes()
 
         cboDia1.Items.Clear()
@@ -281,94 +288,7 @@ Public Class Documentos
 
     End Sub
 
-    Private Sub CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
-        Try
-            ' Verificar que el índice de la fila sea válido
-            If e.RowIndex < 0 Then Return
-
-            ' Obtener el DataTable del DataGridView
-            Dim dt As DataTable = CType(DataGridView1.DataSource, DataTable)
-
-            ' Obtener el valor de IdPresupuesto desde la primera columna
-            Dim idPresupuesto As Integer
-
-            If IsDBNull(DataGridView1.Rows(e.RowIndex).Cells(0).Value) Then
-                Return
-            Else
-                idPresupuesto = Convert.ToInt32(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
-            End If
-
-            ' Verificar si la fila ya está expandida
-            If DataGridView1.Rows(e.RowIndex).Tag IsNot Nothing AndAlso DataGridView1.Rows(e.RowIndex).Tag.ToString() = "Expanded" Then
-                ' Colapsar: Eliminar las filas expandidas desde abajo hacia arriba
-                For i As Integer = DataGridView1.Rows.Count - 1 To e.RowIndex + 1 Step -1
-                    If DataGridView1.Rows(i).Tag IsNot Nothing AndAlso DataGridView1.Rows(i).Tag.ToString() = "Detail" Then
-                        dt.Rows(i).Delete()
-                    End If
-                Next
-
-                ' Restaurar la fila principal a su estado original
-                DataGridView1.Rows(e.RowIndex).Tag = Nothing
-                'DataGridView1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.White
-            Else
-                ' Expandir: Conectar a la base de datos y ejecutar el procedimiento almacenado
-                Dim connectionString As String = "data source=168.197.51.109;initial catalog=PIN_GRUPO11;user id=PIN_GRUPO11;password=PIN_GRUPO11123"
-                Dim query As String = "EstadisticaVentasGrill2"
-
-                Using connection As New SqlConnection(connectionString)
-                    Using command As New SqlCommand(query, connection)
-                        command.CommandType = CommandType.StoredProcedure
-                        command.Parameters.AddWithValue("@IdPresupuesto", idPresupuesto)
-
-                        Dim adapter As New SqlDataAdapter(command)
-                        Dim resultTable As New DataTable()
-                        adapter.Fill(resultTable)
-
-                        ' Verificar que se obtuvieron datos
-                        If resultTable.Rows.Count > 0 Then
-                            ' Marcar la fila principal como expandida
-                            DataGridView1.Rows(e.RowIndex).Tag = "Expanded"
-                            'DataGridView1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.LightGray
-
-                            ' Agregar una fila para los encabezados del sub-DataGridView
-                            Dim headerRow As DataRow = dt.NewRow()
-                            headerRow("Cliente") = "Producto"
-                            headerRow("Descripcion") = "Cantidad"
-
-                            ' Insertar la fila de encabezado en la posición deseada
-                            dt.Rows.InsertAt(headerRow, e.RowIndex + 1)
-
-                            ' Cambiar el estilo de la fila de encabezado del sub-DataGridView
-                            DataGridView1.Rows(e.RowIndex + 1).Tag = "Detail"
-                            'DataGridView1.Rows(e.RowIndex + 1).DefaultCellStyle.BackColor = Color.SteelBlue
-                            'DataGridView1.Rows(e.RowIndex + 1).DefaultCellStyle.ForeColor = Color.White
-                            'DataGridView1.Rows(e.RowIndex + 1).DefaultCellStyle.Font = New Font(DataGridView1.Font, FontStyle.Bold)
-
-                            ' Agregar filas de detalle al DataTable subyacente
-                            Dim insertIndex As Integer = e.RowIndex + 2 ' Iniciar después de la fila de encabezado
-                            For Each detailRow As DataRow In resultTable.Rows
-                                Dim newRow As DataRow = dt.NewRow()
-                                newRow("Cliente") = detailRow("Descripcion") ' Producto
-                                newRow("Descripcion") = detailRow("Cantidad_Venta") ' Cantidad
-
-                                ' Insertar la nueva fila en la posición deseada en el DataTable
-                                dt.Rows.InsertAt(newRow, insertIndex)
-                                ' Cambiar el color de la fila recién insertada
-                                DataGridView1.Rows(insertIndex).Tag = "Detail"
-                                'zzDataGridView1.Rows(insertIndex).DefaultCellStyle.BackColor = Color.LightBlue
-                                insertIndex += 1 ' Aumentar el índice para insertar la siguiente fila debajo de la última añadida
-                            Next
-
-                        End If
-                    End Using
-                End Using
-            End If
-        Catch ex As InvalidCastException
-            ' Manejo de la excepción InvalidCastException
-        Catch ex As Exception
-            ' Manejo de cualquier otra excepción
-        End Try
-    End Sub
+#End Region
 
 #Region "Exportar"
 
@@ -547,9 +467,137 @@ Public Class Documentos
         FiltrarGrilla()
     End Sub
 
-End Class
+#Region "Cell Content Double Click"
 
-'grilla anidada que muestre estado
-'buscar por descripcion
-'
-'
+    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
+        Try
+            ' Verificar que el índice de la fila sea válido
+            If e.RowIndex < 0 Then Return
+
+            ' Obtener el DataTable del DataGridView
+            Dim dt As DataTable = CType(DataGridView1.DataSource, DataTable)
+
+            ' Obtener el valor de IdPresupuesto desde la primera columna
+            Dim id_Presupuesto As Integer
+
+            If IsDBNull(DataGridView1.Rows(e.RowIndex).Cells(0).Value) Then
+                Return
+            Else
+                id_Presupuesto = Convert.ToInt32(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
+            End If
+
+            ' Verificar si la fila ya está expandida
+            If DataGridView1.Rows(e.RowIndex).Tag IsNot Nothing AndAlso DataGridView1.Rows(e.RowIndex).Tag.ToString() = "Expanded" Then
+                ' Colapsar: Eliminar las filas expandidas desde abajo hacia arriba
+                For i As Integer = DataGridView1.Rows.Count - 1 To e.RowIndex + 1 Step -1
+                    If DataGridView1.Rows(i).Tag IsNot Nothing AndAlso DataGridView1.Rows(i).Tag.ToString() = "Detail" Then
+                        dt.Rows(i).Delete()
+                    End If
+                Next
+
+                ' Restaurar la fila principal a su estado original
+                DataGridView1.Rows(e.RowIndex).Tag = Nothing
+                'DataGridView1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.White
+            Else
+                ' Expandir: Conectar a la base de datos y ejecutar el procedimiento almacenado
+                Dim connectionString As String = "data source=168.197.51.109;initial catalog=PIN_GRUPO11;user id=PIN_GRUPO11;password=PIN_GRUPO11123"
+                Dim query As String = "EstadisticaVentasGrill2"
+
+                Using connection As New SqlConnection(connectionString)
+                    Using command As New SqlCommand(query, connection)
+                        command.CommandType = CommandType.StoredProcedure
+                        command.Parameters.AddWithValue("@IdPresupuesto", id_Presupuesto)
+
+                        Dim adapter As New SqlDataAdapter(command)
+                        Dim resultTable As New DataTable()
+                        adapter.Fill(resultTable)
+
+                        ' Verificar que se obtuvieron datos
+                        If resultTable.Rows.Count > 0 Then
+                            ' Marcar la fila principal como expandida
+                            DataGridView1.Rows(e.RowIndex).Tag = "Expanded"
+                            'DataGridView1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.LightGray
+
+                            ' Agregar una fila para los encabezados del sub-DataGridView
+                            Dim headerRow As DataRow = dt.NewRow()
+                            headerRow("Cliente") = "Producto"
+                            headerRow("Descripcion") = "Cantidad"
+
+                            ' Insertar la fila de encabezado en la posición deseada
+                            dt.Rows.InsertAt(headerRow, e.RowIndex + 1)
+
+                            ' Cambiar el estilo de la fila de encabezado del sub-DataGridView
+                            DataGridView1.Rows(e.RowIndex + 1).Tag = "Detail"
+                            'DataGridView1.Rows(e.RowIndex + 1).DefaultCellStyle.BackColor = Color.SteelBlue
+                            'DataGridView1.Rows(e.RowIndex + 1).DefaultCellStyle.ForeColor = Color.White
+                            'DataGridView1.Rows(e.RowIndex + 1).DefaultCellStyle.Font = New Font(DataGridView1.Font, FontStyle.Bold)
+
+                            ' Agregar filas de detalle al DataTable subyacente
+                            Dim insertIndex As Integer = e.RowIndex + 2 ' Iniciar después de la fila de encabezado
+                            For Each detailRow As DataRow In resultTable.Rows
+                                Dim newRow As DataRow = dt.NewRow()
+                                newRow("Cliente") = detailRow("Descripcion") ' Producto
+                                newRow("Descripcion") = detailRow("Cantidad_Venta") ' Cantidad
+
+                                ' Insertar la nueva fila en la posición deseada en el DataTable
+                                dt.Rows.InsertAt(newRow, insertIndex)
+                                ' Cambiar el color de la fila recién insertada
+                                DataGridView1.Rows(insertIndex).Tag = "Detail"
+                                'zzDataGridView1.Rows(insertIndex).DefaultCellStyle.BackColor = Color.LightBlue
+                                insertIndex += 1 ' Aumentar el índice para insertar la siguiente fila debajo de la última añadida
+                            Next
+
+                        End If
+                    End Using
+                End Using
+            End If
+        Catch ex As InvalidCastException
+            ' Manejo de la excepción InvalidCastException
+        Catch ex As Exception
+            ' Manejo de cualquier otra excepción
+        End Try
+    End Sub
+
+#End Region
+
+#Region "Eliminar"
+
+    Private selectedPresupuestoId As Integer
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        ' Check if the clicked cell is valid
+        If e.RowIndex >= 0 Then
+            ' Get the selected Presupuesto ID from the grid (assuming it's in the first column)
+            selectedPresupuestoId = Convert.ToInt32(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
+        End If
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+
+        Using connection As New SqlConnection("data source=168.197.51.109;initial catalog=PIN_GRUPO11;user id=PIN_GRUPO11;password=PIN_GRUPO11123")
+            Using command As New SqlCommand("EliminarPresupuestoDocumentos", connection)
+                command.CommandType = CommandType.StoredProcedure
+                command.Parameters.AddWithValue("@Id_Presupuesto", selectedPresupuestoId)
+
+                Try
+                    connection.Open()
+                    Dim rowsAffected As Integer = command.ExecuteNonQuery()
+
+                    If rowsAffected > 0 Then
+                        MessageBox.Show("File deleted successfully.")
+                        ' Optionally, refresh the grid to reflect the deletion
+                        LlenarGrilla()
+                    Else
+                        MessageBox.Show("No record was deleted.")
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+    End Sub
+
+#End Region
+
+End Class
