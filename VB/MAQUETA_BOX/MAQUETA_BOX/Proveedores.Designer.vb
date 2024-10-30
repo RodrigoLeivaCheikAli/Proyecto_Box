@@ -424,13 +424,13 @@ Partial Class Proveedores
         Me.grillaProv.HeaderBackColor = System.Drawing.Color.DodgerBlue
         Me.grillaProv.HeaderBgColor = System.Drawing.Color.Empty
         Me.grillaProv.HeaderForeColor = System.Drawing.Color.White
-        Me.grillaProv.Location = New System.Drawing.Point(266, 68)
+        Me.grillaProv.Location = New System.Drawing.Point(73, 99)
         Me.grillaProv.Name = "grillaProv"
         Me.grillaProv.ReadOnly = True
         Me.grillaProv.RowHeadersVisible = False
         Me.grillaProv.RowTemplate.Height = 40
         Me.grillaProv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grillaProv.Size = New System.Drawing.Size(513, 308)
+        Me.grillaProv.Size = New System.Drawing.Size(979, 278)
         Me.grillaProv.TabIndex = 47
         Me.grillaProv.TabStop = False
         Me.grillaProv.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light

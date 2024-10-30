@@ -292,9 +292,7 @@
     <Compile Include="Compras.Designer.vb">
       <DependentUpon>Compras.vb</DependentUpon>
     </Compile>
-    <Compile Include="Compras.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Compras.vb" />
     <Compile Include="Documentos.Designer.vb">
       <DependentUpon>Documentos.vb</DependentUpon>
     </Compile>

@@ -154,14 +154,15 @@ Partial Class Ventas
         Me.DataGridView2.HeaderBackColor = System.Drawing.Color.DodgerBlue
         Me.DataGridView2.HeaderBgColor = System.Drawing.Color.Empty
         Me.DataGridView2.HeaderForeColor = System.Drawing.Color.White
-        Me.DataGridView2.Location = New System.Drawing.Point(571, 117)
+        Me.DataGridView2.Location = New System.Drawing.Point(618, 117)
         Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.RowTemplate.Height = 40
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView2.ShowCellErrors = False
         Me.DataGridView2.ShowRowErrors = False
-        Me.DataGridView2.Size = New System.Drawing.Size(556, 359)
+        Me.DataGridView2.Size = New System.Drawing.Size(517, 359)
         Me.DataGridView2.TabIndex = 13
         Me.DataGridView2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
         '
@@ -170,6 +171,7 @@ Partial Class Ventas
         Me.ColumnRestar.HeaderText = ""
         Me.ColumnRestar.Image = Global.MAQUETA_BOX.My.Resources.Resources.boton_menos
         Me.ColumnRestar.Name = "ColumnRestar"
+        Me.ColumnRestar.ReadOnly = True
         Me.ColumnRestar.Width = 20
         '
         'DataGridViewTextBoxColumn1
@@ -178,6 +180,7 @@ Partial Class Ventas
         Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn1.HeaderText = "N°"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
         Me.DataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.DataGridViewTextBoxColumn1.Width = 32
@@ -188,6 +191,7 @@ Partial Class Ventas
         Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridViewTextBoxColumn2.HeaderText = "Tipo"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
         Me.DataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.DataGridViewTextBoxColumn2.Width = 47
@@ -198,6 +202,7 @@ Partial Class Ventas
         Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewTextBoxColumn3.HeaderText = "Descripcion"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
         Me.DataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
@@ -207,6 +212,7 @@ Partial Class Ventas
         Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn4.HeaderText = "Vehiculo"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
         Me.DataGridViewTextBoxColumn4.Width = 95
         '
         'DataGridViewTextBoxColumn5
@@ -215,6 +221,7 @@ Partial Class Ventas
         Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridViewTextBoxColumn5.HeaderText = "Precio"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         Me.DataGridViewTextBoxColumn5.Width = 79
         '
         'DataGridViewTextBoxColumn6
@@ -223,6 +230,7 @@ Partial Class Ventas
         Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridViewTextBoxColumn6.HeaderText = "Cantidad"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
         Me.DataGridViewTextBoxColumn6.Width = 98
         '
         'DataGridView1
@@ -281,6 +289,7 @@ Partial Class Ventas
         Me.DataGridView1.HeaderForeColor = System.Drawing.Color.White
         Me.DataGridView1.Location = New System.Drawing.Point(12, 117)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowTemplate.Height = 40
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -295,6 +304,7 @@ Partial Class Ventas
         Me.ColumnSumar.HeaderText = ""
         Me.ColumnSumar.Image = Global.MAQUETA_BOX.My.Resources.Resources.boton_mas
         Me.ColumnSumar.Name = "ColumnSumar"
+        Me.ColumnSumar.ReadOnly = True
         Me.ColumnSumar.Width = 20
         '
         'ColumnID
@@ -305,6 +315,7 @@ Partial Class Ventas
         Me.ColumnID.DefaultCellStyle = DataGridViewCellStyle13
         Me.ColumnID.HeaderText = "N°"
         Me.ColumnID.Name = "ColumnID"
+        Me.ColumnID.ReadOnly = True
         Me.ColumnID.Width = 40
         '
         'ColumnTipo
@@ -315,6 +326,7 @@ Partial Class Ventas
         Me.ColumnTipo.DefaultCellStyle = DataGridViewCellStyle14
         Me.ColumnTipo.HeaderText = "Tipo"
         Me.ColumnTipo.Name = "ColumnTipo"
+        Me.ColumnTipo.ReadOnly = True
         '
         'ColumnDescripcion
         '
@@ -324,6 +336,7 @@ Partial Class Ventas
         Me.ColumnDescripcion.DefaultCellStyle = DataGridViewCellStyle15
         Me.ColumnDescripcion.HeaderText = "Descripcion"
         Me.ColumnDescripcion.Name = "ColumnDescripcion"
+        Me.ColumnDescripcion.ReadOnly = True
         '
         'ColumnVehiculo
         '
@@ -333,6 +346,7 @@ Partial Class Ventas
         Me.ColumnVehiculo.DefaultCellStyle = DataGridViewCellStyle16
         Me.ColumnVehiculo.HeaderText = "Vehiculo"
         Me.ColumnVehiculo.Name = "ColumnVehiculo"
+        Me.ColumnVehiculo.ReadOnly = True
         '
         'ColumnPrecio
         '
@@ -342,6 +356,7 @@ Partial Class Ventas
         Me.ColumnPrecio.DefaultCellStyle = DataGridViewCellStyle17
         Me.ColumnPrecio.HeaderText = "Precio"
         Me.ColumnPrecio.Name = "ColumnPrecio"
+        Me.ColumnPrecio.ReadOnly = True
         '
         'ColumnCantidad
         '
@@ -351,6 +366,7 @@ Partial Class Ventas
         Me.ColumnCantidad.DefaultCellStyle = DataGridViewCellStyle18
         Me.ColumnCantidad.HeaderText = "Cantidad"
         Me.ColumnCantidad.Name = "ColumnCantidad"
+        Me.ColumnCantidad.ReadOnly = True
         '
         'PictureBox3
         '
