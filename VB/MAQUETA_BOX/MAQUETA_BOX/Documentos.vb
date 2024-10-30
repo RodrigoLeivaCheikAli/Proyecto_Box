@@ -55,9 +55,9 @@ Public Class Documentos
     End Sub
 
     Public Sub CargarCbosAño()
-        Dim Año As Integer = 2000
+        Dim Año As Integer = 2022
         cboAño1.Items.Clear()
-        For i As Integer = 0 To 50
+        For i As Integer = 0 To 10
             cboAño1.Items.Add((Año + i).ToString())
         Next
     End Sub
