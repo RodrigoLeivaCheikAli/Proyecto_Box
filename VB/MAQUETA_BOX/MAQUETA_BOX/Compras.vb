@@ -294,43 +294,6 @@ Public Class Compras
         End Try
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        ' Mostrar el formulario que contiene los botones Aceptar y Cancelar
-        Dim fechaForm As New FechaForm()
-
-        ' Abrir el formulario y verificar el resultado
-        If fechaForm.ShowDialog() = DialogResult.OK Then
-            ' Solo si el usuario hace clic en "Aceptar", se ejecuta la lógica del pedido
-            CargarPedido()
-            SeleccionarUltimoID()
-            CargarDetallePedido()
-
-            MsgBox("Pedido guardado correctamente", vbInformation, "Pedidos")
-
-            totalPrecio = 0
-            If IdPresupuesto = 0 Then
-                DataGridView2.Rows.Clear()
-                addedRows.Clear()
-                Cant.Clear()
-                originalValues.Clear()
-                CalcularTotal()
-                IdPresupuesto = 0
-            End If
-
-            If IdPresupuesto <> 0 Then
-                ActualizarEstadoPresupuesto(IdPresupuesto, "Pedido")
-                DataGridView2.Rows.Clear()
-                addedRows.Clear()
-                Cant.Clear()
-                originalValues.Clear()
-                CalcularTotal()
-                IdPresupuesto = 0
-            End If
-        Else
-            ' Si el usuario cancela, simplemente no se hace nada
-            ' Aquí puedes agregar cualquier lógica adicional si es necesario
-        End If
-    End Sub
 
     Private Sub ActualizarEstadoPresupuesto(idPresupuesto As Integer, nuevoEstado As String)
         Dim conexion As SqlConnection
@@ -387,19 +350,7 @@ Public Class Compras
         End Try
     End Sub
 
-    Public Sub CargarPedido()
-        Dim fechaPedido As DateTime
-
-        Using frmFecha As New FechaForm
-            If frmFecha.ShowDialog() = DialogResult.OK Then
-                fechaPedido = frmFecha.FechaSeleccionada
-            Else
-                MessageBox.Show("Operación cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Exit Sub
-            End If
-        End Using
-
-
+    Public Sub CargarPedido(fechaPedido As DateTime)
         Dim conexion As SqlConnection
         Dim comando As New SqlCommand
 
@@ -417,14 +368,13 @@ Public Class Compras
             End With
 
             comando.ExecuteNonQuery()
-
-
         Catch ex As Exception
             MessageBox.Show("Error al cargar los detalles: " & ex.Message)
         Finally
             conexion.Close()
         End Try
     End Sub
+
 
     Public Sub AgregarProductoAPresupuesto(IdPresupuesto As Integer, IdProducto As Integer, Cantidad As Integer)
         Try
@@ -629,15 +579,12 @@ Public Class Compras
                     If Cant(originalIndex) > 0 Then
                         DataGridView2.Rows(e.RowIndex).Cells(DataGridView2.ColumnCount - 1).Value = Cant(originalIndex)
 
-                        ' Actualizar el total de la fila en la grilla 2
                         UpdateTotal(e.RowIndex)
                     Else
-                        ' Eliminar de addedRows y Cant antes de eliminar la fila
                         addedRows.Remove(originalIndex)
                         Cant.Remove(originalIndex)
                         DataGridView2.Rows.RemoveAt(e.RowIndex)
 
-                        ' Actualizar los índices en addedRows
                         Dim updatedAddedRows As New Dictionary(Of Integer, Integer)
                         For Each pair In addedRows
                             If pair.Value > e.RowIndex Then
@@ -652,6 +599,39 @@ Public Class Compras
             End If
         End If
         CalcularTotal()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Dim fechaForm As New FechaForm()
+
+        If fechaForm.ShowDialog() = DialogResult.OK Then
+            Dim fechaSeleccionada As DateTime = fechaForm.FechaSeleccionada
+
+            ' Pasa la fecha seleccionada a CargarPedido
+            CargarPedido(fechaSeleccionada)
+            SeleccionarUltimoID()
+            CargarDetallePedido()
+
+            MsgBox("Pedido guardado correctamente", vbInformation, "Pedidos")
+
+            totalPrecio = 0
+            If IdPresupuesto = 0 Then
+                DataGridView2.Rows.Clear()
+                addedRows.Clear()
+                Cant.Clear()
+                originalValues.Clear()
+                CalcularTotal()
+                IdPresupuesto = 0
+            Else
+                ActualizarEstadoPresupuesto(IdPresupuesto, "Pedido")
+                DataGridView2.Rows.Clear()
+                addedRows.Clear()
+                Cant.Clear()
+                originalValues.Clear()
+                CalcularTotal()
+                IdPresupuesto = 0
+            End If
+        End If
     End Sub
 
 
