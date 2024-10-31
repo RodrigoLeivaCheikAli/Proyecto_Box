@@ -284,7 +284,6 @@ Public Class Compras
             comando.CommandType = CommandType.StoredProcedure
             comando.CommandText = "Maximo_Id_Orden_Compra"
 
-            ' Ejecutar el comando y obtener el valor
             maxId = Convert.ToInt32(comando.ExecuteScalar())
 
         Catch ex As Exception
@@ -329,12 +328,11 @@ Public Class Compras
 
             For Each fila As DataGridViewRow In DataGridView2.Rows
                 If Not fila.IsNewRow Then
-                    ' Toma los valores de la columna 1 y la columna 6
                     Dim idOferta As Integer = Convert.ToInt32(fila.Cells(1).Value)
                     Dim cantidad As Integer = Convert.ToInt32(fila.Cells(6).Value)
 
                     With comando.Parameters
-                        .Clear() ' Limpia los parámetros antes de agregar nuevos valores
+                        .Clear()
                         .AddWithValue("@ID_Orden_Compra", maxId)
                         .AddWithValue("@ID_Oferta", idOferta)
                         .AddWithValue("@Cantidad", cantidad)
@@ -382,12 +380,10 @@ Public Class Compras
                 Using comando As New SqlCommand("Agregar_Producto_A_Presupuesto", conexion)
                     comando.CommandType = CommandType.StoredProcedure
 
-                    ' Añadir los parámetros necesarios
                     comando.Parameters.AddWithValue("@Id_Presupuesto", IdPresupuesto)
                     comando.Parameters.AddWithValue("@Id_Producto", IdProducto)
                     comando.Parameters.AddWithValue("@Cantidad", Cantidad)
 
-                    ' Abrir la conexión y ejecutar el comando
                     conexion.Open()
                     comando.ExecuteNonQuery()
                 End Using
@@ -565,7 +561,6 @@ Public Class Compras
 
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewImageColumn AndAlso e.RowIndex >= 0 Then
             If e.ColumnIndex = DataGridView2.Columns("Column1").Index AndAlso e.RowIndex >= 0 Then
-                ' Eliminar la fila seleccionada
                 Dim originalIndex As Integer = -1
                 For Each pair In addedRows
                     If pair.Value = selectedRow.Index Then
@@ -607,10 +602,10 @@ Public Class Compras
         If fechaForm.ShowDialog() = DialogResult.OK Then
             Dim fechaSeleccionada As DateTime = fechaForm.FechaSeleccionada
 
-            ' Pasa la fecha seleccionada a CargarPedido
             CargarPedido(fechaSeleccionada)
             SeleccionarUltimoID()
             CargarDetallePedido()
+            ExportarTablaAPedidoCSV()
 
             MsgBox("Pedido guardado correctamente", vbInformation, "Pedidos")
 
@@ -635,5 +630,46 @@ Public Class Compras
     End Sub
 
 
+#End Region
+
+
+#Region "Exportar"
+    Private Sub ExportarTablaAPedidoCSV()
+        Dim saveFileDialog As New SaveFileDialog()
+        saveFileDialog.Filter = "Archivos CSV (*.csv)|*.csv"
+        saveFileDialog.Title = "Guardar pedido como"
+        saveFileDialog.FileName = "Pedido.csv"
+
+        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+            ' Obtener la ruta seleccionada por el usuario
+            Dim rutaArchivo As String = saveFileDialog.FileName
+
+            Try
+                ' Crear el archivo CSV
+                Using sw As New System.IO.StreamWriter(rutaArchivo)
+                    ' Escribir encabezados de las columnas
+                    For Each columna As DataGridViewColumn In DataGridView2.Columns
+                        sw.Write(columna.HeaderText & ",")
+                    Next
+                    sw.WriteLine()
+
+                    ' Escribir las filas
+                    For Each fila As DataGridViewRow In DataGridView2.Rows
+                        If Not fila.IsNewRow Then
+                            For Each celda As DataGridViewCell In fila.Cells
+                                sw.Write(celda.Value.ToString() & ",")
+                            Next
+                            sw.WriteLine()
+                        End If
+                    Next
+                End Using
+
+                ' Mostrar mensaje de éxito
+                MessageBox.Show("Pedido exportado exitosamente a " & rutaArchivo, "Exportar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Ocurrió un error al exportar: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
 #End Region
 End Class
