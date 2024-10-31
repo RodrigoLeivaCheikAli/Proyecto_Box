@@ -3,6 +3,8 @@ Imports System.Drawing.Printing
 
 
 Public Class Productos
+    Private currentRowIndex As Integer = 0
+    Private panelImpreso As Boolean = False
 
 #Region "Load"
     Private Sub Productos_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
@@ -99,7 +101,7 @@ Public Class Productos
     End Sub
 #End Region
 #Region "Vendidos"
-    Private Sub btnVendidos_Click(sender As Object, e As EventArgs) 
+    Private Sub btnVendidos_Click(sender As Object, e As EventArgs)
         ' Crear una instancia del formulario Productos_Listado
         Dim vendidosForm As New Productos_Vendidos(panelContenedor)
 
@@ -399,23 +401,130 @@ Public Class Productos
         End If
     End Sub
 
-    Public Sub ExportarGrillaAPDF()
-        ' Crear un PrintDocument
-        Dim printDocument As New PrintDocument()
+    'Public Sub ExportarGrillaAPDF()
+    '    ' Crear un PrintDocument
+    '    Dim printDocument As New PrintDocument()
 
-        ' Manejar el evento PrintPage para personalizar la impresión
-        AddHandler printDocument.PrintPage, AddressOf Me.PrintGrilla
+    '    ' Manejar el evento PrintPage para personalizar la impresión
+    '    AddHandler printDocument.PrintPage, AddressOf Me.PrintGrilla
 
-        ' Crear el diálogo de impresión
-        Dim printDialog As New PrintDialog()
-        printDialog.Document = printDocument
-        printDialog.PrinterSettings.PrinterName = "Microsoft Print To PDF" ' Seleccionar "Microsoft Print To PDF"
+    '    ' Crear el diálogo de impresión
+    '    Dim printDialog As New PrintDialog()
+    '    printDialog.Document = printDocument
+    '    printDialog.PrinterSettings.PrinterName = "Microsoft Print To PDF" ' Seleccionar "Microsoft Print To PDF"
 
-        ' Mostrar el diálogo de impresión y ejecutar la impresión si el usuario hace clic en OK
-        If printDialog.ShowDialog() = DialogResult.OK Then
-            printDocument.Print()
+    '    ' Mostrar el diálogo de impresión y ejecutar la impresión si el usuario hace clic en OK
+    '    If printDialog.ShowDialog() = DialogResult.OK Then
+    '        printDocument.Print()
+    '    End If
+    'End Sub
+
+
+    Private Sub PrintPage(sender As Object, e As PrintPageEventArgs)
+        ' Tamaño y posición del panel en el PDF
+        Dim panelWidth As Integer = Panel2.Width
+        Dim panelHeight As Integer = Panel2.Height
+
+        ' Margen superior e izquierdo
+        Dim marginX As Integer = e.MarginBounds.Left
+        Dim marginY As Integer = e.MarginBounds.Top
+
+        ' Imprimir el Panel solo una vez
+        If Not panelImpreso Then
+            ' Capturar el Panel con los gráficos
+            Dim panelBitmap As New Bitmap(panelWidth, panelHeight)
+            Panel2.DrawToBitmap(panelBitmap, New Rectangle(0, 0, panelWidth, panelHeight))
+            e.Graphics.DrawImage(panelBitmap, marginX, marginY)
+
+            ' Dejar un espacio debajo del panel antes de empezar con el DataGridView
+            Dim spacing As Integer = 20
+            marginY += panelHeight + spacing
+
+            ' Marcar el panel como impreso para que no se imprima en las siguientes páginas
+            panelImpreso = True
         End If
+
+        ' Variables para manejar el dibujo del DataGridView
+        Dim cellHeight As Integer = 30
+        Dim cellWidth As Integer
+        Dim startX As Integer = marginX
+        Dim availableHeight As Integer = e.MarginBounds.Height - marginY ' Altura restante para el DataGridView
+
+        If currentRowIndex = 0 Then
+            startX = marginX
+            For Each column As DataGridViewColumn In BunifuDataGridView1.Columns
+                ' Aumentar el ancho de ColumnDescripcion
+                If column.Name = "ColumnDescripcion" Then
+                    cellWidth = 200 ' Ajusta el valor según el espacio que necesites
+                Else
+                    cellWidth = column.Width
+                End If
+
+                e.Graphics.FillRectangle(Brushes.SteelBlue, New Rectangle(startX, marginY, cellWidth, cellHeight)) ' Fondo de encabezado
+                e.Graphics.DrawString(column.HeaderText, BunifuDataGridView1.Font, Brushes.White, startX + 5, marginY + 5) ' Texto del encabezado
+                startX += cellWidth
+            Next
+            marginY += cellHeight ' Avanzar a la siguiente línea después de los encabezados
+        End If
+
+        ' Dibujar filas del DataGridView
+        startX = marginX
+        While currentRowIndex < BunifuDataGridView1.Rows.Count
+            Dim row As DataGridViewRow = BunifuDataGridView1.Rows(currentRowIndex)
+
+            ' Verificar si hay suficiente espacio para la fila actual
+            If marginY + cellHeight > e.MarginBounds.Bottom Then
+                ' No hay suficiente espacio, saltar a la siguiente página
+                e.HasMorePages = True
+                Exit Sub
+            End If
+
+            ' Dibujar las celdas de la fila
+            startX = marginX
+            For Each cell As DataGridViewCell In row.Cells
+                ' Aumentar el ancho de ColumnDescripcion en las filas también
+                If BunifuDataGridView1.Columns(cell.ColumnIndex).Name = "ColumnDescripcion" Then
+                    cellWidth = 200 ' Ajusta el valor según el espacio necesario
+                Else
+                    cellWidth = BunifuDataGridView1.Columns(cell.ColumnIndex).Width
+                End If
+
+                ' Dibuja el fondo de la celda
+                Dim brush As Brush = New SolidBrush(row.DefaultCellStyle.BackColor)
+                e.Graphics.FillRectangle(brush, New Rectangle(startX, marginY, cellWidth, cellHeight)) ' Fondo de la celda
+                e.Graphics.DrawRectangle(Pens.Black, startX, marginY, cellWidth, cellHeight) ' Dibuja el borde de la celda
+
+                ' Formatear la celda si es la columna de precio
+                If BunifuDataGridView1.Columns(cell.ColumnIndex).Name = "Total" Then
+                    Dim precio As Decimal
+                    If Decimal.TryParse(cell.Value?.ToString(), precio) Then
+                        e.Graphics.DrawString(precio.ToString("C2"), BunifuDataGridView1.Font, Brushes.Black, startX + 5, marginY + 5) ' Dibuja el texto con formato de precio
+                    Else
+                        e.Graphics.DrawString(cell.Value?.ToString(), BunifuDataGridView1.Font, Brushes.Black, startX + 5, marginY + 5) ' Dibuja el texto sin formatear
+                    End If
+                ElseIf BunifuDataGridView1.Columns(cell.ColumnIndex).Name = "Fecha" Then
+                    Dim fecha As DateTime
+                    If DateTime.TryParse(cell.Value?.ToString(), fecha) Then
+                        e.Graphics.DrawString(fecha.ToString("dd/MM/yyyy"), BunifuDataGridView1.Font, Brushes.Black, startX + 5, marginY + 5) ' Dibuja el texto con formato de fecha
+                    Else
+                        e.Graphics.DrawString(cell.Value?.ToString(), BunifuDataGridView1.Font, Brushes.Black, startX + 5, marginY + 5) ' Dibuja el texto sin formatear
+                    End If
+                Else
+                    e.Graphics.DrawString(cell.Value?.ToString(), BunifuDataGridView1.Font, Brushes.Black, startX + 5, marginY + 5) ' Dibuja el texto para otras columnas
+                End If
+
+                startX += cellWidth
+            Next
+
+            ' Moverse a la siguiente fila
+            marginY += cellHeight
+            currentRowIndex += 1
+        End While
+
+        ' Si no hay más filas, detener el proceso de impresión
+        e.HasMorePages = False
     End Sub
+
 
     ' Manejar el evento PrintPage para dibujar la grilla en el PDF
     Private Sub PrintGrilla(sender As Object, e As PrintPageEventArgs)
@@ -445,8 +554,22 @@ Public Class Productos
         Next
     End Sub
 
+    Public Sub ExportarFormularioAPDF()
+        Dim printDocument As New PrintDocument()
+        AddHandler printDocument.PrintPage, AddressOf Me.PrintPage
+
+        Dim printDialog As New PrintDialog()
+        printDialog.Document = printDocument
+        printDialog.PrinterSettings.PrinterName = "Microsoft Print To PDF"
+
+        If printDialog.ShowDialog() = DialogResult.OK Then
+            printDocument.Print()
+        End If
+        Cargar_Grilla()
+    End Sub
 
     Private Sub btnExportar_Click(sender As Object, e As EventArgs) Handles btnExportar.Click
-        ExportarGrillaAPDF()
+        'ExportarGrillaAPDF()
+        ExportarFormularioAPDF()
     End Sub
 End Class
